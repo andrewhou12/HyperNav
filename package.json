@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "main.js",
   "scripts": {
+    "dev": "concurrently \"npm run dev --prefix renderer\" \"electron .\"",
     "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,6 +15,7 @@
     "url": "https://github.com/andrewhou12/Cortex.git"
   },
   "devDependencies": {
+    "concurrently": "^9.1.2",
     "electron": "^36.5.0"
   }
 }
