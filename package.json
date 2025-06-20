@@ -1,0 +1,19 @@
+{
+  "name": "cortex",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Hou",
+  "license": "ISC",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andrewhou12/Cortex.git"
+  },
+  "devDependencies": {
+    "electron": "^36.5.0"
+  }
+}
