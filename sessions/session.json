@@ -1,0 +1,13 @@
+{
+  "sessionName": "focus_mvp",
+  "createdAt": "2025-06-20T11:56:03.219Z",
+  "items": [
+    {
+      "type": "app",
+      "name": "Visual Studio Code",
+      "path": "/Applications/Visual Studio Code.app",
+      "windowTitle": "Cortex Dev",
+      "isActive": true
+    }
+  ]
+}
