@@ -4,6 +4,26 @@ const fs = require('fs');
 const sessionDir = path.join(__dirname, '..', 'sessions'); // This is a folder
 const sessionFile = path.join(sessionDir, 'session.json'); // This is the file
 
+let sessionData = {
+
+    sessionName: "...",
+    createdAt: "...",
+    items: []
+
+}
+
+function updateSessionData(item) {
+
+    const newItem = {
+        ...item,
+        addedAt: new Date().toISOString()
+      };
+      sessionData.items.push(newItem);
+      console.log("Item added:", newItem);
+
+}
+
+
 function saveSession(sessionData) {
   if (!fs.existsSync(sessionDir)) {
     fs.mkdirSync(sessionDir, { recursive: true });
@@ -30,5 +50,7 @@ function loadSession() {
 // Export these functions so other files can use them
 module.exports = {
   saveSession,
-  loadSession
+  loadSession,
+  updateSessionData,
+  sessionData
 };

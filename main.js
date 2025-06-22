@@ -1,5 +1,5 @@
 const { ipcMain } = require('electron');
-const { saveSession, loadSession } = require('./core/sessionManager');
+const { saveSession, loadSession, updateSessionData, sessionData } = require('./core/sessionManager');
 const path = require('path');
 const { app, BrowserWindow } = require('electron');
 
@@ -37,7 +37,7 @@ function createSessionWindow () {
 
 }
 
-ipcMain.on('save-session', (event, sessionData) => {
+ipcMain.on('save-session', () => {
     saveSession(sessionData);
   });
   
@@ -49,6 +49,11 @@ ipcMain.on('save-session', (event, sessionData) => {
     if (type === 'start-session') createSessionWindow();
   
   });
+
+  ipcMain.on('update-session', (event, tab) => {
+    updateSessionData(tab);
+  });
+  
   
 
 app.whenReady().then(() => {

@@ -1,33 +1,50 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import './index.css'
+import { StrictMode } from 'react'
+
 
 function SessionWindow() {
+
+  const handleSave = () => {
+    
+  
+    window.electron.saveSession();
+
+  
+
+
+  }
+  
+  const handleNewTab = () => {
+
+
+    const dummyTab = {
+      type: "app",
+    name: "Chrome",
+    path: "/Applications/Google Chrome.app",
+    windowTitle: "Inbox",
+    isActive: true
+    };
+
+  window.electron.updateSessionData(dummyTab)
+
+  };
   return (
     <>
       <h1>New Session</h1>
     <button onClick={handleSave}>Save Session</button>
+    <button onClick={handleNewTab}>New Tab</button>
 
   </>
   )
   
 }
 
-const handleSave = () => {
-  const dummySession = {
-    sessionName: "focus_mvp",
-    createdAt: new Date().toISOString(),
-    items: [
-      {
-        type: "app",
-        name: "Visual Studio Code",
-        path: "/Applications/Visual Studio Code.app",
-        windowTitle: "Cortex Dev",
-        isActive: true
-      }
-    ]
-  };
 
-  window.electron.saveSession(dummySession);
-};
 
-ReactDOM.createRoot(document.getElementById('root')).render(<SessionWindow />);
+ReactDOM.createRoot(document.getElementById('root')).render(
+<StrictMode>
+<SessionWindow />
+</StrictMode>,
+);
