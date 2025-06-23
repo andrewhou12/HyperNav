@@ -1,5 +1,6 @@
 const path = require('path');
 const fs = require('fs');
+const { exec } = require('child_process');
 
 const sessionDir = path.join(__dirname, '..', 'sessions'); // This is a folder
 const sessionFile = path.join(sessionDir, 'session.json'); // This is the file
@@ -29,12 +30,30 @@ function saveSession(sessionData) {
     fs.mkdirSync(sessionDir, { recursive: true });
   }
 
+  const timestamp = new Date().toISOString()
+    .replace(/T/, '_')       // Replace 'T' with '_'
+    .replace(/:/g, '-')      // Replace colons with hyphens (valid for filenames)
+    .replace(/\..+/, '');    // Remove milliseconds and 'Z'
+
+const filename = `session_${timestamp}.json`;
+const filepath = path.join(sessionDir, filename);
+
+
   const json = JSON.stringify(sessionData, null, 2);
-  fs.writeFileSync(sessionFile, json);
-  console.log(`✅ Session saved to ${sessionFile}`);
+  fs.writeFileSync(filepath, json);
+  console.log(`✅ Session saved to ${filepath}`);
+
+  sessionData = {
+
+    sessionName: "...",
+    createdAt: "...",
+    items: []
+
 }
 
-// Load the session data from the JSON file
+}
+
+// Load the session data from the JSON file, need to update this 
 function loadSession() {
   if (!fs.existsSync(sessionFile)) {
     console.warn('⚠️ No session file found.');
@@ -47,10 +66,25 @@ function loadSession() {
   return data;
 }
 
+
+function launchApp(appPath) {
+  // Escape spaces properly
+  const escapedPath = `"${appPath}"`;
+  exec(`open ${escapedPath}`, (error) => {
+    if (error) {
+      console.error(`Failed to launch app: ${error}`);
+    } else {
+      console.log(`🚀 Launched app: ${appPath}`);
+    }
+  });
+}
+
+
 // Export these functions so other files can use them
 module.exports = {
   saveSession,
   loadSession,
   updateSessionData,
+  launchApp,
   sessionData
 };

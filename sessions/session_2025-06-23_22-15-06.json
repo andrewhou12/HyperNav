@@ -1,0 +1,14 @@
+{
+  "sessionName": "...",
+  "createdAt": "...",
+  "items": [
+    {
+      "type": "app",
+      "name": "Geometry",
+      "path": "/Applications/Geometry.app",
+      "windowTitle": "Geometry",
+      "isActive": true,
+      "addedAt": "2025-06-23T22:14:54.648Z"
+    }
+  ]
+}

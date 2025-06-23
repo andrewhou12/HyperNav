@@ -1,0 +1,14 @@
+{
+  "sessionName": "...",
+  "createdAt": "...",
+  "items": [
+    {
+      "type": "app",
+      "name": "App Store",
+      "path": "/System/Applications/App Store.app",
+      "windowTitle": "App Store",
+      "isActive": true,
+      "addedAt": "2025-06-23T21:53:31.274Z"
+    }
+  ]
+}

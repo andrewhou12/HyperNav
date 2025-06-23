@@ -16,20 +16,16 @@ function SessionWindow() {
 
   }
   
-  const handleNewTab = () => {
-
-
-    const dummyTab = {
-      type: "app",
-    name: "Chrome",
-    path: "/Applications/Google Chrome.app",
-    windowTitle: "Inbox",
-    isActive: true
-    };
-
-  window.electron.updateSessionData(dummyTab)
-
+  const handleNewTab = async () => {
+    const newtab = await window.electron.chooseApp();
+    if (!newtab) return;
+  
+    // Optional: launch the app
+    window.electron.launchApp?.(newtab.path);
   };
+  
+  
+  
   return (
     <>
       <h1>New Session</h1>
