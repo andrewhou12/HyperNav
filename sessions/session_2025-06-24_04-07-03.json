@@ -1,0 +1,14 @@
+{
+  "sessionName": "...",
+  "createdAt": "2025-06-24T04:06:56.588Z",
+  "items": [
+    {
+      "type": "app",
+      "name": "Calendar",
+      "path": "/System/Applications/Calendar.app",
+      "windowTitle": "Calendar",
+      "isActive": true,
+      "addedAt": "2025-06-24T04:07:00.213Z"
+    }
+  ]
+}

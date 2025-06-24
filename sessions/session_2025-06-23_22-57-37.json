@@ -1,0 +1,30 @@
+{
+  "sessionName": "...",
+  "createdAt": "...",
+  "items": [
+    {
+      "type": "app",
+      "name": "Visual Studio Code",
+      "path": "/Users/andrewhou/Downloads/Visual Studio Code.app",
+      "windowTitle": "Visual Studio Code",
+      "isActive": true,
+      "addedAt": "2025-06-23T22:57:07.065Z"
+    },
+    {
+      "type": "app",
+      "name": "Google Chrome",
+      "path": "/Applications/Google Chrome.app",
+      "windowTitle": "Google Chrome",
+      "isActive": true,
+      "addedAt": "2025-06-23T22:57:21.719Z"
+    },
+    {
+      "type": "app",
+      "name": "Calculator",
+      "path": "/System/Applications/Calculator.app",
+      "windowTitle": "Calculator",
+      "isActive": true,
+      "addedAt": "2025-06-23T22:57:31.274Z"
+    }
+  ]
+}

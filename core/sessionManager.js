@@ -5,27 +5,78 @@ const { exec } = require('child_process');
 const sessionDir = path.join(__dirname, '..', 'sessions'); // This is a folder
 const sessionFile = path.join(sessionDir, 'session.json'); // This is the file
 
-let sessionData = {
+let sessionData; 
 
-    sessionName: "...",
-    createdAt: "...",
-    items: []
 
+function startsession() {
+
+  sessionData = {
+    sessionName: `Session_${new Date().toISOString()}`,
+    createdAt: new Date().toISOString(),
+
+    liveWorkspace: {
+      apps: [],               // List of currently active/tracked apps
+      activeAppId: null,      // ID of currently focused app
+      activeWindowId: null    // ID of currently focused window
+    },
+
+    eventLog: []              // Timeline of user actions
+  };
+
+  console.log("🟢 New session started:", sessionData.sessionName);
 }
 
 function updateSessionData(item) {
+  if (!sessionData) {
+    console.error("❌ sessionData is not initialized");
+    return;
+  }
 
-    const newItem = {
-        ...item,
-        addedAt: new Date().toISOString()
-      };
-      sessionData.items.push(newItem);
-      console.log("Item added:", newItem);
+  const timestamp = new Date().toISOString();
 
+  switch (item.type) {
+    case "app_opened": {
+      const { name, path, windowTitle, isActive } = item;
+
+      const alreadyExists = sessionData.liveWorkspace.apps.some(app => app.path === path);
+      if (!alreadyExists) {
+        sessionData.liveWorkspace.apps.push({ name, path, windowTitle, isActive, addedAt: timestamp });
+      }
+
+      sessionData.liveWorkspace.activeAppId = path;
+      sessionData.liveWorkspace.activeWindowId = windowTitle;
+
+      sessionData.eventLog.push({ type: "app_opened", timestamp, data: item });
+      break;
+    }
+
+    case "app_closed": {
+      const { path } = item;
+      sessionData.liveWorkspace.apps = sessionData.liveWorkspace.apps.filter(app => app.path !== path);
+      sessionData.eventLog.push({ type: "app_closed", timestamp, data: item });
+      break;
+    }
+
+    case "app_switched": {
+      const { path, windowTitle } = item;
+      sessionData.liveWorkspace.activeAppId = path;
+      sessionData.liveWorkspace.activeWindowId = windowTitle;
+      sessionData.eventLog.push({ type: "app_switched", timestamp, data: item });
+      break;
+    }
+
+    // Add more event types here...
+
+    default:
+      console.warn("⚠️ Unknown session update type:", item.type);
+  }
+
+  console.log("✅ Updated session with:", item.type);
 }
 
 
-function saveSession(sessionData) {
+
+function saveSession() {
   if (!fs.existsSync(sessionDir)) {
     fs.mkdirSync(sessionDir, { recursive: true });
   }
@@ -43,13 +94,6 @@ const filepath = path.join(sessionDir, filename);
   fs.writeFileSync(filepath, json);
   console.log(`✅ Session saved to ${filepath}`);
 
-  sessionData = {
-
-    sessionName: "...",
-    createdAt: "...",
-    items: []
-
-}
 
 }
 
@@ -86,5 +130,6 @@ module.exports = {
   loadSession,
   updateSessionData,
   launchApp,
+  startsession,
   sessionData
 };

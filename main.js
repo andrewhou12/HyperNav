@@ -1,5 +1,5 @@
 const { ipcMain } = require('electron');
-const { saveSession, loadSession, updateSessionData, launchApp, sessionData } = require('./core/sessionManager');
+const { saveSession, loadSession, updateSessionData, launchApp, startsession } = require('./core/sessionManager');
 const path = require('path');
 const { app, BrowserWindow } = require('electron');
 const { dialog } = require('electron');
@@ -47,7 +47,7 @@ function createSessionWindow () {
 }
 
 ipcMain.on('save-session', () => {
-    saveSession(sessionData);
+    saveSession();
     sessionwin.close();
   });
   
@@ -56,7 +56,10 @@ ipcMain.on('save-session', () => {
   });
   
   ipcMain.on('open-window', (_, type) => {
-    if (type === 'start-session') createSessionWindow();
+    if (type === 'start-session') {createSessionWindow();
+    startsession();
+    }
+
   
   });
 
@@ -86,11 +89,12 @@ ipcMain.on('save-session', () => {
     const appName = appPath.split('/').pop().replace('.app', '');
   
     const newTab = {
-      type: "app",
+      type: "app_opened",
       name: appName,
       path: appPath,
       windowTitle: appName,
-      isActive: true
+      isActive: true,
+      addedAt: new Date().toISOString()
     };
   
     updateSessionData(newTab); // Save to session
