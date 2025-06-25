@@ -1,0 +1,84 @@
+{
+  "sessionName": "Session_2025-06-25T04:04:51.757Z",
+  "createdAt": "2025-06-25T04:04:51.757Z",
+  "liveWorkspace": {
+    "apps": [
+      {
+        "name": "chrome",
+        "path": "/Applications/Google Chrome.app",
+        "windowTitle": "https://www.google.com/search?q=google%20odcs",
+        "isActive": true,
+        "addedAt": "2025-06-25T04:04:53.565Z"
+      }
+    ],
+    "activeAppId": "Terminal",
+    "activeWindowId": "cortex — Electron Helper (Renderer) ◂ npm run dev TMPDIR=/var/folders/nm/3nvs2j3s54b70vvjmscvzgf00000gn/T/ __CFBundleIdentifier=com.apple.Terminal XPC_FLAGS=0x0 — 80×24"
+  },
+  "eventLog": [
+    {
+      "type": "app_opened",
+      "timestamp": "2025-06-25T04:04:53.565Z",
+      "data": {
+        "type": "app_opened",
+        "name": "chrome",
+        "path": "/Applications/Google Chrome.app",
+        "windowTitle": "https://www.google.com/search?q=google%20odcs",
+        "isActive": true
+      }
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-06-25T04:04:54.989Z",
+      "appName": "Google Chrome",
+      "windowTitle": "google odcs - Google Search"
+    },
+    {
+      "type": "focusChange",
+      "timestamp": "2025-06-25T04:04:54.990Z",
+      "windowTitle": "google odcs - Google Search",
+      "appName": "Google Chrome"
+    },
+    {
+      "type": "idle_check",
+      "timestamp": "2025-06-25T04:04:55.181Z",
+      "idleSeconds": 0,
+      "isIdle": false
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-06-25T04:04:57.838Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "focusChange",
+      "timestamp": "2025-06-25T04:04:57.839Z",
+      "windowTitle": "New Session",
+      "appName": "Electron"
+    },
+    {
+      "type": "idle_check",
+      "timestamp": "2025-06-25T04:04:57.905Z",
+      "idleSeconds": 0,
+      "isIdle": false
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-06-25T04:05:00.871Z",
+      "appName": "Terminal",
+      "windowTitle": "cortex — Electron Helper (Renderer) ◂ npm run dev TMPDIR=/var/folders/nm/3nvs2j3s54b70vvjmscvzgf00000gn/T/ __CFBundleIdentifier=com.apple.Terminal XPC_FLAGS=0x0 — 80×24"
+    },
+    {
+      "type": "focusChange",
+      "timestamp": "2025-06-25T04:05:00.871Z",
+      "windowTitle": "cortex — Electron Helper (Renderer) ◂ npm run dev TMPDIR=/var/folders/nm/3nvs2j3s54b70vvjmscvzgf00000gn/T/ __CFBundleIdentifier=com.apple.Terminal XPC_FLAGS=0x0 — 80×24",
+      "appName": "Terminal"
+    },
+    {
+      "type": "idle_check",
+      "timestamp": "2025-06-25T04:05:00.923Z",
+      "idleSeconds": 0,
+      "isIdle": false
+    }
+  ]
+}

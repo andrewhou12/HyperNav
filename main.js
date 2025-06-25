@@ -3,9 +3,15 @@ const { saveSession, loadSession, updateSessionData, launchApp, startsession, po
 const path = require('path');
 const { app, BrowserWindow } = require('electron');
 const { dialog } = require('electron');
-
+const chromeDriver = require("./core/drivers/chromeDriver");
 
 let sessionwin;
+
+
+const appDrivers = {
+  chrome: chromeDriver,
+  // add vscode, terminal, etc.
+};
 
 function createWindow () {
   const win = new BrowserWindow({
@@ -41,6 +47,7 @@ function createSessionWindow () {
 
       sessionwin.on('closed', () => {
         sessionwin = null;
+        stopPollingWindowState();
     });
     
 
@@ -109,6 +116,33 @@ ipcMain.on('save-session', () => {
     launchApp(appPath);
   });
 
+
+  ipcMain.handle("app-control", async (event, { app, action, payload }) => {
+    const driver = appDrivers[app];
+    
+    if (driver && typeof driver[action] === "function") {
+      try {
+        await driver[action](payload); // don't return this!
+  
+        if (action === "openTab" || action === "launch") {
+          updateSessionData({
+            type: "app_opened",
+            name: app,
+            path: "/Applications/Google Chrome.app", // adjust if dynamic
+            windowTitle: payload,
+            isActive: true
+          });
+        }
+  
+        return; // <- return nothing (or true/null if needed)
+      } catch (err) {
+        console.error(`❌ Failed to perform ${action} on ${app}:`, err);
+      }
+    } else {
+      console.error(`❌ Unknown app/action: ${app}/${action}`);
+    }
+  });
+  
 app.whenReady().then(() => {
   createWindow();
 });
