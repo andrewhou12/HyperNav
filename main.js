@@ -1,5 +1,5 @@
 const { ipcMain } = require('electron');
-const { saveSession, loadSession, updateSessionData, launchApp, startsession } = require('./core/sessionManager');
+const { saveSession, loadSession, updateSessionData, launchApp, startsession, pollActiveWindow, startPollingWindowState, stopPollingWindowState, sessionData } = require('./core/sessionManager');
 const path = require('path');
 const { app, BrowserWindow } = require('electron');
 const { dialog } = require('electron');
@@ -46,8 +46,10 @@ function createSessionWindow () {
 
 }
 
+
 ipcMain.on('save-session', () => {
     saveSession();
+    stopPollingWindowState();
     sessionwin.close();
   });
   

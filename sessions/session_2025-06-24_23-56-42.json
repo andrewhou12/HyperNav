@@ -1,0 +1,65 @@
+{
+  "sessionName": "Session_2025-06-24T23:56:01.626Z",
+  "createdAt": "2025-06-24T23:56:01.628Z",
+  "liveWorkspace": {
+    "apps": [],
+    "activeAppId": "Google Chrome",
+    "activeWindowId": "Function Syntax Explanation"
+  },
+  "eventLog": [
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-06-24T23:56:04.736Z",
+      "appName": "Terminal",
+      "windowTitle": "cortex — Electron Helper (Renderer) ◂ npm run dev TMPDIR=/var/folders/nm/3nvs2j3s54b70vvjmscvzgf00000gn/T/ __CFBundleIdentifier=com.apple.Terminal XPC_FLAGS=0x0 — 80×24"
+    },
+    {
+      "type": "focusChange",
+      "timestamp": "2025-06-24T23:56:04.737Z",
+      "windowTitle": "cortex — Electron Helper (Renderer) ◂ npm run dev TMPDIR=/var/folders/nm/3nvs2j3s54b70vvjmscvzgf00000gn/T/ __CFBundleIdentifier=com.apple.Terminal XPC_FLAGS=0x0 — 80×24",
+      "appName": "Terminal"
+    },
+    {
+      "type": "idle_check",
+      "timestamp": "2025-06-24T23:56:04.786Z",
+      "idleSeconds": 0,
+      "isIdle": false
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-06-24T23:56:07.748Z",
+      "appName": "Terminal",
+      "windowTitle": "cortex — Electron Helper (Renderer) ◂ npm run dev TMPDIR=/var/folders/nm/3nvs2j3s54b70vvjmscvzgf00000gn/T/ __CFBundleIdentifier=com.apple.Terminal XPC_FLAGS=0x0 — 80×24"
+    },
+    {
+      "type": "idle_check",
+      "timestamp": "2025-06-24T23:56:07.797Z",
+      "idleSeconds": 3.011,
+      "isIdle": false
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-06-24T23:56:10.745Z",
+      "appName": "Terminal",
+      "windowTitle": "cortex — Electron Helper (Renderer) ◂ npm run dev TMPDIR=/var/folders/nm/3nvs2j3s54b70vvjmscvzgf00000gn/T/ __CFBundleIdentifier=com.apple.Terminal XPC_FLAGS=0x0 — 80×24"
+    },
+    {
+      "type": "idle_check",
+      "timestamp": "2025-06-24T23:56:10.804Z",
+      "idleSeconds": 6.018,
+      "isIdle": false
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-06-24T23:56:19.269Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Function Syntax Explanation"
+    },
+    {
+      "type": "focusChange",
+      "timestamp": "2025-06-24T23:56:19.269Z",
+      "windowTitle": "Function Syntax Explanation",
+      "appName": "Google Chrome"
+    }
+  ]
+}

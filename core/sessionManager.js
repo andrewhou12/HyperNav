@@ -1,11 +1,99 @@
 const path = require('path');
 const fs = require('fs');
 const { exec } = require('child_process');
+const { powerMonitor } = require('electron');
+const os = require('os');
+const activeWin = require('active-win');
+
+
 
 const sessionDir = path.join(__dirname, '..', 'sessions'); // This is a folder
 const sessionFile = path.join(sessionDir, 'session.json'); // This is the file
 
 let sessionData; 
+let previousAppPaths = new Set();
+let lastActiveWindow = null;
+let lastActiveApp = null;
+let lastActivityTime = Date.now();
+let pollInterval;
+let pollingActive = false;
+
+
+async function trackIdleTime() {
+  try {
+    const win = await activeWin();
+    if (!win) return;
+
+    const currentApp = win.owner?.name;
+
+    if (currentApp !== lastActiveApp) {
+      lastActivityTime = Date.now();
+      lastActiveApp = currentApp;
+    }
+  } catch (err) {
+    console.error("🛑 active-win error:", err);
+  }
+}
+
+
+
+
+function checkIdleStatus() {
+  const now = Date.now();
+  const idleSeconds = (now - lastActivityTime) / 1000;
+  const isIdle = idleSeconds > 60;
+
+  sessionData.eventLog.push({
+    type: "idle_check",
+    timestamp: new Date().toISOString(),
+    idleSeconds,
+    isIdle
+  });
+
+  console.log(`💤 Idle Check: ${idleSeconds}s ${isIdle ? '🟡 IDLE' : '🟢 ACTIVE'}`);
+}
+
+function detectFocusChange(newWindowTitle, appName) {
+  if (lastActiveWindow !== newWindowTitle) {
+    const timestamp = new Date().toISOString();
+    sessionData.eventLog.push({
+      type: "focusChange",
+      timestamp,
+      windowTitle: newWindowTitle,
+      appName
+    });
+
+    lastActiveWindow = newWindowTitle;
+    console.log("🔄 Focus changed to:", newWindowTitle);
+  }
+}
+
+async function pollActiveWindow() {
+  try {
+    const win = await activeWin();
+    if (!win) return;
+
+    const { title, owner } = win;
+    const appName = owner.name;
+    const timestamp = new Date().toISOString();
+
+    const focusEvent = {
+      type: "poll_snapshot",
+      timestamp,
+      appName,
+      windowTitle: title,
+    };
+
+    sessionData.eventLog.push(focusEvent);
+    sessionData.liveWorkspace.activeAppId = appName;
+    sessionData.liveWorkspace.activeWindowId = title;
+    console.log("Polled active window:", focusEvent);
+    detectFocusChange(title, appName);
+  } catch (err) {
+    console.error("❌ Failed to poll active window:", err.message);
+  }
+}
+
 
 
 function startsession() {
@@ -24,6 +112,7 @@ function startsession() {
   };
 
   console.log("🟢 New session started:", sessionData.sessionName);
+  startPollingWindowState();
 }
 
 function updateSessionData(item) {
@@ -123,6 +212,59 @@ function launchApp(appPath) {
   });
 }
 
+function detectAppClosures(currentApps) {
+  const currentPaths = new Set(currentApps.map(app => app.path));
+  
+  const closedApps = [...previousAppPaths].filter(p => !currentPaths.has(p));
+
+  for (const path of closedApps) {
+    const timestamp = new Date().toISOString();
+    sessionData.eventLog.push({
+      type: "app_closed",
+      timestamp,
+      path
+    });
+
+    console.log(`❌ App closed: ${path}`);
+  }
+
+  previousAppPaths = currentPaths;
+
+
+}
+
+function startPollingWindowState() {
+  pollingActive = true;
+  pollInterval = setInterval(async () => {
+    if (!pollingActive) return;
+
+    await pollActiveWindow();
+    await trackIdleTime();
+
+    if (sessionData?.liveWorkspace?.apps) {
+      detectAppClosures(sessionData.liveWorkspace.apps);
+    }
+
+    checkIdleStatus();
+  }, 3000);
+  
+}
+
+function stopPollingWindowState() {
+  pollingActive = false;
+  if (pollInterval) {
+    clearInterval(pollInterval);
+    pollInterval = null;
+    console.log("🛑 Stopped polling session state.");
+  }
+}
+
+
+
+
+
+
+
 
 // Export these functions so other files can use them
 module.exports = {
@@ -131,5 +273,10 @@ module.exports = {
   updateSessionData,
   launchApp,
   startsession,
+  pollActiveWindow,
+  detectAppClosures,
+  checkIdleStatus,
+  startPollingWindowState,
+  stopPollingWindowState,
   sessionData
 };
