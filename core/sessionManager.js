@@ -153,6 +153,16 @@ function updateSessionData(item) {
       sessionData.eventLog.push({ type: "app_switched", timestamp, data: item });
       break;
     }
+    case "workspace_cleared": {
+    const { items } = item;
+
+    sessionData.eventLog.push({
+      type: "workspace_cleared",
+      timestamp: new Date().toISOString(),
+      items,
+    });
+    break;
+  }
 
     // Add more event types here...
 

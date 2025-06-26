@@ -8,6 +8,7 @@ contextBridge.exposeInMainWorld('electron', {
   updateSessionData: (tab) => ipcRenderer.send('update-session', tab),
   chooseApp: () => ipcRenderer.invoke('choose-app'),
   launchApp: (path) => ipcRenderer.invoke('launch-app', path),
+  clearWorkspace: () => ipcRenderer.invoke("clear-workspace"),
   
 
   

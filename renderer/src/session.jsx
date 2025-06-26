@@ -9,6 +9,10 @@ function SessionWindow() {
   const handleSave = () => {
     window.electron.saveSession();
   };
+  const handleClear = async () => {
+    const result = await window.electron.clearWorkspace();
+    console.log(result); // Optional: show toast or feedback
+  };
 
   const handleNewTab = async () => {
     const newtab = await window.electron.chooseApp();
@@ -33,27 +37,43 @@ function SessionWindow() {
   
 
   return (
-    <>
-      <h1>New Session</h1>
+    <div className="dashboard-grid">
+  <header className="top-bar">
+    <h1 style={{ margin: 0 }}>New Session</h1>
+    <div className="top-controls">
       <button onClick={handleSave}>Save Session</button>
       <button onClick={handleNewTab}>New Tab</button>
+      <button onClick={handleClear}>🧹 Clear Workspace</button>
+    </div>
+  </header>
 
-      <form onSubmit={handleSearch} style={{ marginTop: "20px" }}>
-        <input
-          type="text"
-          placeholder="Search in Chrome..."
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          style={{
-            padding: "8px",
-            fontSize: "16px",
-            width: "300px",
-            border: "1px solid #ccc",
-            borderRadius: "4px"
-          }}
-        />
-      </form>
-    </>
+  <main className="main-panel">
+    {/* You could list apps, or just leave blank for now */}
+  </main>
+
+  <aside className="side-panel">
+    <h2>Summary</h2>
+    <p>Live AI summary goes here...</p>
+  </aside>
+
+  <footer className="bottom-bar">
+    <form onSubmit={handleSearch}>
+      <input
+        type="text"
+        placeholder="Search in Chrome..."
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        style={{
+          padding: "8px",
+          fontSize: "16px",
+          width: "300px",
+          border: "1px solid #ccc",
+          borderRadius: "4px"
+        }}
+      />
+    </form>
+  </footer>
+</div>
   );
 }
 

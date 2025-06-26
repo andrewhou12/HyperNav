@@ -4,6 +4,9 @@ const path = require('path');
 const { app, BrowserWindow } = require('electron');
 const { dialog } = require('electron');
 const chromeDriver = require("./core/drivers/chromeDriver");
+const { clearWorkspace } = require("./core/workspaceManager");
+const { screen } = require("electron");
+
 
 let sessionwin;
 
@@ -32,10 +35,11 @@ function createWindow () {
 
 function createSessionWindow () {
     sessionwin = new BrowserWindow({
-        width: 1000,
-        height: 700,
-        webPreferences: {
-            preload: path.join(__dirname, 'preload.js'),
+      frame: false, // 🔥 removes OS window chrome
+      transparent: false, // (keep true if you want a see-through effect)
+      titleBarStyle: "hiddenInset", // macOS: hides the native title bar cleanly
+      webPreferences: {
+        preload: path.join(__dirname, "preload.js"),
     }
         
     })
@@ -51,6 +55,16 @@ function createSessionWindow () {
     });
     
 
+}
+function expandAndCenterSessionWindow(win) {
+  const { workArea } = screen.getPrimaryDisplay();
+  win.setBounds({
+    x: workArea.x,
+    y: workArea.y,
+    width: workArea.width,
+    height: workArea.height,
+  });
+  win.center();
 }
 
 
@@ -142,6 +156,19 @@ ipcMain.on('save-session', () => {
       console.error(`❌ Unknown app/action: ${app}/${action}`);
     }
   });
+
+ipcMain.handle("clear-workspace", async (event) => {
+  const win = BrowserWindow.fromWebContents(event.sender);
+  const hiddenApps = await clearWorkspace();
+  await new Promise(resolve => setTimeout(resolve, 1000));
+  expandAndCenterSessionWindow(win);
+  updateSessionData({
+    type: "workspace_cleared",
+    items: hiddenApps,
+  });
+  
+  return "Workspace cleared and expanded.";
+});
   
 app.whenReady().then(() => {
   createWindow();

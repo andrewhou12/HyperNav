@@ -66,3 +66,51 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+.dashboard-grid {
+  display: grid;
+  grid-template-areas:
+    "top top"
+    "main side"
+    "bottom bottom";
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
+  width: 100vw;
+  gap: 16px;
+  padding: 24px;
+  box-sizing: border-box;
+  background-color: #f8f9fa;
+}
+
+.top-bar {
+  grid-area: top;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.top-controls button {
+  margin-left: 8px;
+}
+
+.main-panel {
+  grid-area: main;
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+}
+
+.side-panel {
+  grid-area: side;
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+}
+
+.bottom-bar {
+  grid-area: bottom;
+  padding-top: 12px;
+}

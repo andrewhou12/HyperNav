@@ -1,0 +1,114 @@
+{
+  "sessionName": "Session_2025-06-25T21:46:42.593Z",
+  "createdAt": "2025-06-25T21:46:42.594Z",
+  "liveWorkspace": {
+    "apps": [
+      {
+        "name": "chrome",
+        "path": "/Applications/Google Chrome.app",
+        "windowTitle": "https://www.google.com/search?q=google%20docs",
+        "isActive": true,
+        "addedAt": "2025-06-25T21:46:50.174Z"
+      }
+    ],
+    "activeAppId": "Electron",
+    "activeWindowId": "New Session"
+  },
+  "eventLog": [
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-06-25T21:46:45.776Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "focusChange",
+      "timestamp": "2025-06-25T21:46:45.777Z",
+      "windowTitle": "New Session",
+      "appName": "Electron"
+    },
+    {
+      "type": "idle_check",
+      "timestamp": "2025-06-25T21:46:45.830Z",
+      "idleSeconds": 0,
+      "isIdle": false
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-06-25T21:46:48.689Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "idle_check",
+      "timestamp": "2025-06-25T21:46:48.739Z",
+      "idleSeconds": 2.909,
+      "isIdle": false
+    },
+    {
+      "type": "app_opened",
+      "timestamp": "2025-06-25T21:46:50.174Z",
+      "data": {
+        "type": "app_opened",
+        "name": "chrome",
+        "path": "/Applications/Google Chrome.app",
+        "windowTitle": "https://www.google.com/search?q=google%20docs",
+        "isActive": true
+      }
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-06-25T21:46:51.831Z",
+      "appName": "Google Chrome",
+      "windowTitle": "google docs - Google Search"
+    },
+    {
+      "type": "focusChange",
+      "timestamp": "2025-06-25T21:46:51.831Z",
+      "windowTitle": "google docs - Google Search",
+      "appName": "Google Chrome"
+    },
+    {
+      "type": "idle_check",
+      "timestamp": "2025-06-25T21:46:52.022Z",
+      "idleSeconds": 0,
+      "isIdle": false
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-06-25T21:46:54.700Z",
+      "appName": "Code",
+      "windowTitle": "session.jsx — cortex"
+    },
+    {
+      "type": "focusChange",
+      "timestamp": "2025-06-25T21:46:54.700Z",
+      "windowTitle": "session.jsx — cortex",
+      "appName": "Code"
+    },
+    {
+      "type": "idle_check",
+      "timestamp": "2025-06-25T21:46:54.756Z",
+      "idleSeconds": 0,
+      "isIdle": false
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-06-25T21:46:57.715Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "focusChange",
+      "timestamp": "2025-06-25T21:46:57.715Z",
+      "windowTitle": "New Session",
+      "appName": "Electron"
+    },
+    {
+      "type": "idle_check",
+      "timestamp": "2025-06-25T21:46:57.773Z",
+      "idleSeconds": 0,
+      "isIdle": false
+    }
+  ]
+}
