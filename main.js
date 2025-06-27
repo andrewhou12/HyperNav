@@ -1,3 +1,5 @@
+const { app } = require('electron');
+app.setName("Cortex");
 const { ipcMain } = require('electron');
 const {
   getSessionData,
@@ -13,7 +15,7 @@ const {
   sessionData,
 } = require('./core/sessionManager');
 const path = require('path');
-const { app, BrowserWindow, screen } = require('electron');
+const { BrowserWindow, screen } = require('electron');
 const { dialog } = require('electron');
 const chromeDriver = require('./core/drivers/chromeDriver');
 const { chromeSessionProfile } = require('./core/drivers/chromeDriver');
@@ -24,6 +26,7 @@ const fs = require('fs');
 const { exec } = require('child_process');
 
 let sessionwin;
+
 
 const appDrivers = {
   chrome: chromeDriver,
@@ -55,11 +58,10 @@ async function startCortexSession() {
   const { bounds } = screen.getPrimaryDisplay();
 
   sessionwin = new BrowserWindow({
-    width: bounds.width,
-    height: bounds.height,
-    x: bounds.x,
-    y: bounds.y,
-    frame: false,
+    title: "Cortex",
+    titleBarStyle: "hiddenInset",
+    show: false, // <- Hide until ready
+    frame: true,
     transparent: false,
     alwaysOnTop: false,
     resizable: false,
@@ -73,7 +75,22 @@ async function startCortexSession() {
     },
   });
 
+
   sessionwin.loadURL('http://localhost:5173/session');
+
+  // Wait for content + dock autohide before showing
+  sessionwin.once('ready-to-show', () => {
+    setTimeout(() => {
+      sessionwin.setBounds({
+        x: bounds.x,
+        y: bounds.y,
+        width: bounds.width,
+        height: bounds.height
+      });
+      sessionwin.show(); // <- now show it!
+      console.log("🧱 Visual fullscreen complete");
+    }, 2000);
+  });
 
   updateSessionData({
     type: 'workspace_cleared',
@@ -83,22 +100,16 @@ async function startCortexSession() {
   sessionwin.on('closed', () => {
     stopPollingWindowState();
     toggleDockAutohide(false);
-
     const previouslyHidden = getPreviouslyHiddenApps();
     if (previouslyHidden?.length) showApps(previouslyHidden);
-
     const sessionData = getSessionData();
     const wasChromeTracked = sessionData?.liveWorkspace?.apps?.some(
       (app) => app.name.toLowerCase() === 'google chrome'
     );
-
     if (wasChromeTracked) {
       exec(`osascript -e 'tell application "Google Chrome" to quit'`, (err) => {
-        if (err) {
-          console.error('❌ Failed to quit Chrome:', err.message);
-        } else {
-          console.log('🧼 Chrome instance quit successfully.');
-        }
+        if (err) console.error('❌ Chrome quit failed:', err.message);
+        else console.log('🧼 Chrome instance quit successfully.');
       });
     }
   });
@@ -206,19 +217,6 @@ ipcMain.handle('app-control', async (event, { app, action, payload }) => {
   } else {
     console.error(`❌ Unknown app/action: ${app}/${action}`);
   }
-});
-
-ipcMain.handle('clear-workspace', async (event) => {
-  const win = BrowserWindow.fromWebContents(event.sender);
-  const hiddenApps = await clearWorkspace();
-  await toggleDockAutohide(true);
-
-  updateSessionData({
-    type: 'workspace_cleared',
-    items: hiddenApps,
-  });
-
-  return 'Workspace cleared and expanded.';
 });
 
 app.whenReady().then(() => {
