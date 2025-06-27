@@ -1,0 +1,200 @@
+{
+  "sessionName": "Session_2025-06-27T05:56:04.768Z",
+  "createdAt": "2025-06-27T05:56:04.768Z",
+  "liveWorkspace": {
+    "apps": [
+      {
+        "name": "chrome",
+        "path": "/Applications/Google Chrome.app",
+        "windowTitle": "https://www.google.com/search?q=google%20docs",
+        "isActive": true,
+        "addedAt": "2025-06-27T05:56:11.227Z"
+      }
+    ],
+    "activeAppId": "Google Chrome",
+    "activeWindowId": "Inbox (10,603) - andrewhou2026@u.northwestern.edu - @u.northwestern.edu Mail",
+    "activeTab": {
+      "title": "Inbox (10,603) - andrewhou2026@u.northwestern.edu - @u.northwestern.edu Mail",
+      "url": "https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox"
+    }
+  },
+  "eventLog": [
+    {
+      "type": "workspace_cleared",
+      "timestamp": "2025-06-27T05:56:06.777Z",
+      "items": [
+        "Messages",
+        "Notes",
+        "Day One",
+        "News",
+        "Numbers",
+        "Finder",
+        "Spotify",
+        "Discord",
+        "Slack",
+        "Brave Browser",
+        "Photos",
+        "Electron",
+        "Google Chrome",
+        "Figma",
+        "Books",
+        "Terminal",
+        "Google Chrome",
+        "Electron"
+      ]
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-06-27T05:56:07.867Z",
+      "appName": "Electron",
+      "windowTitle": "New Session",
+      "durationMs": 32785
+    },
+    {
+      "type": "focusChange",
+      "timestamp": "2025-06-27T05:56:07.867Z",
+      "windowTitle": "New Session",
+      "appName": "Electron"
+    },
+    {
+      "type": "app_closed",
+      "timestamp": "2025-06-27T05:56:07.946Z",
+      "path": "/Applications/Google Chrome.app"
+    },
+    {
+      "type": "idle_check",
+      "timestamp": "2025-06-27T05:56:07.946Z",
+      "idleSeconds": 0,
+      "isIdle": false
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-06-27T05:56:10.849Z",
+      "appName": "Electron",
+      "windowTitle": "New Session",
+      "durationMs": 2982
+    },
+    {
+      "type": "idle_check",
+      "timestamp": "2025-06-27T05:56:10.907Z",
+      "idleSeconds": 2.961,
+      "isIdle": false
+    },
+    {
+      "type": "app_opened",
+      "timestamp": "2025-06-27T05:56:11.227Z",
+      "data": {
+        "type": "app_opened",
+        "name": "chrome",
+        "path": "/Applications/Google Chrome.app",
+        "windowTitle": "https://www.google.com/search?q=google%20docs",
+        "isActive": true
+      }
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-06-27T05:56:14.011Z",
+      "appName": "Google Chrome",
+      "windowTitle": "google docs - Google Search",
+      "title": "Google Docs",
+      "url": "https://docs.google.com/document/u/0/?tgif=d",
+      "durationMs": 3162
+    },
+    {
+      "type": "focusChange",
+      "timestamp": "2025-06-27T05:56:14.153Z",
+      "windowTitle": "google docs - Google Search",
+      "appName": "Google Chrome"
+    },
+    {
+      "type": "idle_check",
+      "timestamp": "2025-06-27T05:56:14.195Z",
+      "idleSeconds": 0,
+      "isIdle": false
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-06-27T05:56:17.022Z",
+      "appName": "Google Chrome",
+      "windowTitle": "",
+      "title": "New Tab",
+      "url": "chrome://newtab/",
+      "durationMs": 3011
+    },
+    {
+      "type": "focusChange",
+      "timestamp": "2025-06-27T05:56:17.141Z",
+      "windowTitle": "",
+      "appName": "Google Chrome"
+    },
+    {
+      "type": "idle_check",
+      "timestamp": "2025-06-27T05:56:17.175Z",
+      "idleSeconds": 2.98,
+      "isIdle": false
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-06-27T05:56:19.985Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Game Start - Google Docs",
+      "title": "Game Start - Google Docs",
+      "url": "https://docs.google.com/document/d/1sqTUGX6vKGqbrSAfX2Ds7I7IdKlJXYOSmO_rsB-au1Q/edit?tab=t.0",
+      "durationMs": 2963
+    },
+    {
+      "type": "focusChange",
+      "timestamp": "2025-06-27T05:56:20.124Z",
+      "windowTitle": "Game Start - Google Docs",
+      "appName": "Google Chrome"
+    },
+    {
+      "type": "idle_check",
+      "timestamp": "2025-06-27T05:56:20.162Z",
+      "idleSeconds": 5.967,
+      "isIdle": false
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-06-27T05:56:23.027Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Inbox (10,603) - andrewhou2026@u.northwestern.edu - @u.northwestern.edu Mail",
+      "title": "Inbox (10,603) - andrewhou2026@u.northwestern.edu - @u.northwestern.edu Mail",
+      "url": "https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox",
+      "durationMs": 3042
+    },
+    {
+      "type": "focusChange",
+      "timestamp": "2025-06-27T05:56:23.176Z",
+      "windowTitle": "Inbox (10,603) - andrewhou2026@u.northwestern.edu - @u.northwestern.edu Mail",
+      "appName": "Google Chrome"
+    },
+    {
+      "type": "idle_check",
+      "timestamp": "2025-06-27T05:56:23.214Z",
+      "idleSeconds": 9.019,
+      "isIdle": false
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-06-27T05:56:26.036Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Inbox (10,603) - andrewhou2026@u.northwestern.edu - @u.northwestern.edu Mail",
+      "title": "Inbox (10,603) - andrewhou2026@u.northwestern.edu - @u.northwestern.edu Mail",
+      "url": "https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox",
+      "durationMs": 3009
+    },
+    {
+      "type": "idle_check",
+      "timestamp": "2025-06-27T05:56:26.202Z",
+      "idleSeconds": 12.007,
+      "isIdle": false
+    },
+    {
+      "type": "idle_check",
+      "timestamp": "2025-06-27T05:56:28.937Z",
+      "idleSeconds": 14.742,
+      "isIdle": false
+    }
+  ]
+}

@@ -1,11 +1,18 @@
 const { ipcMain } = require('electron');
-const { saveSession, loadSession, updateSessionData, launchApp, startsession, pollActiveWindow, startPollingWindowState, stopPollingWindowState, sessionData } = require('./core/sessionManager');
+const { isAppInWorkspace, saveSession, loadSession, updateSessionData, launchApp, startsession, pollActiveWindow, startPollingWindowState, stopPollingWindowState, sessionData } = require('./core/sessionManager');
 const path = require('path');
 const { app, BrowserWindow } = require('electron');
 const { dialog } = require('electron');
 const chromeDriver = require("./core/drivers/chromeDriver");
+const { chromeSessionProfile } = require("./core/drivers/chromeDriver");
 const { clearWorkspace } = require("./core/workspaceManager");
 const { screen } = require("electron");
+const { toggleDockAutohide } = require("./core/systemUIManager");
+const { getPreviouslyHiddenApps } = require("./core/workspaceManager");
+const { showApps } = require("./utils/applescript");
+const fs = require("fs");
+const { exec } = require("child_process");
+
 
 
 let sessionwin;
@@ -13,6 +20,7 @@ let sessionwin;
 
 const appDrivers = {
   chrome: chromeDriver,
+  vscode: require("./core/drivers/vscode")
   // add vscode, terminal, etc.
 };
 
@@ -52,18 +60,39 @@ function createSessionWindow () {
       sessionwin.on('closed', () => {
         sessionwin = null;
         stopPollingWindowState();
+        toggleDockAutohide(false);
+       
+        const previouslyHidden = getPreviouslyHiddenApps();
+        if (previouslyHidden?.length) {
+          showApps(previouslyHidden);
+        }
+
+        
+
+        exec(`osascript -e 'tell application "Google Chrome" to quit'`, (err) => {
+          if (err) {
+            console.error("❌ Failed to quit Chrome:", err.message);
+          } else {
+            console.log("🧼 Chrome instance quit successfully.");
+      
+          }
+        });
+        
     });
     
 
 }
 function expandAndCenterSessionWindow(win) {
-  const { workArea } = screen.getPrimaryDisplay();
+  const display = screen.getPrimaryDisplay();
+  const bounds = display.bounds; // full screen area, including Dock space
+
   win.setBounds({
-    x: workArea.x,
-    y: workArea.y,
-    width: workArea.width,
-    height: workArea.height,
+    x: bounds.x,
+    y: bounds.y,
+    width: bounds.width,
+    height: bounds.height
   });
+
   win.center();
 }
 
@@ -133,22 +162,44 @@ ipcMain.on('save-session', () => {
 
   ipcMain.handle("app-control", async (event, { app, action, payload }) => {
     const driver = appDrivers[app];
-    
+  
     if (driver && typeof driver[action] === "function") {
       try {
-        await driver[action](payload); // don't return this!
+        // 🧠 Smart Chrome handler
+        if (app === "chrome" && action === "openTab") {
+          if (!isAppInWorkspace("Google Chrome")) {
+            console.log("🔍 Chrome not in workspace — launching new window");
+            await driver.openNewWindowWithTab(payload);
+          } else {
+            console.log("🔍 Chrome already in workspace — opening new tab");
+            await driver.openTab(payload);
+          }
   
-        if (action === "openTab" || action === "launch") {
           updateSessionData({
             type: "app_opened",
             name: app,
-            path: "/Applications/Google Chrome.app", // adjust if dynamic
+            path: "/Applications/Google Chrome.app",
+            windowTitle: payload,
+            isActive: true
+          });
+  
+          return;
+        }
+  
+        // 🧩 Default behavior
+        await driver[action](payload);
+  
+        if (["openTab", "launch", "openNewWindowWithTab"].includes(action)) {
+          updateSessionData({
+            type: "app_opened",
+            name: app,
+            path: "/Applications/Google Chrome.app",
             windowTitle: payload,
             isActive: true
           });
         }
   
-        return; // <- return nothing (or true/null if needed)
+        return;
       } catch (err) {
         console.error(`❌ Failed to perform ${action} on ${app}:`, err);
       }
@@ -156,19 +207,26 @@ ipcMain.on('save-session', () => {
       console.error(`❌ Unknown app/action: ${app}/${action}`);
     }
   });
+  
 
 ipcMain.handle("clear-workspace", async (event) => {
   const win = BrowserWindow.fromWebContents(event.sender);
   const hiddenApps = await clearWorkspace();
-  await new Promise(resolve => setTimeout(resolve, 1000));
-  expandAndCenterSessionWindow(win);
+  await toggleDockAutohide(true);
+  
+  setTimeout(() => {
+    expandAndCenterSessionWindow(win);
+  }, 2000);
+
   updateSessionData({
     type: "workspace_cleared",
     items: hiddenApps,
   });
+
   
   return "Workspace cleared and expanded.";
 });
+
   
 app.whenReady().then(() => {
   createWindow();

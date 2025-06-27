@@ -4,11 +4,13 @@ const { exec } = require('child_process');
 const { powerMonitor } = require('electron');
 const os = require('os');
 const activeWin = require('active-win');
+const { getActiveChromeTabInfo } = require('../utils/chromeTracker');
 
 
 
 const sessionDir = path.join(__dirname, '..', 'sessions'); // This is a folder
 const sessionFile = path.join(sessionDir, 'session.json'); // This is the file
+
 
 let sessionData; 
 let previousAppPaths = new Set();
@@ -17,6 +19,11 @@ let lastActiveApp = null;
 let lastActivityTime = Date.now();
 let pollInterval;
 let pollingActive = false;
+let lastFocus = {
+  appName: null,
+  windowTitle: null,
+  timestamp: null
+};
 
 
 async function trackIdleTime() {
@@ -68,6 +75,7 @@ function detectFocusChange(newWindowTitle, appName) {
   }
 }
 
+
 async function pollActiveWindow() {
   try {
     const win = await activeWin();
@@ -75,25 +83,63 @@ async function pollActiveWindow() {
 
     const { title, owner } = win;
     const appName = owner.name;
-    const timestamp = new Date().toISOString();
+    const now = new Date();
+    const timestamp = now.toISOString();
 
-    const focusEvent = {
-      type: "poll_snapshot",
-      timestamp,
-      appName,
-      windowTitle: title,
+    // Calculate duration since last focus
+    let durationMs = null;
+    if (lastFocus.timestamp) {
+      durationMs = now - new Date(lastFocus.timestamp); // in milliseconds
+    }
+
+    // Helper: update workspace and lastFocus
+    const updateFocusState = (focusEvent) => {
+      sessionData.eventLog.push(focusEvent);
+
+      sessionData.liveWorkspace.activeAppId = appName;
+      sessionData.liveWorkspace.activeWindowId = title;
+
+      if (focusEvent.url && focusEvent.title) {
+        sessionData.liveWorkspace.activeTab = {
+          title: focusEvent.title,
+          url: focusEvent.url
+        };
+      } else {
+        sessionData.liveWorkspace.activeTab = null;
+      }
+
+      lastFocus = { appName, windowTitle: title, timestamp };
+      console.log("Polled:", focusEvent);
+      detectFocusChange(title, appName);
     };
 
-    sessionData.eventLog.push(focusEvent);
-    sessionData.liveWorkspace.activeAppId = appName;
-    sessionData.liveWorkspace.activeWindowId = title;
-    console.log("Polled active window:", focusEvent);
-    detectFocusChange(title, appName);
+    // Chrome-specific tab tracking
+    if (appName === "Google Chrome") {
+      getActiveChromeTabInfo((tabInfo) => {
+        const focusEvent = {
+          type: "tab_focus",
+          timestamp,
+          appName,
+          windowTitle: title,
+          ...tabInfo,
+          durationMs
+        };
+        updateFocusState(focusEvent);
+      });
+    } else {
+      const focusEvent = {
+        type: "poll_snapshot",
+        timestamp,
+        appName,
+        windowTitle: title,
+        durationMs
+      };
+      updateFocusState(focusEvent);
+    }
   } catch (err) {
     console.error("❌ Failed to poll active window:", err.message);
   }
 }
-
 
 
 function startsession() {
@@ -269,6 +315,11 @@ function stopPollingWindowState() {
   }
 }
 
+function isAppInWorkspace(appName) {
+  return sessionData.liveWorkspace.apps.some(app => app.name === appName);
+}
+
+
 
 
 
@@ -288,5 +339,6 @@ module.exports = {
   checkIdleStatus,
   startPollingWindowState,
   stopPollingWindowState,
+  isAppInWorkspace,
   sessionData
 };

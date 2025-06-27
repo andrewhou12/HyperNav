@@ -1,0 +1,198 @@
+{
+  "sessionName": "Session_2025-06-27T05:41:39.087Z",
+  "createdAt": "2025-06-27T05:41:39.088Z",
+  "liveWorkspace": {
+    "apps": [
+      {
+        "name": "chrome",
+        "path": "/Applications/Google Chrome.app",
+        "windowTitle": "https://www.google.com/search?q=google%20docs",
+        "isActive": true,
+        "addedAt": "2025-06-27T05:41:52.820Z"
+      }
+    ],
+    "activeAppId": "Google Chrome",
+    "activeWindowId": "New Tab",
+    "activeTab": null
+  },
+  "eventLog": [
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-06-27T05:41:42.212Z",
+      "appName": "Electron",
+      "windowTitle": "New Session",
+      "durationMs": null
+    },
+    {
+      "type": "focusChange",
+      "timestamp": "2025-06-27T05:41:42.213Z",
+      "windowTitle": "New Session",
+      "appName": "Electron"
+    },
+    {
+      "type": "idle_check",
+      "timestamp": "2025-06-27T05:41:42.267Z",
+      "idleSeconds": 0.001,
+      "isIdle": false
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-06-27T05:41:45.187Z",
+      "appName": "Electron",
+      "windowTitle": "New Session",
+      "durationMs": 2975
+    },
+    {
+      "type": "idle_check",
+      "timestamp": "2025-06-27T05:41:45.249Z",
+      "idleSeconds": 2.983,
+      "isIdle": false
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-06-27T05:41:48.210Z",
+      "appName": "Electron",
+      "windowTitle": "New Session",
+      "durationMs": 3023
+    },
+    {
+      "type": "idle_check",
+      "timestamp": "2025-06-27T05:41:48.263Z",
+      "idleSeconds": 5.997,
+      "isIdle": false
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-06-27T05:41:51.205Z",
+      "appName": "Electron",
+      "windowTitle": "New Session",
+      "durationMs": 2995
+    },
+    {
+      "type": "idle_check",
+      "timestamp": "2025-06-27T05:41:51.264Z",
+      "idleSeconds": 8.998,
+      "isIdle": false
+    },
+    {
+      "type": "app_opened",
+      "timestamp": "2025-06-27T05:41:52.820Z",
+      "data": {
+        "type": "app_opened",
+        "name": "chrome",
+        "path": "/Applications/Google Chrome.app",
+        "windowTitle": "https://www.google.com/search?q=google%20docs",
+        "isActive": true
+      }
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-06-27T05:41:54.373Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Untitled",
+      "title": "google docs - Google Search",
+      "url": "https://www.google.com/search?q=google%20docs",
+      "durationMs": 3168
+    },
+    {
+      "type": "focusChange",
+      "timestamp": "2025-06-27T05:41:54.554Z",
+      "windowTitle": "Untitled",
+      "appName": "Google Chrome"
+    },
+    {
+      "type": "idle_check",
+      "timestamp": "2025-06-27T05:41:54.592Z",
+      "idleSeconds": 0,
+      "isIdle": false
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-06-27T05:41:57.315Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Google Docs",
+      "title": "New Tab",
+      "url": "chrome://newtab/",
+      "durationMs": 2942
+    },
+    {
+      "type": "focusChange",
+      "timestamp": "2025-06-27T05:41:57.829Z",
+      "windowTitle": "Google Docs",
+      "appName": "Google Chrome"
+    },
+    {
+      "type": "idle_check",
+      "timestamp": "2025-06-27T05:41:57.834Z",
+      "idleSeconds": 3.242,
+      "isIdle": false
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-06-27T05:42:00.314Z",
+      "appName": "Google Chrome",
+      "windowTitle": "New Tab",
+      "title": "New Tab",
+      "url": "chrome://newtab/",
+      "durationMs": 2999
+    },
+    {
+      "type": "focusChange",
+      "timestamp": "2025-06-27T05:42:00.413Z",
+      "windowTitle": "New Tab",
+      "appName": "Google Chrome"
+    },
+    {
+      "type": "idle_check",
+      "timestamp": "2025-06-27T05:42:00.479Z",
+      "idleSeconds": 5.887,
+      "isIdle": false
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-06-27T05:42:03.341Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Inbox (10,603) - andrewhou2026@u.northwestern.edu - @u.northwestern.edu Mail",
+      "title": "New Tab",
+      "url": "chrome://newtab/",
+      "durationMs": 3027
+    },
+    {
+      "type": "focusChange",
+      "timestamp": "2025-06-27T05:42:03.495Z",
+      "windowTitle": "Inbox (10,603) - andrewhou2026@u.northwestern.edu - @u.northwestern.edu Mail",
+      "appName": "Google Chrome"
+    },
+    {
+      "type": "idle_check",
+      "timestamp": "2025-06-27T05:42:03.531Z",
+      "idleSeconds": 8.939,
+      "isIdle": false
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-06-27T05:42:06.340Z",
+      "appName": "Google Chrome",
+      "windowTitle": "New Tab",
+      "durationMs": 2999
+    },
+    {
+      "type": "focusChange",
+      "timestamp": "2025-06-27T05:42:06.476Z",
+      "windowTitle": "New Tab",
+      "appName": "Google Chrome"
+    },
+    {
+      "type": "idle_check",
+      "timestamp": "2025-06-27T05:42:06.531Z",
+      "idleSeconds": 11.939,
+      "isIdle": false
+    },
+    {
+      "type": "idle_check",
+      "timestamp": "2025-06-27T05:42:09.267Z",
+      "idleSeconds": 14.675,
+      "isIdle": false
+    }
+  ]
+}
