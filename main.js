@@ -1,6 +1,5 @@
-const { app } = require('electron');
-app.setName("Cortex");
-const { ipcMain } = require('electron');
+const { ipcMain, app, BrowserWindow, screen, dialog } = require('electron');
+const path = require('path');
 const {
   getSessionData,
   isAppInWorkspace,
@@ -9,29 +8,21 @@ const {
   updateSessionData,
   launchApp,
   startSession,
-  pollActiveWindow,
-  startPollingWindowState,
   stopPollingWindowState,
-  sessionData,
 } = require('./core/sessionManager');
-const path = require('path');
-const { BrowserWindow, screen } = require('electron');
-const { dialog } = require('electron');
 const chromeDriver = require('./core/drivers/chromeDriver');
-const { chromeSessionProfile } = require('./core/drivers/chromeDriver');
 const { clearWorkspace, getPreviouslyHiddenApps } = require('./core/workspaceManager');
 const { toggleDockAutohide } = require('./core/systemUIManager');
 const { showApps } = require('./utils/applescript');
-const fs = require('fs');
 const { exec } = require('child_process');
 
 let sessionwin;
 
+app.setName("Cortex");
 
 const appDrivers = {
   chrome: chromeDriver,
   vscode: require('./core/drivers/vscode'),
-  // add vscode, terminal, etc.
 };
 
 function createWindow() {
@@ -50,66 +41,80 @@ function createWindow() {
   }
 }
 
-async function startCortexSession() {
-  startSession();
-  const hiddenApps = await clearWorkspace();
-  await toggleDockAutohide(true);
-
+function createSessionWindow() {
   const { bounds } = screen.getPrimaryDisplay();
 
-  sessionwin = new BrowserWindow({
+  const win = new BrowserWindow({
     title: "Cortex",
-    titleBarStyle: "hiddenInset",
-    show: false, // <- Hide until ready
     frame: true,
+    titleBarStyle: "hiddenInset",
+    show: false,
+    width: bounds.width,
+    height: bounds.height,
+    x: bounds.x,
+    y: bounds.y,
     transparent: false,
-    alwaysOnTop: false,
-    resizable: false,
-    movable: false,
-    hasShadow: false,
-    roundedCorners: false,
+    resizable: true,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
-      nodeIntegration: false,
-      contextIsolation: true,
     },
   });
 
+  win.loadURL('http://localhost:5173/session.html');
 
-  sessionwin.loadURL('http://localhost:5173/session');
+  return win;
+}
 
-  // Wait for content + dock autohide before showing
-  sessionwin.once('ready-to-show', () => {
+function expandAndCenterSessionWindow(win) {
+  const display = screen.getPrimaryDisplay();
+  const bounds = display.bounds;
+
+  win.setBounds({
+    x: bounds.x,
+    y: bounds.y,
+    width: bounds.width,
+    height: bounds.height,
+  });
+
+  win.center();
+}
+
+async function startCortexSession() {
+  startSession();
+
+  const hiddenApps = await clearWorkspace();
+  await toggleDockAutohide(true);
+
+  sessionwin = createSessionWindow();
+
+  sessionwin.once("ready-to-show", () => {
     setTimeout(() => {
-      sessionwin.setBounds({
-        x: bounds.x,
-        y: bounds.y,
-        width: bounds.width,
-        height: bounds.height
-      });
-      sessionwin.show(); // <- now show it!
-      console.log("🧱 Visual fullscreen complete");
-    }, 2000);
+      expandAndCenterSessionWindow(sessionwin);
+      sessionwin.show();
+    }, 1500);
   });
 
   updateSessionData({
-    type: 'workspace_cleared',
+    type: "workspace_cleared",
     items: hiddenApps,
   });
 
-  sessionwin.on('closed', () => {
+  sessionwin.on("closed", () => {
     stopPollingWindowState();
     toggleDockAutohide(false);
+
     const previouslyHidden = getPreviouslyHiddenApps();
     if (previouslyHidden?.length) showApps(previouslyHidden);
+
     const sessionData = getSessionData();
     const wasChromeTracked = sessionData?.liveWorkspace?.apps?.some(
-      (app) => app.name.toLowerCase() === 'google chrome'
+      (app) => app.name.toLowerCase() === "google chrome"
     );
+
     if (wasChromeTracked) {
       exec(`osascript -e 'tell application "Google Chrome" to quit'`, (err) => {
-        if (err) console.error('❌ Chrome quit failed:', err.message);
-        else console.log('🧼 Chrome instance quit successfully.');
+        if (err) console.error("❌ Chrome quit failed:", err.message);
+        else console.log("🧼 Chrome instance quit successfully.");
       });
     }
   });
