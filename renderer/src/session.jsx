@@ -9,10 +9,6 @@ function SessionWindow() {
   const handleSave = () => {
     window.electron.saveSession();
   };
-  const handleClear = async () => {
-    const result = await window.electron.clearWorkspace();
-    console.log(result); // Optional: show toast or feedback
-  };
 
   const handleNewTab = async () => {
     const newtab = await window.electron.chooseApp();
@@ -43,7 +39,6 @@ function SessionWindow() {
     <div className="top-controls">
       <button onClick={handleSave}>Save Session</button>
       <button onClick={handleNewTab}>New Tab</button>
-      <button onClick={handleClear}>🧹 Clear Workspace</button>
     </div>
   </header>
 

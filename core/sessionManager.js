@@ -5,6 +5,7 @@ const { powerMonitor } = require('electron');
 const os = require('os');
 const activeWin = require('active-win');
 const { getActiveChromeTabInfo } = require('../utils/chromeTracker');
+const { hideApps } = require("../utils/applescript");
 
 
 
@@ -12,7 +13,7 @@ const sessionDir = path.join(__dirname, '..', 'sessions'); // This is a folder
 const sessionFile = path.join(sessionDir, 'session.json'); // This is the file
 
 
-let sessionData; 
+let sessionData = null;
 let previousAppPaths = new Set();
 let lastActiveWindow = null;
 let lastActiveApp = null;
@@ -24,7 +25,8 @@ let lastFocus = {
   windowTitle: null,
   timestamp: null
 };
-
+let lastHiddenApp = null;
+let lastHideTime = 0;
 
 async function trackIdleTime() {
   try {
@@ -76,6 +78,7 @@ function detectFocusChange(newWindowTitle, appName) {
 }
 
 
+
 async function pollActiveWindow() {
   try {
     const win = await activeWin();
@@ -86,63 +89,70 @@ async function pollActiveWindow() {
     const now = new Date();
     const timestamp = now.toISOString();
 
-    // Calculate duration since last focus
     let durationMs = null;
     if (lastFocus.timestamp) {
-      durationMs = now - new Date(lastFocus.timestamp); // in milliseconds
+      durationMs = now - new Date(lastFocus.timestamp);
     }
 
-    // Helper: update workspace and lastFocus
-    const updateFocusState = (focusEvent) => {
+    const isTrackedApp = sessionData.liveWorkspace.apps.some(
+      (app) => app.name?.toLowerCase() === appName.toLowerCase()
+    );
+
+    // If the last app was untracked and we're now focusing something new → hide it
+    if (
+      lastFocus.appName &&
+      lastFocus.appName !== appName &&
+      !sessionData.liveWorkspace.apps.some(
+        (app) => app.name?.toLowerCase() === lastFocus.appName.toLowerCase()
+      )
+    ) {
+      console.log("👻 Hiding previously focused untracked app:", lastFocus.appName);
+      hideApps([lastFocus.appName]);
+    }
+
+    const focusEvent = {
+      type: appName === "Google Chrome" ? "tab_focus" : "poll_snapshot",
+      timestamp,
+      appName,
+      windowTitle: title,
+      durationMs
+    };
+
+    // Chrome tab info
+    if (appName === "Google Chrome") {
+      getActiveChromeTabInfo((tabInfo) => {
+        updateFocusState({ ...focusEvent, ...tabInfo });
+      });
+    } else {
+      updateFocusState(focusEvent);
+    }
+
+    function updateFocusState(focusEvent) {
       sessionData.eventLog.push(focusEvent);
 
-      sessionData.liveWorkspace.activeAppId = appName;
-      sessionData.liveWorkspace.activeWindowId = title;
+      if (isTrackedApp) {
+        sessionData.liveWorkspace.activeAppId = appName;
+        sessionData.liveWorkspace.activeWindowId = title;
 
-      if (focusEvent.url && focusEvent.title) {
-        sessionData.liveWorkspace.activeTab = {
-          title: focusEvent.title,
-          url: focusEvent.url
-        };
-      } else {
-        sessionData.liveWorkspace.activeTab = null;
+        if (focusEvent.url && focusEvent.title) {
+          sessionData.liveWorkspace.activeTab = {
+            title: focusEvent.title,
+            url: focusEvent.url
+          };
+        } else {
+          sessionData.liveWorkspace.activeTab = null;
+        }
       }
 
       lastFocus = { appName, windowTitle: title, timestamp };
-      console.log("Polled:", focusEvent);
       detectFocusChange(title, appName);
-    };
-
-    // Chrome-specific tab tracking
-    if (appName === "Google Chrome") {
-      getActiveChromeTabInfo((tabInfo) => {
-        const focusEvent = {
-          type: "tab_focus",
-          timestamp,
-          appName,
-          windowTitle: title,
-          ...tabInfo,
-          durationMs
-        };
-        updateFocusState(focusEvent);
-      });
-    } else {
-      const focusEvent = {
-        type: "poll_snapshot",
-        timestamp,
-        appName,
-        windowTitle: title,
-        durationMs
-      };
-      updateFocusState(focusEvent);
     }
   } catch (err) {
     console.error("❌ Failed to poll active window:", err.message);
   }
 }
 
-
-function startsession() {
+function startSession() {
 
   sessionData = {
     sessionName: `Session_${new Date().toISOString()}`,
@@ -161,6 +171,10 @@ function startsession() {
   startPollingWindowState();
 }
 
+function getSessionData() {
+  return sessionData;
+}
+
 function updateSessionData(item) {
   if (!sessionData) {
     console.error("❌ sessionData is not initialized");
@@ -171,15 +185,25 @@ function updateSessionData(item) {
 
   switch (item.type) {
     case "app_opened": {
-      const { name, path, windowTitle, isActive } = item;
+      const { name, path, windowTitle, isActive, launchedViaCortex = false } = item;
 
-      const alreadyExists = sessionData.liveWorkspace.apps.some(app => app.path === path);
-      if (!alreadyExists) {
-        sessionData.liveWorkspace.apps.push({ name, path, windowTitle, isActive, addedAt: timestamp });
+      // Only track app in workspace if it was launched via Cortex
+      if (launchedViaCortex) {
+        const alreadyExists = sessionData.liveWorkspace.apps.some(app => app.path === path);
+        if (!alreadyExists) {
+          sessionData.liveWorkspace.apps.push({
+            name,
+            path,
+            windowTitle,
+            isActive,
+            addedAt: timestamp
+          });
+        }
+
+        // Set active state only for tracked apps
+        sessionData.liveWorkspace.activeAppId = path;
+        sessionData.liveWorkspace.activeWindowId = windowTitle;
       }
-
-      sessionData.liveWorkspace.activeAppId = path;
-      sessionData.liveWorkspace.activeWindowId = windowTitle;
 
       sessionData.eventLog.push({ type: "app_opened", timestamp, data: item });
       break;
@@ -199,18 +223,16 @@ function updateSessionData(item) {
       sessionData.eventLog.push({ type: "app_switched", timestamp, data: item });
       break;
     }
+
     case "workspace_cleared": {
-    const { items } = item;
-
-    sessionData.eventLog.push({
-      type: "workspace_cleared",
-      timestamp: new Date().toISOString(),
-      items,
-    });
-    break;
-  }
-
-    // Add more event types here...
+      const { items } = item;
+      sessionData.eventLog.push({
+        type: "workspace_cleared",
+        timestamp,
+        items,
+      });
+      break;
+    }
 
     default:
       console.warn("⚠️ Unknown session update type:", item.type);
@@ -218,6 +240,7 @@ function updateSessionData(item) {
 
   console.log("✅ Updated session with:", item.type);
 }
+
 
 
 
@@ -333,12 +356,13 @@ module.exports = {
   loadSession,
   updateSessionData,
   launchApp,
-  startsession,
+  startSession,
   pollActiveWindow,
   detectAppClosures,
   checkIdleStatus,
   startPollingWindowState,
   stopPollingWindowState,
   isAppInWorkspace,
+  getSessionData,
   sessionData
 };

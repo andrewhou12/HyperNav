@@ -1,0 +1,80 @@
+{
+  "sessionName": "Session_2025-06-27T07:17:57.594Z",
+  "createdAt": "2025-06-27T07:17:57.595Z",
+  "liveWorkspace": {
+    "apps": [],
+    "activeAppId": null,
+    "activeWindowId": null
+  },
+  "eventLog": [
+    {
+      "type": "workspace_cleared",
+      "timestamp": "2025-06-27T07:17:58.021Z",
+      "items": [
+        "Messages",
+        "Notes",
+        "Day One",
+        "News",
+        "Numbers",
+        "Finder",
+        "Spotify",
+        "Discord",
+        "Slack",
+        "Brave Browser",
+        "Photos",
+        "Electron",
+        "Figma",
+        "Books",
+        "Terminal",
+        "Google Chrome",
+        "Google Chrome",
+        "Electron"
+      ]
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-06-27T07:18:00.689Z",
+      "appName": "Electron",
+      "windowTitle": "New Session",
+      "durationMs": null
+    },
+    {
+      "type": "focusChange",
+      "timestamp": "2025-06-27T07:18:00.690Z",
+      "windowTitle": "New Session",
+      "appName": "Electron"
+    },
+    {
+      "type": "idle_check",
+      "timestamp": "2025-06-27T07:18:00.736Z",
+      "idleSeconds": 0,
+      "isIdle": false
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-06-27T07:18:03.705Z",
+      "appName": "Electron",
+      "windowTitle": "New Session",
+      "durationMs": 3016
+    },
+    {
+      "type": "idle_check",
+      "timestamp": "2025-06-27T07:18:03.769Z",
+      "idleSeconds": 3.033,
+      "isIdle": false
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-06-27T07:18:06.706Z",
+      "appName": "Electron",
+      "windowTitle": "New Session",
+      "durationMs": 3001
+    },
+    {
+      "type": "idle_check",
+      "timestamp": "2025-06-27T07:18:06.752Z",
+      "idleSeconds": 6.016,
+      "isIdle": false
+    }
+  ]
+}

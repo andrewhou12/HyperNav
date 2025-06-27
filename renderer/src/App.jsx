@@ -6,7 +6,9 @@ function App() {
     <>
       
 <button onClick={handleLoad}>Load Session</button>
-<button onClick={() => window.electron.openWindow('start-session')}>Start Session</button>
+<button onClick={() => window.electron.openWindow("start-session")}>
+  Start Session
+</button>
 
 
     </>
