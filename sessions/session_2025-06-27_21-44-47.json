@@ -1,0 +1,344 @@
+{
+  "sessionName": "Session_2025-06-27T21:44:04.699Z",
+  "createdAt": "2025-06-27T21:44:04.701Z",
+  "liveWorkspace": {
+    "apps": [
+      {
+        "name": "Google Chrome",
+        "path": "/Applications/Google Chrome.app",
+        "windowTitle": "https://www.google.com/search?q=google%20docs",
+        "isActive": true,
+        "addedAt": "2025-06-27T21:44:14.928Z"
+      },
+      {
+        "name": "App Store",
+        "path": "/System/Applications/App Store.app",
+        "windowTitle": "App Store",
+        "isActive": true,
+        "addedAt": "2025-06-27T21:44:34.010Z"
+      },
+      {
+        "name": "Beekeeper Studio Ultimate",
+        "path": "/Applications/Beekeeper Studio Ultimate.app",
+        "windowTitle": "Beekeeper Studio Ultimate",
+        "isActive": true,
+        "addedAt": "2025-06-27T21:44:40.853Z"
+      }
+    ],
+    "activeAppId": "Beekeeper Studio Ultimate",
+    "activeWindowId": "Beekeeper Studio Ultimate",
+    "activeTab": null
+  },
+  "eventLog": [
+    {
+      "type": "workspace_cleared",
+      "timestamp": "2025-06-27T21:44:05.114Z",
+      "items": [
+        "Messages",
+        "Notes",
+        "Day One",
+        "System Settings",
+        "News",
+        "Numbers",
+        "Finder",
+        "Spotify",
+        "Discord",
+        "Slack",
+        "Brave Browser",
+        "Photos",
+        "Electron",
+        "Figma",
+        "Books",
+        "Terminal",
+        "Google Chrome",
+        "Electron"
+      ]
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-06-27T21:44:07.823Z",
+      "appName": "Electron",
+      "windowTitle": "New Session",
+      "durationMs": null
+    },
+    {
+      "type": "focusChange",
+      "timestamp": "2025-06-27T21:44:07.823Z",
+      "windowTitle": "New Session",
+      "appName": "Electron"
+    },
+    {
+      "type": "idle_check",
+      "timestamp": "2025-06-27T21:44:07.872Z",
+      "idleSeconds": 0,
+      "isIdle": false
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-06-27T21:44:10.799Z",
+      "appName": "Electron",
+      "windowTitle": "New Session",
+      "durationMs": 2976
+    },
+    {
+      "type": "idle_check",
+      "timestamp": "2025-06-27T21:44:10.856Z",
+      "idleSeconds": 2.984,
+      "isIdle": false
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-06-27T21:44:13.823Z",
+      "appName": "Electron",
+      "windowTitle": "New Session",
+      "durationMs": 3024
+    },
+    {
+      "type": "idle_check",
+      "timestamp": "2025-06-27T21:44:13.869Z",
+      "idleSeconds": 5.997,
+      "isIdle": false
+    },
+    {
+      "type": "app_opened",
+      "timestamp": "2025-06-27T21:44:14.928Z",
+      "data": {
+        "type": "app_opened",
+        "name": "Google Chrome",
+        "path": "/Applications/Google Chrome.app",
+        "windowTitle": "https://www.google.com/search?q=google%20docs",
+        "isActive": true,
+        "launchedViaCortex": true
+      }
+    },
+    {
+      "type": "idle_check",
+      "timestamp": "2025-06-27T21:44:17.121Z",
+      "idleSeconds": 0,
+      "isIdle": false
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-06-27T21:44:16.963Z",
+      "appName": "Google Chrome",
+      "windowTitle": "google docs - Google Search",
+      "durationMs": 3140,
+      "title": "google docs - Google Search",
+      "url": "https://www.google.com/search?q=google%20docs"
+    },
+    {
+      "type": "focusChange",
+      "timestamp": "2025-06-27T21:44:17.406Z",
+      "windowTitle": "google docs - Google Search",
+      "appName": "Google Chrome"
+    },
+    {
+      "type": "idle_check",
+      "timestamp": "2025-06-27T21:44:20.100Z",
+      "idleSeconds": 2.979,
+      "isIdle": false
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-06-27T21:44:19.927Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Google Docs",
+      "durationMs": 2964,
+      "title": "Google Docs",
+      "url": "https://docs.google.com/document/u/0/?tgif=d"
+    },
+    {
+      "type": "focusChange",
+      "timestamp": "2025-06-27T21:44:20.368Z",
+      "windowTitle": "Google Docs",
+      "appName": "Google Chrome"
+    },
+    {
+      "type": "idle_check",
+      "timestamp": "2025-06-27T21:44:23.095Z",
+      "idleSeconds": 5.974,
+      "isIdle": false
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-06-27T21:44:22.925Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Google Docs",
+      "durationMs": 2998,
+      "title": "Google Docs",
+      "url": "https://docs.google.com/document/u/0/?tgif=d"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-06-27T21:44:25.824Z",
+      "appName": "Electron",
+      "windowTitle": "Choose an App",
+      "durationMs": 2899
+    },
+    {
+      "type": "focusChange",
+      "timestamp": "2025-06-27T21:44:25.824Z",
+      "windowTitle": "Choose an App",
+      "appName": "Electron"
+    },
+    {
+      "type": "idle_check",
+      "timestamp": "2025-06-27T21:44:25.883Z",
+      "idleSeconds": 0,
+      "isIdle": false
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-06-27T21:44:28.838Z",
+      "appName": "Electron",
+      "windowTitle": "Choose an App",
+      "durationMs": 3014
+    },
+    {
+      "type": "idle_check",
+      "timestamp": "2025-06-27T21:44:28.887Z",
+      "idleSeconds": 3.004,
+      "isIdle": false
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-06-27T21:44:31.817Z",
+      "appName": "Electron",
+      "windowTitle": "New Session",
+      "durationMs": 2979
+    },
+    {
+      "type": "focusChange",
+      "timestamp": "2025-06-27T21:44:31.817Z",
+      "windowTitle": "New Session",
+      "appName": "Electron"
+    },
+    {
+      "type": "idle_check",
+      "timestamp": "2025-06-27T21:44:31.985Z",
+      "idleSeconds": 6.102,
+      "isIdle": false
+    },
+    {
+      "type": "app_opened",
+      "timestamp": "2025-06-27T21:44:34.010Z",
+      "data": {
+        "type": "app_opened",
+        "name": "App Store",
+        "path": "/System/Applications/App Store.app",
+        "windowTitle": "App Store",
+        "isActive": true,
+        "addedAt": "2025-06-27T21:44:34.010Z",
+        "launchedViaCortex": true
+      }
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-06-27T21:44:34.837Z",
+      "appName": "App Store",
+      "windowTitle": "App Store",
+      "durationMs": 3020
+    },
+    {
+      "type": "focusChange",
+      "timestamp": "2025-06-27T21:44:34.837Z",
+      "windowTitle": "App Store",
+      "appName": "App Store"
+    },
+    {
+      "type": "idle_check",
+      "timestamp": "2025-06-27T21:44:34.917Z",
+      "idleSeconds": 0,
+      "isIdle": false
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-06-27T21:44:37.824Z",
+      "appName": "Electron",
+      "windowTitle": "New Session",
+      "durationMs": 2987
+    },
+    {
+      "type": "focusChange",
+      "timestamp": "2025-06-27T21:44:37.824Z",
+      "windowTitle": "New Session",
+      "appName": "Electron"
+    },
+    {
+      "type": "idle_check",
+      "timestamp": "2025-06-27T21:44:37.883Z",
+      "idleSeconds": 0,
+      "isIdle": false
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-06-27T21:44:40.826Z",
+      "appName": "Electron",
+      "windowTitle": "Choose an App",
+      "durationMs": 3002
+    },
+    {
+      "type": "focusChange",
+      "timestamp": "2025-06-27T21:44:40.826Z",
+      "windowTitle": "Choose an App",
+      "appName": "Electron"
+    },
+    {
+      "type": "app_opened",
+      "timestamp": "2025-06-27T21:44:40.853Z",
+      "data": {
+        "type": "app_opened",
+        "name": "Beekeeper Studio Ultimate",
+        "path": "/Applications/Beekeeper Studio Ultimate.app",
+        "windowTitle": "Beekeeper Studio Ultimate",
+        "isActive": true,
+        "addedAt": "2025-06-27T21:44:40.853Z",
+        "launchedViaCortex": true
+      }
+    },
+    {
+      "type": "idle_check",
+      "timestamp": "2025-06-27T21:44:40.899Z",
+      "idleSeconds": 3.016,
+      "isIdle": false
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-06-27T21:44:43.825Z",
+      "appName": "Beekeeper Studio Ultimate",
+      "windowTitle": "Beekeeper Studio Ultimate",
+      "durationMs": 2999
+    },
+    {
+      "type": "focusChange",
+      "timestamp": "2025-06-27T21:44:43.826Z",
+      "windowTitle": "Beekeeper Studio Ultimate",
+      "appName": "Beekeeper Studio Ultimate"
+    },
+    {
+      "type": "idle_check",
+      "timestamp": "2025-06-27T21:44:43.890Z",
+      "idleSeconds": 0,
+      "isIdle": false
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-06-27T21:44:46.846Z",
+      "appName": "Electron",
+      "windowTitle": "New Session",
+      "durationMs": 3021
+    },
+    {
+      "type": "focusChange",
+      "timestamp": "2025-06-27T21:44:46.846Z",
+      "windowTitle": "New Session",
+      "appName": "Electron"
+    },
+    {
+      "type": "idle_check",
+      "timestamp": "2025-06-27T21:44:46.909Z",
+      "idleSeconds": 0,
+      "isIdle": false
+    }
+  ]
+}
