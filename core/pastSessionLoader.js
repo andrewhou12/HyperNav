@@ -1,12 +1,15 @@
 // core/pastSessionLoader.js
-import fs from "fs";
-import path from "path";
 
-const sessionsDir = path.join(process.cwd(), "sessions");
+const fs = require('fs');
+const path = require('path');
 
-export function loadRecentSessionSummaries(limit = 3) {
+const sessionsDir = path.join(__dirname, '..', 'sessions');
+
+function loadRecentSessionEventLogs(limit = 3) {
+  if (!fs.existsSync(sessionsDir)) return [];
+
   const files = fs.readdirSync(sessionsDir)
-    .filter(f => f.endsWith(".json"))
+    .filter(f => f.endsWith('.json'))
     .map(f => ({
       name: f,
       time: fs.statSync(path.join(sessionsDir, f)).mtimeMs,
@@ -14,15 +17,28 @@ export function loadRecentSessionSummaries(limit = 3) {
     .sort((a, b) => b.time - a.time)
     .slice(0, limit);
 
-  const summaries = files.map(f => {
-    const data = JSON.parse(fs.readFileSync(path.join(sessionsDir, f.name), "utf-8"));
-    const { liveWorkspace, eventLog } = data;
-
-    const appNames = (liveWorkspace?.apps || []).map(app => app.name).join(", ");
-    const summaryLine = `Session from ${f.name} involved apps: ${appNames}, events: ${eventLog.length}`;
-
-    return summaryLine;
+  const allEventLogs = files.map(file => {
+    const data = JSON.parse(fs.readFileSync(path.join(sessionsDir, file.name), 'utf-8'));
+    return data.eventLog || [];
   });
 
-  return summaries.join("\n");
+  return allEventLogs.flat();
 }
+
+function formatEventLogForGPT(eventLog) {
+  return eventLog.map(e => {
+    const time = new Date(e.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    const details = e.url
+      ? `${e.windowTitle} (${e.url})`
+      : e.windowTitle || e.appName || e.type;
+
+    const duration = e.durationMs ? ` [${Math.round(e.durationMs / 1000)} sec]` : '';
+
+    return `${time} → ${details}${duration}`;
+  }).join('\n');
+}
+
+module.exports = {
+  loadRecentSessionEventLogs,
+  formatEventLogForGPT,
+};
