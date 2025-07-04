@@ -1,84 +1,87 @@
-import { ipcMain } from "electron";
-import openai from "./openaiClient.js";
-import { loadRecentSessionSummaries } from "./pastSessionLoader.js";
+// core/gptRouter.js
 
-export async function askGPT({ userInput, currentContext = "", pastSummary = null }) {
-  const inputText = userInput?.trim();
-  if (!inputText) throw new Error("❌ Missing or invalid user input for GPT");
+const { ipcMain } = require('electron');
+const openai = require('./openaiClient');
+const { loadRecentSessionEventLogs, formatEventLogForGPT } = require('./pastSessionLoader');
 
-  const pastContext = pastSummary || loadRecentSessionSummaries();
+// === 1. GPT Answering for User Queries ===
+async function askGPT({ userInput, currentContext = "" }) {
+  const pastEvents = loadRecentSessionEventLogs(3);
+  const formattedPast = formatEventLogForGPT(pastEvents);
 
-  console.log("🧠 Composing messages for GPT with:", {
-    currentContext,
-    pastContext,
-    userInput: inputText,
-  });
+  const systemPrompt = `
+You are Cortex, an AI productivity assistant.
+
+Here is the user's recent work timeline:
+${formattedPast}
+
+Current context:
+${currentContext}
+
+Respond clearly, briefly, and in a focused tone.
+`;
 
   const messages = [
-    {
-      role: "system",
-      content: `You are a focused, pragmatic productivity assistant. Respond directly and clearly.\nContext: ${currentContext}\nPast: ${pastContext}`,
-    },
-    {
-      role: "user",
-      content: inputText,
-    },
+    { role: "system", content: systemPrompt },
+    { role: "user", content: userInput }
   ];
 
   const response = await openai.chat.completions.create({
-    model: "gpt-3.5-turbo",
+    model: 'gpt-4-turbo',
     messages,
   });
 
   return response.choices[0].message.content;
 }
 
-ipcMain.handle("ask-gpt", async (event, payload) => {
+ipcMain.handle('ask-gpt', async (event, payload) => {
   try {
-    console.log("💡 Received ask-gpt:", payload);
     const response = await askGPT(payload);
-    console.log("💬 GPT raw reply:", response);
     return response;
   } catch (err) {
-    console.error("❌ ask-gpt failed:", err.message);
-    return "⚠️ GPT failed to respond. Please try again.";
+    console.error("❌ GPT handler error:", err);
+    throw err;
   }
 });
 
 // === 2. Session Summarization ===
-export async function summarizeSession(eventLog) {
-  const formattedLog = eventLog.map(e => `- ${e.type}: ${e.items?.join(", ") || "(no items)"}`).join("\n");
+
+//not using this yet
+async function summarizeSession(eventLog) {
+  const formattedLog = formatEventLogForGPT(eventLog);
 
   const messages = [
     {
       role: "system",
-      content: "Summarize the user’s activity as a human would. Highlight work themes, focus patterns, and any noticeable shifts.",
+      content: "Summarize the user's session activity chronologically, including focus changes, major tasks, and time patterns.",
     },
     {
       role: "user",
-      content: `Here’s what the user has done:\n${formattedLog}`,
+      content: `Here’s the session log:\n${formattedLog}`,
     },
   ];
 
   const response = await openai.chat.completions.create({
-    model: "gpt-3.5-turbo",
+    model: 'gpt-4-turbo',
     messages,
   });
 
   return response.choices[0].message.content;
 }
 
-ipcMain.handle("summarize-session", async (event, eventLog) => {
+ipcMain.handle('summarize-session', async (event, eventLog) => {
   return await summarizeSession(eventLog);
 });
 
+// === 3. Command Interpretation ===
 
-// === 3. GPT → Command Interpreter ===
-export async function interpretCommand(userText) {
+//also not using this yet
+
+async function interpretCommand(userText) {
   const messages = [
     {
       role: "system",
-      content: "You are an assistant that outputs only a JSON command for actions in an Electron productivity workspace. Example: {\"action\":\"clear_workspace\", \"target\":null}. Valid actions: open_app, close_app, clear_workspace, focus_app, summarize_session",
+      content: "You are a command interpreter for a productivity workspace. Return only valid JSON commands.",
     },
     {
       role: "user",
@@ -87,7 +90,7 @@ export async function interpretCommand(userText) {
   ];
 
   const response = await openai.chat.completions.create({
-    model: "gpt-3.5-turbo",
+    model: 'gpt-3.5-turbo',
     messages,
     response_format: "json",
   });
@@ -95,6 +98,12 @@ export async function interpretCommand(userText) {
   return JSON.parse(response.choices[0].message.content);
 }
 
-ipcMain.handle("interpret-command", async (event, userText) => {
+ipcMain.handle('interpret-command', async (event, userText) => {
   return await interpretCommand(userText);
 });
+
+module.exports = {
+  askGPT,
+  summarizeSession,
+  interpretCommand
+};

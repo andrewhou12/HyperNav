@@ -98,19 +98,7 @@ async function pollActiveWindow() {
       (app) => app.name?.toLowerCase() === appName.toLowerCase()
     );
 
-    // If the last app was untracked and we're now focusing something new → hide it
-    if (
-      lastFocus.appName &&
-      lastFocus.appName !== appName &&
-      !sessionData.liveWorkspace.apps.some(
-        (app) => app.name?.toLowerCase() === lastFocus.appName.toLowerCase()
-      )
-    ) {
-      console.log("👻 Hiding previously focused untracked app:", lastFocus.appName);
-      hideApps([lastFocus.appName]);
-    }
-
-    const focusEvent = {
+    const baseFocusEvent = {
       type: appName === "Google Chrome" ? "tab_focus" : "poll_snapshot",
       timestamp,
       appName,
@@ -118,26 +106,26 @@ async function pollActiveWindow() {
       durationMs
     };
 
-    // Chrome tab info
     if (appName === "Google Chrome") {
       getActiveChromeTabInfo((tabInfo) => {
-        updateFocusState({ ...focusEvent, ...tabInfo });
+        const fullEvent = { ...baseFocusEvent, ...tabInfo };
+        updateFocusState(fullEvent);
       });
     } else {
-      updateFocusState(focusEvent);
+      updateFocusState(baseFocusEvent);
     }
 
-    function updateFocusState(focusEvent) {
-      sessionData.eventLog.push(focusEvent);
+    function updateFocusState(event) {
+      sessionData.eventLog.push(event);
 
       if (isTrackedApp) {
         sessionData.liveWorkspace.activeAppId = appName;
         sessionData.liveWorkspace.activeWindowId = title;
 
-        if (focusEvent.url && focusEvent.title) {
+        if (event.url && event.title) {
           sessionData.liveWorkspace.activeTab = {
-            title: focusEvent.title,
-            url: focusEvent.url
+            title: event.title,
+            url: event.url
           };
         } else {
           sessionData.liveWorkspace.activeTab = null;
@@ -147,10 +135,12 @@ async function pollActiveWindow() {
       lastFocus = { appName, windowTitle: title, timestamp };
       detectFocusChange(title, appName);
     }
+
   } catch (err) {
     console.error("❌ Failed to poll active window:", err.message);
   }
 }
+
 
 function startSession() {
 
