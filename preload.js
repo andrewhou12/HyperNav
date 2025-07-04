@@ -1,24 +1,23 @@
-// preload.js
 const { contextBridge, ipcRenderer } = require('electron');
 
 contextBridge.exposeInMainWorld('electron', {
-  saveSession: (data) => ipcRenderer.send('save-session'),
-  loadSession: () => ipcRenderer.invoke('load-session'),
-  openWindow: (type) => ipcRenderer.send('open-window', type),
-  updateSessionData: (tab) => ipcRenderer.send('update-session', tab),
+  askGPT: (payload) => ipcRenderer.invoke('ask-gpt', payload),
+  summarizeSession: (eventLog) => ipcRenderer.invoke('summarize-session', eventLog),
+  interpretCommand: (command) => ipcRenderer.invoke('interpret-command', command),
+  saveSession: () => ipcRenderer.invoke('save-session'),
   chooseApp: () => ipcRenderer.invoke('choose-app'),
-  launchApp: (path) => ipcRenderer.invoke('launch-app', path),
-  
-
-  
+  launchApp: (appPath) => ipcRenderer.invoke('launch-app', appPath),
+  hideBackgroundApps: () => ipcRenderer.invoke('hide-background-apps'),
+  showAllApps: () => ipcRenderer.invoke('show-all-apps'),
+  startAutoHide: () => ipcRenderer.invoke('start-auto-hide'),
+  stopAutoHide: () => ipcRenderer.invoke('stop-auto-hide'),
+  pauseWorkspace: () => ipcRenderer.invoke('pause-workspace'),
+  resumeWorkspace: () => ipcRenderer.invoke('resume-workspace'),
+  openWindow: (type) => ipcRenderer.send('open-window', type),
 });
 
-contextBridge.exposeInMainWorld("cortexAPI", {
-  appControl: (app, action, payload) =>
-    ipcRenderer.invoke("app-control", { app, action, payload })
+contextBridge.exposeInMainWorld('cortexAPI', {
+  appControl: (app, action, payload) => ipcRenderer.invoke('app-control', { app, action, payload }),
 });
-
-
-
   
 

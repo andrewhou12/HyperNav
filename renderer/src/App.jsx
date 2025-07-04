@@ -6,7 +6,10 @@ function App() {
     <>
       
 <button onClick={handleLoad}>Load Session</button>
-<button onClick={() => window.electron.openWindow("start-session")}>
+<button onClick={() => {
+  console.log("🟢 Start button clicked");
+  window.electron.openWindow("start-session");
+}}>
   Start Session
 </button>
 
