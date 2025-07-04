@@ -10,6 +10,11 @@ const { exec } = require('child_process');
 require('dotenv').config();
 const { askGPT } = require('./core/gptRouter');
 
+require("./core/gptRouter"); // ✅ loads handlers
+
+
+
+
 let sessionwin;
 
 app.setName("Cortex");
@@ -90,7 +95,7 @@ async function startCortexSession() {
         if (err) console.error("❌ Chrome quit failed:", err.message);
         else console.log("🧼 Chrome instance quit successfully.");
       });
-    }
+    }//later need to make sure that all cortex apps (not just chrome) are also quit 
   });
 }
 

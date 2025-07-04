@@ -16,6 +16,7 @@
     "url": "https://github.com/andrewhou12/Cortex.git"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.21",
     "concurrently": "^9.1.2",
     "electron": "^36.5.0"
   },
