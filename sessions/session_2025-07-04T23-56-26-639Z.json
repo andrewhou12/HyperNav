@@ -1,0 +1,162 @@
+{
+  "sessionName": "Session_2025-07-04T23:55:25.903Z",
+  "createdAt": "2025-07-04T23:55:25.904Z",
+  "liveWorkspace": {
+    "apps": [],
+    "activeAppId": null,
+    "activeWindowId": null
+  },
+  "eventLog": [
+    {
+      "type": "workspace_cleared",
+      "timestamp": "2025-07-04T23:55:27.202Z",
+      "data": {
+        "type": "workspace_cleared",
+        "items": [
+          "Messages",
+          "Notes",
+          "Day One",
+          "News",
+          "Numbers",
+          "Finder",
+          "Spotify",
+          "Discord",
+          "Slack",
+          "Brave Browser",
+          "Figma",
+          "Books",
+          "Google Chrome",
+          "Notion",
+          "iPhone Mirroring",
+          "Electron",
+          "Google Chrome",
+          "anki",
+          "Activity Monitor",
+          "Terminal",
+          "Calculator",
+          "Electron"
+        ]
+      }
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-04T23:55:28.984Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-04T23:55:31.998Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-04T23:55:34.987Z",
+      "appName": "Discord",
+      "windowTitle": "#general-chat💬 | Dark Knights - Discord"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-04T23:55:37.997Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-04T23:55:41.026Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-04T23:55:44.028Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-04T23:55:47.018Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-04T23:55:50.032Z",
+      "appName": "Terminal",
+      "windowTitle": "cortex — Electron Helper (Renderer) ◂ npm run dev TMPDIR=/var/folders/nm/3nvs2j3s54b70vvjmscvzgf00000gn/T/ __CFBundleIdentifier=com.apple.Terminal XPC_FLAGS=0x0 — 80×24"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-04T23:55:53.020Z",
+      "appName": "Terminal",
+      "windowTitle": "cortex — Electron Helper (Renderer) ◂ npm run dev TMPDIR=/var/folders/nm/3nvs2j3s54b70vvjmscvzgf00000gn/T/ __CFBundleIdentifier=com.apple.Terminal XPC_FLAGS=0x0 — 80×24"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-04T23:55:56.036Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-04T23:55:59.043Z",
+      "appName": "Slack",
+      "windowTitle": "random (Channel) - The Daily Northwestern - Slack"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-04T23:56:02.060Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-04T23:56:05.049Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-04T23:56:08.066Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-04T23:56:11.083Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-04T23:56:14.078Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-04T23:56:17.076Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-04T23:56:20.074Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-04T23:56:23.083Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-04T23:56:26.102Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    }
+  ]
+}

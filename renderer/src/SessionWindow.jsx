@@ -1,3 +1,4 @@
+// sessionwindow.jsx
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import ChatBot from './components/ChatBot';
@@ -10,7 +11,6 @@ function SessionWindow() {
   const [backgroundHidden, setBackgroundHidden] = useState(true);
   const [autoHideApps, setAutoHideApps] = useState(true);
 
-  // On first mount (session start), clear & hide initial apps, then kick off auto-hide
   useEffect(() => {
     (async () => {
       if (workspaceActive) {
@@ -18,10 +18,10 @@ function SessionWindow() {
         window.electron.startAutoHide?.();
       }
     })();
-  }, []); // run once
+  }, []);
 
-  const handleSave = () => {
-    window.electron.saveSession();
+  const handleSave = async () => {
+    await window.electron.saveSession();
     setEventLog(prev => [
       ...prev,
       { type: "session_saved", timestamp: new Date().toISOString() }
@@ -59,27 +59,20 @@ function SessionWindow() {
     }
   };
 
-  // Pause / resume the entire workspace
   const toggleWorkspace = async () => {
     if (workspaceActive) {
-      // — Turning OFF —
       setWorkspaceActive(false);
       setAutoHideApps(false);
       window.electron.pauseWorkspace?.();
     } else {
-      // — Turning ON —
       setWorkspaceActive(true);
       setAutoHideApps(true);
-      // 1) clear and initial-hide
       await window.electron.clearWorkspace?.();
-      // 2) restart auto-hide loop
       window.electron.startAutoHide?.();
-      // 3) restore dock & polling
       window.electron.resumeWorkspace?.();
     }
   };
 
-  // Enable/disable the running auto-hide loop
   const toggleAutoHide = () => {
     if (!workspaceActive) return;
     setAutoHideApps(prev => {
@@ -91,7 +84,6 @@ function SessionWindow() {
     });
   };
 
-  // Show/hide all background apps on demand
   const toggleBackgroundApps = () => {
     if (!workspaceActive) return;
     setBackgroundHidden(prev => {

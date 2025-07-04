@@ -1,0 +1,245 @@
+{
+  "sessionName": "Session_2025-07-04T23:11:08.242Z",
+  "createdAt": "2025-07-04T23:11:08.243Z",
+  "liveWorkspace": {
+    "apps": [
+      {
+        "name": "Google Chrome",
+        "path": "/Applications/Google Chrome.app",
+        "windowTitle": "https://www.google.com/search?q=google%20docs",
+        "isActive": true,
+        "addedAt": "2025-07-04T23:11:16.326Z"
+      }
+    ],
+    "activeAppId": "Google Chrome",
+    "activeWindowId": "Game Start - Google Docs",
+    "activeTab": {
+      "title": "Game Start - Google Docs",
+      "url": "https://docs.google.com/document/d/1sqTUGX6vKGqbrSAfX2Ds7I7IdKlJXYOSmO_rsB-au1Q/edit?tab=t.0"
+    }
+  },
+  "eventLog": [
+    {
+      "type": "workspace_cleared",
+      "timestamp": "2025-07-04T23:11:09.299Z",
+      "items": [
+        "Messages",
+        "Notes",
+        "Day One",
+        "News",
+        "Numbers",
+        "Finder",
+        "Spotify",
+        "Discord",
+        "Slack",
+        "Brave Browser",
+        "Figma",
+        "Books",
+        "Preview",
+        "Google Chrome",
+        "Notion",
+        "iPhone Mirroring",
+        "System Settings",
+        "Electron",
+        "Terminal",
+        "Google Chrome",
+        "anki",
+        "Electron"
+      ]
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-04T23:11:11.333Z",
+      "appName": "Electron",
+      "windowTitle": "New Session",
+      "durationMs": null
+    },
+    {
+      "type": "focusChange",
+      "timestamp": "2025-07-04T23:11:11.333Z",
+      "windowTitle": "New Session",
+      "appName": "Electron"
+    },
+    {
+      "type": "idle_check",
+      "timestamp": "2025-07-04T23:11:11.389Z",
+      "idleSeconds": 0,
+      "isIdle": false
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-04T23:11:14.313Z",
+      "appName": "Electron",
+      "windowTitle": "New Session",
+      "durationMs": 2980
+    },
+    {
+      "type": "idle_check",
+      "timestamp": "2025-07-04T23:11:14.373Z",
+      "idleSeconds": 2.984,
+      "isIdle": false
+    },
+    {
+      "type": "app_opened",
+      "timestamp": "2025-07-04T23:11:16.326Z",
+      "data": {
+        "type": "app_opened",
+        "name": "Google Chrome",
+        "path": "/Applications/Google Chrome.app",
+        "windowTitle": "https://www.google.com/search?q=google%20docs",
+        "isActive": true,
+        "launchedViaCortex": true
+      }
+    },
+    {
+      "type": "idle_check",
+      "timestamp": "2025-07-04T23:11:17.625Z",
+      "idleSeconds": 0,
+      "isIdle": false
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-04T23:11:17.470Z",
+      "appName": "Google Chrome",
+      "windowTitle": "google.com/search?q=google docs",
+      "durationMs": 3157,
+      "title": "google docs - Google Search",
+      "url": "https://www.google.com/search?q=google%20docs"
+    },
+    {
+      "type": "focusChange",
+      "timestamp": "2025-07-04T23:11:17.915Z",
+      "windowTitle": "google.com/search?q=google docs",
+      "appName": "Google Chrome"
+    },
+    {
+      "type": "idle_check",
+      "timestamp": "2025-07-04T23:11:20.642Z",
+      "idleSeconds": 3.017,
+      "isIdle": false
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-04T23:11:20.464Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Google Docs",
+      "durationMs": 2994,
+      "title": "Game Start - Google Docs",
+      "url": "https://docs.google.com/document/d/1sqTUGX6vKGqbrSAfX2Ds7I7IdKlJXYOSmO_rsB-au1Q/edit?ouid=101336166816060930249&usp=docs_home&ths=true"
+    },
+    {
+      "type": "focusChange",
+      "timestamp": "2025-07-04T23:11:20.905Z",
+      "windowTitle": "Google Docs",
+      "appName": "Google Chrome"
+    },
+    {
+      "type": "idle_check",
+      "timestamp": "2025-07-04T23:11:23.624Z",
+      "idleSeconds": 5.999,
+      "isIdle": false
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-04T23:11:23.459Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Game Start - Google Docs",
+      "durationMs": 2995,
+      "title": "Game Start - Google Docs",
+      "url": "https://docs.google.com/document/d/1sqTUGX6vKGqbrSAfX2Ds7I7IdKlJXYOSmO_rsB-au1Q/edit?tab=t.0"
+    },
+    {
+      "type": "focusChange",
+      "timestamp": "2025-07-04T23:11:23.907Z",
+      "windowTitle": "Game Start - Google Docs",
+      "appName": "Google Chrome"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-04T23:11:26.357Z",
+      "appName": "Terminal",
+      "windowTitle": "cortex — Electron Helper (Renderer) ◂ npm run dev TMPDIR=/var/folders/nm/3nvs2j3s54b70vvjmscvzgf00000gn/T/ __CFBundleIdentifier=com.apple.Terminal XPC_FLAGS=0x0 — 80×24",
+      "durationMs": 2898
+    },
+    {
+      "type": "focusChange",
+      "timestamp": "2025-07-04T23:11:26.357Z",
+      "windowTitle": "cortex — Electron Helper (Renderer) ◂ npm run dev TMPDIR=/var/folders/nm/3nvs2j3s54b70vvjmscvzgf00000gn/T/ __CFBundleIdentifier=com.apple.Terminal XPC_FLAGS=0x0 — 80×24",
+      "appName": "Terminal"
+    },
+    {
+      "type": "idle_check",
+      "timestamp": "2025-07-04T23:11:26.405Z",
+      "idleSeconds": 0,
+      "isIdle": false
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-04T23:11:29.364Z",
+      "appName": "Terminal",
+      "windowTitle": "cortex — Electron Helper (Renderer) ◂ npm run dev TMPDIR=/var/folders/nm/3nvs2j3s54b70vvjmscvzgf00000gn/T/ __CFBundleIdentifier=com.apple.Terminal XPC_FLAGS=0x0 — 80×24",
+      "durationMs": 3007
+    },
+    {
+      "type": "idle_check",
+      "timestamp": "2025-07-04T23:11:29.411Z",
+      "idleSeconds": 3.006,
+      "isIdle": false
+    },
+    {
+      "type": "idle_check",
+      "timestamp": "2025-07-04T23:11:32.600Z",
+      "idleSeconds": 0,
+      "isIdle": false
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-04T23:11:32.456Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Game Start - Google Docs",
+      "durationMs": 3092,
+      "title": "Game Start - Google Docs",
+      "url": "https://docs.google.com/document/d/1sqTUGX6vKGqbrSAfX2Ds7I7IdKlJXYOSmO_rsB-au1Q/edit?tab=t.0"
+    },
+    {
+      "type": "focusChange",
+      "timestamp": "2025-07-04T23:11:32.894Z",
+      "windowTitle": "Game Start - Google Docs",
+      "appName": "Google Chrome"
+    },
+    {
+      "type": "idle_check",
+      "timestamp": "2025-07-04T23:11:35.642Z",
+      "idleSeconds": 3.042,
+      "isIdle": false
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-04T23:11:35.477Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Game Start - Google Docs",
+      "durationMs": 3021,
+      "title": "Game Start - Google Docs",
+      "url": "https://docs.google.com/document/d/1sqTUGX6vKGqbrSAfX2Ds7I7IdKlJXYOSmO_rsB-au1Q/edit?tab=t.0"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-04T23:11:38.372Z",
+      "appName": "Electron",
+      "windowTitle": "New Session",
+      "durationMs": 2895
+    },
+    {
+      "type": "focusChange",
+      "timestamp": "2025-07-04T23:11:38.372Z",
+      "windowTitle": "New Session",
+      "appName": "Electron"
+    },
+    {
+      "type": "idle_check",
+      "timestamp": "2025-07-04T23:11:38.424Z",
+      "idleSeconds": 0,
+      "isIdle": false
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "sessionName": "Session_2025-07-04T23:35:57.430Z",
+  "createdAt": "2025-07-04T23:35:57.430Z",
+  "liveWorkspace": {
+    "apps": [],
+    "activeAppId": null,
+    "activeWindowId": null
+  },
+  "eventLog": [
+    {
+      "type": "workspace_cleared",
+      "timestamp": "2025-07-04T23:35:58.635Z",
+      "data": {
+        "type": "workspace_cleared",
+        "items": [
+          "Messages",
+          "Notes",
+          "Day One",
+          "News",
+          "Numbers",
+          "Finder",
+          "Spotify",
+          "Discord",
+          "Slack",
+          "Brave Browser",
+          "Figma",
+          "Books",
+          "Google Chrome",
+          "Notion",
+          "iPhone Mirroring",
+          "Electron",
+          "Terminal",
+          "Google Chrome",
+          "anki",
+          "Activity Monitor",
+          "Electron"
+        ]
+      }
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-04T23:36:00.548Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-04T23:36:03.502Z",
+      "appName": "Terminal",
+      "windowTitle": "cortex — Electron Helper (Renderer) ◂ npm run dev TMPDIR=/var/folders/nm/3nvs2j3s54b70vvjmscvzgf00000gn/T/ __CFBundleIdentifier=com.apple.Terminal XPC_FLAGS=0x0 — 214×67"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-04T23:36:06.537Z",
+      "appName": "Terminal",
+      "windowTitle": "cortex — Electron Helper (Renderer) ◂ npm run dev TMPDIR=/var/folders/nm/3nvs2j3s54b70vvjmscvzgf00000gn/T/ __CFBundleIdentifier=com.apple.Terminal XPC_FLAGS=0x0 — 214×67"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-04T23:36:09.522Z",
+      "appName": "Code",
+      "windowTitle": "workspaceManager.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-04T23:36:12.529Z",
+      "appName": "Code",
+      "windowTitle": "workspaceManager.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-04T23:36:15.551Z",
+      "appName": "Code",
+      "windowTitle": "workspaceManager.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-04T23:36:18.560Z",
+      "appName": "Code",
+      "windowTitle": "workspaceManager.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-04T23:36:21.560Z",
+      "appName": "Code",
+      "windowTitle": "workspaceManager.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-04T23:36:24.547Z",
+      "appName": "Code",
+      "windowTitle": "workspaceManager.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-04T23:36:27.556Z",
+      "appName": "Code",
+      "windowTitle": "workspaceManager.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-04T23:36:30.566Z",
+      "appName": "Code",
+      "windowTitle": "workspaceManager.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-04T23:36:33.562Z",
+      "appName": "Terminal",
+      "windowTitle": ""
+    }
+  ]
+}
