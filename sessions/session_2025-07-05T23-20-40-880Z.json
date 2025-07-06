@@ -1,0 +1,45 @@
+{
+  "sessionName": "Session_2025-07-05T23:20:27.266Z",
+  "createdAt": "2025-07-05T23:20:27.266Z",
+  "liveWorkspace": {
+    "apps": [],
+    "activeAppId": null,
+    "activeWindowId": null
+  },
+  "eventLog": [
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-05T23:20:30.365Z",
+      "appName": "Terminal",
+      "windowTitle": "cortex — osascript ◂ npm run dev TMPDIR=/var/folders/nm/3nvs2j3s54b70vvjmscvzgf00000gn/T/ __CFBundleIdentifier=com.apple.Terminal XPC_FLAGS=0x0 — 80×24"
+    },
+    {
+      "type": "workspace_cleared",
+      "timestamp": "2025-07-05T23:20:30.966Z",
+      "data": {
+        "type": "workspace_cleared",
+        "items": [
+          "MessagesNotesDay OneNewsNumbersFinderSpotifyDiscordSlackBrave BrowserFigmaBooksGoogle ChromeNotioniPhone MirroringElectronankiActivity MonitorTerminalCalculatorPhotosSystem SettingsBadlion ClientElectron"
+        ]
+      }
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-05T23:20:33.355Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-05T23:20:36.367Z",
+      "appName": "Terminal",
+      "windowTitle": "cortex — Electron Helper (Renderer) ◂ npm run dev TMPDIR=/var/folders/nm/3nvs2j3s54b70vvjmscvzgf00000gn/T/ __CFBundleIdentifier=com.apple.Terminal XPC_FLAGS=0x0 — 80×24"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-05T23:20:39.352Z",
+      "appName": "Terminal",
+      "windowTitle": "cortex — Electron Helper (Renderer) ◂ npm run dev TMPDIR=/var/folders/nm/3nvs2j3s54b70vvjmscvzgf00000gn/T/ __CFBundleIdentifier=com.apple.Terminal XPC_FLAGS=0x0 — 80×24"
+    }
+  ]
+}

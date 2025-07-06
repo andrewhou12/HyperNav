@@ -1,0 +1,178 @@
+{
+  "sessionName": "Session_2025-07-05T00:20:43.846Z",
+  "createdAt": "2025-07-05T00:20:43.846Z",
+  "liveWorkspace": {
+    "apps": [
+      {
+        "type": "app_opened",
+        "name": "Google Chrome",
+        "path": "/Applications/Google Chrome.app",
+        "windowTitle": "https://www.google.com/search?q=docs",
+        "isActive": true,
+        "launchedViaCortex": true,
+        "addedAt": "2025-07-05T00:20:51.582Z"
+      }
+    ],
+    "activeAppId": null,
+    "activeWindowId": null
+  },
+  "eventLog": [
+    {
+      "type": "workspace_cleared",
+      "timestamp": "2025-07-05T00:20:45.129Z",
+      "data": {
+        "type": "workspace_cleared",
+        "items": [
+          "Messages",
+          "Notes",
+          "Day One",
+          "News",
+          "Numbers",
+          "Finder",
+          "Spotify",
+          "Discord",
+          "Slack",
+          "Brave Browser",
+          "Figma",
+          "Books",
+          "Google Chrome",
+          "Notion",
+          "iPhone Mirroring",
+          "Electron",
+          "Google Chrome",
+          "anki",
+          "Activity Monitor",
+          "Terminal",
+          "Calculator",
+          "Electron"
+        ]
+      }
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-05T00:20:46.926Z",
+      "appName": "Electron",
+      "windowTitle": "Cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-05T00:20:49.951Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "app_opened",
+      "timestamp": "2025-07-05T00:20:51.582Z",
+      "data": {
+        "type": "app_opened",
+        "name": "Google Chrome",
+        "path": "/Applications/Google Chrome.app",
+        "windowTitle": "https://www.google.com/search?q=docs",
+        "isActive": true,
+        "launchedViaCortex": true
+      }
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-05T00:20:53.039Z",
+      "appName": "Google Chrome",
+      "windowTitle": "docs - Google Search"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-05T00:20:56.043Z",
+      "appName": "Google Chrome",
+      "windowTitle": "@u.northwestern.edu Mail"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-05T00:20:59.050Z",
+      "appName": "Google Chrome",
+      "windowTitle": "New Tab"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-05T00:21:02.055Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Game Start - Google Docs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-05T00:21:05.072Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Game Start - Google Docs"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-05T00:21:07.957Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-05T00:21:10.949Z",
+      "appName": "Code",
+      "windowTitle": "session_2025-07-05T00-19-25-785Z.json — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-05T00:21:13.972Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-05T00:21:16.991Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-05T00:21:20.002Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-05T00:21:22.986Z",
+      "appName": "Terminal",
+      "windowTitle": "cortex — Electron Helper (Renderer) ◂ npm run dev TMPDIR=/var/folders/nm/3nvs2j3s54b70vvjmscvzgf00000gn/T/ __CFBundleIdentifier=com.apple.Terminal XPC_FLAGS=0x0 — 80×24"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-05T00:21:25.982Z",
+      "appName": "Terminal",
+      "windowTitle": "cortex — Electron Helper (Renderer) ◂ npm run dev TMPDIR=/var/folders/nm/3nvs2j3s54b70vvjmscvzgf00000gn/T/ __CFBundleIdentifier=com.apple.Terminal XPC_FLAGS=0x0 — 80×24"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-05T00:21:29.003Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-05T00:21:32.128Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Game Start - Google Docs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-05T00:21:35.127Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Game Start - Google Docs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-05T00:21:38.136Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Game Start - Google Docs"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-05T00:21:41.032Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    }
+  ]
+}
