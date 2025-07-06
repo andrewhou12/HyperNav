@@ -26,7 +26,7 @@ export function AppCard({ name, icon, tabs, isActive = false }: AppCardProps) {
       group relative p-4 rounded-xl border transition-all duration-200 cursor-pointer
       ${isActive 
         ? 'bg-primary/5 border-primary/20 shadow-dashboard' 
-        : 'bg-card hover:bg-card-hover  hover:shadow-dashboard-hover'
+        : 'bg-card hover:bg-card-hover border-border hover:shadow-dashboard-hover'
       }
     `}>
       <div className="flex items-center gap-3 mb-3">

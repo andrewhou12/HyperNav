@@ -159,7 +159,7 @@ export function CortexDashboard() {
             </div>
 
             {/* Keyboard Shortcuts Hint */}
-            <div className="mt-12 p-4 bg-card border  rounded-xl">
+            <div className="mt-12 p-4 bg-card border border-border rounded-xl">
               <h3 className="text-sm font-medium text-foreground mb-2">Keyboard Shortcuts</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs text-muted-foreground">
                 <div className="flex items-center gap-2">

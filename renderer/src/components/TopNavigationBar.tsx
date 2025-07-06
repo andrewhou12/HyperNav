@@ -27,7 +27,7 @@ export function TopNavigationBar({
   }, []);
 
   return (
-    <div className="h-14 px-6 bg-card border-b  flex items-center justify-between">
+    <div className="h-14 px-6 bg-card border-b border-border flex items-center justify-between">
       {/* Left: Logo + Session Name */}
       <div className="flex items-center gap-4">
         <div className="flex items-center gap-2">

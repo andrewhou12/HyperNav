@@ -71,9 +71,9 @@ export function Spotlight({ isOpen, onClose, onSearch, onAskAI }: SpotlightProps
 
   return (
     <div className="fixed inset-0 bg-black/20 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-      <div className="w-full max-w-2xl bg-dashboard-glass backdrop-blur-xl rounded-2xl shadow-dashboard-lg border  overflow-hidden">
+      <div className="w-full max-w-2xl bg-dashboard-glass backdrop-blur-xl rounded-2xl shadow-dashboard-lg border border-border overflow-hidden">
         {/* Header */}
-        <div className="p-6 border-b ">
+        <div className="p-6 border-b border-border">
           <div className="flex items-center gap-3 mb-4">
             <div className="p-2 bg-primary/10 rounded-lg">
               <Sparkles className="w-5 h-5 text-primary" />
@@ -85,7 +85,7 @@ export function Spotlight({ isOpen, onClose, onSearch, onAskAI }: SpotlightProps
           </div>
 
           <form onSubmit={handleSubmit} className="relative">
-            <div className="flex items-center bg-card border  rounded-xl shadow-dashboard hover:shadow-dashboard-hover transition-all group">
+            <div className="flex items-center bg-card border border-border rounded-xl shadow-dashboard hover:shadow-dashboard-hover transition-all group">
               <input
                 ref={inputRef}
                 type="text"
@@ -125,7 +125,7 @@ export function Spotlight({ isOpen, onClose, onSearch, onAskAI }: SpotlightProps
               <button
                 key={index}
                 onClick={() => handleSuggestionClick(suggestion)}
-                className="text-left p-3 bg-card hover:bg-card-hover border  rounded-lg transition-colors text-sm"
+                className="text-left p-3 bg-card hover:bg-card-hover border border-border rounded-lg transition-colors text-sm"
               >
                 {suggestion}
               </button>
@@ -134,7 +134,7 @@ export function Spotlight({ isOpen, onClose, onSearch, onAskAI }: SpotlightProps
         </div>
 
         {/* Footer */}
-        <div className="px-6 py-3 border-t  bg-muted/30 text-xs text-muted-foreground flex items-center justify-between">
+        <div className="px-6 py-3 border-t border-border bg-muted/30 text-xs text-muted-foreground flex items-center justify-between">
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-1">
               <Command className="w-3 h-3" />

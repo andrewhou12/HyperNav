@@ -20,7 +20,7 @@ export function SearchBar({ onSubmit }: SearchBarProps) {
   return (
     <div className="w-full max-w-4xl mx-auto">
       <form onSubmit={handleSubmit} className="relative">
-        <div className="flex items-center bg-card border  rounded-2xl shadow-dashboard hover:shadow-dashboard-hover transition-shadow group">
+        <div className="flex items-center bg-card border border-border rounded-2xl shadow-dashboard hover:shadow-dashboard-hover transition-shadow group">
           <input
             type="text"
             value={query}
