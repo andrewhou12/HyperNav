@@ -1,0 +1,57 @@
+{
+  "sessionName": "Session_2025-07-05T23:19:48.210Z",
+  "createdAt": "2025-07-05T23:19:48.220Z",
+  "liveWorkspace": {
+    "apps": [],
+    "activeAppId": null,
+    "activeWindowId": null
+  },
+  "eventLog": [
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-05T23:19:51.322Z",
+      "appName": "Electron",
+      "windowTitle": "Cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-05T23:19:54.301Z",
+      "appName": "Terminal",
+      "windowTitle": "cortex — osascript ◂ npm run dev TMPDIR=/var/folders/nm/3nvs2j3s54b70vvjmscvzgf00000gn/T/ __CFBundleIdentifier=com.apple.Terminal XPC_FLAGS=0x0 — 80×24"
+    },
+    {
+      "type": "workspace_cleared",
+      "timestamp": "2025-07-05T23:19:55.047Z",
+      "data": {
+        "type": "workspace_cleared",
+        "items": [
+          "MessagesNotesDay OneNewsNumbersFinderSpotifyDiscordSlackBrave BrowserFigmaBooksGoogle ChromeNotioniPhone MirroringElectronankiActivity MonitorTerminalCalculatorPhotosSystem SettingsBadlion ClientElectron"
+        ]
+      }
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-05T23:19:57.337Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-05T23:20:00.475Z",
+      "appName": "Google Chrome",
+      "windowTitle": "New Incognito Tab"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-05T23:20:03.335Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-05T23:20:06.358Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    }
+  ]
+}
