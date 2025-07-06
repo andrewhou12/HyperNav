@@ -1,0 +1,1418 @@
+{
+  "sessionName": "Session_2025-07-06T08:17:30.160Z",
+  "createdAt": "2025-07-06T08:17:30.161Z",
+  "liveWorkspace": {
+    "apps": [],
+    "activeAppId": null,
+    "activeWindowId": null
+  },
+  "eventLog": [
+    {
+      "type": "workspace_cleared",
+      "timestamp": "2025-07-06T08:17:31.678Z",
+      "data": {
+        "type": "workspace_cleared",
+        "items": [
+          "Messages",
+          "Notes",
+          "Day One",
+          "News",
+          "Numbers",
+          "Finder",
+          "Spotify",
+          "Discord",
+          "Slack",
+          "Brave Browser",
+          "Figma",
+          "Books",
+          "Google Chrome",
+          "Notion",
+          "iPhone Mirroring",
+          "Electron",
+          "anki",
+          "Activity Monitor",
+          "Terminal",
+          "Calculator",
+          "Photos",
+          "System Settings",
+          "Dictionary",
+          "Electron"
+        ]
+      }
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-06T08:17:33.330Z",
+      "appName": "Electron",
+      "windowTitle": "Cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-06T08:17:36.334Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-06T08:17:39.389Z",
+      "appName": "Code",
+      "windowTitle": "index.css — cortex"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:17:42.533Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind CSS v4 with React + Vite: Styles not applied on first load in dev mode · tailwindlabs/tailwindcss · Discussion #16399"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:17:45.481Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind CSS v4 with React + Vite: Styles not applied on first load in dev mode · tailwindlabs/tailwindcss · Discussion #16399"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:17:48.479Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind CSS v4 with React + Vite: Styles not applied on first load in dev mode · tailwindlabs/tailwindcss · Discussion #16399"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:17:51.512Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind CSS v4 with React + Vite: Styles not applied on first load in dev mode · tailwindlabs/tailwindcss · Discussion #16399"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:17:54.508Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind CSS v4 with React + Vite: Styles not applied on first load in dev mode · tailwindlabs/tailwindcss · Discussion #16399"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:17:57.495Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind CSS v4 with React + Vite: Styles not applied on first load in dev mode · tailwindlabs/tailwindcss · Discussion #16399"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-06T08:18:00.352Z",
+      "appName": "Code",
+      "windowTitle": "index.css — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-06T08:18:03.372Z",
+      "appName": "Code",
+      "windowTitle": "index.css — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-06T08:18:06.381Z",
+      "appName": "Code",
+      "windowTitle": "index.css — cortex"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:18:09.524Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:18:12.518Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:18:15.523Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:18:18.521Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:18:21.508Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:18:24.559Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:18:27.508Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:18:30.555Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:18:33.540Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:18:36.574Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:18:39.544Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:18:42.573Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:18:45.566Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:18:48.562Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:18:51.581Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:18:54.558Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:18:57.570Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:19:00.622Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:19:03.586Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:19:06.610Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:19:09.609Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:19:12.633Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:19:15.573Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:19:18.602Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:19:21.875Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:19:24.694Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:19:27.646Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:19:30.645Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:19:33.636Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:19:36.667Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:19:39.604Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:19:42.725Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:19:45.661Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:19:48.674Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:19:51.704Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:19:54.666Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:19:57.670Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:20:00.681Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:20:03.716Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:20:06.687Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:20:09.695Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:20:12.724Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:20:15.721Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:20:18.708Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:20:22.052Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:20:24.734Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:20:27.711Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:20:30.717Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:20:33.711Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:20:36.724Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:20:39.721Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:20:42.728Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:20:45.705Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:20:48.735Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:20:51.743Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:20:54.777Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:20:57.795Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:21:00.777Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:21:03.769Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:21:06.782Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:21:09.788Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:21:12.785Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:21:15.822Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:21:18.808Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:21:22.111Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:21:24.857Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:21:27.822Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:21:30.857Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:21:33.826Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:21:36.829Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:21:39.852Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:21:42.901Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:21:45.829Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:21:48.847Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:21:51.856Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:21:54.870Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:21:57.852Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:22:00.850Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:22:03.873Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:22:06.884Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:22:09.876Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:22:12.900Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:22:15.896Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:22:18.904Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:22:22.073Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:22:24.935Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:22:27.919Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:22:30.949Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:22:33.934Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:22:36.923Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:22:39.911Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:22:42.916Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:22:45.933Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:22:48.942Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:22:51.982Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:22:54.958Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:22:57.963Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:23:00.964Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:23:03.945Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:23:06.960Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:23:09.966Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:23:12.969Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:23:15.981Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:23:18.969Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:23:22.078Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:23:25.026Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:23:28.009Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:23:31.020Z",
+      "appName": "Google Chrome",
+      "windowTitle": "using apply tailwindcss v4 - Google Search"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:23:34.027Z",
+      "appName": "Google Chrome",
+      "windowTitle": "using apply tailwindcss v4 - Google Search"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:23:37.026Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind CSS v4.0 - Tailwind CSS"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:23:40.025Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind CSS v4.0 - Tailwind CSS"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:23:43.046Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind CSS v4.0 - Tailwind CSS"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:23:46.034Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind CSS v4.0 - Tailwind CSS"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:23:49.025Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind CSS v4.0 - Tailwind CSS"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:23:52.056Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind CSS v4.0 - Tailwind CSS"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:23:55.096Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind CSS v4.0 - Tailwind CSS"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:23:58.087Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind CSS v4.0 - Tailwind CSS"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:24:01.058Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind CSS v4.0 - Tailwind CSS"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:24:04.068Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind CSS v4.0 - Tailwind CSS"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:24:07.091Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind CSS v4.0 - Tailwind CSS"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:24:10.082Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind CSS v4.0 - Tailwind CSS"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:24:13.081Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind CSS v4.0 - Tailwind CSS"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:24:16.082Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Window close unhide fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:24:19.097Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind CSS v4.0 - Tailwind CSS"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:24:22.228Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind CSS v4.0 - Tailwind CSS"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:24:25.188Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind CSS v4.0 - Tailwind CSS"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:24:28.116Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind CSS v4.0 - Tailwind CSS"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:24:31.120Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind CSS v4.0 - Tailwind CSS"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:24:34.126Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind CSS v4.0 - Tailwind CSS"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:24:37.118Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind CSS v4.0 - Tailwind CSS"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:24:40.167Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind CSS v4.0 - Tailwind CSS"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:24:43.125Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind CSS v4.0 - Tailwind CSS"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:24:46.168Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind CSS v4.0 - Tailwind CSS"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:24:49.145Z",
+      "appName": "Google Chrome",
+      "windowTitle": "using apply tailwindcss v4 - Google Search"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:24:52.199Z",
+      "appName": "Google Chrome",
+      "windowTitle": "using apply tailwindcss v4 - Google Search"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:24:55.168Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind v4 + CSS modules @apply alternative : r/reactjs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:24:58.167Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind v4 + CSS modules @apply alternative : r/reactjs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:25:01.133Z",
+      "appName": "Google Chrome",
+      "windowTitle": "`@apply`Broken in Tailwind CSS v4.0 – No Clear Fix or Docs! · tailwindlabs/tailwindcss · Discussion #16429"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:25:04.171Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind CSS v4 with React + Vite: Styles not applied on first load in dev mode · tailwindlabs/tailwindcss · Discussion #16399"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:25:07.166Z",
+      "appName": "Google Chrome",
+      "windowTitle": "`@apply`Broken in Tailwind CSS v4.0 – No Clear Fix or Docs! · tailwindlabs/tailwindcss · Discussion #16429"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:25:10.176Z",
+      "appName": "Google Chrome",
+      "windowTitle": "`@apply`Broken in Tailwind CSS v4.0 – No Clear Fix or Docs! · tailwindlabs/tailwindcss · Discussion #16429"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:25:13.170Z",
+      "appName": "Google Chrome",
+      "windowTitle": "`@apply`Broken in Tailwind CSS v4.0 – No Clear Fix or Docs! · tailwindlabs/tailwindcss · Discussion #16429"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:25:16.233Z",
+      "appName": "Google Chrome",
+      "windowTitle": "`@apply`Broken in Tailwind CSS v4.0 – No Clear Fix or Docs! · tailwindlabs/tailwindcss · Discussion #16429"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:25:19.223Z",
+      "appName": "Google Chrome",
+      "windowTitle": "`@apply`Broken in Tailwind CSS v4.0 – No Clear Fix or Docs! · tailwindlabs/tailwindcss · Discussion #16429"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:25:22.302Z",
+      "appName": "Google Chrome",
+      "windowTitle": "`@apply`Broken in Tailwind CSS v4.0 – No Clear Fix or Docs! · tailwindlabs/tailwindcss · Discussion #16429"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:25:25.209Z",
+      "appName": "Google Chrome",
+      "windowTitle": "`@apply`Broken in Tailwind CSS v4.0 – No Clear Fix or Docs! · tailwindlabs/tailwindcss · Discussion #16429"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:25:28.226Z",
+      "appName": "Google Chrome",
+      "windowTitle": "`@apply`Broken in Tailwind CSS v4.0 – No Clear Fix or Docs! · tailwindlabs/tailwindcss · Discussion #16429"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:25:31.237Z",
+      "appName": "Google Chrome",
+      "windowTitle": "`@apply`Broken in Tailwind CSS v4.0 – No Clear Fix or Docs! · tailwindlabs/tailwindcss · Discussion #16429"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:25:34.222Z",
+      "appName": "Google Chrome",
+      "windowTitle": "`@apply`Broken in Tailwind CSS v4.0 – No Clear Fix or Docs! · tailwindlabs/tailwindcss · Discussion #16429"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:25:37.212Z",
+      "appName": "Google Chrome",
+      "windowTitle": "`@apply`Broken in Tailwind CSS v4.0 – No Clear Fix or Docs! · tailwindlabs/tailwindcss · Discussion #16429"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:25:40.233Z",
+      "appName": "Google Chrome",
+      "windowTitle": "`@apply`Broken in Tailwind CSS v4.0 – No Clear Fix or Docs! · tailwindlabs/tailwindcss · Discussion #16429"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:25:43.230Z",
+      "appName": "Google Chrome",
+      "windowTitle": "`@apply`Broken in Tailwind CSS v4.0 – No Clear Fix or Docs! · tailwindlabs/tailwindcss · Discussion #16429"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:25:46.238Z",
+      "appName": "Google Chrome",
+      "windowTitle": "`@apply`Broken in Tailwind CSS v4.0 – No Clear Fix or Docs! · tailwindlabs/tailwindcss · Discussion #16429"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:25:49.235Z",
+      "appName": "Google Chrome",
+      "windowTitle": "`@apply`Broken in Tailwind CSS v4.0 – No Clear Fix or Docs! · tailwindlabs/tailwindcss · Discussion #16429"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:25:52.236Z",
+      "appName": "Google Chrome",
+      "windowTitle": "`@apply`Broken in Tailwind CSS v4.0 – No Clear Fix or Docs! · tailwindlabs/tailwindcss · Discussion #16429"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:25:55.257Z",
+      "appName": "Google Chrome",
+      "windowTitle": "`@apply`Broken in Tailwind CSS v4.0 – No Clear Fix or Docs! · tailwindlabs/tailwindcss · Discussion #16429"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:25:58.263Z",
+      "appName": "Google Chrome",
+      "windowTitle": "`@apply`Broken in Tailwind CSS v4.0 – No Clear Fix or Docs! · tailwindlabs/tailwindcss · Discussion #16429"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:26:01.305Z",
+      "appName": "Google Chrome",
+      "windowTitle": "`@apply`Broken in Tailwind CSS v4.0 – No Clear Fix or Docs! · tailwindlabs/tailwindcss · Discussion #16429"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:26:04.298Z",
+      "appName": "Google Chrome",
+      "windowTitle": "`@apply`Broken in Tailwind CSS v4.0 – No Clear Fix or Docs! · tailwindlabs/tailwindcss · Discussion #16429"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:26:07.262Z",
+      "appName": "Google Chrome",
+      "windowTitle": "`@apply`Broken in Tailwind CSS v4.0 – No Clear Fix or Docs! · tailwindlabs/tailwindcss · Discussion #16429"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:26:10.236Z",
+      "appName": "Google Chrome",
+      "windowTitle": "`@apply`Broken in Tailwind CSS v4.0 – No Clear Fix or Docs! · tailwindlabs/tailwindcss · Discussion #16429"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:26:13.293Z",
+      "appName": "Google Chrome",
+      "windowTitle": "`@apply`Broken in Tailwind CSS v4.0 – No Clear Fix or Docs! · tailwindlabs/tailwindcss · Discussion #16429"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:26:16.280Z",
+      "appName": "Google Chrome",
+      "windowTitle": "`@apply`Broken in Tailwind CSS v4.0 – No Clear Fix or Docs! · tailwindlabs/tailwindcss · Discussion #16429"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:26:19.305Z",
+      "appName": "Google Chrome",
+      "windowTitle": "`@apply`Broken in Tailwind CSS v4.0 – No Clear Fix or Docs! · tailwindlabs/tailwindcss · Discussion #16429"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:26:22.413Z",
+      "appName": "Google Chrome",
+      "windowTitle": "`@apply`Broken in Tailwind CSS v4.0 – No Clear Fix or Docs! · tailwindlabs/tailwindcss · Discussion #16429"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:26:25.299Z",
+      "appName": "Google Chrome",
+      "windowTitle": "`@apply`Broken in Tailwind CSS v4.0 – No Clear Fix or Docs! · tailwindlabs/tailwindcss · Discussion #16429"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:26:28.306Z",
+      "appName": "Google Chrome",
+      "windowTitle": "`@apply`Broken in Tailwind CSS v4.0 – No Clear Fix or Docs! · tailwindlabs/tailwindcss · Discussion #16429"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:26:31.319Z",
+      "appName": "Google Chrome",
+      "windowTitle": "`@apply`Broken in Tailwind CSS v4.0 – No Clear Fix or Docs! · tailwindlabs/tailwindcss · Discussion #16429"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:26:34.314Z",
+      "appName": "Google Chrome",
+      "windowTitle": "`@apply`Broken in Tailwind CSS v4.0 – No Clear Fix or Docs! · tailwindlabs/tailwindcss · Discussion #16429"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:26:37.331Z",
+      "appName": "Google Chrome",
+      "windowTitle": "ChatGPT"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:26:40.337Z",
+      "appName": "Google Chrome",
+      "windowTitle": "ChatGPT"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-06T08:26:43.209Z",
+      "appName": "Code",
+      "windowTitle": "index.css — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-06T08:26:46.217Z",
+      "appName": "Code",
+      "windowTitle": "index.css — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-06T08:26:49.207Z",
+      "appName": "Code",
+      "windowTitle": "index.css — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-06T08:26:52.218Z",
+      "appName": "Code",
+      "windowTitle": "tailwind.config.cjs — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-06T08:26:55.215Z",
+      "appName": "Code",
+      "windowTitle": "vite.config.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-06T08:26:58.228Z",
+      "appName": "Code",
+      "windowTitle": "tailwind.config.cjs — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-06T08:27:01.240Z",
+      "appName": "Code",
+      "windowTitle": "index.css — cortex"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:27:04.392Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind v4 @apply Issue"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:27:07.354Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind v4 @apply Issue"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:27:10.382Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind v4 @apply Issue"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:27:13.369Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind v4 @apply Issue"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:27:16.382Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind v4 @apply Issue"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:27:19.402Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind v4 @apply Issue"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:27:22.510Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind v4 @apply Issue"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:27:25.407Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind v4 @apply Issue"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:27:28.415Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind v4 @apply Issue"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:27:31.422Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind v4 @apply Issue"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:27:34.425Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind v4 @apply Issue"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:27:37.430Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind v4 @apply Issue"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:27:40.444Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind v4 @apply Issue"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:27:43.440Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind v4 @apply Issue"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:27:46.440Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind v4 @apply Issue"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:27:49.430Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind v4 @apply Issue"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:27:52.451Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind v4 @apply Issue"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:27:55.444Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind v4 @apply Issue"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:27:58.456Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind v4 @apply Issue"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:28:01.488Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind v4 @apply Issue"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:28:04.446Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind v4 @apply Issue"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:28:07.469Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind v4 @apply Issue"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:28:10.500Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind v4 @apply Issue"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:28:13.498Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind v4 @apply Issue"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:28:16.508Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind v4 @apply Issue"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:28:19.491Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind v4 @apply Issue"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:28:22.566Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind v4 @apply Issue"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:28:25.502Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind v4 @apply Issue"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:28:28.503Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind v4 @apply Issue"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-06T08:28:31.367Z",
+      "appName": "Code",
+      "windowTitle": "index.css — cortex"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:28:34.532Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind v4 @apply Issue"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-06T08:28:37.408Z",
+      "appName": "Code",
+      "windowTitle": "tailwind.config.cjs — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-06T08:28:40.418Z",
+      "appName": "Code",
+      "windowTitle": "tailwind.config.cjs — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-06T08:28:43.421Z",
+      "appName": "Code",
+      "windowTitle": "tailwind.config.cjs — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-06T08:28:46.389Z",
+      "appName": "Code",
+      "windowTitle": "tailwind.config.cjs — cortex"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:28:49.529Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Tailwind v4 @apply Issue"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-06T08:28:52.549Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Google Docs"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-06T08:28:55.406Z",
+      "appName": "Code",
+      "windowTitle": ""
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-06T08:28:58.415Z",
+      "appName": "Code",
+      "windowTitle": "index.css — cortex"
+    }
+  ]
+}

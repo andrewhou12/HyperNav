@@ -1,0 +1,50 @@
+{
+  "sessionName": "Session_2025-07-06T08:40:58.695Z",
+  "createdAt": "2025-07-06T08:40:58.696Z",
+  "liveWorkspace": {
+    "apps": [],
+    "activeAppId": null,
+    "activeWindowId": null
+  },
+  "eventLog": [
+    {
+      "type": "workspace_cleared",
+      "timestamp": "2025-07-06T08:41:00.706Z",
+      "data": {
+        "type": "workspace_cleared",
+        "items": [
+          "Messages",
+          "Notes",
+          "Day One",
+          "News",
+          "Numbers",
+          "Finder",
+          "Spotify",
+          "Discord",
+          "Slack",
+          "Brave Browser",
+          "Figma",
+          "Books",
+          "Google Chrome",
+          "Notion",
+          "iPhone Mirroring",
+          "Electron",
+          "anki",
+          "Activity Monitor",
+          "Terminal",
+          "Calculator",
+          "Photos",
+          "System Settings",
+          "Dictionary",
+          "Electron"
+        ]
+      }
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-06T08:41:01.907Z",
+      "appName": "Electron",
+      "windowTitle": "Cortex"
+    }
+  ]
+}
