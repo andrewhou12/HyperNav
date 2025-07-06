@@ -2,20 +2,18 @@ const plugin = require("tailwindcss-animate");
 
 module.exports = {
   darkMode: ["class"],
+  // you can drop `content` entirely in v4, but if you keep it:
   content: [
     "./index.html",
-    "./session.html",  
+    "./session.html",
     "./src/**/*.{js,ts,jsx,tsx}",
-    "./**"
   ],
   prefix: "",
   theme: {
     container: {
       center: true,
       padding: '2rem',
-      screens: {
-        '2xl': '1400px',
-      },
+      screens: { '2xl': '1400px' },
     },
     extend: {
       colors: {
@@ -66,10 +64,10 @@ module.exports = {
         dashboard: {
           'session-item': 'hsl(var(--session-item))',
           'app-icon': 'hsl(var(--app-icon-bg))',
-          'stack': 'hsl(var(--stack-bg))',
+          stack: 'hsl(var(--stack-bg))',
           'stack-hover': 'hsl(var(--stack-hover))',
-          'overlay': 'hsl(var(--overlay-bg))',
-          'glass': 'hsl(var(--glass-bg))',
+          overlay: 'hsl(var(--overlay-bg))',
+          glass: 'hsl(var(--glass-bg))',
         },
       },
       boxShadow: {
@@ -99,4 +97,4 @@ module.exports = {
     },
   },
   plugins: [plugin],
-};
+}
