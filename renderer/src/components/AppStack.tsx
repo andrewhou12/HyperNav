@@ -48,7 +48,7 @@ export function AppStack({
       group rounded-xl border transition-all duration-200 
       ${isActive 
         ? 'bg-primary/5 border-primary/20 shadow-dashboard' 
-        : 'bg-dashboard-stack hover:bg-dashboard-stack-hover  hover:shadow-dashboard-hover'
+        : 'bg-dashboard-stack hover:bg-dashboard-stack-hover border-border hover:shadow-dashboard-hover'
       }
     `}>
       {/* Stack Header */}
@@ -87,7 +87,7 @@ export function AppStack({
 
       {/* Expanded Tabs */}
       {isExpanded && (
-        <div className="border-t  bg-card/50">
+        <div className="border-t border-border bg-card/50">
           <div className="max-h-48 overflow-y-auto">
             {tabs.map((tab) => (
               <div

@@ -79,9 +79,9 @@ export function QuickSwitcher({ isOpen, onClose, onSelect }: QuickSwitcherProps)
 
   return (
     <div className="fixed inset-0 bg-black/20 backdrop-blur-sm z-50 flex items-start justify-center pt-32">
-      <div className="w-full max-w-lg mx-4 bg-dashboard-glass backdrop-blur-xl rounded-2xl shadow-dashboard-lg border  overflow-hidden">
+      <div className="w-full max-w-lg mx-4 bg-dashboard-glass backdrop-blur-xl rounded-2xl shadow-dashboard-lg border border-border overflow-hidden">
         {/* Header */}
-        <div className="flex items-center gap-3 p-4 border-b ">
+        <div className="flex items-center gap-3 p-4 border-b border-border">
           <Search className="w-5 h-5 text-muted-foreground" />
           <input
             ref={inputRef}
@@ -142,7 +142,7 @@ export function QuickSwitcher({ isOpen, onClose, onSelect }: QuickSwitcherProps)
         </div>
 
         {/* Footer */}
-        <div className="p-3 border-t  bg-muted/30 text-xs text-muted-foreground flex items-center justify-center gap-4">
+        <div className="p-3 border-t border-border bg-muted/30 text-xs text-muted-foreground flex items-center justify-center gap-4">
           <div className="flex items-center gap-1">
             <ArrowUp className="w-3 h-3" />
             <ArrowDown className="w-3 h-3" />

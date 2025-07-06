@@ -38,7 +38,7 @@ export function WorkspaceControls({
             p-2 rounded-lg transition-all duration-200
             ${isPaused 
               ? 'bg-primary text-primary-foreground hover:bg-primary/90' 
-              : 'bg-card text-card-foreground hover:bg-card-hover border '
+              : 'bg-card text-card-foreground hover:bg-card-hover border border-border'
             }
             shadow-dashboard hover:shadow-dashboard-hover
           `}
@@ -49,7 +49,7 @@ export function WorkspaceControls({
 
         <button
           onClick={handleBackgroundAppsToggle}
-          className="p-2 rounded-lg bg-card text-card-foreground hover:bg-card-hover border  transition-all duration-200 shadow-dashboard hover:shadow-dashboard-hover"
+          className="p-2 rounded-lg bg-card text-card-foreground hover:bg-card-hover border border-border transition-all duration-200 shadow-dashboard hover:shadow-dashboard-hover"
           title={backgroundAppsHidden ? 'Show Background Apps' : 'Hide Background Apps'}
         >
           {backgroundAppsHidden ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
@@ -62,7 +62,7 @@ export function WorkspaceControls({
       {/* Settings */}
       <button
         onClick={onSettingsClick}
-        className="p-2 rounded-lg bg-card text-muted-foreground hover:text-card-foreground hover:bg-card-hover border  transition-all duration-200 shadow-dashboard hover:shadow-dashboard-hover"
+        className="p-2 rounded-lg bg-card text-muted-foreground hover:text-card-foreground hover:bg-card-hover border border-border transition-all duration-200 shadow-dashboard hover:shadow-dashboard-hover"
         title="Settings"
       >
         <Settings className="w-4 h-4" />
