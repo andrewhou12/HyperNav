@@ -4,7 +4,9 @@
   "version": "1.0.0",
   "main": "main.js",
   "scripts": {
-    "dev": "concurrently \"npm run dev --prefix renderer\" \"electron .\"",
+    "dev:renderer": "npm run dev --prefix renderer",
+    "dev:electron": "wait-on http://localhost:5173 && electron .",
+    "dev": "concurrently \"npm:dev:renderer\" \"npm:dev:electron\"",
     "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,12 +19,14 @@
   },
   "devDependencies": {
     "@tailwindcss/cli": "^4.1.11",
+    "@tailwindcss/postcss": "^4.1.11",
     "autoprefixer": "^10.4.21",
-    "concurrently": "^9.1.2",
+    "concurrently": "^9.2.0",
     "electron": "^36.5.0",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.11",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "wait-on": "^8.0.3"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.11",
