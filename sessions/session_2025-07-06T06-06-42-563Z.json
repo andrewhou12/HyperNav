@@ -1,0 +1,319 @@
+{
+  "sessionName": "Session_2025-07-06T06:06:17.625Z",
+  "createdAt": "2025-07-06T06:06:17.625Z",
+  "liveWorkspace": {
+    "apps": [],
+    "activeAppId": null,
+    "activeWindowId": null
+  },
+  "eventLog": [
+    {
+      "type": "workspace_cleared",
+      "timestamp": "2025-07-06T06:06:18.224Z",
+      "data": {
+        "type": "workspace_cleared",
+        "items": [
+          "Messages",
+          "Notes",
+          "Day One",
+          "News",
+          "Numbers",
+          "Finder",
+          "Spotify",
+          "Discord",
+          "Slack",
+          "Brave Browser",
+          "Figma",
+          "Books",
+          "Google Chrome",
+          "Notion",
+          "iPhone Mirroring",
+          "Electron",
+          "anki",
+          "Activity Monitor",
+          "Terminal",
+          "Calculator",
+          "Photos",
+          "System Settings",
+          "Dictionary",
+          "Electron"
+        ]
+      }
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-06T06:06:22.650Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "workspace_cleared",
+      "timestamp": "2025-07-06T06:06:22.753Z",
+      "data": {
+        "type": "workspace_cleared",
+        "items": [
+          "Messages",
+          "Notes",
+          "Day One",
+          "News",
+          "Numbers",
+          "Finder",
+          "Spotify",
+          "Discord",
+          "Slack",
+          "Brave Browser",
+          "Figma",
+          "Books",
+          "Google Chrome",
+          "Notion",
+          "iPhone Mirroring",
+          "Electron",
+          "anki",
+          "Activity Monitor",
+          "Terminal",
+          "Calculator",
+          "Photos",
+          "System Settings",
+          "Dictionary",
+          "Electron"
+        ]
+      }
+    },
+    {
+      "type": "workspace_cleared",
+      "timestamp": "2025-07-06T06:06:26.609Z",
+      "data": {
+        "type": "workspace_cleared",
+        "items": [
+          "Messages",
+          "Notes",
+          "Day One",
+          "News",
+          "Numbers",
+          "Finder",
+          "Spotify",
+          "Discord",
+          "Slack",
+          "Brave Browser",
+          "Figma",
+          "Books",
+          "Google Chrome",
+          "Notion",
+          "iPhone Mirroring",
+          "Electron",
+          "anki",
+          "Activity Monitor",
+          "Terminal",
+          "Calculator",
+          "Photos",
+          "System Settings",
+          "Dictionary",
+          "Electron",
+          "osascript"
+        ]
+      }
+    },
+    {
+      "type": "workspace_cleared",
+      "timestamp": "2025-07-06T06:06:26.871Z",
+      "data": {
+        "type": "workspace_cleared",
+        "items": [
+          "Messages",
+          "Notes",
+          "Day One",
+          "News",
+          "Numbers",
+          "Finder",
+          "Spotify",
+          "Discord",
+          "Slack",
+          "Brave Browser",
+          "Figma",
+          "Books",
+          "Google Chrome",
+          "Notion",
+          "iPhone Mirroring",
+          "Electron",
+          "anki",
+          "Activity Monitor",
+          "Terminal",
+          "Calculator",
+          "Photos",
+          "System Settings",
+          "Dictionary",
+          "Electron"
+        ]
+      }
+    },
+    {
+      "type": "workspace_cleared",
+      "timestamp": "2025-07-06T06:06:27.254Z",
+      "data": {
+        "type": "workspace_cleared",
+        "items": [
+          "Messages",
+          "Notes",
+          "Day One",
+          "News",
+          "Numbers",
+          "Finder",
+          "Spotify",
+          "Discord",
+          "Slack",
+          "Brave Browser",
+          "Figma",
+          "Books",
+          "Google Chrome",
+          "Notion",
+          "iPhone Mirroring",
+          "Electron",
+          "anki",
+          "Activity Monitor",
+          "Terminal",
+          "Calculator",
+          "Photos",
+          "System Settings",
+          "Dictionary",
+          "Electron"
+        ]
+      }
+    },
+    {
+      "type": "workspace_cleared",
+      "timestamp": "2025-07-06T06:06:28.332Z",
+      "data": {
+        "type": "workspace_cleared",
+        "items": [
+          "Messages",
+          "Notes",
+          "Day One",
+          "News",
+          "Numbers",
+          "Finder",
+          "Spotify",
+          "Discord",
+          "Slack",
+          "Brave Browser",
+          "Figma",
+          "Books",
+          "Google Chrome",
+          "Notion",
+          "iPhone Mirroring",
+          "Electron",
+          "anki",
+          "Activity Monitor",
+          "Terminal",
+          "Calculator",
+          "Photos",
+          "System Settings",
+          "Dictionary",
+          "Electron",
+          "osascript"
+        ]
+      }
+    },
+    {
+      "type": "workspace_cleared",
+      "timestamp": "2025-07-06T06:06:35.672Z",
+      "data": {
+        "type": "workspace_cleared",
+        "items": [
+          "Messages",
+          "Notes",
+          "Day One",
+          "News",
+          "Numbers",
+          "Finder",
+          "Spotify",
+          "Discord",
+          "Slack",
+          "Brave Browser",
+          "Figma",
+          "Books",
+          "Google Chrome",
+          "Notion",
+          "iPhone Mirroring",
+          "Electron",
+          "anki",
+          "Activity Monitor",
+          "Terminal",
+          "Calculator",
+          "Photos",
+          "System Settings",
+          "Dictionary",
+          "Electron",
+          "osascript"
+        ]
+      }
+    },
+    {
+      "type": "workspace_cleared",
+      "timestamp": "2025-07-06T06:06:35.926Z",
+      "data": {
+        "type": "workspace_cleared",
+        "items": [
+          "Messages",
+          "Notes",
+          "Day One",
+          "News",
+          "Numbers",
+          "Finder",
+          "Spotify",
+          "Discord",
+          "Slack",
+          "Brave Browser",
+          "Figma",
+          "Books",
+          "Google Chrome",
+          "Notion",
+          "iPhone Mirroring",
+          "Electron",
+          "anki",
+          "Activity Monitor",
+          "Terminal",
+          "Calculator",
+          "Photos",
+          "System Settings",
+          "Dictionary",
+          "Electron",
+          "osascript"
+        ]
+      }
+    },
+    {
+      "type": "workspace_cleared",
+      "timestamp": "2025-07-06T06:06:37.372Z",
+      "data": {
+        "type": "workspace_cleared",
+        "items": [
+          "Messages",
+          "Notes",
+          "Day One",
+          "News",
+          "Numbers",
+          "Finder",
+          "Spotify",
+          "Discord",
+          "Slack",
+          "Brave Browser",
+          "Figma",
+          "Books",
+          "Google Chrome",
+          "Notion",
+          "iPhone Mirroring",
+          "Electron",
+          "anki",
+          "Activity Monitor",
+          "Terminal",
+          "Calculator",
+          "Photos",
+          "System Settings",
+          "Dictionary",
+          "Electron",
+          "osascript"
+        ]
+      }
+    }
+  ]
+}

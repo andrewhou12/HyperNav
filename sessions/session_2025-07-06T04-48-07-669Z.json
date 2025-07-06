@@ -1,0 +1,51 @@
+{
+  "sessionName": "Session_2025-07-06T04:48:03.608Z",
+  "createdAt": "2025-07-06T04:48:03.608Z",
+  "liveWorkspace": {
+    "apps": [],
+    "activeAppId": null,
+    "activeWindowId": null
+  },
+  "eventLog": [
+    {
+      "type": "workspace_cleared",
+      "timestamp": "2025-07-06T04:48:04.509Z",
+      "data": {
+        "type": "workspace_cleared",
+        "items": [
+          "Messages",
+          "Notes",
+          "Day One",
+          "News",
+          "Numbers",
+          "Finder",
+          "Spotify",
+          "Discord",
+          "Slack",
+          "Brave Browser",
+          "Figma",
+          "Books",
+          "Google Chrome",
+          "Notion",
+          "iPhone Mirroring",
+          "Electron",
+          "anki",
+          "Activity Monitor",
+          "Terminal",
+          "Calculator",
+          "Photos",
+          "System Settings",
+          "Badlion Client",
+          "Dictionary",
+          "Electron"
+        ]
+      }
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-06T04:48:06.711Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    }
+  ]
+}

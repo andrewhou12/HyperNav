@@ -3,10 +3,10 @@ const plugin = require("tailwindcss-animate");
 module.exports = {
   darkMode: ["class"],
   content: [
-    "./pages/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx}",
-    "./app/**/*.{ts,tsx}",
-    "./src/**/*.{ts,tsx}",
+    "./index.html",
+    "./session.html",  
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./**"
   ],
   prefix: "",
   theme: {
