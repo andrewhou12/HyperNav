@@ -1,6 +1,5 @@
-import React from 'react';
-import { useState, useEffect } from "react";
-import { Pause, Play, Eye, EyeOff, Settings } from "lucide-react";
+import React, { useState, useEffect } from 'react';
+import { Pause, Play, Eye, EyeOff, Settings } from 'lucide-react';
 
 interface TopNavigationBarProps {
   sessionName?: string;
@@ -12,12 +11,12 @@ interface TopNavigationBarProps {
 }
 
 export function TopNavigationBar({
-  sessionName = "Session 4",
+  sessionName = 'Session 4',
   isPaused = false,
   backgroundAppsHidden = false,
   onPauseToggle,
   onBackgroundAppsToggle,
-  onSettingsClick
+  onSettingsClick,
 }: TopNavigationBarProps) {
   const [currentTime, setCurrentTime] = useState(new Date());
 
@@ -28,11 +27,16 @@ export function TopNavigationBar({
 
   return (
     <div className="h-14 px-6 bg-card border-b border-border flex items-center justify-between">
+      
       {/* Left: Logo + Session Name */}
       <div className="flex items-center gap-4">
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-            <span className="text-primary-foreground font-bold text-sm">C</span>
+          <div className="w-8 h-8 overflow-hidden">
+            <img
+              src="/icons/cortexlogov1invert.svg"
+              alt="Cortex logo"
+              className="w-full h-full object-contain"
+            />
           </div>
           <span className="font-semibold text-foreground">Cortex</span>
         </div>

@@ -30,10 +30,21 @@ const appDrivers = {
   vscode: vscodeDriver,
 };
 
+const iconPath = path.resolve(
+  app.getAppPath(), 
+  'renderer', 
+  'public', 
+  'icons', 
+  'cortexlogov1.icns'
+);
+
 function createWindow() {
+
   const win = new BrowserWindow({
+    
     width: 1200,
     height: 800,
+    icon: iconPath,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
     },
@@ -45,6 +56,7 @@ function createSessionWindow() {
   const { bounds } = screen.getPrimaryDisplay();
   const win = new BrowserWindow({
     title: "Cortex",
+    icon: iconPath,
     frame: true,
     titleBarStyle: "hiddenInset",
     show: false,
@@ -170,4 +182,5 @@ ipcMain.handle('stop-auto-hide', () => workspaceManager.stopAutoHide());
 ipcMain.handle('pause-workspace', () => workspaceManager.pauseWorkspace());
 ipcMain.handle('resume-workspace', () => workspaceManager.resumeWorkspace());
 
-app.whenReady().then(() => { createWindow(); });
+app.whenReady().then(() => {
+  createWindow(); });
