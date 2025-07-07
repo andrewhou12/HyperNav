@@ -13,6 +13,7 @@ contextBridge.exposeInMainWorld('electron', {
   stopAutoHide: () => ipcRenderer.invoke('stop-auto-hide'),
   pauseWorkspace: () => ipcRenderer.invoke('pause-workspace'),
   resumeWorkspace: () => ipcRenderer.invoke('resume-workspace'),
+  clearWorkspace:     () => ipcRenderer.invoke('clear-workspace'),
   openWindow: (type) => ipcRenderer.send('open-window', type),
   onLiveWorkspaceUpdate: (callback) => {
     ipcRenderer.on('live-workspace-update', (event, liveWorkspace) => {

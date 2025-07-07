@@ -91,6 +91,7 @@ async function pollActiveWindow() {
 }
 
 function startPollingWindowState() {
+  console.log("🟢 Started polling session state.");
   if (pollInterval) clearInterval(pollInterval);
   pollingActive = true;
   pollInterval = setInterval(async () => {

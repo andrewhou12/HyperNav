@@ -7,7 +7,8 @@ const {
 } = require("../utils/applescript");
 const {
   getSessionData,
-  stopPollingWindowState
+  stopPollingWindowState,
+  startPollingWindowState
 } = require("./sessionManager");
 const { toggleDockAutohide } = require("./systemUIManager");
 
@@ -96,6 +97,9 @@ function pauseWorkspace() {
 
 function resumeWorkspace() {
   toggleDockAutohide(true);
+  startAutoHide();
+  clearWorkspace();
+  startPollingWindowState();
 }
 
 function getPreviouslyHiddenApps() {
