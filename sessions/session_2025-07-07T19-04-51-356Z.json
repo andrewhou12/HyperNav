@@ -1,0 +1,251 @@
+{
+  "sessionName": "Session_2025-07-07T19:02:48.676Z",
+  "createdAt": "2025-07-07T19:02:48.677Z",
+  "liveWorkspace": {
+    "apps": [],
+    "activeAppId": null,
+    "activeWindowId": null
+  },
+  "eventLog": [
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T19:02:51.840Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T19:02:54.847Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-07T19:02:57.980Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Create .icns File"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-07T19:03:01.014Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Create .icns File"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-07T19:03:03.990Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Create .icns File"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-07T19:03:06.979Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Create .icns File"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-07T19:03:10.012Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Create .icns File"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-07T19:03:13.024Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Create .icns File"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-07T19:03:16.003Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Create .icns File"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-07T19:03:18.986Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Create .icns File"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-07T19:03:21.990Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Create .icns File"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-07T19:03:25.022Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Create .icns File"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-07T19:03:28.026Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Create .icns File"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-07T19:03:31.018Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Create .icns File"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-07T19:03:34.040Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Create .icns File"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-07T19:03:37.054Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Create .icns File"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-07T19:03:40.036Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Create .icns File"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T19:03:42.909Z",
+      "appName": "Code",
+      "windowTitle": "TopNavigationBar.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T19:03:45.940Z",
+      "appName": "Code",
+      "windowTitle": "TopNavigationBar.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T19:03:48.916Z",
+      "appName": "Code",
+      "windowTitle": "TopNavigationBar.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T19:03:51.944Z",
+      "appName": "Code",
+      "windowTitle": "TopNavigationBar.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T19:03:54.926Z",
+      "appName": "Code",
+      "windowTitle": "TopNavigationBar.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T19:03:57.946Z",
+      "appName": "Code",
+      "windowTitle": "TopNavigationBar.tsx — cortex"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-07T19:04:01.054Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Create .icns File"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-07T19:04:04.075Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Create .icns File"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-07T19:04:07.043Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Create .icns File"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-07T19:04:10.096Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Create .icns File"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-07T19:04:13.109Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Create .icns File"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-07T19:04:16.075Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Create .icns File"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-07T19:04:19.107Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Create .icns File"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-07T19:04:22.133Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Create .icns File"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-07T19:04:25.102Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Create .icns File"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-07T19:04:28.126Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Create .icns File"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-07T19:04:31.168Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Create .icns File"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-07T19:04:34.111Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Create .icns File"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-07T19:04:37.166Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Create .icns File"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-07T19:04:40.164Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Create .icns File"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-07T19:04:43.131Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Create .icns File"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-07T19:04:46.160Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Create .icns File"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T19:04:49.001Z",
+      "appName": "Code",
+      "windowTitle": "TopNavigationBar.tsx — cortex"
+    }
+  ]
+}
