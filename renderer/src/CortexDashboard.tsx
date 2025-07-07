@@ -130,19 +130,6 @@ export function CortexDashboard() {
         onBackgroundAppsToggle={setBackgroundHidden}
         onSettingsClick={() => console.log('Settings clicked')}
       />
-
-      <div className="flex items-center p-4 bg-card border-b border-border">
-        <span className="mr-4 text-sm text-muted-foreground">
-          Auto-Hide: {autoHideEnabled ? 'On' : 'Off'}
-        </span>
-        <button
-          onClick={toggleAutoHide}
-          className="px-3 py-1 bg-muted text-muted-foreground rounded-lg hover:bg-muted/80 transition"
-        >
-          {autoHideEnabled ? 'Disable Auto-Hide' : 'Enable Auto-Hide'}
-        </button>
-      </div>
-
       <div className="flex flex-1 h-[calc(100vh-3.5rem-3rem)]">
         <div className="flex-1 p-6 overflow-y-auto">
           {/* Workspace View */}
