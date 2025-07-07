@@ -14,6 +14,12 @@ contextBridge.exposeInMainWorld('electron', {
   pauseWorkspace: () => ipcRenderer.invoke('pause-workspace'),
   resumeWorkspace: () => ipcRenderer.invoke('resume-workspace'),
   openWindow: (type) => ipcRenderer.send('open-window', type),
+  onLiveWorkspaceUpdate: (callback) => {
+    ipcRenderer.on('live-workspace-update', (event, liveWorkspace) => {
+      callback(liveWorkspace);
+    });
+  },
+  
 });
 
 contextBridge.exposeInMainWorld('cortexAPI', {

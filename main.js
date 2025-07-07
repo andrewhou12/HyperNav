@@ -21,8 +21,7 @@ const workspaceManager = require('./core/workspaceManager');
 const { toggleDockAutohide } = require('./core/systemUIManager');
 const { showApps } = require('./utils/applescript');
 const { askGPT } = require('./core/gptRouter');
-
-let sessionwin;
+const sessionManager = require('./core/sessionManager');
 
 app.setName("Cortex");
 
@@ -91,7 +90,7 @@ function createSessionWindow() {
 }
 
 async function startCortexSession() {
-  startSession();
+  
   const hiddenApps = await workspaceManager.clearWorkspace();
   await toggleDockAutohide(true);
 
@@ -101,6 +100,8 @@ async function startCortexSession() {
       sessionwin.maximize();
       sessionwin.show();
     }, 1500);
+  sessionManager.setMainWindow(sessionwin)
+  startSession();
   });
 
   updateSessionData({ type: "workspace_cleared", items: hiddenApps });
