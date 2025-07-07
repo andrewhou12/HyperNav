@@ -21,6 +21,12 @@ contextBridge.exposeInMainWorld('electron', {
     });
   },
   getSessionData: () => ipcRenderer.invoke('get-session-data'),
+  onSessionLogEntry: (cb) => {
+    ipcRenderer.on('session-log-entry', (_, entry) => cb(entry));
+  },
+  offSessionLogEntry: (cb) => {
+    ipcRenderer.removeListener('session-log-entry', cb);
+  }
   
 });
 

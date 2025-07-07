@@ -11,6 +11,7 @@ const {
   startPollingWindowState
 } = require("./sessionManager");
 const { toggleDockAutohide } = require("./systemUIManager");
+const { updateSessionData } = require('./sessionManager');
 
 let autoHideInterval = null;
 let prevActiveApp = null;
@@ -28,8 +29,17 @@ function clearWorkspace() {
   return new Promise((resolve, reject) => {
     getOpenApps((apps) => {
       if (!apps) return reject("Failed to get apps");
-      // record *all* currently open apps
-      recordAndHide(apps);
+
+      // 1) Hide all windows
+      hideApps(apps);
+
+      // 2) Log the workspace_cleared event
+      updateSessionData({
+        type: 'workspace_cleared',
+        data: { items: apps }
+      });
+
+      // 3) Seed prevActiveApp for future auto-hide checks
       getActiveApp(app => {
         prevActiveApp = app;
         resolve(apps);
@@ -48,10 +58,11 @@ function hideBackgroundApps() {
   });
 }
 function showAllApps() {
-  // unhide everything we ever hid
+  // unhide everything
   showApps(previouslyHiddenApps);
-  // reset for next time
   previouslyHiddenApps = [];
+  // log it
+  updateSessionData({ type: 'visibility_changed', data: { visible: true } });
 }
 
 function startAutoHide() {
@@ -67,10 +78,9 @@ function startAutoHide() {
       recordAndHide(toHide);
     });
   });
-  console.log('🟢 startAutoHide called');
+
 
   autoHideInterval = setInterval(() => {
-    console.log('⏱️ auto-hide tick');
     hideBackgroundApps();
   }, 3000);
 }
@@ -83,9 +93,11 @@ function stopAutoHide() {
 
 function pauseWorkspace() {
   stopAutoHide();
-  showAllApps();
+  showApps(previouslyHiddenApps);
+  previouslyHiddenApps = [];
   toggleDockAutohide(false);
   stopPollingWindowState();
+  updateSessionData({ type: 'session_paused' });
 }
 
 function resumeWorkspace() {
@@ -93,6 +105,8 @@ function resumeWorkspace() {
   startAutoHide();
   clearWorkspace();
   startPollingWindowState();
+  console.log("ADDED SESSION RESUMED")
+  updateSessionData({ type: 'session_resumed' });
 }
 
 function getPreviouslyHiddenApps() {

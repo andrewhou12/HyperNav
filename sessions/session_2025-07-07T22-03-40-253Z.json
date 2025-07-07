@@ -1,0 +1,59 @@
+{
+  "sessionName": "Session_2025-07-07T22:03:13.811Z",
+  "createdAt": "2025-07-07T22:03:13.812Z",
+  "liveWorkspace": {
+    "apps": [],
+    "activeAppId": null,
+    "activeWindowId": null
+  },
+  "eventLog": [
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T22:03:17.005Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T22:03:20.035Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "EnhancedSessionSidebar.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T22:03:23.029Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "EnhancedSessionSidebar.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T22:03:26.048Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "EnhancedSessionSidebar.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T22:03:29.031Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "EnhancedSessionSidebar.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T22:03:32.042Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "EnhancedSessionSidebar.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T22:03:35.060Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "EnhancedSessionSidebar.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T22:03:38.042Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "EnhancedSessionSidebar.tsx — cortex"
+    }
+  ]
+}

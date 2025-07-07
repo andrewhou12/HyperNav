@@ -4,7 +4,7 @@ import { createRoot } from 'react-dom/client';
 import { CortexDashboard } from './CortexDashboard';
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+    <StrictMode>
     <CortexDashboard />
-  </StrictMode>
+    </StrictMode>
   );

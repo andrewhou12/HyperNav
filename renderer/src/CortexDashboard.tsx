@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, SetStateAction } from "react";
 import { TopNavigationBar } from "./components/TopNavigationBar";
 import { AppStack } from "./components/AppStack";
 import { EnhancedSessionSidebar } from "./components/EnhancedSessionSidebar";
@@ -22,11 +22,41 @@ type LiveWorkspace = {
 export function CortexDashboard() {
   const [isPaused, setIsPaused] = useState(false);
   const firstPauseRun = useRef(true);
-  const [backgroundHidden, setBackgroundHidden] = useState(true);
+  const [backgroundAppsHidden, setBackgroundAppsHidden] = useState<boolean>(true);
   const [autoHideEnabled, setAutoHideEnabled] = useState(true);
   const [expandedStacks, setExpandedStacks] = useState<string[]>([]);
   const [isQuickSwitcherOpen, setIsQuickSwitcherOpen] = useState(false);
   const [isSpotlightOpen, setIsSpotlightOpen] = useState(false);
+
+
+  const handleChangeIsPaused = (val: SetStateAction<boolean>) => {
+    setIsPaused(prevIsPaused => {
+      const newIsPaused = typeof val === 'function' ? val(prevIsPaused) : val;
+  
+      if (newIsPaused) {
+        window.electron.pauseWorkspace();
+      } else {
+        window.electron.resumeWorkspace();
+      }
+  
+      return newIsPaused;
+    });
+  };
+
+  const handleChangeIsBackgroundAppsHidden = (val: SetStateAction<boolean>) => {
+    setBackgroundAppsHidden(prevIsBackgroundAppsHidden => {
+      const newIsBackgroundAppsHidden = typeof val === 'function' ? val(prevIsBackgroundAppsHidden) : val;
+  
+      if (newIsBackgroundAppsHidden) {
+        window.electron.showAllApps();
+      } else {
+        window.electron.clearWorkspace();
+      }
+  
+      return newIsBackgroundAppsHidden;
+    });
+  }
+
 
   // live workspace from main
   const [workspace, setWorkspace] = useState<LiveWorkspace>({
@@ -35,24 +65,7 @@ export function CortexDashboard() {
     activeWindowId: null,
   });
 
-  // Pause/resume side-effects
-  useEffect(() => {
-    if (firstPauseRun.current) {
-      firstPauseRun.current = false;
-      return;                    // skip on initial mount
-    }
-    if (isPaused) window.electron.pauseWorkspace();
-    else          window.electron.resumeWorkspace();
-  }, [isPaused]);
 
-  // Background apps hide/show
-  useEffect(() => {
-    if (backgroundHidden) {
-      window.electron.hideBackgroundApps();
-    } else {
-      window.electron.showAllApps();
-    }
-  }, [backgroundHidden]);
 
   // Toggle auto-hide on/off
   const toggleAutoHide = () => {
@@ -123,12 +136,14 @@ export function CortexDashboard() {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <TopNavigationBar
-        sessionName={workspace.activeAppId || 'No Active Session'}
-        isPaused={isPaused}
-        backgroundAppsHidden={backgroundHidden}
-        onPauseToggle={setIsPaused}
-        onBackgroundAppsToggle={setBackgroundHidden}
-        onSettingsClick={() => console.log('Settings clicked')}
+      sessionName={'new session'}
+      isPaused={isPaused}
+      backgroundAppsHidden={backgroundAppsHidden}              
+      onBackgroundAppsToggle={handleChangeIsBackgroundAppsHidden}        
+      autoHideEnabled={autoHideEnabled}
+      onPauseToggle={handleChangeIsPaused}
+      onAutoHideToggle={toggleAutoHide}
+      onSettingsClick={() => {}}
       />
       <div className="flex flex-1 h-[calc(100vh-3.5rem-3rem)]">
         <div className="flex-1 p-6 overflow-y-auto">
@@ -160,7 +175,7 @@ export function CortexDashboard() {
 
         <EnhancedSessionSidebar
           isPaused={isPaused}
-          onPauseToggle={() => setIsPaused(!isPaused)}
+          onPauseToggle={() => {handleChangeIsPaused((isPaused) => !isPaused)}}
           onSettings={() => console.log('Settings opened')}
         />
       </div>

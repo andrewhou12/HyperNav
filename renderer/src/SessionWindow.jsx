@@ -11,15 +11,6 @@ function SessionWindow() {
   const [backgroundHidden, setBackgroundHidden] = useState(true);
   const [autoHideApps, setAutoHideApps] = useState(true);
 
-  useEffect(() => {
-    (async () => {
-      if (workspaceActive) {
-        await window.electron.clearWorkspace?.();
-        window.electron.startAutoHide?.();
-      }
-    })();
-  }, []);
-
   const handleSave = async () => {
     await window.electron.saveSession();
     setEventLog(prev => [
