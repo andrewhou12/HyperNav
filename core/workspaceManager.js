@@ -16,16 +16,13 @@ let autoHideInterval = null;
 let prevActiveApp = null;
 let previouslyHiddenApps = [];
 
-// Helper to record & hide in one go
+
 function recordAndHide(apps) {
   if (!apps.length) return;
-  // remember them just once
-  previouslyHiddenApps = Array.from(new Set([
-    ...previouslyHiddenApps,
-    ...apps
-  ]));
-  hideApps(apps);
+  previouslyHiddenApps = Array.from(new Set([...previouslyHiddenApps, ...apps]));
+  hideApps(apps);  // your AppleScript helper
 }
+
 
 function clearWorkspace() {
   return new Promise((resolve, reject) => {
@@ -42,22 +39,14 @@ function clearWorkspace() {
 }
 
 function hideBackgroundApps() {
-  getActiveApp((activeApp) => {
-    const tracked = (getSessionData().liveWorkspace?.apps || [])
-      .map(a => a.name);
-    // if we switched away from prevActiveApp, and it’s not in tracked,
-    // hide it now (and record that hide)
-    if (
-      prevActiveApp &&
-      prevActiveApp !== activeApp &&
-      !tracked.includes(prevActiveApp)
-    ) {
+  getActiveApp(activeApp => {
+    const tracked = (getSessionData().liveWorkspace?.apps || []).map(a => a.name);
+    if (prevActiveApp && prevActiveApp !== activeApp && !tracked.includes(prevActiveApp)) {
       recordAndHide([prevActiveApp]);
-    }
+    } 
     prevActiveApp = activeApp;
   });
 }
-
 function showAllApps() {
   // unhide everything we ever hid
   showApps(previouslyHiddenApps);
@@ -78,8 +67,12 @@ function startAutoHide() {
       recordAndHide(toHide);
     });
   });
+  console.log('🟢 startAutoHide called');
 
-  autoHideInterval = setInterval(hideBackgroundApps, 3000);
+  autoHideInterval = setInterval(() => {
+    console.log('⏱️ auto-hide tick');
+    hideBackgroundApps();
+  }, 3000);
 }
 
 function stopAutoHide() {
