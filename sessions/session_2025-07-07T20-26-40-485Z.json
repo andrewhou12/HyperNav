@@ -1,0 +1,17 @@
+{
+  "sessionName": "Session_2025-07-07T20:26:36.957Z",
+  "createdAt": "2025-07-07T20:26:36.957Z",
+  "liveWorkspace": {
+    "apps": [],
+    "activeAppId": null,
+    "activeWindowId": null
+  },
+  "eventLog": [
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T20:26:40.131Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    }
+  ]
+}

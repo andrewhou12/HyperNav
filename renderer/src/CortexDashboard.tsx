@@ -21,7 +21,7 @@ type LiveWorkspace = {
 
 export function CortexDashboard() {
   const [isPaused, setIsPaused] = useState(false);
-  const [backgroundAppsHidden, setBackgroundAppsHidden] = useState(false);
+  const [backgroundAppsHidden, setBackgroundAppsHidden] = useState(true);
   const [expandedStacks, setExpandedStacks] = useState<string[]>([]);
   const [isQuickSwitcherOpen, setIsQuickSwitcherOpen] = useState(false);
   const [isSpotlightOpen, setIsSpotlightOpen] = useState(false);

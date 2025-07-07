@@ -15,6 +15,10 @@ const {
   stopPollingWindowState
 } = require('./core/sessionManager');
 
+const {
+  clearWorkspace
+} = require('./core/workspaceManager');
+
 const chromeDriver = require('./core/drivers/chromeDriver');
 const vscodeDriver = require('./core/drivers/vscode');
 const workspaceManager = require('./core/workspaceManager');
@@ -181,6 +185,10 @@ ipcMain.handle('start-auto-hide', () => workspaceManager.startAutoHide());
 ipcMain.handle('stop-auto-hide', () => workspaceManager.stopAutoHide());
 ipcMain.handle('pause-workspace', () => workspaceManager.pauseWorkspace());
 ipcMain.handle('resume-workspace', () => workspaceManager.resumeWorkspace());
+ipcMain.handle('clear-workspace', async () => {
+  const apps = await clearWorkspace();
+  return apps;
+});
 
 app.whenReady().then(() => {
   createWindow(); });
