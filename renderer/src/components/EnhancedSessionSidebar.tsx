@@ -29,48 +29,99 @@ export function EnhancedSessionSidebar({
     const ts = new Date(item.timestamp)
       .toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
     const id = `${item.timestamp}-${index}`;
-    let icon = 'ℹ️', type: SessionLogEntry['type'] = 'system', message = item.type;
-
+  
+    let icon = 'ℹ️';
+    let type: SessionLogEntry['type'] = 'system';
+    let message = '';
+  
     switch (item.type) {
+      case 'session_started':
+        icon = '🟢'; // or 🎉
+        type = 'system';
+        message = `Session started: ${new Date(item.timestamp).toLocaleString()}`;
+        break;
+  
       case 'app_opened':
         icon = '🚀';
         type = 'app';
         message = `Opened ${item.data.appName || item.data.path}`;
         break;
+  
       case 'tab_focus':
         icon = '🔄';
         type = 'focus';
         message = `Focused: ${item.windowTitle}`;
         break;
+  
       case 'poll_snapshot':
         icon = '📊';
         type = 'system';
         message = `Snapshot: ${item.appName}`;
         break;
+  
       case 'idle':
         icon = '⏸';
         type = 'idle';
         message = `Idle detected (${item.data?.duration || 'n/a'} min)`;
         break;
+  
       case 'session_saved':
         icon = '✅';
         type = 'system';
         message = 'Session saved';
         break;
-    }
 
+      case 'session_paused':
+          icon    = '⏸️';
+          type    = 'system';
+          message = 'Session paused';
+          break;
+        
+      case 'session_resumed':
+          icon    = '▶️';
+          type    = 'system';
+          message = 'Session resumed';
+          break;
+        
+      case 'visibility_changed':
+          icon    = item.data.visible ? '👁️' : '🚫👁️';
+          type    = 'system';
+          message = item.data.visible ? 'Background apps shown' : 'Background apps hidden';
+          break;
+  
+      default:
+        icon = 'ℹ️';
+        type = 'system';
+        message = item.data?.message || item.type;
+        break;
+    }
+  
     return { id, icon, message, timestamp: ts, type };
   };
-
-  // pull in sessionData.eventLog on mount
+ 
   useEffect(() => {
+    // 1) Pull in everything so far
     window.electron.getSessionData().then(raw => {
-      const uiLogs = raw.eventLog.map(normalizeEntry);
-      setSessionLogs(uiLogs);
+      setSessionLogs(raw.eventLog.map(normalizeEntry));
     });
-  }, []);
+  
+    // 2) Subscribe to every new entry
+    const handler = (entry: any) => {
+      setSessionLogs(prev => [
+        ...prev,
+        normalizeEntry(entry, prev.length)
+      ]);
+    };
+    window.electron.onSessionLogEntry(handler);
+  
+    // 3) Cleanup on unmount
+    return () => {
+      window.electron.offSessionLogEntry(handler);
+    };
+  }, []);  // run only once
+  
 
-  // save handler appends both in back end and in our UI
+
   const handleSave = async () => {
     await window.electron.saveSession();
     const now = new Date().toISOString();

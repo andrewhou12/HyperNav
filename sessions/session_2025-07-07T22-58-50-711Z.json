@@ -1,0 +1,205 @@
+{
+  "sessionName": "Session_2025-07-07T22:58:18.292Z",
+  "createdAt": "2025-07-07T22:58:18.293Z",
+  "liveWorkspace": {
+    "apps": [],
+    "activeAppId": null,
+    "activeWindowId": null
+  },
+  "eventLog": [
+    {
+      "type": "session_started",
+      "timestamp": "2025-07-07T22:58:18.293Z",
+      "data": {
+        "type": "session_started",
+        "sessionName": "Session_2025-07-07T22:58:18.292Z"
+      }
+    },
+    {
+      "type": "session_resumed",
+      "timestamp": "2025-07-07T22:58:18.339Z",
+      "data": {
+        "type": "session_resumed"
+      }
+    },
+    {
+      "type": "workspace_cleared",
+      "timestamp": "2025-07-07T22:58:18.846Z",
+      "data": {
+        "type": "workspace_cleared",
+        "data": {
+          "items": [
+            "Electron",
+            "Google Chrome",
+            "Figma",
+            "Messages",
+            "Spotify",
+            "Brave Browser",
+            "Discord",
+            "Terminal",
+            "Preview",
+            "Notes",
+            "Slack",
+            "Notion",
+            "Activity Monitor",
+            "iPhone Mirroring",
+            "Photos",
+            "Calculator",
+            "News",
+            "Calendar",
+            "Day One",
+            "Books",
+            "Numbers",
+            "Finder",
+            "Electron",
+            "osascript"
+          ]
+        }
+      }
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T22:58:21.459Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T22:58:24.462Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "session_paused",
+      "timestamp": "2025-07-07T22:58:26.469Z",
+      "data": {
+        "type": "session_paused"
+      }
+    },
+    {
+      "type": "session_paused",
+      "timestamp": "2025-07-07T22:58:26.483Z",
+      "data": {
+        "type": "session_paused"
+      }
+    },
+    {
+      "type": "session_resumed",
+      "timestamp": "2025-07-07T22:58:31.377Z",
+      "data": {
+        "type": "session_resumed"
+      }
+    },
+    {
+      "type": "session_resumed",
+      "timestamp": "2025-07-07T22:58:31.386Z",
+      "data": {
+        "type": "session_resumed"
+      }
+    },
+    {
+      "type": "workspace_cleared",
+      "timestamp": "2025-07-07T22:58:31.917Z",
+      "data": {
+        "type": "workspace_cleared",
+        "data": {
+          "items": [
+            "Electron",
+            "Google Chrome",
+            "Figma",
+            "Messages",
+            "Spotify",
+            "Brave Browser",
+            "Discord",
+            "Terminal",
+            "Preview",
+            "Notes",
+            "Slack",
+            "Notion",
+            "Activity Monitor",
+            "iPhone Mirroring",
+            "Photos",
+            "Calculator",
+            "News",
+            "Calendar",
+            "Day One",
+            "Books",
+            "Numbers",
+            "Finder",
+            "Electron"
+          ]
+        }
+      }
+    },
+    {
+      "type": "workspace_cleared",
+      "timestamp": "2025-07-07T22:58:32.189Z",
+      "data": {
+        "type": "workspace_cleared",
+        "data": {
+          "items": [
+            "Electron",
+            "Google Chrome",
+            "Figma",
+            "Messages",
+            "Spotify",
+            "Brave Browser",
+            "Discord",
+            "Terminal",
+            "Preview",
+            "Notes",
+            "Slack",
+            "Notion",
+            "Activity Monitor",
+            "iPhone Mirroring",
+            "Photos",
+            "Calculator",
+            "News",
+            "Calendar",
+            "Day One",
+            "Books",
+            "Numbers",
+            "Finder",
+            "Electron"
+          ]
+        }
+      }
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T22:58:34.552Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T22:58:37.594Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T22:58:40.563Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T22:58:43.548Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "EnhancedSessionSidebar.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T22:58:46.598Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T22:58:49.553Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    }
+  ]
+}

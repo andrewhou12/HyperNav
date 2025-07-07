@@ -1,0 +1,127 @@
+{
+  "sessionName": "Session_2025-07-07T22:27:50.864Z",
+  "createdAt": "2025-07-07T22:27:50.864Z",
+  "liveWorkspace": {
+    "apps": [],
+    "activeAppId": null,
+    "activeWindowId": null
+  },
+  "eventLog": [
+    {
+      "type": "session_started",
+      "timestamp": "2025-07-07T22:27:50.864Z",
+      "data": {
+        "type": "session_started",
+        "sessionName": "Session_2025-07-07T22:27:50.864Z"
+      }
+    },
+    {
+      "type": "session_resumed",
+      "timestamp": "2025-07-07T22:27:50.899Z",
+      "data": {
+        "type": "session_resumed"
+      }
+    },
+    {
+      "type": "workspace_cleared",
+      "timestamp": "2025-07-07T22:27:51.377Z",
+      "data": {
+        "type": "workspace_cleared",
+        "data": {
+          "items": [
+            "Electron",
+            "Google Chrome",
+            "Figma",
+            "Messages",
+            "Spotify",
+            "Brave Browser",
+            "Discord",
+            "Terminal",
+            "Preview",
+            "Notes",
+            "Slack",
+            "Notion",
+            "Activity Monitor",
+            "iPhone Mirroring",
+            "Photos",
+            "Calculator",
+            "News",
+            "Calendar",
+            "Day One",
+            "Books",
+            "Numbers",
+            "Finder",
+            "Electron",
+            "osascript"
+          ]
+        }
+      }
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T22:27:54.047Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "visibility_changed",
+      "timestamp": "2025-07-07T22:27:54.911Z",
+      "data": {
+        "type": "visibility_changed",
+        "visible": true
+      }
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T22:27:57.061Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T22:28:00.089Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T22:28:03.111Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "visibility_changed",
+      "timestamp": "2025-07-07T22:28:03.491Z",
+      "data": {
+        "type": "visibility_changed",
+        "visible": true
+      }
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T22:28:06.067Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "visibility_changed",
+      "timestamp": "2025-07-07T22:28:08.682Z",
+      "data": {
+        "type": "visibility_changed",
+        "visible": true
+      }
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T22:28:09.078Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T22:28:12.115Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    }
+  ]
+}
