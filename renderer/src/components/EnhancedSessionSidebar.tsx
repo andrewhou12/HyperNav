@@ -1,7 +1,5 @@
-import React from 'react';
-import { useState } from "react";
-import { Clock, Save, Play, Pause, Settings, ChevronUp, ChevronDown } from "lucide-react";
-
+import React, { useState, useEffect } from 'react';
+import { Clock, Save, Play, Pause, Settings, ChevronUp, ChevronDown } from 'lucide-react';
 
 interface SessionLogEntry {
   id: string;
@@ -14,39 +12,78 @@ interface SessionLogEntry {
 interface EnhancedSessionSidebarProps {
   isPaused?: boolean;
   onPauseToggle?: () => void;
-  onSave?: () => void;
   onSettings?: () => void;
 }
 
-const mockLogs: SessionLogEntry[] = [
-  { id: '1', icon: '🏁', message: 'Workspace cleared', timestamp: '3:45 PM', type: 'system' },
-  { id: '2', icon: '🚀', message: 'Opened Google Chrome', timestamp: '3:47 PM', type: 'app' },
-  { id: '3', icon: '🔄', message: 'Focused: Slack (Marketing Channel)', timestamp: '3:52 PM', type: 'focus' },
-  { id: '4', icon: '⏸', message: 'Idle detected (inactive 7 min)', timestamp: '4:10 PM', type: 'idle' },
-  { id: '5', icon: '📝', message: 'Opened Google Docs: "Q3 Launch Plan"', timestamp: '4:15 PM', type: 'app' },
-  { id: '6', icon: '✅', message: 'Session saved', timestamp: '4:20 PM', type: 'system' },
-  { id: '7', icon: '💬', message: 'New message in #general', timestamp: '4:22 PM', type: 'focus' },
-  { id: '8', icon: '🔍', message: 'Searched for "cortex api"', timestamp: '4:25 PM', type: 'system' },
-];
-
-const sessionSummary = "You began your session by opening Chrome and checking your inbox, followed by switching focus to a Google Docs document titled 'Q3 Launch Plan.' Later, you briefly viewed Slack and returned to Chrome to open a new tab. A short period of inactivity was detected before you saved the session. Your recent focus has been split between communication and document editing.";
-
-export function EnhancedSessionSidebar({ 
-  isPaused = false, 
-  onPauseToggle, 
-  onSave, 
-  onSettings 
+export function EnhancedSessionSidebar({
+  isPaused = false,
+  onPauseToggle,
+  onSettings
 }: EnhancedSessionSidebarProps) {
   const [isLogsExpanded, setIsLogsExpanded] = useState(true);
   const [isSummaryExpanded, setIsSummaryExpanded] = useState(true);
+  const [sessionLogs, setSessionLogs] = useState<SessionLogEntry[]>([]);
+
+  // helper to turn your raw sessionData.eventLog items into UI entries
+  const normalizeEntry = (item: any, index: number): SessionLogEntry => {
+    const ts = new Date(item.timestamp)
+      .toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
+    const id = `${item.timestamp}-${index}`;
+    let icon = 'ℹ️', type: SessionLogEntry['type'] = 'system', message = item.type;
+
+    switch (item.type) {
+      case 'app_opened':
+        icon = '🚀';
+        type = 'app';
+        message = `Opened ${item.data.appName || item.data.path}`;
+        break;
+      case 'tab_focus':
+        icon = '🔄';
+        type = 'focus';
+        message = `Focused: ${item.windowTitle}`;
+        break;
+      case 'poll_snapshot':
+        icon = '📊';
+        type = 'system';
+        message = `Snapshot: ${item.appName}`;
+        break;
+      case 'idle':
+        icon = '⏸';
+        type = 'idle';
+        message = `Idle detected (${item.data?.duration || 'n/a'} min)`;
+        break;
+      case 'session_saved':
+        icon = '✅';
+        type = 'system';
+        message = 'Session saved';
+        break;
+    }
+
+    return { id, icon, message, timestamp: ts, type };
+  };
+
+  // pull in sessionData.eventLog on mount
+  useEffect(() => {
+    window.electron.getSessionData().then(raw => {
+      const uiLogs = raw.eventLog.map(normalizeEntry);
+      setSessionLogs(uiLogs);
+    });
+  }, []);
+
+  // save handler appends both in back end and in our UI
+  const handleSave = async () => {
+    await window.electron.saveSession();
+    const now = new Date().toISOString();
+    const savedEntry = normalizeEntry({ type: 'session_saved', timestamp: now }, sessionLogs.length);
+    setSessionLogs(prev => [...prev, savedEntry]);
+  };
 
   const getLogTypeColor = (type: SessionLogEntry['type']) => {
     switch (type) {
-      case 'app': return 'text-blue-600';
+      case 'app':   return 'text-blue-600';
       case 'focus': return 'text-green-600';
-      case 'idle': return 'text-yellow-600';
-      case 'system': return 'text-purple-600';
-      default: return 'text-muted-foreground';
+      case 'idle':  return 'text-yellow-600';
+      case 'system':return 'text-purple-600';
     }
   };
 
@@ -60,7 +97,6 @@ export function EnhancedSessionSidebar({
             Session Control
           </h2>
         </div>
-        
         <div className="flex items-center gap-2">
           <button
             onClick={onPauseToggle}
@@ -75,15 +111,13 @@ export function EnhancedSessionSidebar({
             {isPaused ? <Play className="w-4 h-4" /> : <Pause className="w-4 h-4" />}
             {isPaused ? 'Resume' : 'Pause'}
           </button>
-          
           <button
-            onClick={onSave}
+            onClick={handleSave}
             className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium bg-muted text-muted-foreground hover:bg-muted/80 transition-all"
           >
             <Save className="w-4 h-4" />
             Save
           </button>
-          
           <button
             onClick={onSettings}
             className="p-2 rounded-lg bg-muted text-muted-foreground hover:bg-muted/80 transition-all"
@@ -95,52 +129,51 @@ export function EnhancedSessionSidebar({
 
       {/* Session Timeline */}
       <div className="flex-1 overflow-hidden flex flex-col">
-        {/* Session Logs */}
-        <div className="flex-1 overflow-hidden flex flex-col">
-          <div 
-            className="flex items-center justify-between p-4 cursor-pointer hover:bg-muted/30 transition-colors"
-            onClick={() => setIsLogsExpanded(!isLogsExpanded)}
-          >
-            <h3 className="text-sm font-semibold text-foreground flex items-center gap-2">
-              <span className="text-lg">📋</span>
-              Session Timeline
-            </h3>
-            {isLogsExpanded ? 
-              <ChevronUp className="w-4 h-4 text-muted-foreground" /> : 
-              <ChevronDown className="w-4 h-4 text-muted-foreground" />
-            }
-          </div>
-          
-          {isLogsExpanded && (
-            <div className="flex-1 overflow-y-auto px-4 pb-4">
-              <div className="space-y-2">
-                {mockLogs.map((log) => (
-                  <div
-                    key={log.id}
-                    className="flex items-start gap-3 p-3 rounded-lg bg-dashboard-session-item hover:bg-muted/50 transition-colors group"
-                  >
-                    <div className="text-base leading-none mt-0.5 group-hover:scale-110 transition-transform">
-                      {log.icon}
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <p className="text-sm text-card-foreground leading-relaxed">
-                        {log.message}
-                      </p>
-                      <div className="flex items-center gap-2 mt-1">
-                        <p className="text-xs text-muted-foreground">
-                          {log.timestamp}
-                        </p>
-                        <span className={`text-xs px-1.5 py-0.5 rounded ${getLogTypeColor(log.type)} bg-opacity-10`}>
-                          {log.type}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
+        <div 
+          className="flex items-center justify-between p-4 cursor-pointer hover:bg-muted/30 transition-colors"
+          onClick={() => setIsLogsExpanded(!isLogsExpanded)}
+        >
+          <h3 className="text-sm font-semibold text-foreground flex items-center gap-2">
+            <span className="text-lg">📋</span>
+            Session Timeline
+          </h3>
+          {isLogsExpanded 
+            ? <ChevronUp className="w-4 h-4 text-muted-foreground" /> 
+            : <ChevronDown className="w-4 h-4 text-muted-foreground" />
+          }
         </div>
+        {isLogsExpanded && (
+          <div className="flex-1 overflow-y-auto px-4 pb-4 space-y-2">
+            {sessionLogs.map(log => (
+              <div
+                key={log.id}
+                className="flex items-start gap-3 p-3 rounded-lg bg-dashboard-session-item hover:bg-muted/50 transition-colors group"
+              >
+                <div className="text-base leading-none mt-0.5 group-hover:scale-110 transition-transform">
+                  {log.icon}
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="text-sm text-card-foreground leading-relaxed">
+                    {log.message}
+                  </p>
+                  <div className="flex items-center gap-2 mt-1">
+                    <p className="text-xs text-muted-foreground">
+                      {log.timestamp}
+                    </p>
+                    <span
+                      className={`
+                        text-xs px-1.5 py-0.5 rounded 
+                        ${getLogTypeColor(log.type)} bg-opacity-10
+                      `}
+                    >
+                      {log.type}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
 
         {/* AI Summary */}
         <div className="border-t border-border">
@@ -152,21 +185,21 @@ export function EnhancedSessionSidebar({
               <span className="text-lg">🧠</span>
               AI Summary
             </h3>
-            {isSummaryExpanded ? 
-              <ChevronUp className="w-4 h-4 text-muted-foreground" /> : 
-              <ChevronDown className="w-4 h-4 text-muted-foreground" />
+            {isSummaryExpanded 
+              ? <ChevronUp className="w-4 h-4 text-muted-foreground" /> 
+              : <ChevronDown className="w-4 h-4 text-muted-foreground" />
             }
           </div>
-          
           {isSummaryExpanded && (
             <div className="px-4 pb-4">
               <div className="p-4 rounded-xl bg-card border border-border">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  {sessionSummary}
+                  {/* you can also fetch summary via IPC if dynamic */}
+                  You began your session by opening Chrome and checking your inbox…
                 </p>
                 <div className="mt-3 pt-3 border-t border-border">
                   <div className="flex items-center justify-between text-xs text-muted-foreground">
-                    <span>Last updated: 4:25 PM</span>
+                    <span>Last updated: {/* optionally dynamic */}</span>
                     <button className="text-primary hover:text-primary/80 transition-colors">
                       Regenerate
                     </button>

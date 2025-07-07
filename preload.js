@@ -20,6 +20,7 @@ contextBridge.exposeInMainWorld('electron', {
       callback(liveWorkspace);
     });
   },
+  getSessionData: () => ipcRenderer.invoke('get-session-data'),
   
 });
 

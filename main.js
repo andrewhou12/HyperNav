@@ -16,7 +16,11 @@ const {
 } = require('./core/sessionManager');
 
 const {
-  clearWorkspace
+  clearWorkspace,
+  startAutoHide,
+  stopAutoHide,
+  pauseWorkspace,
+  resumeWorkspace
 } = require('./core/workspaceManager');
 
 const chromeDriver = require('./core/drivers/chromeDriver');
@@ -106,21 +110,26 @@ function createSessionWindow() {
 }
 
 async function startCortexSession() {
-  
-  const hiddenApps = await workspaceManager.clearWorkspace();
-  await toggleDockAutohide(true);
 
+  const hiddenApps = await clearWorkspace();
+  toggleDockAutohide(true);
+
+
+ 
   sessionwin = createSessionWindow();
-  sessionwin.once("ready-to-show", () => {
+  sessionwin.once('ready-to-show', () => {
     setTimeout(() => {
       sessionwin.maximize();
       sessionwin.show();
     }, 1500);
-  sessionManager.setMainWindow(sessionwin)
-  startSession();
+
+   
+    sessionManager.setMainWindow(sessionwin);
+    startSession(); 
+    startAutoHide();
   });
 
-  updateSessionData({ type: "workspace_cleared", items: hiddenApps });
+  updateSessionData({ type: 'workspace_cleared', items: hiddenApps });
 }
 
 ipcMain.handle('save-session', async () => {
@@ -189,6 +198,7 @@ ipcMain.handle('clear-workspace', async () => {
   const apps = await clearWorkspace();
   return apps;
 });
+ipcMain.handle('get-session-data', () => getSessionData());
 
 app.whenReady().then(() => {
   createWindow(); });

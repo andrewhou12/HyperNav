@@ -1,0 +1,47 @@
+{
+  "sessionName": "Session_2025-07-07T21:41:20.001Z",
+  "createdAt": "2025-07-07T21:41:20.003Z",
+  "liveWorkspace": {
+    "apps": [],
+    "activeAppId": null,
+    "activeWindowId": null
+  },
+  "eventLog": [
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T21:41:23.236Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T21:41:26.201Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T21:41:29.203Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T21:41:32.206Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T21:41:35.213Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T21:41:38.227Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    }
+  ]
+}
