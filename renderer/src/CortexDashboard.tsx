@@ -42,7 +42,7 @@ export function CortexDashboard() {
       }
       
       // Option + Space for Spotlight
-      if (e.altKey && e.key === ' ') {
+      if (e.altKey && e.code === 'Space') {
         e.preventDefault();
         setIsSpotlightOpen(true);
       }
