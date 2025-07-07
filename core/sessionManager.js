@@ -10,6 +10,12 @@ let sessionData = null;
 let pollInterval = null;
 let pollingActive = false;
 let lastFocus = {};
+let mainWindow = null;
+
+
+function setMainWindow(win) {
+  mainWindow = win;
+}
 
 function startSession() {
   sessionData = {
@@ -24,6 +30,12 @@ function startSession() {
   };
   console.log("🟢 New session started:", sessionData.sessionName);
   startPollingWindowState();
+
+  mainWindow.webContents.send('live-workspace-update', sessionData.liveWorkspace);
+}
+
+function onWorkspaceChange() {
+  mainWindow.webContents.send('live-workspace-update', sessionData.liveWorkspace);
 }
 
 function getSessionData() {
@@ -107,5 +119,6 @@ module.exports = {
   startPollingWindowState,
   stopPollingWindowState,
   isAppInWorkspace,
-  getSessionData
+  getSessionData,
+  setMainWindow
 };

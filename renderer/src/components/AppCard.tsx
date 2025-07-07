@@ -1,4 +1,3 @@
-import React from 'react';
 import { Chrome, Slack } from "lucide-react";
 
 interface AppCardProps {

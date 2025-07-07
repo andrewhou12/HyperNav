@@ -1,0 +1,214 @@
+{
+  "sessionName": "Session_2025-07-07T15:27:24.732Z",
+  "createdAt": "2025-07-07T15:27:24.733Z",
+  "liveWorkspace": {
+    "apps": [],
+    "activeAppId": null,
+    "activeWindowId": null
+  },
+  "eventLog": [
+    {
+      "type": "workspace_cleared",
+      "timestamp": "2025-07-07T15:27:26.544Z",
+      "data": {
+        "type": "workspace_cleared",
+        "items": [
+          "Google Chrome",
+          "Messages",
+          "Brave Browser",
+          "iPhone Mirroring",
+          "Slack",
+          "Terminal",
+          "Books",
+          "Photos",
+          "Spotify",
+          "Notion",
+          "Activity Monitor",
+          "Figma",
+          "Day One",
+          "Notes",
+          "News",
+          "Numbers",
+          "Finder",
+          "Discord",
+          "Electron",
+          "Electron"
+        ]
+      }
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T15:27:28.022Z",
+      "appName": "Electron",
+      "windowTitle": "Cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T15:27:30.899Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T15:27:33.905Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T15:27:36.884Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T15:27:39.918Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T15:27:42.934Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T15:27:45.928Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T15:27:48.969Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T15:27:51.958Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T15:27:54.932Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T15:27:57.936Z",
+      "appName": "Spotify",
+      "windowTitle": "Spotify Premium"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T15:28:00.994Z",
+      "appName": "Spotify",
+      "windowTitle": "SteinsGate Opening Theme - Hacking to the Gate (Full Version)"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T15:28:03.970Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T15:28:06.959Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T15:28:09.997Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T15:28:12.972Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T15:28:15.974Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T15:28:18.966Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T15:28:21.985Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T15:28:24.987Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T15:28:28.000Z",
+      "appName": "Spotify",
+      "windowTitle": "xpui.app.spotify.com"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T15:28:30.995Z",
+      "appName": "Spotify",
+      "windowTitle": "SteinsGate Opening Theme - Hacking to the Gate (Full Version)"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T15:28:33.999Z",
+      "appName": "Electron",
+      "windowTitle": "Cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T15:28:36.992Z",
+      "appName": "Electron",
+      "windowTitle": "Cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T15:28:40.002Z",
+      "appName": "Electron",
+      "windowTitle": "Cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T15:28:43.019Z",
+      "appName": "Code",
+      "windowTitle": "sessionManager.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T15:28:46.014Z",
+      "appName": "Code",
+      "windowTitle": "sessionManager.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T15:28:49.003Z",
+      "appName": "Code",
+      "windowTitle": "sessionManager.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-07T15:28:52.017Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    }
+  ]
+}

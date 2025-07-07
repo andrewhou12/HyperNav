@@ -1,6 +1,5 @@
 const { exec } = require("child_process");
 
-// Returns a list of visible (non-background) application names
 function getOpenApps(callback) {
   exec(
     `osascript -e 'tell application "System Events" to get name of (processes where background only is false)'`,
@@ -18,7 +17,6 @@ function getOpenApps(callback) {
     }
   );
 }
-
 // Hide the specified apps via AppleScript
 function hideApps(apps) {
   apps.forEach(app => {
