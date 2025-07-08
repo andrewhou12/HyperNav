@@ -77,7 +77,7 @@ function startAutoHide() {
     getOpenApps((apps) => {
       const tracked = (getSessionData().liveWorkspace?.apps || [])
         .map(a => a.name);
-      const toHide = apps.filter(a => !tracked.includes(a));
+      const toHide = (apps || []).filter(a => !tracked.includes(a));
       recordAndHide(toHide);
     });
   });
