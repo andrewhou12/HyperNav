@@ -36,6 +36,7 @@ export function CortexDashboard() {
       if (newIsPaused) {
         window.electron.pauseWorkspace();
       } else {
+        console.log("CULPRIT")
         window.electron.resumeWorkspace();
       }
   
@@ -136,7 +137,7 @@ export function CortexDashboard() {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <TopNavigationBar
-      sessionName={'new session'}
+      sessionName={'New Session'}
       isPaused={isPaused}
       backgroundAppsHidden={backgroundAppsHidden}              
       onBackgroundAppsToggle={handleChangeIsBackgroundAppsHidden}        

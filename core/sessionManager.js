@@ -65,7 +65,6 @@ function updateSessionData(item) {
   } 
 
   // Push into our in-memory log
-  console.log("PUSHING ENTRY", entry)
   sessionData.eventLog.push(entry);
 
   // Emit that single new entry to the renderer

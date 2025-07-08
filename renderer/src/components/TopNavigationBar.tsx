@@ -53,10 +53,8 @@ export function TopNavigationBar({
         <button
           onClick={async () => {
             if (isPaused) {
-              await window.electron.resumeWorkspace();
               onPauseToggle?.(false);
             } else {
-              await window.electron.pauseWorkspace();
               onPauseToggle?.(true);
             }
           }}
@@ -76,10 +74,8 @@ export function TopNavigationBar({
         <button
           onClick={async () => {
             if (backgroundAppsHidden) {
-              await window.electron.showAllApps();
               onBackgroundAppsToggle?.(false);
             } else {
-              await window.electron.clearWorkspace();
               onBackgroundAppsToggle?.(true);
             }
           }}
