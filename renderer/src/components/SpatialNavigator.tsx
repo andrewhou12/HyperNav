@@ -466,16 +466,18 @@ export function SpatialNavigator({ isOpen, onClose }: QuickNavigatorProps) {
             </div>
   
             <div className="relative w-64">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
-              <input
-                ref={searchInputRef}
-                type="text"
-                placeholder="Search workspace..."
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 text-sm bg-input border-border rounded-xl focus:border-primary focus:ring-1 focus:ring-ring/20 focus:bg-white text-foreground placeholder:text-muted-foreground font-medium transition-all"
-              />
-            </div>
+  <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" />
+  <input
+    ref={searchInputRef}
+    type="text"
+    placeholder="Search workspace..."
+    value={query}
+    onChange={(e) => setQuery(e.target.value)}
+    className="w-full pl-10 pr-4 py-2 text-sm bg-input border border-border rounded-xl text-foreground placeholder:text-muted-foreground font-medium transition-all
+               focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary focus:bg-blue-50"
+  />
+</div>
+
           </div>
   
           {/* Tab to return */}
