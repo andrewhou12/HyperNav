@@ -1,5 +1,13 @@
 const { exec } = require("child_process");
 
+function getAppVisibility(app, callback) {
+  const cmd = `osascript -e 'tell application "System Events" to get visible of process "${app}"'`;
+  exec(cmd, (err, stdout) => {
+    if (err) return callback(null);
+    callback(stdout.trim() === 'true');
+  });
+}
+
 function getOpenApps(callback) {
   exec(
     `osascript -e 'tell application "System Events" to get name of (processes where background only is false)'`,
@@ -17,16 +25,38 @@ function getOpenApps(callback) {
     }
   );
 }
-// Hide the specified apps via AppleScript
 function hideApps(apps) {
   apps.forEach(app => {
-    const cmd = `osascript -e 'tell application "System Events" to set visible of process "${app}" to false'`;
-    exec(cmd, err => {
-      if (err) console.error(`Failed to hide ${app}:`, err);
-    });
+    // 1) System Events flag
+    exec(
+      `osascript -e 'tell application "System Events" to set visible of process "${app}" to false'`,
+      err => {
+        if (err) console.warn(`⚠️ [${app}] SysEvents hide failed:`, err.message);
+        else       console.log(`🔨 [${app}] SysEvents hide sent`);
+        
+        // 2) Always follow up with the app-level hide
+        exec(
+          `osascript -e 'tell application "${app}" to hide'`,
+          fbErr => {
+            if (fbErr) console.error(`❌ [${app}] app-level hide failed:`, fbErr.message);
+            else       console.log(`🔨 [${app}] app-level hide sent`);
+
+            // 3) Final check
+            getAppVisibility(app, finalVisible => {
+              if (finalVisible === false) {
+                console.log(`✅ [${app}] is now hidden.`);
+              } else if (finalVisible === true) {
+                console.error(`❌ [${app}] STILL visible after both attempts!`);
+              } else {
+                console.warn(`⚠️ [${app}] visibility unknown after hide.`);
+              }
+            });
+          }
+        );
+      }
+    );
   });
 }
-
 // Show the specified apps via AppleScript
 function showApps(apps) {
   apps.forEach(app => {
@@ -51,9 +81,12 @@ function getActiveApp(callback) {
   );
 }
 
+
+
 module.exports = {
   getOpenApps,
   hideApps,
   showApps,
-  getActiveApp
+  getActiveApp,
+  getAppVisibility
 };

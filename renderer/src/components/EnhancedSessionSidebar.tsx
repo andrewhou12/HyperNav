@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Clock, Save, Play, Pause, Settings, ChevronUp, ChevronDown } from 'lucide-react';
-
 interface SessionLogEntry {
   id: string;
   icon: string;
@@ -23,6 +22,7 @@ export function EnhancedSessionSidebar({
   const [isLogsExpanded, setIsLogsExpanded] = useState(true);
   const [isSummaryExpanded, setIsSummaryExpanded] = useState(true);
   const [sessionLogs, setSessionLogs] = useState<SessionLogEntry[]>([]);
+  const sessionLogsRef = useRef<SessionLogEntry[]>([]);
 
   // helper to turn your raw sessionData.eventLog items into UI entries
   const normalizeEntry = (item: any, index: number): SessionLogEntry => {
@@ -100,27 +100,30 @@ export function EnhancedSessionSidebar({
   };
  
   useEffect(() => {
-    // 1) Pull in everything so far
+    const handler = (entry: any) => {
+      const normalized = normalizeEntry(entry, sessionLogsRef.current.length);
+      // simple de-dup: ignore if the last message is identical
+      if (sessionLogsRef.current[sessionLogsRef.current.length - 1]?.message !== normalized.message) {
+        setSessionLogs(prev => {
+          sessionLogsRef.current = [...prev, normalized];
+          return sessionLogsRef.current;
+        });
+      }
+    };
+  
+    // grab the very first batch once
     window.electron.getSessionData().then(raw => {
-      setSessionLogs(raw.eventLog.map(normalizeEntry));
+      const initial = raw.eventLog.map(normalizeEntry);
+      sessionLogsRef.current = initial;
+      setSessionLogs(initial);
     });
   
-    // 2) Subscribe to every new entry
-    const handler = (entry: any) => {
-      setSessionLogs(prev => [
-        ...prev,
-        normalizeEntry(entry, prev.length)
-      ]);
-    };
     window.electron.onSessionLogEntry(handler);
-  
-    // 3) Cleanup on unmount
     return () => {
       window.electron.offSessionLogEntry(handler);
     };
-  }, []);  // run only once
+  }, []);
   
-
 
   const handleSave = async () => {
     await window.electron.saveSession();

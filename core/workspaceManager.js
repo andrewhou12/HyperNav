@@ -34,10 +34,13 @@ function clearWorkspace() {
       hideApps(apps);
 
       // 2) Log the workspace_cleared event
-      updateSessionData({
-        type: 'workspace_cleared',
-        data: { items: apps }
-      });
+      // updateSessionData({
+      //   type: 'workspace_cleared',
+      //   data: { items: apps }
+      // });
+
+//^we will add this back when we actually have a user facing button to clear workspace
+
 
       // 3) Seed prevActiveApp for future auto-hide checks
       getActiveApp(app => {
@@ -105,7 +108,6 @@ function resumeWorkspace() {
   startAutoHide();
   clearWorkspace();
   startPollingWindowState();
-  console.log("ADDED SESSION RESUMED")
   updateSessionData({ type: 'session_resumed' });
 }
 
