@@ -1,0 +1,2885 @@
+{
+  "sessionName": "Session_2025-07-08T03:08:03.842Z",
+  "createdAt": "2025-07-08T03:08:03.843Z",
+  "liveWorkspace": {
+    "apps": [],
+    "activeAppId": null,
+    "activeWindowId": null
+  },
+  "eventLog": [
+    {
+      "type": "session_started",
+      "timestamp": "2025-07-08T03:08:03.844Z",
+      "data": {
+        "type": "session_started",
+        "sessionName": "Session_2025-07-08T03:08:03.842Z"
+      }
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-08T03:08:07.209Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-08T03:08:10.037Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-08T03:08:13.046Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-08T03:08:16.049Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-08T03:08:19.068Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-08T03:08:22.068Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-08T03:08:25.070Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-08T03:08:28.070Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-08T03:08:31.073Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:08:34.189Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:08:37.181Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:08:40.145Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:08:43.177Z",
+      "appName": "Google Chrome",
+      "windowTitle": "lovable. - Google Search"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:08:46.197Z",
+      "appName": "Google Chrome",
+      "windowTitle": "New Tab"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-08T03:08:49.063Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "QuickSwitcher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-08T03:08:52.065Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "CortexDashboard.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-08T03:08:55.060Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "Spotlight.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-08T03:08:58.068Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "Spotlight.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-08T03:09:01.067Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "Spotlight.tsx — cortex"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:09:04.222Z",
+      "appName": "Google Chrome",
+      "windowTitle": "ChatGPT"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:09:07.221Z",
+      "appName": "Google Chrome",
+      "windowTitle": "ChatGPT"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:09:10.191Z",
+      "appName": "Google Chrome",
+      "windowTitle": "ChatGPT"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:09:13.217Z",
+      "appName": "Google Chrome",
+      "windowTitle": "ChatGPT"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:09:16.246Z",
+      "appName": "Google Chrome",
+      "windowTitle": "ChatGPT"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:09:19.184Z",
+      "appName": "Google Chrome",
+      "windowTitle": "ChatGPT"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:09:22.209Z",
+      "appName": "Google Chrome",
+      "windowTitle": "ChatGPT"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:09:25.217Z",
+      "appName": "Google Chrome",
+      "windowTitle": "ChatGPT"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:09:28.219Z",
+      "appName": "Google Chrome",
+      "windowTitle": "ChatGPT"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:09:31.227Z",
+      "appName": "Google Chrome",
+      "windowTitle": "ChatGPT"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:09:34.257Z",
+      "appName": "Google Chrome",
+      "windowTitle": "ChatGPT"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:09:37.229Z",
+      "appName": "Google Chrome",
+      "windowTitle": "ChatGPT"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:09:40.256Z",
+      "appName": "Google Chrome",
+      "windowTitle": "ChatGPT"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:09:43.239Z",
+      "appName": "Google Chrome",
+      "windowTitle": "ChatGPT"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:09:46.273Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:09:49.276Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:09:52.311Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:09:55.283Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:09:58.290Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:10:01.273Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:10:04.268Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:10:07.325Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:10:10.321Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:10:13.281Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:10:16.316Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:10:19.340Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:10:22.308Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:10:25.346Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:10:28.348Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:10:31.335Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:10:34.274Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:10:37.354Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:10:40.306Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:10:43.367Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:10:46.314Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:10:49.336Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Game Start - Google Docs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:10:52.386Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Game Start - Google Docs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:10:55.376Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Game Start - Google Docs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:10:58.322Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Game Start - Google Docs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:11:01.362Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Game Start - Google Docs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:11:04.397Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Game Start - Google Docs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:11:07.373Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Game Start - Google Docs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:11:10.360Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Game Start - Google Docs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:11:13.450Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Game Start - Google Docs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:11:16.432Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Game Start - Google Docs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:11:19.400Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Game Start - Google Docs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:11:22.408Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Game Start - Google Docs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:11:25.410Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:11:28.375Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Google Docs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:11:31.360Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Google Docs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:11:34.431Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Google Docs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:11:37.399Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Google Docs"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-08T03:11:40.274Z",
+      "appName": "Notes",
+      "windowTitle": "Notes"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-08T03:11:43.284Z",
+      "appName": "Notes",
+      "windowTitle": "Notes"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-08T03:11:46.305Z",
+      "appName": "Notes",
+      "windowTitle": "Notes"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-08T03:11:49.343Z",
+      "appName": "Notes",
+      "windowTitle": "Notes"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:11:52.441Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Game Start - Google Docs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:11:55.444Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Game Start - Google Docs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:11:58.408Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Game Start - Google Docs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:12:01.428Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Game Start - Google Docs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:12:04.460Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Google Docs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:12:07.486Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Google Docs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:12:10.469Z",
+      "appName": "Google Chrome",
+      "windowTitle": "The Plan - Google Docs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:12:13.512Z",
+      "appName": "Google Chrome",
+      "windowTitle": "The Plan - Google Docs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:12:16.468Z",
+      "appName": "Google Chrome",
+      "windowTitle": "The Plan - Google Docs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:12:19.443Z",
+      "appName": "Google Chrome",
+      "windowTitle": "The Plan - Google Docs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:12:22.506Z",
+      "appName": "Google Chrome",
+      "windowTitle": "The Plan - Google Docs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:12:25.507Z",
+      "appName": "Google Chrome",
+      "windowTitle": "The Plan - Google Docs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:12:28.483Z",
+      "appName": "Google Chrome",
+      "windowTitle": "The Plan - Google Docs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:12:31.518Z",
+      "appName": "Google Chrome",
+      "windowTitle": "The Plan - Google Docs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:12:34.531Z",
+      "appName": "Google Chrome",
+      "windowTitle": "The Plan - Google Docs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:12:37.567Z",
+      "appName": "Google Chrome",
+      "windowTitle": "The Plan - Google Docs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:12:40.545Z",
+      "appName": "Google Chrome",
+      "windowTitle": "The Plan - Google Docs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:12:43.497Z",
+      "appName": "Google Chrome",
+      "windowTitle": "The Plan - Google Docs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:12:46.521Z",
+      "appName": "Google Chrome",
+      "windowTitle": "The Plan - Google Docs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:12:49.552Z",
+      "appName": "Google Chrome",
+      "windowTitle": "The Plan - Google Docs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:12:52.495Z",
+      "appName": "Google Chrome",
+      "windowTitle": "ChatGPT"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:12:55.556Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:12:58.564Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:13:01.541Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:13:04.564Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:13:07.531Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:13:10.529Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:13:13.599Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:13:16.581Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:13:19.600Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:13:22.548Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:13:25.599Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:13:28.544Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:13:31.545Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:13:34.619Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:13:37.579Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:13:40.577Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:13:43.561Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:13:46.560Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:13:49.567Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:13:52.583Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:13:55.592Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:13:58.580Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:14:01.596Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:14:04.577Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:14:07.596Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:14:10.592Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:14:13.641Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:14:16.615Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:14:19.616Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:14:22.619Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:14:25.621Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:14:28.613Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:14:31.609Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:14:34.638Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:14:37.648Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:14:40.656Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:14:43.671Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:14:46.646Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:14:49.666Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:14:52.706Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:14:55.673Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:14:58.674Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:15:01.660Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:15:04.696Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:15:07.699Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:15:10.688Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:15:13.666Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:15:16.698Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:15:19.688Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:15:22.687Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:15:25.742Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:15:28.713Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:15:31.708Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:15:34.704Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:15:37.717Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:15:40.716Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:15:43.735Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:15:46.758Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:15:49.762Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:15:52.754Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:15:55.766Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:15:58.744Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:16:01.761Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:16:04.727Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:16:07.778Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:16:10.792Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:16:13.772Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:16:16.767Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:16:19.814Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:16:22.780Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:16:25.754Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:16:28.812Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:16:31.774Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:16:34.830Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:16:37.820Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:16:40.775Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:16:43.831Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:16:46.802Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:16:49.821Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:16:52.798Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:16:55.866Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:16:58.788Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:17:01.780Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:17:04.796Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:17:07.815Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:17:10.813Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:17:13.805Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:17:16.818Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:17:19.821Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:17:22.829Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:17:25.800Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:17:28.830Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:17:31.826Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:17:34.863Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:17:37.856Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:17:40.856Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:17:43.839Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:17:46.850Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:17:49.843Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:17:52.892Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:17:55.892Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:17:58.878Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:18:01.867Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:18:04.872Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:18:07.868Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:18:10.877Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:18:13.892Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:18:16.884Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:18:19.905Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:18:22.896Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:18:25.902Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:18:28.910Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:18:31.921Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:18:34.905Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:18:37.897Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:18:40.916Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:18:43.919Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:18:46.950Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:18:49.937Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:18:52.932Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:18:55.931Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:18:58.939Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:19:01.962Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:19:04.962Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:19:07.967Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:19:10.964Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:19:13.988Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:19:16.987Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:19:19.992Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:19:22.959Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:19:26.017Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:19:28.991Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:19:31.996Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:19:35.017Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:19:37.979Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:19:41.028Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:19:44.011Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:19:47.017Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:19:50.021Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:19:52.996Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:19:56.018Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:19:59.060Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:20:02.034Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:20:05.045Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:20:08.027Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:20:11.055Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:20:14.094Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:20:17.060Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:20:20.053Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:20:23.095Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:20:26.101Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:20:29.098Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:20:32.083Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:20:35.061Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:20:38.083Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:20:41.054Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:20:44.096Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:20:47.116Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:20:50.104Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:20:53.101Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:20:56.117Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:20:59.067Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:21:02.150Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:21:05.108Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:21:08.142Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:21:11.089Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:21:14.123Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:21:17.130Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:21:20.118Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:21:23.137Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:21:26.113Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:21:29.154Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:21:32.146Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:21:35.171Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:21:38.162Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:21:41.154Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:21:44.163Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:21:47.168Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:21:50.154Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:21:53.213Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:21:56.236Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:21:59.225Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:22:02.187Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:22:05.233Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:22:08.230Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:22:11.185Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:22:14.231Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:22:17.226Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:22:20.191Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:22:23.210Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:22:26.247Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:22:29.261Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:22:32.263Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:22:35.228Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:22:38.255Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:22:41.185Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:22:44.242Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:22:47.211Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:22:50.281Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:22:53.295Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:22:56.307Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:22:59.261Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:23:02.294Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:23:05.309Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:23:08.272Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:23:11.360Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:23:14.368Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:23:17.266Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:23:20.319Z",
+      "appName": "Google Chrome",
+      "windowTitle": "useEffect code breakdown"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:23:23.309Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:23:26.340Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:23:29.320Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:23:32.302Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:23:35.326Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:23:38.313Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:23:41.329Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:23:44.318Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:23:47.330Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:23:50.350Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:23:53.362Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:23:56.343Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:23:59.392Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:24:02.474Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:24:05.363Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:24:08.352Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:24:11.367Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:24:14.366Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:24:17.404Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:24:20.371Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:24:23.410Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:24:26.370Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:24:29.396Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:24:32.418Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:24:35.392Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:24:38.385Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:24:41.401Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:24:44.396Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:24:47.437Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:24:50.466Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:24:53.453Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:24:56.425Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:24:59.419Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:25:02.487Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:25:05.497Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:25:08.445Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:25:11.435Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:25:14.468Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:25:17.492Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:25:20.458Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:25:23.464Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:25:26.481Z",
+      "appName": "Google Chrome",
+      "windowTitle": "ChatGPT"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:25:29.481Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:25:32.481Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:25:35.513Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:25:38.464Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:25:41.504Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:25:44.492Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:25:47.478Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:25:50.518Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:25:53.504Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:25:56.522Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:25:59.525Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:26:02.559Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:26:05.543Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:26:08.533Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:26:11.519Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:26:14.554Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:26:17.627Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:26:20.521Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:26:23.533Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:26:26.538Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:26:29.559Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:26:32.587Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:26:35.548Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:26:38.560Z",
+      "appName": "Google Chrome",
+      "windowTitle": "ChatGPT"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:26:41.631Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:26:44.594Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:26:47.602Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Quicknav Button Enhancement"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:26:50.606Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:26:53.589Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:26:56.592Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:26:59.630Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:27:02.641Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:27:05.610Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:27:08.618Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:27:11.608Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:27:14.656Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:27:17.669Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:27:20.664Z",
+      "appName": "Google Chrome",
+      "windowTitle": "World Table Tennis"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:27:23.664Z",
+      "appName": "Google Chrome",
+      "windowTitle": "World Table Tennis"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:27:26.672Z",
+      "appName": "Google Chrome",
+      "windowTitle": "World Table Tennis"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:27:29.677Z",
+      "appName": "Google Chrome",
+      "windowTitle": "World Table Tennis"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:27:32.667Z",
+      "appName": "Google Chrome",
+      "windowTitle": "World Table Tennis"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:27:35.687Z",
+      "appName": "Google Chrome",
+      "windowTitle": "World Table Tennis"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-08T03:27:38.568Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-08T03:27:41.566Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-08T03:27:44.570Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-08T03:27:47.561Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-08T03:27:50.565Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-08T03:27:53.550Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-08T03:27:56.598Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "session_paused",
+      "timestamp": "2025-07-08T03:27:58.942Z",
+      "data": {
+        "type": "session_paused"
+      }
+    },
+    {
+      "type": "session_paused",
+      "timestamp": "2025-07-08T03:27:58.944Z",
+      "data": {
+        "type": "session_paused"
+      }
+    },
+    {
+      "type": "session_resumed",
+      "timestamp": "2025-07-08T03:28:02.379Z",
+      "data": {
+        "type": "session_resumed"
+      }
+    },
+    {
+      "type": "session_resumed",
+      "timestamp": "2025-07-08T03:28:02.381Z",
+      "data": {
+        "type": "session_resumed"
+      }
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-08T03:28:05.580Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-08T03:28:08.737Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-08T03:28:11.651Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:28:14.695Z",
+      "appName": "Google Chrome",
+      "windowTitle": "World Table Tennis"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:28:17.691Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:28:20.735Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:28:23.714Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:28:26.663Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:28:29.702Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:28:32.733Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:28:35.719Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:28:38.706Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:28:41.712Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:28:44.690Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:28:47.675Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:28:50.679Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:28:53.696Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:28:56.727Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:28:59.760Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:29:02.748Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:29:05.754Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:29:08.746Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:29:11.779Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:29:14.723Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:29:17.750Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:29:20.741Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:29:23.760Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:29:26.733Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:29:29.758Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:29:32.766Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:29:35.752Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:29:38.775Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:29:41.906Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:29:44.768Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:29:47.832Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:29:50.851Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:29:53.829Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:29:56.820Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:29:59.782Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:30:02.853Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:30:05.853Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:30:08.802Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:30:11.842Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:30:14.835Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:30:17.866Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:30:20.876Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:30:23.814Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:30:26.813Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex - Next-Generation Productivity Assistant"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:30:29.857Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-08T03:30:32.718Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-08T03:30:35.783Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:30:38.853Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:30:41.905Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:30:44.884Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:30:47.880Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:30:50.877Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:30:53.863Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:30:56.898Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:30:59.862Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:31:02.907Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:31:05.884Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:31:08.929Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:31:11.944Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:31:14.941Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:31:17.960Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:31:20.939Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:31:23.940Z",
+      "appName": "Google Chrome",
+      "windowTitle": "cortex-whisper-dock - Lovable"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:31:26.920Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:31:29.948Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:31:32.961Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:31:35.969Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:31:38.961Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:31:41.936Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-08T03:31:44.977Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Lovable - Build for the web 20x faster"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-08T03:31:47.817Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "Spotlight.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-08T03:31:50.832Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    }
+  ]
+}
