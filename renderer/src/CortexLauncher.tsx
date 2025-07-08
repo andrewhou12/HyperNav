@@ -107,7 +107,7 @@ const CortexLauncher = () => {
               Welcome to Cortex
             </h2>
             <p className="text-muted-foreground text-lg mb-6">
-              Your Intelligent Workspace
+              Great Work Awaits
             </p>
 
             <div className="space-y-4">

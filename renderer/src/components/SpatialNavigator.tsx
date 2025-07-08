@@ -203,7 +203,7 @@ export function SpatialNavigator({ isOpen, onClose }: QuickNavigatorProps) {
   const [navigationStack, setNavigationStack] = useState<NavigationLevel[]>([
     { items: navigatorData, title: "Workspace", parentId: undefined }
   ]);
-  const [filteredItems, setFilteredItems] = useState<NavigatorItem[]>([]);
+//   const [filteredItems, setFilteredItems] = useState<NavigatorItem[]>([]);
   const searchInputRef = useRef<HTMLInputElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -230,13 +230,11 @@ export function SpatialNavigator({ isOpen, onClose }: QuickNavigatorProps) {
   }, []);
 
   // Filter items based on search query across all levels
-  const filterItems = useCallback(() => {
+   let filteredItems: NavigatorItem[] = [];
     if (query === "") {
-      setFilteredItems(currentLevel.items);
-      return;
-    }
-
-    // Search across all levels
+      filteredItems = currentLevel.items;
+    } else {
+         // Search across all levels
     const allItems = getAllItems();
     const searchResults = allItems.filter(item => 
       item.title.toLowerCase().includes(query.toLowerCase()) || 
@@ -252,14 +250,9 @@ export function SpatialNavigator({ isOpen, onClose }: QuickNavigatorProps) {
       }
     }));
 
-    setFilteredItems(resultsWithPositions);
-  }, [query, currentLevel.items, getAllItems]);
-
-  useEffect(() => {
-    filterItems();
-    setSelectedPosition({ x: 0, y: 0 });
-  }, [filterItems]);
-
+    filteredItems = resultsWithPositions;
+    }
+ 
   // Reset to root level and focus search input when opened
   useEffect(() => {
     if (isOpen) {
@@ -288,11 +281,13 @@ export function SpatialNavigator({ isOpen, onClose }: QuickNavigatorProps) {
   const navigateToChildren = (item: NavigatorItem) => {
     if (!item.children || !canGoDeeper) return;
 
+    const positionToSave = selectedPosition;
+
     const newLevel: NavigationLevel = {
       items: item.children,
       title: item.title,
       parentId: item.id,
-      parentPosition: selectedPosition // Store current position to return to
+      parentPosition: positionToSave  // Store current position to return to
     };
 
     setNavigationStack(prev => [...prev, newLevel]);
@@ -304,13 +299,16 @@ export function SpatialNavigator({ isOpen, onClose }: QuickNavigatorProps) {
   const navigateBack = () => {
     if (isRootLevel) return;
 
-    const currentLevel = navigationStack[navigationStack.length - 1];
+    const originalPosition = navigationStack[navigationStack.length-1]?.parentPosition;
+    console.log(originalPosition);
+    //grab the parent position before we exist the stack    
     
     setNavigationStack(prev => prev.slice(0, -1));
     
     // Restore selection to the position we came from
-    if (currentLevel.parentPosition) {
-      setSelectedPosition(currentLevel.parentPosition);
+    if (originalPosition) {
+    
+      setSelectedPosition(originalPosition);
     } else {
       setSelectedPosition({ x: 0, y: 0 });
     }
@@ -423,7 +421,7 @@ export function SpatialNavigator({ isOpen, onClose }: QuickNavigatorProps) {
 
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
-  }, [isOpen, selectedPosition, filteredItems, onClose, isRootLevel, canGoDeeper]);
+  }, [isOpen, selectedPosition, onClose, filteredItems, isRootLevel, canGoDeeper]);
 
   const handleSelectItem = (item: NavigatorItem) => {
     if (item.children && canGoDeeper) {
