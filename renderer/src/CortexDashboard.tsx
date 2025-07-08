@@ -1,74 +1,50 @@
-import React, { useState, useEffect, SetStateAction } from "react";
+import React, { useState, useEffect, useRef, SetStateAction } from "react";
 import { TopNavigationBar } from "./components/TopNavigationBar";
 import { AppStack } from "./components/AppStack";
 import { EnhancedSessionSidebar } from "./components/EnhancedSessionSidebar";
-import { QuickSwitcher } from "./components/QuickSwitcher";
-import { Spotlight } from "./components/Spotlight";
-import { useRef } from 'react';
-
-type Tab = { id: string; title: string; url?: string; isActive: boolean };
-type App = {
-  id: string;
-  name: string;
-  icon: "chrome" | "slack" | "vscode" | "folder";
-  tabs: Tab[];
-};
-type LiveWorkspace = {
-  apps: App[];
-  activeAppId: string | null;
-  activeWindowId: string | null;
-};
+import { CortexInlineAssistant } from "./components/CortexInlineAssistant";
+import { SpatialNavigator } from "./components/SpatialNavigator";
 
 export function CortexDashboard() {
   const [isPaused, setIsPaused] = useState(false);
-  const firstPauseRun = useRef(true);
-  const [backgroundAppsHidden, setBackgroundAppsHidden] = useState<boolean>(true);
+  const [backgroundAppsHidden, setBackgroundAppsHidden] = useState(true);
   const [autoHideEnabled, setAutoHideEnabled] = useState(true);
   const [expandedStacks, setExpandedStacks] = useState<string[]>([]);
-  const [isQuickSwitcherOpen, setIsQuickSwitcherOpen] = useState(false);
-  const [isSpotlightOpen, setIsSpotlightOpen] = useState(false);
+  const [isSpatialNavigatorOpen, setIsSpatialNavigatorOpen] = useState(false);
+  const [isCortexInlineAssistantOpen, setIsCortexInlineAssistantOpen] = useState(false);
 
+  const firstPauseRun = useRef(true);
 
   const handleChangeIsPaused = (val: SetStateAction<boolean>) => {
-    setIsPaused(prevIsPaused => {
-      const newIsPaused = typeof val === 'function' ? val(prevIsPaused) : val;
-  
-      if (newIsPaused) {
+    setIsPaused(prev => {
+      const newVal = typeof val === 'function' ? val(prev) : val;
+      if (newVal) {
         window.electron.pauseWorkspace();
       } else {
-        console.log("CULPRIT")
         window.electron.resumeWorkspace();
       }
-  
-      return newIsPaused;
+      return newVal;
     });
   };
 
   const handleChangeIsBackgroundAppsHidden = (val: SetStateAction<boolean>) => {
-    setBackgroundAppsHidden(prevIsBackgroundAppsHidden => {
-      const newIsBackgroundAppsHidden = typeof val === 'function' ? val(prevIsBackgroundAppsHidden) : val;
-  
-      if (newIsBackgroundAppsHidden) {
+    setBackgroundAppsHidden(prev => {
+      const newVal = typeof val === 'function' ? val(prev) : val;
+      if (newVal) {
         window.electron.showAllApps();
       } else {
         window.electron.clearWorkspace();
       }
-  
-      return newIsBackgroundAppsHidden;
+      return newVal;
     });
-  }
+  };
 
-
-  // live workspace from main
-  const [workspace, setWorkspace] = useState<LiveWorkspace>({
+  const [workspace, setWorkspace] = useState({
     apps: [],
     activeAppId: null,
     activeWindowId: null,
   });
 
-
-
-  // Toggle auto-hide on/off
   const toggleAutoHide = () => {
     setAutoHideEnabled(prev => {
       const next = !prev;
@@ -78,35 +54,32 @@ export function CortexDashboard() {
     });
   };
 
-  // Keyboard shortcuts
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.altKey && e.key === 'Tab') {
         e.preventDefault();
-        setIsQuickSwitcherOpen(true);
+        setIsSpatialNavigatorOpen(true);
       }
       if (e.altKey && e.code === 'Space') {
         e.preventDefault();
-        setIsSpotlightOpen(true);
+        setIsCortexInlineAssistantOpen(true);
       }
       if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
         e.preventDefault();
-        setIsQuickSwitcherOpen(true);
+        setIsSpatialNavigatorOpen(true);
       }
     };
+
     document.addEventListener('keydown', handleKeyDown);
     return () => document.removeEventListener('keydown', handleKeyDown);
   }, []);
 
-  // Live workspace updates
   useEffect(() => {
-    window.electron.onLiveWorkspaceUpdate((liveWorkspace: LiveWorkspace) => {
+    window.electron.onLiveWorkspaceUpdate((liveWorkspace) => {
       setWorkspace(liveWorkspace);
       if (liveWorkspace.activeAppId) {
         setExpandedStacks(prev =>
-          prev.includes(liveWorkspace.activeAppId!)
-            ? prev
-            : [...prev, liveWorkspace.activeAppId!]
+          prev.includes(liveWorkspace.activeAppId) ? prev : [...prev, liveWorkspace.activeAppId]
         );
       }
     });
@@ -122,33 +95,21 @@ export function CortexDashboard() {
     console.log('Tab clicked:', tabId);
   };
 
-  const handleQuickSwitcherSelect = (item: any) => {
-    console.log('Quick switcher selected:', item);
-  };
-
-  const handleSpotlightSearch = (query: string) => {
-    console.log('Spotlight search:', query);
-  };
-
-  const handleSpotlightAI = (question: string) => {
-    console.log('Spotlight AI question:', question);
-  };
-
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <TopNavigationBar
-      sessionName={'New Session'}
-      isPaused={isPaused}
-      backgroundAppsHidden={backgroundAppsHidden}              
-      onBackgroundAppsToggle={handleChangeIsBackgroundAppsHidden}        
-      autoHideEnabled={autoHideEnabled}
-      onPauseToggle={handleChangeIsPaused}
-      onAutoHideToggle={toggleAutoHide}
-      onSettingsClick={() => {}}
+        sessionName={'New Session'}
+        isPaused={isPaused}
+        backgroundAppsHidden={backgroundAppsHidden}
+        onBackgroundAppsToggle={handleChangeIsBackgroundAppsHidden}
+        autoHideEnabled={autoHideEnabled}
+        onPauseToggle={handleChangeIsPaused}
+        onAutoHideToggle={toggleAutoHide}
+        onSettingsClick={() => {}}
       />
+
       <div className="flex flex-1 h-[calc(100vh-3.5rem-3rem)]">
         <div className="flex-1 p-6 overflow-y-auto">
-          {/* Workspace View */}
           <div className="max-w-6xl mx-auto">
             <div className="mb-8">
               <h1 className="text-3xl font-bold text-foreground mb-2">Workspace</h1>
@@ -157,6 +118,7 @@ export function CortexDashboard() {
                 {workspace.apps.reduce((acc, app) => acc + app.tabs.length, 0)} total items
               </p>
             </div>
+
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {workspace.apps.map(app => (
                 <AppStack
@@ -176,23 +138,19 @@ export function CortexDashboard() {
 
         <EnhancedSessionSidebar
           isPaused={isPaused}
-          onPauseToggle={() => {handleChangeIsPaused((isPaused) => !isPaused)}}
+          onPauseToggle={() => handleChangeIsPaused(prev => !prev)}
           onSettings={() => console.log('Settings opened')}
         />
       </div>
 
-      <QuickSwitcher
-        isOpen={isQuickSwitcherOpen}
-        onClose={() => setIsQuickSwitcherOpen(false)}
-        onSelect={handleQuickSwitcherSelect}
+      <SpatialNavigator
+        isOpen={isSpatialNavigatorOpen}
+        onClose={() => setIsSpatialNavigatorOpen(false)}
       />
 
-      <Spotlight
-        isOpen={isSpotlightOpen}
-        onClose={() => setIsSpotlightOpen(false)}
-        onSearch={handleSpotlightSearch}
-        onAskAI={handleSpotlightAI}
-      />
+      {isCortexInlineAssistantOpen && (
+        <CortexInlineAssistant onClose={() => setIsCortexInlineAssistantOpen(false)} />
+      )}
     </div>
   );
 }

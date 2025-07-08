@@ -1,0 +1,43 @@
+{
+  "sessionName": "Session_2025-07-08T03:46:41.423Z",
+  "createdAt": "2025-07-08T03:46:41.425Z",
+  "liveWorkspace": {
+    "apps": [],
+    "activeAppId": null,
+    "activeWindowId": null
+  },
+  "eventLog": [
+    {
+      "type": "session_started",
+      "timestamp": "2025-07-08T03:46:41.425Z",
+      "data": {
+        "type": "session_started",
+        "sessionName": "Session_2025-07-08T03:46:41.423Z"
+      }
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-08T03:46:44.687Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-08T03:46:47.584Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-08T03:46:50.594Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-08T03:46:53.615Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "SearchBar.tsx — cortex"
+    }
+  ]
+}
