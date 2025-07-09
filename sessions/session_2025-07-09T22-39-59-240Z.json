@@ -1,0 +1,343 @@
+{
+  "sessionName": "Session_2025-07-09T21:44:16.645Z",
+  "createdAt": "2025-07-09T21:44:16.646Z",
+  "liveWorkspace": {
+    "apps": [],
+    "activeAppId": null,
+    "activeWindowId": null
+  },
+  "eventLog": [
+    {
+      "type": "session_started",
+      "timestamp": "2025-07-09T21:44:16.646Z",
+      "data": {
+        "type": "session_started",
+        "sessionName": "Session_2025-07-09T21:44:16.645Z"
+      }
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T21:44:19.806Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T21:44:22.809Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T21:44:25.816Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T21:44:28.801Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T21:44:31.824Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T21:44:34.819Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T21:44:37.871Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T21:44:40.873Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T21:44:43.872Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T21:44:46.885Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T21:44:49.876Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T21:44:52.859Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T21:44:55.861Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T21:44:58.897Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "CortexDashboard.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T21:45:01.895Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "CortexDashboard.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T21:45:08.972Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "CortexDashboard.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T21:45:11.866Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "CortexDashboard.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T21:45:13.052Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T21:45:15.409Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-09T21:45:18.116Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Button hover effect summary"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-09T21:45:20.979Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Button hover effect summary"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-09T21:45:23.947Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Button hover effect summary"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-09T21:45:26.969Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Button hover effect summary"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-09T21:45:29.967Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Button hover effect summary"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-09T21:45:32.968Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Button hover effect summary"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-09T21:45:35.977Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Button hover effect summary"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-09T21:45:38.981Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Button hover effect summary"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-09T21:45:42.013Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Button hover effect summary"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-09T21:45:44.995Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Button hover effect summary"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-09T21:45:47.964Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Button hover effect summary"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-09T21:45:51.011Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Button hover effect summary"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-09T21:45:53.977Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Button hover effect summary"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-09T21:45:56.990Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Button hover effect summary"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-09T21:46:00.000Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Button hover effect summary"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-09T21:46:03.010Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Button hover effect summary"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-09T21:46:06.013Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Button hover effect summary"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-09T21:46:09.028Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Button hover effect summary"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-09T21:46:12.042Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Button hover effect summary"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-09T21:46:15.033Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Button hover effect summary"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-09T21:46:18.032Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Button hover effect summary"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-09T21:46:21.038Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Button hover effect summary"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-09T21:46:24.046Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Button hover effect summary"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-09T21:46:27.049Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Button hover effect summary"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-09T21:46:30.050Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Button hover effect summary"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T21:46:36.942Z",
+      "appName": "loginwindow",
+      "windowTitle": ""
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T21:46:37.132Z",
+      "appName": "loginwindow",
+      "windowTitle": ""
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T22:03:40.882Z",
+      "appName": "loginwindow",
+      "windowTitle": ""
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T22:03:43.169Z",
+      "appName": "loginwindow",
+      "windowTitle": ""
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T22:20:02.961Z",
+      "appName": "loginwindow",
+      "windowTitle": ""
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T22:20:05.971Z",
+      "appName": "loginwindow",
+      "windowTitle": ""
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T22:20:08.958Z",
+      "appName": "loginwindow",
+      "windowTitle": ""
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T22:36:23.034Z",
+      "appName": "loginwindow",
+      "windowTitle": ""
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T22:36:25.985Z",
+      "appName": "loginwindow",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-09T22:38:51.544Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Button hover effect summary"
+    }
+  ]
+}

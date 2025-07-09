@@ -70,8 +70,7 @@ function createSessionWindow() {
   const win = new BrowserWindow({
     title: "Cortex",
     icon: iconPath,
-    frame: true,
-    titleBarStyle: "hiddenInset",
+    frame: false,
     show: false,
     width: bounds.width,
     height: bounds.height,
@@ -231,7 +230,7 @@ async function startCortexSession() {
       }
 
 
-    }, 200);//this shit is buggy as hell, we need to add a timer to wait for everything to hide properly. should refactor this because it's very hacky.
+    }, 2000);//this shit is buggy as hell, we need to add a timer to wait for everything to hide properly. should refactor this because it's very hacky.
 
     sessionManager.setMainWindow(sessionwin);
     startSession();
@@ -247,7 +246,7 @@ ipcMain.handle('save-session', async () => {
   await saveSession();
   stopPollingWindowState();
   workspaceManager.stopAutoHide && workspaceManager.stopAutoHide();
-  sessionwin.close();
+  sessionWindow.close();
   return { ok: true };
 });
 

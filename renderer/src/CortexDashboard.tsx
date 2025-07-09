@@ -3,6 +3,10 @@ import { TopNavigationBar } from "./components/TopNavigationBar";
 import { AppStack } from "./components/AppStack";
 import { EnhancedSessionSidebar } from "./components/EnhancedSessionSidebar";
 import { SpatialNavigator } from "./components/SpatialNavigator";
+import { InfiniteCanvas } from "./components/InfiniteCanvas";
+import { Button } from "./components/ui/button";
+import { ResizablePanelGroup, ResizablePanel, ResizableHandle } from "./components/ui/resizable";
+import { Grid3X3, Map, Plus } from "lucide-react";
 
 export function CortexDashboard() {
   const [isPaused, setIsPaused] = useState(false);
@@ -10,47 +14,16 @@ export function CortexDashboard() {
   const [autoHideEnabled, setAutoHideEnabled] = useState(true);
   const [expandedStacks, setExpandedStacks] = useState<string[]>([]);
   const [quickNavOpen, setQuickNavOpen] = useState(false);
+  const [viewMode, setViewMode] = useState<'grid' | 'canvas'>('grid');
+  const [isNotebookExpanded, setIsNotebookExpanded] = useState(false)
 
   const firstPauseRun = useRef(true);
-
-  const handleChangeIsPaused = (val: SetStateAction<boolean>) => {
-    setIsPaused(prev => {
-      const newVal = typeof val === 'function' ? val(prev) : val;
-      if (newVal) {
-        window.electron.pauseWorkspace();
-      } else {
-        window.electron.resumeWorkspace();
-      }
-      return newVal;
-    });
-  };
-
-  const handleChangeIsBackgroundAppsHidden = (val: SetStateAction<boolean>) => {
-    setBackgroundAppsHidden(prev => {
-      const newVal = typeof val === 'function' ? val(prev) : val;
-      if (newVal) {
-        window.electron.showAllApps();
-      } else {
-        window.electron.clearWorkspace();
-      }
-      return newVal;
-    });
-  };
 
   const [workspace, setWorkspace] = useState({
     apps: [],
     activeAppId: null,
     activeWindowId: null,
   });
-
-  const toggleAutoHide = () => {
-    setAutoHideEnabled(prev => {
-      const next = !prev;
-      if (next) window.electron.startAutoHide();
-      else window.electron.stopAutoHide();
-      return next;
-    });
-  };
 
   useEffect(() => {
     window.electron.onLiveWorkspaceUpdate((liveWorkspace) => {
@@ -77,6 +50,43 @@ export function CortexDashboard() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [quickNavOpen]);
 
+  const handleChangeIsPaused = (val: SetStateAction<boolean>) => {
+    setIsPaused(prev => {
+      const newVal = typeof val === 'function' ? val(prev) : val;
+      if (newVal) {
+        window.electron.pauseWorkspace();
+      } else {
+        window.electron.resumeWorkspace();
+      }
+      return newVal;
+    });
+  };
+
+  const handleSave = () => {
+    window.electron.saveSession();
+  };
+
+  const handleChangeIsBackgroundAppsHidden = (val: SetStateAction<boolean>) => {
+    setBackgroundAppsHidden(prev => {
+      const newVal = typeof val === 'function' ? val(prev) : val;
+      if (newVal) {
+        window.electron.showAllApps();
+      } else {
+        window.electron.clearWorkspace();
+      }
+      return newVal;
+    });
+  };
+
+  const toggleAutoHide = () => {
+    setAutoHideEnabled(prev => {
+      const next = !prev;
+      if (next) window.electron.startAutoHide();
+      else window.electron.stopAutoHide();
+      return next;
+    });
+  };
+
   const handleToggleStack = (stackId: string) => {
     setExpandedStacks(prev =>
       prev.includes(stackId) ? prev.filter(id => id !== stackId) : [...prev, stackId]
@@ -96,53 +106,123 @@ export function CortexDashboard() {
         onBackgroundAppsToggle={handleChangeIsBackgroundAppsHidden}
         autoHideEnabled={autoHideEnabled}
         onPauseToggle={handleChangeIsPaused}
+        onSave={handleSave}
         onAutoHideToggle={toggleAutoHide}
         onSettingsClick={() => {}}
       />
 
       <div className="flex flex-1 h-[calc(100vh-3.5rem-3rem)]">
-        <div className="flex-1 p-6 overflow-y-auto">
-          <div className="max-w-6xl mx-auto">
-            <div className="mb-8">
-              <h1 className="text-3xl font-bold text-foreground mb-2">Workspace</h1>
-              <p className="text-muted-foreground">
-                {workspace.apps.filter(app => app.id === workspace.activeAppId).length} active •{' '}
-                {workspace.apps.reduce((acc, app) => acc + app.tabs.length, 0)} total items
-              </p>
-            </div>
+        <ResizablePanelGroup direction="horizontal">
+          <ResizablePanel defaultSize={75} minSize={60}>
+            <div className="p-6 overflow-y-auto h-screen">
+              <div className="max-w-6xl mx-auto">
+                <div className="mb-6 flex items-center justify-between">
+                  <div>
+                    <h1 className="text-2xl font-semibold text-foreground mb-1">Workspace</h1>
+                    <p className="text-xs text-muted-foreground">
+                      {workspace.apps.filter(app => app.id === workspace.activeAppId).length} active • {workspace.apps.reduce((acc, app) => acc + app.tabs.length, 0)} total items
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Button
+                      variant={viewMode === 'grid' ? 'default' : 'outline'}
+                      size="sm"
+                      onClick={() => setViewMode('grid')}
+                      className="glass"
+                    >
+                      <Grid3X3 className="w-4 h-4 mr-2" />
+                      Grid
+                    </Button>
+                      <Button
+                        variant={viewMode === 'canvas' ? 'default' : 'outline'}
+                        size="sm"
+                        onClick={() => setViewMode('canvas')}
+                        className="glass hover:bg-muted hover:text-muted-foreground"
+                      >
+                        <Map className="w-4 h-4 mr-2" />
+                        Canvas
+                      </Button>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              {workspace.apps.map(app => (
-                <AppStack
-                  key={app.id}
-                  name={app.name}
-                  icon={app.icon}
-                  tabs={app.tabs}
-                  isExpanded={expandedStacks.includes(app.id)}
-                  isActive={app.id === workspace.activeAppId}
-                  onToggleExpanded={() => handleToggleStack(app.id)}
-                  onTabClick={handleTabClick}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
+                  </div>
+                </div>
 
-        <EnhancedSessionSidebar
-          isPaused={isPaused}
-          onPauseToggle={() => handleChangeIsPaused(prev => !prev)}
-          onSettings={() => console.log('Settings opened')}
-        />
+                {viewMode === 'grid' ? (
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    {workspace.apps.map(app => (
+                      <AppStack
+                        key={app.id}
+                        name={app.name}
+                        icon={app.icon}
+                        tabs={app.tabs}
+                        isExpanded={expandedStacks.includes(app.id)}
+                        isActive={app.id === workspace.activeAppId}
+                        onToggleExpanded={() => handleToggleStack(app.id)}
+                        onTabClick={handleTabClick}
+                      />
+                    ))}
+                  </div>
+                ) : (
+                  <div className="h-[600px] border border-border rounded-xl overflow-hidden">
+                    <InfiniteCanvas />
+                  </div>
+                )}
+
+                <div className="mt-12 p-4 bg-card border border-border rounded-xl">
+                  <h3 className="text-sm font-medium text-foreground mb-3">Keyboard Shortcuts</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 text-xs text-muted-foreground">
+                    <div className="flex items-center gap-2">
+                      <kbd className="px-2 py-1 bg-muted rounded text-xs">⌥</kbd>
+                      <kbd className="px-2 py-1 bg-muted rounded text-xs">Tab</kbd>
+                      <span>Spatial Navigator</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <kbd className="px-2 py-1 bg-muted rounded text-xs">⌥</kbd>
+                      <kbd className="px-2 py-1 bg-muted rounded text-xs">Space</kbd>
+                      <span>Cortex Intelligence</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Button
+                        size="sm"
+                        onClick={() => console.log('Create new app/tab')}
+                        className="h-6 px-2 bg-primary hover:bg-primary/90 text-primary-foreground"
+                      >
+                        <Plus className="w-3 h-3" />
+                      </Button>
+                      <kbd className="px-2 py-1 bg-muted rounded text-xs">⌘</kbd>
+                      <kbd className="px-2 py-1 bg-muted rounded text-xs">T</kbd>
+                      <span>New App/Tab</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </ResizablePanel>
+
+          <ResizableHandle withHandle />
+
+          <ResizablePanel defaultSize={25} minSize={15} maxSize={35}>
+            <EnhancedSessionSidebar
+              isPaused={isPaused}
+              onPauseToggle={() => handleChangeIsPaused(prev => !prev)}
+              onSave={handleSave}
+              onSettings={() => console.log('Settings opened')}
+              isNotebookExpanded = {isNotebookExpanded}
+              onNotebookExpand={() => setIsNotebookExpanded(!isNotebookExpanded)}
+            />
+          </ResizablePanel>
+
+        </ResizablePanelGroup>
       </div>
 
       {quickNavOpen && (
-  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/20 backdrop-blur-sm">
-    <SpatialNavigator
-      isOpen={quickNavOpen}
-      onClose={() => setQuickNavOpen(false)}
-    />
-  </div>
-)}
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/20 backdrop-blur-sm">
+          <SpatialNavigator
+            isOpen={quickNavOpen}
+            onClose={() => setQuickNavOpen(false)}
+          />
+        </div>
+      )}
 
     </div>
   );
