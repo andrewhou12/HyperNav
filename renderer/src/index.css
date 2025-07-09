@@ -178,3 +178,28 @@
     box-shadow: 0 0 20px hsl(var(--accent-glow)), var(--glass-shadow);
   }
 }
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+    width: 0px;
+    height: 0px;
+  }
+
+  .scrollbar-hidden {
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+  }
+
+  .h-dynamic-screen {
+    height: 100vh;
+    /* Fallback */
+    height: 100dvh;
+  }
+}

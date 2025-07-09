@@ -473,12 +473,12 @@ switch (e.key) {
 
   return (
     <div
-      className="w-full h-full flex items-center justify-center bg-transparent overflow-hidden"
+      className="w-full h-full flex items-center justify-center bg-transparent overflow-hidden scrollbar-hidden"
       onClick={onClose}  // Clicking outside closes overlay
     >
       <div
         ref={containerRef}
-        className="w-full max-w-4xl h-[90vh] rounded-xl bg-white border border-gray-200 shadow-lg overflow-hidden animate-fade-in"
+        className="w-full max-w-4xl rounded-xl bg-white border border-gray-200 shadow-lg overflow-hidden animate-fade-in scrollbar-hidden"
         onClick={(e) => e.stopPropagation()}  // Prevent click from bubbling
       >
         {/* Header with Search and Breadcrumbs */}
@@ -491,7 +491,7 @@ switch (e.key) {
             />
             <div>
               <h3 className="text-sm font-semibold text-gray-900">Spatial Navigator</h3>
-              <div className="flex items-center gap-1 text-xs text-gray-500">
+              <div className="flex items-center gap-1 text-xs text-gray-500 h-5 overflow-hidden">
                 <button
                   onClick={() => navigateToLevel(0)}
                   className="hover:text-primary transition-colors"
