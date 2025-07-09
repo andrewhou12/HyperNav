@@ -33,6 +33,9 @@ const sessionManager = require('./core/sessionManager');
 app.setName("Cortex");
 let hotkeysEnabled = false;
 let overlayWindow;
+let launcherWindow;
+let sessionWindow;
+let overlayOpenedFromGlobal = false;
 
 const appDrivers = { chrome: chromeDriver, vscode: vscodeDriver };
 
@@ -54,6 +57,12 @@ function createWindow() {
     },
   });
   win.loadURL('http://localhost:5173/');
+
+  win.on('closed', () => {
+    launcherWindow = null;
+  });
+  
+  launcherWindow = win;
 }
 
 function createSessionWindow() {
@@ -81,6 +90,7 @@ function createSessionWindow() {
     unregisterHotkeys();
     workspaceManager.stopAutoHide && workspaceManager.stopAutoHide();
     win.destroy();
+    sessionWindow = null;
   });
 
   win.on('closed', () => {
@@ -102,7 +112,23 @@ function createSessionWindow() {
         }
       );
     }
+    
+    createWindow(); //reopen launcher on close
+
   });
+
+  win.on('focus', () => {
+    unregisterHotkeys();
+  });
+
+  win.on('blur', () => {
+    registerHotkeys();
+  });
+
+  
+  sessionWindow = win;
+
+
 
   return win;
 }
@@ -162,12 +188,25 @@ function registerHotkeys() {
     if (overlayWindow?.isVisible()) {
       overlayWindow.hide();
     } else {
+      overlayOpenedFromGlobal = true;
+  
+      // Immediately hide any other Electron windows:
+      if (launcherWindow?.isVisible()) launcherWindow.hide();
+      if (sessionWindow?.isVisible()) sessionWindow.hide();
+  
       overlayWindow.show();
-      overlayWindow.focus();
     }
   });
 
-  globalShortcut.register('Option+Space', () => {});
+  globalShortcut.register('Option+Space', () => { //theoretical for now
+    // if (aiWindow?.isVisible()) {
+    //   aiWindow.hide();
+    // } else {
+    //   aiOpenedFromGlobal = true;  
+    //   aiWindow.show();
+    //  
+    // }
+  });
 }
 
 function unregisterHotkeys() {
@@ -185,6 +224,13 @@ async function startCortexSession() {
     setTimeout(() => {
       sessionwin.maximize();
       sessionwin.show();
+
+      if (launcherWindow && !launcherWindow.isDestroyed()) {//wait for session to start before hiding launcher window
+        launcherWindow.close();
+        launcherWindow = null;
+      }
+
+
     }, 2000);//this shit is buggy as hell, we need to add a timer to wait for everything to hide properly. should refactor this because it's very hacky.
 
     sessionManager.setMainWindow(sessionwin);
@@ -282,9 +328,34 @@ ipcMain.handle('clear-workspace', async () => {
   return apps;
 });
 ipcMain.handle('get-session-data', () => getSessionData());
-ipcMain.on('hide-overlay', () => {
+ipcMain.on('hide-overlay', (event, { reason }) => {
   if (overlayWindow && !overlayWindow.isDestroyed()) {
     overlayWindow.hide();
+  }
+
+  if (reason === 'escape') {
+    if (overlayOpenedFromGlobal) {
+      app.hide();  // ✅ Only hide if global overlay was used
+    }
+    overlayOpenedFromGlobal = false;  // Reset flag
+  } else if (reason === 'shift') {
+    if (sessionWindow && !sessionWindow.isDestroyed()) sessionWindow.show();
+    if (launcherWindow && !launcherWindow.isDestroyed()) launcherWindow.show();
+    overlayOpenedFromGlobal = false;  // Reset flag
+  }
+});
+
+
+app.on('activate', () => {
+  const dashboardVisible = sessionWindow && !sessionWindow.isDestroyed() && sessionWindow.isVisible();
+  const launcherVisible = launcherWindow && !launcherWindow.isDestroyed() && launcherWindow.isVisible();
+  const overlayVisible = overlayWindow && !overlayWindow.isDestroyed() && overlayWindow.isVisible();
+
+  // If no windows are visible, bring back the **session window (Dashboard)**
+  if (!dashboardVisible && !launcherVisible && !overlayVisible) {
+    if (sessionWindow && !sessionWindow.isDestroyed()) {
+      sessionWindow.show();
+    }
   }
 });
 
