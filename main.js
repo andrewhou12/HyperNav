@@ -111,7 +111,7 @@ function createOverlayWindow() {
   const { bounds } = screen.getPrimaryDisplay();
   
   const panelWidth  = 896;
-  const panelHeight = 856;
+  const panelHeight = 860;
 
   overlayWindow = new BrowserWindow({
     x: Math.round((bounds.width  - panelWidth ) / 2),
