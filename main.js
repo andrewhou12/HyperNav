@@ -111,7 +111,7 @@ function createOverlayWindow() {
   const { bounds } = screen.getPrimaryDisplay();
   
   const panelWidth  = 896;
-  const panelHeight = 860;
+  const panelHeight = 856;
 
   overlayWindow = new BrowserWindow({
     x: Math.round((bounds.width  - panelWidth ) / 2),
@@ -185,7 +185,7 @@ async function startCortexSession() {
     setTimeout(() => {
       sessionwin.maximize();
       sessionwin.show();
-    }, 1500);
+    }, 2000);//this shit is buggy as hell, we need to add a timer to wait for everything to hide properly. should refactor this because it's very hacky.
 
     sessionManager.setMainWindow(sessionwin);
     startSession();

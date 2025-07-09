@@ -1,0 +1,49 @@
+{
+  "sessionName": "Session_2025-07-09T02:51:43.492Z",
+  "createdAt": "2025-07-09T02:51:43.492Z",
+  "liveWorkspace": {
+    "apps": [],
+    "activeAppId": null,
+    "activeWindowId": null
+  },
+  "eventLog": [
+    {
+      "type": "session_started",
+      "timestamp": "2025-07-09T02:51:43.492Z",
+      "data": {
+        "type": "session_started",
+        "sessionName": "Session_2025-07-09T02:51:43.492Z"
+      }
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T02:51:46.679Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T02:51:49.656Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T02:51:52.703Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T02:51:55.707Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T02:51:58.690Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    }
+  ]
+}
