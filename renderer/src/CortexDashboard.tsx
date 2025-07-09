@@ -2,12 +2,14 @@ import React, { useState, useEffect, useRef, SetStateAction } from "react";
 import { TopNavigationBar } from "./components/TopNavigationBar";
 import { AppStack } from "./components/AppStack";
 import { EnhancedSessionSidebar } from "./components/EnhancedSessionSidebar";
+import { SpatialNavigator } from "./components/SpatialNavigator";
 
 export function CortexDashboard() {
   const [isPaused, setIsPaused] = useState(false);
   const [backgroundAppsHidden, setBackgroundAppsHidden] = useState(true);
   const [autoHideEnabled, setAutoHideEnabled] = useState(true);
   const [expandedStacks, setExpandedStacks] = useState<string[]>([]);
+  const [quickNavOpen, setQuickNavOpen] = useState(false);
 
   const firstPauseRun = useRef(true);
 
@@ -60,6 +62,20 @@ export function CortexDashboard() {
       }
     });
   }, []);
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.altKey && e.key === 'Tab') {
+        setQuickNavOpen(true);
+      }
+      if (e.key === 'Escape' && quickNavOpen) {
+        setQuickNavOpen(false);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [quickNavOpen]);
 
   const handleToggleStack = (stackId: string) => {
     setExpandedStacks(prev =>
@@ -118,6 +134,16 @@ export function CortexDashboard() {
           onSettings={() => console.log('Settings opened')}
         />
       </div>
+
+      {quickNavOpen && (
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/20 backdrop-blur-sm">
+    <SpatialNavigator
+      isOpen={quickNavOpen}
+      onClose={() => setQuickNavOpen(false)}
+    />
+  </div>
+)}
+
     </div>
   );
-} 
+}

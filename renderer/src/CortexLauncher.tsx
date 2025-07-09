@@ -1,32 +1,16 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Play, FolderOpen, Settings, User } from 'lucide-react';
+import { Play, FolderOpen, Settings, User, Loader2 } from 'lucide-react';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 
-// Real-time Clock Component
-const LiveClock = ({ className = "" }: { className?: string }) => {
+const LiveClock = ({ className = "" }) => {
   const [time, setTime] = useState(new Date());
-
   useEffect(() => {
     const timer = setInterval(() => setTime(new Date()), 1000);
     return () => clearInterval(timer);
   }, []);
-
-  const formatTime = (date: Date) => {
-    return date.toLocaleTimeString('en-US', {
-      hour: '2-digit',
-      minute: '2-digit',
-      hour12: false
-    });
-  };
-
-  const formatDate = (date: Date) => {
-    return date.toLocaleDateString('en-US', {
-      month: 'short',
-      day: 'numeric'
-    });
-  };
-
+  const formatTime = (date) => date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false });
+  const formatDate = (date) => date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
   return (
     <div className={`font-mono text-muted-foreground/80 ${className}`}>
       <div className="text-sm tracking-wide flex items-center gap-2">
@@ -44,7 +28,6 @@ export function CortexLauncher() {
   const handleStartSession = () => {
     setIsLoading('start');
     window.electron.openWindow("start-session");
-    setTimeout(() => setIsLoading(null), 1000);
   };
 
   const handleLoadSession = async () => {
@@ -166,6 +149,30 @@ export function CortexLauncher() {
           </div>
         </div>
       </main>
+
+      {/* Loading Overlay */}
+      {isLoading && (
+  <div className="fixed inset-0 z-50 bg-background/80 backdrop-blur-md flex flex-col items-center justify-center gap-6 animate-fade-in">
+
+    <div className="w-full max-w-sm glass border border-border/50 rounded-xl p-6 shadow-lg">
+      <h3 className="text-lg font-semibold text-foreground mb-4 text-center">
+        {isLoading === 'start' ? 'Launching Cortex Session...' : 'Loading Previous Session...'}
+      </h3>
+
+      <div className="w-full h-3 rounded-full bg-muted overflow-hidden relative border border-border">
+        <div
+          className="absolute top-0 left-0 h-full bg-primary rounded-full animate-loading-bar"
+          style={{ width: '100%' }}
+        />
+      </div>
+
+      <p className="text-xs text-muted-foreground text-center mt-4">
+        Preparing your workspace...
+      </p>
+    </div>
+
+  </div>
+)}
 
       <footer className="relative z-10 p-6 text-center animate-fade-in">
         <div className="flex items-center justify-center gap-6 text-xs text-muted-foreground/70">

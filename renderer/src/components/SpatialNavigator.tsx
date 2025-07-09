@@ -198,8 +198,10 @@ const GRID_COLS = 3;
 const GRID_ROWS = 3;
 
 export function SpatialNavigator({ isOpen, onClose }: QuickNavigatorProps) {
+  let currentAppPosition;
+  currentAppPosition = {x: 0, y: 0}; //replace this with what actual current app is based on liveworkspace in the future
   const [query, setQuery] = useState("");
-  const [selectedPosition, setSelectedPosition] = useState({ x: 0, y: 0 });
+  const [selectedPosition, setSelectedPosition] = useState(currentAppPosition);
   const [navigationStack, setNavigationStack] = useState<NavigationLevel[]>([
     { items: navigatorData, title: "Workspace", parentId: undefined }
   ]);
@@ -259,7 +261,7 @@ export function SpatialNavigator({ isOpen, onClose }: QuickNavigatorProps) {
   useEffect(() => {
     if (isOpen) {
       setNavigationStack([{ items: navigatorData, title: "Workspace", parentId: undefined }]);
-      setSelectedPosition({ x: 0, y: 0 });
+      setSelectedPosition(currentAppPosition);
       setQuery("");
       if (searchInputRef.current) {
         searchInputRef.current.focus();
@@ -293,7 +295,7 @@ export function SpatialNavigator({ isOpen, onClose }: QuickNavigatorProps) {
     };
 
     setNavigationStack(prev => [...prev, newLevel]);
-    setSelectedPosition({ x: 0, y: 0 });
+    setSelectedPosition({ x: 0, y: 0 }); //<- fix hard coded logic in the future
     setQuery(""); // Clear search when navigating
   };
 
@@ -312,7 +314,7 @@ export function SpatialNavigator({ isOpen, onClose }: QuickNavigatorProps) {
     
       setSelectedPosition(originalPosition);
     } else {
-      setSelectedPosition({ x: 0, y: 0 });
+      setSelectedPosition(currentAppPosition);
     }
     
     setQuery(""); // Clear search when navigating
@@ -413,9 +415,10 @@ switch (e.key) {
     break;
 
   case "Escape":
-    e.preventDefault();
-    window.electron.ipcRenderer.send('hide-overlay');
-    break;
+      e.preventDefault();
+      window.electron.ipcRenderer.send('hide-overlay', { reason: 'escape' });
+      setSelectedPosition(currentAppPosition);
+      break;
 }
 
     };
@@ -478,7 +481,7 @@ switch (e.key) {
     >
       <div
         ref={containerRef}
-        className="w-full max-w-4xl rounded-xl bg-white border border-gray-200 shadow-lg overflow-hidden animate-fade-in scrollbar-hidden"
+        className="w-full max-w-4xl rounded-xl bg-white border border-gray-200 shadow-lg overflow-hidden scrollbar-hidden"
         onClick={(e) => e.stopPropagation()}  // Prevent click from bubbling
       >
         {/* Header with Search and Breadcrumbs */}
