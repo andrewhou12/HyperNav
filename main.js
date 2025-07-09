@@ -231,7 +231,7 @@ async function startCortexSession() {
       }
 
 
-    }, 2000);//this shit is buggy as hell, we need to add a timer to wait for everything to hide properly. should refactor this because it's very hacky.
+    }, 200);//this shit is buggy as hell, we need to add a timer to wait for everything to hide properly. should refactor this because it's very hacky.
 
     sessionManager.setMainWindow(sessionwin);
     startSession();
