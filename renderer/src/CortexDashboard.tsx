@@ -2,16 +2,12 @@ import React, { useState, useEffect, useRef, SetStateAction } from "react";
 import { TopNavigationBar } from "./components/TopNavigationBar";
 import { AppStack } from "./components/AppStack";
 import { EnhancedSessionSidebar } from "./components/EnhancedSessionSidebar";
-import { CortexInlineAssistant } from "./components/CortexInlineAssistant";
-import { SpatialNavigator } from "./components/SpatialNavigator";
 
 export function CortexDashboard() {
   const [isPaused, setIsPaused] = useState(false);
   const [backgroundAppsHidden, setBackgroundAppsHidden] = useState(true);
   const [autoHideEnabled, setAutoHideEnabled] = useState(true);
   const [expandedStacks, setExpandedStacks] = useState<string[]>([]);
-  const [isSpatialNavigatorOpen, setIsSpatialNavigatorOpen] = useState(false);
-  const [isCortexInlineAssistantOpen, setIsCortexInlineAssistantOpen] = useState(false);
 
   const firstPauseRun = useRef(true);
 
@@ -53,26 +49,6 @@ export function CortexDashboard() {
       return next;
     });
   };
-
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.altKey && e.key === 'Tab') {
-        e.preventDefault();
-        setIsSpatialNavigatorOpen(true);
-      }
-      if (e.altKey && e.code === 'Space') {
-        e.preventDefault();
-        setIsCortexInlineAssistantOpen(true);
-      }
-      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
-        e.preventDefault();
-        setIsSpatialNavigatorOpen(true);
-      }
-    };
-
-    document.addEventListener('keydown', handleKeyDown);
-    return () => document.removeEventListener('keydown', handleKeyDown);
-  }, []);
 
   useEffect(() => {
     window.electron.onLiveWorkspaceUpdate((liveWorkspace) => {
@@ -142,15 +118,6 @@ export function CortexDashboard() {
           onSettings={() => console.log('Settings opened')}
         />
       </div>
-
-      <SpatialNavigator
-        isOpen={isSpatialNavigatorOpen}
-        onClose={() => setIsSpatialNavigatorOpen(false)}
-      />
-
-      {isCortexInlineAssistantOpen && (
-        <CortexInlineAssistant onClose={() => setIsCortexInlineAssistantOpen(false)} />
-      )}
     </div>
   );
-}
+} 

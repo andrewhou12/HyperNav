@@ -1,10 +1,24 @@
-import './index.css'; 
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import CortexLauncher from './CortexLauncher.tsx'
+import './index.css';
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from 'react-router-dom';
+
+import { CortexLauncher } from './CortexLauncher';
+import { CortexDashboard } from './CortexDashboard';
+import OverlayApp from './OverlayApp';
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <CortexLauncher/>
-  </StrictMode>,
-)
+  <React.StrictMode>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<CortexLauncher />} />
+        <Route path="/session" element={<CortexDashboard />} />
+        <Route path="/overlay" element={<OverlayApp />} />
+      </Routes>
+    </BrowserRouter>
+  </React.StrictMode>
+);
