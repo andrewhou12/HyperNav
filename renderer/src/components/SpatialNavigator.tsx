@@ -254,6 +254,8 @@ export function SpatialNavigator({ isOpen, onClose }: QuickNavigatorProps) {
     }
  
   // Reset to root level and focus search input when opened
+
+
   useEffect(() => {
     if (isOpen) {
       setNavigationStack([{ items: navigatorData, title: "Workspace", parentId: undefined }]);
@@ -337,86 +339,85 @@ export function SpatialNavigator({ isOpen, onClose }: QuickNavigatorProps) {
   e.preventDefault();
   onClose();
   return;
-     }
+}
 
-      switch (e.key) {
-        case "ArrowRight":
-          e.preventDefault();
-          const nextRightIndex = validPositions.findIndex(
-            pos => pos.y === selectedPosition.y && pos.x > selectedPosition.x
-          );
-          if (nextRightIndex !== -1) {
-            setSelectedPosition(validPositions[nextRightIndex]);
-          }
-          break;
-          
-        case "ArrowLeft":
-          e.preventDefault();
-          const nextLeftIndex = [...validPositions]
-            .reverse()
-            .findIndex(pos => pos.y === selectedPosition.y && pos.x < selectedPosition.x);
-          if (nextLeftIndex !== -1) {
-            const actualIndex = validPositions.length - 1 - nextLeftIndex;
-            setSelectedPosition(validPositions[actualIndex]);
-          }
-          break;
-          
-        case "ArrowDown":
-          e.preventDefault();
-          const nextDownIndex = validPositions.findIndex(
-            pos => pos.x === selectedPosition.x && pos.y > selectedPosition.y
-          );
-          if (nextDownIndex !== -1) {
-            setSelectedPosition(validPositions[nextDownIndex]);
-          }
-          break;
-          
-        case "ArrowUp":
-          e.preventDefault();
-          const nextUpIndex = [...validPositions]
-            .reverse()
-            .findIndex(pos => pos.x === selectedPosition.x && pos.y < selectedPosition.y);
-          if (nextUpIndex !== -1) {
-            const actualIndex = validPositions.length - 1 - nextUpIndex;
-            setSelectedPosition(validPositions[actualIndex]);
-          }
-          break;
+switch (e.key) {
+  case "ArrowRight":
+    e.preventDefault();
+    const nextRightIndex = validPositions.findIndex(
+      pos => pos.y === selectedPosition.y && pos.x > selectedPosition.x
+    );
+    if (nextRightIndex !== -1) {
+      setSelectedPosition(validPositions[nextRightIndex]);
+    }
+    break;
 
-        case "Tab": // Tab key - navigate into children (zoom in)
-          e.preventDefault();
-          const selectedItem = getItemAtPosition(selectedPosition.x, selectedPosition.y);
-          if (selectedItem?.children && canGoDeeper) {
-            navigateToChildren(selectedItem);
-          }
-          break;
-          
-        case "Enter":
-          e.preventDefault();
-          const currentItem = getItemAtPosition(selectedPosition.x, selectedPosition.y);
-          if (currentItem) {
-            // For apps, activate the currently selected tab
-            if (currentItem.type === "app" && currentItem.activeTab) {
-              console.log(`Activating ${currentItem.title} - switching to tab: ${currentItem.activeTab}`);
-            } else {
-              console.log(`Activating: ${currentItem.title}`);
-            }
-            onClose();
-          }
-          break;
-          
-        case "Alt": // Option key - go back
-          e.preventDefault();
-          if (!isRootLevel) {
-            navigateBack();
-          }
-          break;
-          
+  case "ArrowLeft":
+    e.preventDefault();
+    const nextLeftIndex = [...validPositions]
+      .reverse()
+      .findIndex(pos => pos.y === selectedPosition.y && pos.x < selectedPosition.x);
+    if (nextLeftIndex !== -1) {
+      const actualIndex = validPositions.length - 1 - nextLeftIndex;
+      setSelectedPosition(validPositions[actualIndex]);
+    }
+    break;
 
-        case "Escape":
-          e.preventDefault();
-          onClose();
-          break;
+  case "ArrowDown":
+    e.preventDefault();
+    const nextDownIndex = validPositions.findIndex(
+      pos => pos.x === selectedPosition.x && pos.y > selectedPosition.y
+    );
+    if (nextDownIndex !== -1) {
+      setSelectedPosition(validPositions[nextDownIndex]);
+    }
+    break;
+
+  case "ArrowUp":
+    e.preventDefault();
+    const nextUpIndex = [...validPositions]
+      .reverse()
+      .findIndex(pos => pos.x === selectedPosition.x && pos.y < selectedPosition.y);
+    if (nextUpIndex !== -1) {
+      const actualIndex = validPositions.length - 1 - nextUpIndex;
+      setSelectedPosition(validPositions[actualIndex]);
+    }
+    break;
+
+  case "Tab": // Tab key - navigate into children (zoom in)
+    e.preventDefault();
+    const selectedItem = getItemAtPosition(selectedPosition.x, selectedPosition.y);
+    if (selectedItem?.children && canGoDeeper) {
+      navigateToChildren(selectedItem);
+    }
+    break;
+
+  case "Enter":
+    e.preventDefault();
+    const currentItem = getItemAtPosition(selectedPosition.x, selectedPosition.y);
+    if (currentItem) {
+      if (currentItem.type === "app" && currentItem.activeTab) {
+        console.log(`Activating ${currentItem.title} - switching to tab: ${currentItem.activeTab}`);
+      } else {
+        console.log(`Activating: ${currentItem.title}`);
       }
+      window.electron.ipcRenderer.send('hide-overlay');
+    }
+    break;
+
+  case "Alt": // Option key - go back
+    e.preventDefault();
+    if (!isRootLevel) {
+      navigateBack();
+    }
+    break;
+
+  case "Escape":
+    e.preventDefault();
+    window.electron.ipcRenderer.send('hide-overlay');
+    break;
+}
+
     };
 
     document.addEventListener("keydown", handleKeyDown);
@@ -471,183 +472,182 @@ export function SpatialNavigator({ isOpen, onClose }: QuickNavigatorProps) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto p-2 bg-black/20 backdrop-blur-sm flex items-center justify-center" onClick={onClose}>
-      <div className="w-full max-w-4xl h-fit max-h-[95vh] overflow-hidden">
-        <div
-          ref={containerRef}
-          className="relative w-full rounded-xl bg-white border border-gray-200 shadow-lg overflow-hidden animate-fade-in"
-          onClick={(e) => e.stopPropagation()}
-        >
-          {/* Header with Search and Breadcrumbs */}
-          <div className="flex items-center justify-between gap-4 p-4 border-b border-gray-100">
-            <div className="flex items-center gap-3">
-              <img 
-                src="/icons/cortexlogov1invert.svg" 
-                alt="Cortex Logo" 
-                className="h-8 w-8"
-              />
-              <div>
-                <h3 className="text-sm font-semibold text-gray-900">Spatial Navigator</h3>
-                <div className="flex items-center gap-1 text-xs text-gray-500">
-                  <button
-                    onClick={() => navigateToLevel(0)}
-                    className="hover:text-primary transition-colors"
-                  >
-                    <Home className="w-3 h-3" />
-                  </button>
-                  {navigationStack.map((level, index) => (
-                    <div key={index} className="flex items-center gap-1">
-                      {index > 0 && <ChevronRight className="w-3 h-3" />}
-                      <button
-                        onClick={() => navigateToLevel(index)}
-                        className={cn(
-                          "hover:text-primary transition-colors",
-                          index === navigationStack.length - 1 ? "text-primary font-medium" : ""
-                        )}
-                      >
-                        {level.title}
-                      </button>
-                    </div>
-                  ))}
-                  {!isRootLevel && (
-                    <div className="ml-2 px-2 py-1 bg-primary/10 text-primary rounded text-xs">
-                      Level {navigationStack.length}
-                    </div>
-                  )}
-                </div>
-              </div>
-            </div>
-  
-            <div className="relative w-64">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" />
-              <input
-                ref={searchInputRef}
-                type="text"
-                placeholder="Search all levels..."
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 text-sm bg-input border border-border rounded-xl text-foreground placeholder:text-muted-foreground font-medium transition-all
-                           focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary focus:bg-blue-50"
-              />
-            </div>
-          </div>
-  
-          {/* Navigation hint */}
-          <div className="flex items-center justify-center px-6 py-2 bg-blue-50 border-b border-gray-100">
-            <div className="flex items-center gap-2 text-sm text-primary font-medium">
-             <span className="px-2 py-1 bg-primary text-white rounded text-xs font-mono">⇧</span>
-<span>Press Shift to return to Cortex Dashboard</span>
-              {!isRootLevel && (
-                <>
-                  <span className="text-gray-300">•</span>
-                  <span className="px-2 py-1 bg-gray-200 text-gray-700 rounded text-xs font-mono">⌥</span>
-                  <span>Option to go back</span>
-                </>
-              )}
-            </div>
-          </div>
-  
-          {/* Spatial Grid */}
-          <div className="p-3 overflow-hidden flex items-center justify-center">
-            {filteredItems.length === 0 ? (
-              <div className="flex flex-col items-center justify-center py-12 text-center text-gray-500">
-                <Search className="w-12 h-12 mb-4 opacity-50" />
-                <p className="text-lg">No results found for "{query}"</p>
-                <p className="text-sm mt-2">Try a different search term</p>
-              </div>
-            ) : (
-              <div className="grid grid-cols-3 gap-3 w-full max-w-2xl" style={{ aspectRatio: '3/3' }}>
-                {Array.from({ length: GRID_ROWS * GRID_COLS }).map((_, index) => {
-                  const x = index % GRID_COLS;
-                  const y = Math.floor(index / GRID_COLS);
-                  const item = filteredItems.find(item => item.gridPosition?.x === x && item.gridPosition?.y === y);
-                  const isSelected = selectedPosition.x === x && selectedPosition.y === y;
-
-                  return (
-                    <div
-                      key={`${x}-${y}`}
+    <div
+      className="w-full h-full flex items-center justify-center bg-transparent overflow-hidden"
+      onClick={onClose}  // Clicking outside closes overlay
+    >
+      <div
+        ref={containerRef}
+        className="w-full max-w-4xl h-[90vh] rounded-xl bg-white border border-gray-200 shadow-lg overflow-hidden animate-fade-in"
+        onClick={(e) => e.stopPropagation()}  // Prevent click from bubbling
+      >
+        {/* Header with Search and Breadcrumbs */}
+        <div className="flex items-center justify-between gap-4 p-4 border-b border-gray-100">
+          <div className="flex items-center gap-3">
+            <img
+              src="/icons/cortexlogov1invert.svg"
+              alt="Cortex Logo"
+              className="h-8 w-8"
+            />
+            <div>
+              <h3 className="text-sm font-semibold text-gray-900">Spatial Navigator</h3>
+              <div className="flex items-center gap-1 text-xs text-gray-500">
+                <button
+                  onClick={() => navigateToLevel(0)}
+                  className="hover:text-primary transition-colors"
+                >
+                  <Home className="w-3 h-3" />
+                </button>
+                {navigationStack.map((level, index) => (
+                  <div key={index} className="flex items-center gap-1">
+                    {index > 0 && <ChevronRight className="w-3 h-3" />}
+                    <button
+                      onClick={() => navigateToLevel(index)}
                       className={cn(
-                        "relative aspect-square rounded-xl border transition-all duration-300 cursor-pointer group overflow-hidden",
-                        item ? "bg-white border-gray-200 hover:border-primary shadow-sm hover:shadow-md" : "border-dashed border-gray-200",
-                        isSelected && item ? "ring-2 ring-primary border-primary bg-blue-50 scale-105" : "",
-                        !item && isSelected ? "border-primary/50" : ""
+                        "hover:text-primary transition-colors",
+                        index === navigationStack.length - 1 ? "text-primary font-medium" : ""
                       )}
-                      onClick={() => item && handleSelectItem(item)}
                     >
-                      {item && (
-                        <>
-                          {getTypeIndicator(item.type)}
-                          <div className="flex flex-col items-center justify-center h-full p-2 text-center">
-                            <div className="w-5 h-5 mb-1">{getItemIcon(item)}</div>
-                            <h3 className={cn(
-                              "font-semibold text-xs mb-0.5 line-clamp-2",
-                              isSelected ? "text-primary" : "text-gray-900"
-                            )}>{item.title}</h3>
-                            {item.subtitle && (
-                              <p className="text-[10px] text-gray-500 line-clamp-1">{item.subtitle}</p>
-                            )}
-                            {item.shortcut && (
-                              <span className="absolute bottom-1 left-1 text-[9px] text-gray-500 bg-gray-100 px-1 py-0.5 rounded">{item.shortcut}</span>
-                            )}
-                            {/* Active tab indicator for apps */}
-                            {item.type === "app" && item.activeTab && (
-                              <div className="absolute bottom-1 right-1 w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
-                            )}
-                             {/* Children indicator */}
-                            {item.children && item.children.length > 0 && canGoDeeper && (
-                              <div className="absolute bottom-1 right-1 flex items-center gap-0.5">
-                                <span className="text-[9px] text-primary font-medium">⇥</span>
-                                <div className="w-1 h-1 bg-primary rounded-full animate-pulse" />
-                              </div>
-                            )}
-                          </div>
-
-                          {isSelected && (
-                        <div className="absolute inset-0 rounded-xl bg-primary/5" />
+                      {level.title}
+                    </button>
+                  </div>
+                ))}
+                {!isRootLevel && (
+                  <div className="ml-2 px-2 py-1 bg-primary/10 text-primary rounded text-xs">
+                    Level {navigationStack.length}
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+  
+          <div className="relative w-64">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" />
+            <input
+              ref={searchInputRef}
+              type="text"
+              placeholder="Search all levels..."
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              className="w-full pl-10 pr-4 py-2 text-sm bg-input border border-border rounded-xl text-foreground placeholder:text-muted-foreground font-medium transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary focus:bg-blue-50"
+            />
+          </div>
+        </div>
+  
+        {/* Navigation hint */}
+        <div className="flex items-center justify-center px-6 py-2 bg-blue-50 border-b border-gray-100">
+          <div className="flex items-center gap-2 text-sm text-primary font-medium">
+            <span className="px-2 py-1 bg-primary text-white rounded text-xs font-mono">⇧</span>
+            <span>Press Shift to return to Cortex Dashboard</span>
+            {!isRootLevel && (
+              <>
+                <span className="text-gray-300">•</span>
+                <span className="px-2 py-1 bg-gray-200 text-gray-700 rounded text-xs font-mono">⌥</span>
+                <span>Option to go back</span>
+              </>
+            )}
+          </div>
+        </div>
+  
+        {/* Spatial Grid */}
+        <div className="p-3 overflow-hidden flex items-center justify-center">
+          {filteredItems.length === 0 ? (
+            <div className="flex flex-col items-center justify-center py-12 text-center text-gray-500">
+              <Search className="w-12 h-12 mb-4 opacity-50" />
+              <p className="text-lg">No results found for "{query}"</p>
+              <p className="text-sm mt-2">Try a different search term</p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-3 gap-3 w-full max-w-2xl" style={{ aspectRatio: '3/3' }}>
+              {Array.from({ length: GRID_ROWS * GRID_COLS }).map((_, index) => {
+                const x = index % GRID_COLS;
+                const y = Math.floor(index / GRID_COLS);
+                const item = filteredItems.find(item => item.gridPosition?.x === x && item.gridPosition?.y === y);
+                const isSelected = selectedPosition.x === x && selectedPosition.y === y;
+  
+                return (
+                  <div
+                    key={`${x}-${y}`}
+                    className={cn(
+                      "relative aspect-square rounded-xl border transition-all duration-300 cursor-pointer group overflow-hidden",
+                      item ? "bg-white border-gray-200 hover:border-primary shadow-sm hover:shadow-md" : "border-dashed border-gray-200",
+                      isSelected && item ? "ring-2 ring-primary border-primary bg-blue-50 scale-105" : "",
+                      !item && isSelected ? "border-primary/50" : ""
+                    )}
+                    onClick={() => item && handleSelectItem(item)}
+                  >
+                    {item && (
+                      <>
+                        {getTypeIndicator(item.type)}
+                        <div className="flex flex-col items-center justify-center h-full p-2 text-center">
+                          <div className="w-5 h-5 mb-1">{getItemIcon(item)}</div>
+                          <h3 className={cn(
+                            "font-semibold text-xs mb-0.5 line-clamp-2",
+                            isSelected ? "text-primary" : "text-gray-900"
+                          )}>{item.title}</h3>
+                          {item.subtitle && (
+                            <p className="text-[10px] text-gray-500 line-clamp-1">{item.subtitle}</p>
                           )}
-                        </>
-                      )}
-                      {!item && isSelected && (
-                        <div className="absolute inset-0 rounded-xl bg-primary/5 border-primary/30" />
-                      )}
-                    </div>
-                  );
-                })}
+                          {item.shortcut && (
+                            <span className="absolute bottom-1 left-1 text-[9px] text-gray-500 bg-gray-100 px-1 py-0.5 rounded">{item.shortcut}</span>
+                          )}
+                          {item.type === "app" && item.activeTab && (
+                            <div className="absolute bottom-1 right-1 w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
+                          )}
+                          {item.children && item.children.length > 0 && canGoDeeper && (
+                            <div className="absolute bottom-1 right-1 flex items-center gap-0.5">
+                              <span className="text-[9px] text-primary font-medium">⇥</span>
+                              <div className="w-1 h-1 bg-primary rounded-full animate-pulse" />
+                            </div>
+                          )}
+                        </div>
+                        {isSelected && (
+                          <div className="absolute inset-0 rounded-xl bg-primary/5" />
+                        )}
+                      </>
+                    )}
+                    {!item && isSelected && (
+                      <div className="absolute inset-0 rounded-xl bg-primary/5 border-primary/30" />
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          )}
+        </div>
+  
+        {/* Footer */}
+        <div className="flex items-center justify-between px-6 py-3 border-t border-gray-100 bg-gray-50">
+          <div className="flex items-center gap-6 text-xs text-gray-500">
+            <div className="flex items-center gap-1">
+              <ArrowUp className="w-3 h-3" />
+              <ArrowDown className="w-3 h-3" />
+              <ArrowLeft className="w-3 h-3" />
+              <ArrowRight className="w-3 h-3" />
+              <span>Navigate</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <span className="px-1.5 py-0.5 bg-gray-100 rounded text-xs">⇥</span>
+              <span>Zoom in</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <CornerDownLeft className="w-3 h-3" />
+              <span>Activate</span>
+            </div>
+            {!isRootLevel && (
+              <div className="flex items-center gap-1">
+                <span className="px-1.5 py-0.5 bg-gray-100 rounded text-xs">⌥</span>
+                <span>Back</span>
               </div>
             )}
           </div>
-  
-          {/* Footer */}
-          <div className="flex items-center justify-between px-6 py-3 border-t border-gray-100 bg-gray-50">
-            <div className="flex items-center gap-6 text-xs text-gray-500">
-              <div className="flex items-center gap-1">
-                <ArrowUp className="w-3 h-3" />
-                <ArrowDown className="w-3 h-3" />
-                <ArrowLeft className="w-3 h-3" />
-                <ArrowRight className="w-3 h-3" />
-                <span>Navigate</span>
-              </div>
-              <div className="flex items-center gap-1">
-                <span className="px-1.5 py-0.5 bg-gray-100 rounded text-xs">⇥</span>
-                <span>Zoom in</span>
-              </div>
-              <div className="flex items-center gap-1">
-                <CornerDownLeft className="w-3 h-3" />
-                <span>Activate</span>
-              </div>
-              {!isRootLevel && (
-                <div className="flex items-center gap-1">
-                  <span className="px-1.5 py-0.5 bg-gray-100 rounded text-xs">⌥</span>
-                  <span>Back</span>
-                </div>
-              )}
-            </div>
-            <div className="text-xs text-gray-500">
-              {filteredItems.length} items • Level {navigationStack.length}/{3}
-            </div>
+          <div className="text-xs text-gray-500">
+            {filteredItems.length} items • Level {navigationStack.length}/{3}
           </div>
         </div>
+  
       </div>
     </div>
   );
+  
 }

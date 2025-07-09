@@ -1,0 +1,421 @@
+{
+  "sessionName": "Session_2025-07-09T00:15:26.792Z",
+  "createdAt": "2025-07-09T00:15:26.792Z",
+  "liveWorkspace": {
+    "apps": [],
+    "activeAppId": null,
+    "activeWindowId": null
+  },
+  "eventLog": [
+    {
+      "type": "session_started",
+      "timestamp": "2025-07-09T00:15:26.792Z",
+      "data": {
+        "type": "session_started",
+        "sessionName": "Session_2025-07-09T00:15:26.792Z"
+      }
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:15:29.977Z",
+      "appName": "Electron",
+      "windowTitle": "Cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:15:32.941Z",
+      "appName": "Electron",
+      "windowTitle": "Cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:15:35.987Z",
+      "appName": "Electron",
+      "windowTitle": "Cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:15:38.950Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "SpatialNavigator.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:15:41.967Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "SpatialNavigator.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:15:44.965Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "SpatialNavigator.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:15:47.965Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "SpatialNavigator.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:15:50.969Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "SpatialNavigator.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:15:53.980Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "SpatialNavigator.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:15:56.988Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "SpatialNavigator.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:15:59.991Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "SpatialNavigator.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:16:02.999Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "SpatialNavigator.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:16:06.017Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "SpatialNavigator.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:16:09.033Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "SpatialNavigator.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:16:12.000Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "SpatialNavigator.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:16:15.002Z",
+      "appName": "Electron",
+      "windowTitle": "Cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:16:18.052Z",
+      "appName": "Electron",
+      "windowTitle": "Cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:16:21.022Z",
+      "appName": "Electron",
+      "windowTitle": "Cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:16:24.011Z",
+      "appName": "Electron",
+      "windowTitle": "Cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:16:27.023Z",
+      "appName": "Electron",
+      "windowTitle": "Cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:16:30.017Z",
+      "appName": "Electron",
+      "windowTitle": "Cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:16:33.023Z",
+      "appName": "Electron",
+      "windowTitle": "Cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:16:36.023Z",
+      "appName": "Electron",
+      "windowTitle": "Cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:16:39.043Z",
+      "appName": "Electron",
+      "windowTitle": "Cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:16:42.039Z",
+      "appName": "Electron",
+      "windowTitle": "Cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:16:45.038Z",
+      "appName": "Electron",
+      "windowTitle": "Cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:16:48.041Z",
+      "appName": "Electron",
+      "windowTitle": "Cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:16:51.047Z",
+      "appName": "Electron",
+      "windowTitle": "Cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:16:54.065Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "SpatialNavigator.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:16:57.047Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "SpatialNavigator.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:17:00.057Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "SpatialNavigator.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:17:03.055Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "SpatialNavigator.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:17:06.063Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "SpatialNavigator.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:17:09.062Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "SpatialNavigator.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:17:12.112Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "SpatialNavigator.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:17:15.086Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "SpatialNavigator.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:17:18.121Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "SpatialNavigator.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:17:21.111Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "SpatialNavigator.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:17:24.084Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "SpatialNavigator.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:17:27.117Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "SpatialNavigator.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:17:30.131Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "SpatialNavigator.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:17:33.105Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "SpatialNavigator.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:17:36.135Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "SpatialNavigator.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:17:39.144Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "SpatialNavigator.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:17:42.161Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "SpatialNavigator.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:17:45.144Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "SpatialNavigator.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:17:48.130Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "SpatialNavigator.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:17:51.130Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "SpatialNavigator.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:17:54.136Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "SpatialNavigator.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:17:57.178Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "SpatialNavigator.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:18:00.147Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "SpatialNavigator.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:18:03.146Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "SpatialNavigator.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:18:06.170Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "SpatialNavigator.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:18:09.162Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "SpatialNavigator.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:18:12.153Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:18:15.146Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:18:18.147Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:18:21.189Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:18:24.169Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:18:27.169Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:18:30.171Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:18:33.213Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:18:36.214Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:18:39.220Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:18:42.224Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:18:45.191Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-09T00:18:49.029Z",
+      "appName": "Visual Studio Code",
+      "windowTitle": "main.js — cortex"
+    }
+  ]
+}

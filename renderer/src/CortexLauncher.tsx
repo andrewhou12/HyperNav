@@ -38,7 +38,7 @@ const LiveClock = ({ className = "" }: { className?: string }) => {
   );
 };
 
-const CortexLauncher = () => {
+export function CortexLauncher() {
   const [isLoading, setIsLoading] = useState<string | null>(null);
 
   const handleStartSession = () => {
@@ -181,6 +181,4 @@ const CortexLauncher = () => {
       </footer>
     </div>
   );
-};
-
-export default CortexLauncher;
+}
