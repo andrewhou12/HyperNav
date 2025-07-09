@@ -124,24 +124,32 @@ export function CortexDashboard() {
                     </p>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Button
-                      variant={viewMode === 'grid' ? 'default' : 'outline'}
-                      size="sm"
-                      onClick={() => setViewMode('grid')}
-                      className="glass"
-                    >
-                      <Grid3X3 className="w-4 h-4 mr-2" />
-                      Grid
-                    </Button>
-                      <Button
-                        variant={viewMode === 'canvas' ? 'default' : 'outline'}
-                        size="sm"
-                        onClick={() => setViewMode('canvas')}
-                        className="glass hover:bg-muted hover:text-muted-foreground"
-                      >
-                        <Map className="w-4 h-4 mr-2" />
-                        Canvas
-                      </Button>
+                  <button
+  onClick={() => setViewMode('grid')}
+  className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+    viewMode === 'grid'
+      ? 'bg-primary text-primary-foreground hover:bg-primary/90'
+      : 'bg-muted text-muted-foreground hover:bg-gray-300'
+  }`}
+  title="Grid View"
+>
+  <Grid3X3 className="w-4 h-4" />
+  Grid
+</button>
+
+<button
+  onClick={() => setViewMode('canvas')}
+  className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+    viewMode === 'canvas'
+      ? 'bg-primary text-primary-foreground hover:bg-primary/90'
+      : 'bg-muted text-muted-foreground hover:bg-gray-300'
+  }`}
+  title="Canvas View"
+>
+  <Map className="w-4 h-4" />
+  Canvas
+</button>
+
 
                   </div>
                 </div>
