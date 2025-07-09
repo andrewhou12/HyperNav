@@ -263,9 +263,12 @@ export function SpatialNavigator({ isOpen, onClose }: QuickNavigatorProps) {
       setNavigationStack([{ items: navigatorData, title: "Workspace", parentId: undefined }]);
       setSelectedPosition(currentAppPosition);
       setQuery("");
-      if (searchInputRef.current) {
-        searchInputRef.current.focus();
-      }
+  
+      const timeout = setTimeout(() => {
+        searchInputRef.current?.focus();
+      }, 20);  // 20ms is the sweet spot—no visible lag, high reliability
+  
+      return () => clearTimeout(timeout);
     }
   }, [isOpen]);
 
