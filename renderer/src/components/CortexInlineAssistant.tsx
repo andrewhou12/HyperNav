@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Hexagon, Sparkles, MessageSquare, Search, Zap, Send, X, Bot } from 'lucide-react';
+import { Send, X, Trash2, Brain, Globe, FileText, Sparkles, ChevronUp, ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -11,34 +11,86 @@ interface Message {
   timestamp: Date;
 }
 
+interface MemoryBubble {
+  id: string;
+  type: 'highlight';
+  content: string;
+  preview: string;
+}
+
 const DEMO_RESPONSES = [
-  "I'm Cortex, your AI productivity assistant. How can I help you today?",
-  "I can help you with workspace management, AI tasks, file search, and more. What would you like to do?",
-  "Searching your workspace... Found 3 relevant items. Would you like me to open them?",
-  "Task completed! I've organized your tabs and cleared unnecessary windows.",
-  "Here's a quick summary of your current session and open tasks."
+  "I'm Cortex Intelligence, your AI assistant. How can I help you today?",
+  "I can analyze, explain, translate, or rephrase any text you provide. What would you like me to do?",
+  "I've processed your request. Here's what I found...",
+  "Based on the content you've shared, here's my analysis...",
+  "Task completed! Let me know if you need any additional help."
 ];
 
-const tools = [
-  { id: 'ai', label: 'AI', icon: Bot, active: true },
-  { id: 'search', label: 'Search', icon: Search, active: false },
-  { id: 'actions', label: 'Actions', icon: Zap, active: false },
-];
+interface CortexInlineAssistantProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
 
-export const CortexInlineAssistant: React.FC = () => {
-  const [isExpanded, setIsExpanded] = useState(false);
-  const [activeTab, setActiveTab] = useState('ai');
+export const CortexInlineAssistant: React.FC<CortexInlineAssistantProps> = ({ isOpen, onClose }) => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputValue, setInputValue] = useState('');
   const [isTyping, setIsTyping] = useState(false);
+  const [memoryBubbles, setMemoryBubbles] = useState<MemoryBubble[]>([]);
+  const [selectedBubble, setSelectedBubble] = useState<string | null>(null);
+  const [isExpanded, setIsExpanded] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const handleToggle = () => {
-    setIsExpanded(!isExpanded);
-    if (!isExpanded) {
+
+  // Monitor text selection
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleSelection = () => {
+      const selection = window.getSelection();
+      const selectedText = selection?.toString().trim();
+      
+      if (selectedText && selectedText.length > 10) {
+        const preview = selectedText.length > 40 ? selectedText.substring(0, 40) + '...' : selectedText;
+        const newBubble: MemoryBubble = {
+          id: `highlight-${Date.now()}`,
+          type: 'highlight',
+          content: selectedText,
+          preview
+        };
+        
+        setMemoryBubbles(prev => {
+          // Remove existing highlight bubbles and add new one
+          const filtered = prev.filter(b => b.type !== 'highlight');
+          return [newBubble, ...filtered];
+        });
+      }
+    };
+
+    // Add event listeners
+    document.addEventListener('selectionchange', handleSelection);
+
+    return () => {
+      document.removeEventListener('selectionchange', handleSelection);
+    };
+  }, [isOpen]);
+
+  // Focus input when opened and handle escape key
+  useEffect(() => {
+    if (isOpen) {
       setTimeout(() => inputRef.current?.focus(), 150);
     }
-  };
+  }, [isOpen]);
+
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isOpen) {
+        onClose();
+      }
+    };
+
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [isOpen, onClose]);
 
   const handleSendMessage = async () => {
     if (!inputValue.trim()) return;
@@ -71,117 +123,128 @@ export const CortexInlineAssistant: React.FC = () => {
     if (e.key === 'Enter') {
       handleSendMessage();
     }
-    if (e.key === 'Escape') {
-      setIsExpanded(false);
+  };
+
+  const handleBubbleClick = (bubbleId: string) => {
+    setSelectedBubble(selectedBubble === bubbleId ? null : bubbleId);
+  };
+
+  const handleRemoveBubble = (bubbleId: string, e: React.MouseEvent) => {
+    e.stopPropagation();
+    setMemoryBubbles(prev => prev.filter(bubble => bubble.id !== bubbleId));
+    if (selectedBubble === bubbleId) {
+      setSelectedBubble(null);
     }
   };
 
-  // Global hotkey simulation (spacebar for demo)
-  useEffect(() => {
-    const handleGlobalKeypress = (e: KeyboardEvent) => {
-      if (e.code === 'Space' && !isExpanded && e.target === document.body) {
-        e.preventDefault();
-        setIsExpanded(true);
-        setTimeout(() => inputRef.current?.focus(), 150);
-      }
-    };
+  const handleActionButton = (action: 'explain' | 'translate' | 'rephrase') => {
+    if (!selectedBubble) return;
+    
+    const bubble = memoryBubbles.find(b => b.id === selectedBubble);
+    if (!bubble) return;
 
-    document.addEventListener('keydown', handleGlobalKeypress);
-    return () => document.removeEventListener('keydown', handleGlobalKeypress);
-  }, [isExpanded]);
+    let prompt = '';
+    switch (action) {
+      case 'explain':
+        prompt = `Explain this: ${bubble.content}`;
+        break;
+      case 'translate':
+        prompt = `Translate this to English: ${bubble.content}`;
+        break;
+      case 'rephrase':
+        prompt = `Rephrase this: ${bubble.content}`;
+        break;
+    }
+    setInputValue(prompt);
+    inputRef.current?.focus();
+  };
 
-  if (!isExpanded) {
-    return (
-      <div className="fixed bottom-6 right-6 z-50">
-        <Button
-  onClick={handleToggle}
-  className={cn(
-    "h-12 px-4 rounded-xl bg-white border border-gray-200 shadow-sm",
-    "hover:shadow-md transition-all duration-200 text-gray-900 hover:text-gray-900",
-    "hover:bg-gray-50"
-  )}
-  variant="ghost"
->
-  <img 
-    src="/icons/cortexlogov1invert.svg" 
-    alt="Cortex Logo" 
-    className="h-5 w-5 mr-2"
-  />
-  <span className="text-sm font-medium">Cortex</span>
-</Button>
-        
-        {/* Floating hint */}
-        <div className="absolute -top-11 right-0 px-3 py-2 bg-white border border-gray-200 rounded-lg text-xs text-gray-600 font-medium whitespace-nowrap shadow-sm">
-          Press Space for Cortex
-        </div>
-      </div>
-    );
+  const handleClearChat = () => {
+    setMessages([]);
+    setIsTyping(false);
+  };
+
+  if (!isOpen) {
+    return null;
   }
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 w-96">
+    <div className="fixed bottom-6 right-6 z-50 pointer-events-none">
       <div className={cn(
-        "bg-white rounded-xl border border-gray-200 shadow-lg overflow-hidden",
-        "animate-in slide-in-from-bottom-4 zoom-in-95 duration-300"
+        "bg-white/95 backdrop-blur-xl rounded-2xl border border-border shadow-2xl pointer-events-auto",
+        "animate-in slide-in-from-bottom-4 zoom-in-95 duration-300",
+        "flex flex-col overflow-hidden",
+        isExpanded ? "w-[600px] h-[80vh]" : "w-96 h-auto max-h-[80vh]"
       )}>
         {/* Header */}
-        <div className="flex items-center justify-between p-4 border-b border-gray-100">
-  <div className="flex items-center gap-3">
-    <img 
-      src="/icons/cortexlogov1invert.svg" 
-      alt="Cortex Logo" 
-      className="h-8 w-8"
-    />
-    <div>
-      <h3 className="text-sm font-semibold text-gray-900">Cortex</h3>
-      <p className="text-xs text-gray-500">AI Assistant</p>
-    </div>
-  </div>
-
-  <Button
-    onClick={() => setIsExpanded(false)}
-    variant="ghost"
-    size="sm"
-    className="h-7 w-7 rounded-lg hover:bg-gray-100 text-gray-400 hover:text-gray-600"
-  >
-    <X className="h-3.5 w-3.5" />
-  </Button>
-</div>
-
-        {/* Tool Tabs */}
-        <div className="flex border-b border-gray-100">
-          {tools.map((tool) => (
-            <button
-              key={tool.id}
-              onClick={() => setActiveTab(tool.id)}
-              className={cn(
-                "flex-1 flex items-center justify-center gap-2 py-3 px-4 text-xs font-medium transition-all duration-200 relative",
-                activeTab === tool.id
-                  ? "text-primary bg-blue-50"
-                  : "text-gray-600 hover:text-primary hover:bg-gray-50"
-              )}
-            >
-              <tool.icon className="h-3.5 w-3.5" />
-              {tool.label}
-              {activeTab === tool.id && (
-                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary" />
-              )}
-            </button>
-          ))}
+        <div className="flex items-center justify-between p-4 border-b border-border/50">
+          <div className="flex items-center gap-3">
+            <div className="h-8 w-8 rounded-lg bg-primary/10 flex items-center justify-center">
+              <Sparkles className="h-4 w-4 text-primary" />
+            </div>
+            <div>
+              <h3 className="text-sm font-semibold text-foreground">Cortex Intelligence</h3>
+            </div>
+          </div>
+          <Button
+            onClick={() => setIsExpanded(!isExpanded)}
+            variant="ghost"
+            size="sm"
+            className="h-8 w-8 p-0"
+          >
+            {isExpanded ? <ChevronDown className="h-4 w-4" /> : <ChevronUp className="h-4 w-4" />}
+          </Button>
         </div>
 
-        {/* Chat Messages */}
-        <div className="max-h-64 overflow-y-auto p-4 space-y-3 bg-gray-50/50">
+        {/* Memory Layer - Bubbles */}
+        {memoryBubbles.length > 0 && (
+          <div className="p-4 border-b border-border/50">
+            <div className="flex flex-wrap gap-2">
+              {memoryBubbles.map((bubble) => (
+                <div
+                  key={bubble.id}
+                  onClick={() => handleBubbleClick(bubble.id)}
+                  className={cn(
+                    "relative group cursor-pointer rounded-lg px-3 py-2 text-xs border transition-all",
+                    selectedBubble === bubble.id
+                      ? "bg-primary/10 border-primary text-primary"
+                      : "bg-muted/50 border-border hover:bg-muted text-muted-foreground hover:text-foreground"
+                  )}
+                >
+                  <div className="flex items-center gap-2">
+                    <div className="h-2 w-2 rounded-full bg-blue-500" />
+                    <span className="truncate max-w-[120px]">{bubble.preview}</span>
+                    <button
+                      onClick={(e) => handleRemoveBubble(bubble.id, e)}
+                      className="opacity-0 group-hover:opacity-100 transition-opacity ml-1 text-muted-foreground hover:text-destructive"
+                    >
+                      <X className="h-3 w-3" />
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Chat Area */}
+        <div className={cn(
+          "flex-1 overflow-y-auto p-4 space-y-3",
+          isExpanded ? "min-h-[40vh]" : "max-h-64"
+        )}>
           {messages.length === 0 && (
             <div className="text-center py-6">
-              <div className="h-12 w-12 rounded-xl bg-blue-50 flex items-center justify-center mx-auto mb-3">
+              <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-3">
                 <Sparkles className="h-6 w-6 text-primary" />
               </div>
-              <p className="text-sm text-gray-900 font-medium">
-                Welcome to Cortex
+              <p className="text-sm text-foreground font-medium">
+                Welcome to Cortex Intelligence
               </p>
-              <p className="text-xs text-gray-500 mt-1">
-                How can I assist you today?
+              <p className="text-xs text-muted-foreground mt-1">
+                {memoryBubbles.length === 0 
+                  ? "Highlight text to create memory bubbles" 
+                  : "Select a memory bubble or ask me anything"
+                }
               </p>
             </div>
           )}
@@ -196,10 +259,10 @@ export const CortexInlineAssistant: React.FC = () => {
             >
               <div
                 className={cn(
-                  "max-w-[80%] rounded-xl px-4 py-2.5 text-sm",
+                  "max-w-[80%] rounded-xl px-3 py-2 text-sm",
                   message.type === 'user'
-                    ? "bg-primary text-white font-medium"
-                    : "bg-white text-gray-900 border border-gray-200 font-medium"
+                    ? "bg-primary text-primary-foreground"
+                    : "bg-muted text-foreground border border-border"
                 )}
               >
                 {message.content}
@@ -209,7 +272,7 @@ export const CortexInlineAssistant: React.FC = () => {
           
           {isTyping && (
             <div className="flex justify-start">
-              <div className="bg-white border border-gray-200 rounded-xl px-4 py-2.5 text-sm">
+              <div className="bg-muted border border-border rounded-xl px-3 py-2 text-sm">
                 <div className="flex space-x-1">
                   <div className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse"></div>
                   <div className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse delay-75"></div>
@@ -221,20 +284,20 @@ export const CortexInlineAssistant: React.FC = () => {
         </div>
 
         {/* Input Area */}
-        <div className="p-4 border-t border-gray-100 bg-white">
-          <div className="flex gap-3">
+        <div className="flex-shrink-0 p-4 bg-card border-t border-border/50">
+          <div className="flex gap-2 mb-3">
             <div className="relative flex-1">
               <Input
                 ref={inputRef}
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
                 onKeyDown={handleKeyPress}
-                placeholder="Ask Cortex anything..."
+                placeholder="Ask anything..."
                 className={cn(
-                  "h-11 bg-input border-border rounded-xl",
-                  "focus:border-primary focus:ring-1 focus:ring-ring/20 focus:bg-white",
+                  "h-10 bg-background border-border rounded-lg",
+                  "focus:border-primary focus:ring-1 focus:ring-primary/20",
                   "text-foreground placeholder:text-muted-foreground",
-                  "font-medium text-sm"
+                  "text-sm"
                 )}
               />
             </div>
@@ -242,18 +305,73 @@ export const CortexInlineAssistant: React.FC = () => {
               onClick={handleSendMessage}
               disabled={!inputValue.trim() || isTyping}
               size="sm"
-              className={cn(
-                "h-11 w-11 rounded-xl bg-primary hover:bg-primary/90",
-                "transition-all duration-200 font-medium",
-                "disabled:opacity-50 disabled:hover:bg-primary"
-              )}
+              className="h-10 w-10 rounded-lg"
             >
               <Send className="h-4 w-4" />
             </Button>
           </div>
+
+          {/* Action & Utility Row */}
+          <div className="flex items-center justify-between">
+            {/* Action Buttons (Left) */}
+            <div className="flex gap-2">
+              <Button
+                onClick={() => handleActionButton('explain')}
+                disabled={!selectedBubble}
+                variant="outline"
+                size="sm"
+                className="h-8 px-3 text-xs"
+              >
+                <Brain className="h-3 w-3 mr-1" />
+                Explain
+              </Button>
+              <Button
+                onClick={() => handleActionButton('translate')}
+                disabled={!selectedBubble}
+                variant="outline"
+                size="sm"
+                className="h-8 px-3 text-xs"
+              >
+                <Globe className="h-3 w-3 mr-1" />
+                Translate
+              </Button>
+              <Button
+                onClick={() => handleActionButton('rephrase')}
+                disabled={!selectedBubble}
+                variant="outline"
+                size="sm"
+                className="h-8 px-3 text-xs"
+              >
+                <FileText className="h-3 w-3 mr-1" />
+                Rephrase
+              </Button>
+            </div>
+
+            {/* Utility Buttons (Right) */}
+            <div className="flex gap-2">
+              <Button
+                onClick={handleClearChat}
+                variant="ghost"
+                size="sm"
+                className="h-8 px-3 text-xs text-muted-foreground hover:text-foreground"
+              >
+                <Trash2 className="h-3 w-3 mr-1" />
+                Clear Chat
+              </Button>
+              <Button
+                onClick={onClose}
+                variant="ghost"
+                size="sm"
+                className="h-8 px-3 text-xs text-muted-foreground hover:text-foreground"
+              >
+                <X className="h-3 w-3 mr-1" />
+                Close
+              </Button>
+            </div>
+          </div>
           
-          <p className="text-xs text-gray-500 mt-2.5 text-center">
-            Press Enter to send • Esc to close
+          <p className="text-xs text-muted-foreground mt-2 text-center">
+            Enter to send • Esc to close
           </p>
         </div>
       </div>
