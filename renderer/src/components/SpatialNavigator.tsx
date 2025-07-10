@@ -338,13 +338,6 @@ export function SpatialNavigator({ isOpen, onClose }: QuickNavigatorProps) {
       if (!isOpen) return;
 
       const validPositions = getValidPositions();
-      
-      // Handle Shift key for returning to Cortex dashboard
-     if (e.shiftKey && !e.metaKey && !e.altKey && !e.ctrlKey) {
-  e.preventDefault();
-  onClose();
-  return;
-}
 
 switch (e.key) {
   case "ArrowRight":
@@ -420,6 +413,12 @@ switch (e.key) {
   case "Escape":
       e.preventDefault();
       window.electron.ipcRenderer.send('hide-overlay', { reason: 'escape' });
+      setSelectedPosition(currentAppPosition);
+      break;
+  
+  case "Shift":
+      e. preventDefault();
+      window.electron.ipcRenderer.send('hide-overlay', { reason: 'shift' });
       setSelectedPosition(currentAppPosition);
       break;
 }

@@ -20,7 +20,7 @@ export function Notebook({ onExpand, isExpanded = false }: NotebookProps) {
         glass border border-border/50 rounded-xl transition-all duration-300
         ${isExpanded 
           ? 'fixed inset-4 z-50 flex flex-col' 
-          : 'h-64 flex flex-col'
+          : 'h-full flex flex-col'
         }
       `}
     >
