@@ -148,7 +148,7 @@ function createOverlayWindow() {
     vibrancy: 'under-window',
     thickFrame: false,
     backgroundColor: '#00000000',
-    hasShadow: true,
+    hasShadow: false,
     resizable: false,  // you could set this to true if you want window resize handles (optional)
     alwaysOnTop: true,
     skipTaskbar: true,
