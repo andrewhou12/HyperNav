@@ -221,7 +221,7 @@ export function EnhancedSessionSidebar({
         </div>
     
         {/* Notebook */}
-        <div className="border-t border-border p-4">
+        <div className="border-t border-border p-4 flex-1">
           <Notebook onExpand={onNotebookExpand} isExpanded={isNotebookExpanded} />
         </div>
     
