@@ -157,8 +157,8 @@ export function InfiniteCanvas() {
 
       {/* Controls */}
       <ZoomControls 
-        onZoomIn={() => transformRef.current?.zoomIn(0.3)}
-        onZoomOut={() => transformRef.current?.zoomOut(0.3)}
+        onZoomIn={() => transformRef.current?.zoomIn(0.5)}
+        onZoomOut={() => transformRef.current?.zoomOut(0.5)}
         onZoomToFit={handleZoomToFit}
       />
 
