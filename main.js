@@ -3,33 +3,53 @@ const fs = require('fs');
 const { app, BrowserWindow, globalShortcut, ipcMain, screen, dialog } = require('electron');
 const { exec } = require('child_process');
 require('dotenv').config();
-const { getInstalledApps } = require('./core/appDiscovery');
+const { getInstalledApps, getInstalledAppsWithIcons, extractIcon } = require('./core/appDiscovery');
 const { smartLaunchApp, openChromeWithSearch } = require('./core/appLauncher');
 
-// Load and persist recent apps
 const RECENT_APPS_FILE = path.join(app.getPath('userData'), 'recent-apps.json');
 let recentApps = [];
+
+function isValidMacApp(appPath) {
+  return typeof appPath === 'string' && appPath.endsWith('.app') && fs.existsSync(appPath);
+}
 
 async function loadRecentApps() {
   try {
     if (fs.existsSync(RECENT_APPS_FILE)) {
       const data = await fs.promises.readFile(RECENT_APPS_FILE, 'utf-8');
-      recentApps = JSON.parse(data);
+      const loadedApps = JSON.parse(data);
+      const validApps = loadedApps.filter(app => isValidMacApp(app.path));
+      recentApps = await Promise.all(validApps.map(async app => ({
+        ...app,
+        icon: await extractIcon(app.path)
+      })));
+    } else {
+      recentApps = [];
     }
   } catch (err) {
-    console.error('Failed to load recent apps:', err);
+    console.error('❌ Failed to load recent apps:', err);
     recentApps = [];
   }
 }
 
 async function markAppAsUsed(app) {
+  if (!isValidMacApp(app.path)) {
+    console.warn(`⚠️ Skipping invalid app: ${app.path}`);
+    return;
+  }
   recentApps = recentApps.filter(item => item.path !== app.path);
-  recentApps.unshift({ name: app.name, path: app.path, icon: app.icon });
-  if (recentApps.length > 10) recentApps = recentApps.slice(0, 10);
+  recentApps.unshift({
+    name: app.name,
+    path: app.path,
+    icon: app.icon || null,
+  });
+  if (recentApps.length > 10) {
+    recentApps = recentApps.slice(0, 10);
+  }
   try {
     await fs.promises.writeFile(RECENT_APPS_FILE, JSON.stringify(recentApps, null, 2));
   } catch (err) {
-    console.error('Failed to write recent apps:', err);
+    console.error('❌ Failed to write recent apps:', err);
   }
 }
 
@@ -195,7 +215,9 @@ async function startCortexSession() {
   const hiddenApps = await clearWorkspace();
   toggleDockAutohide(true);
   const sessionwin = createSessionWindow();
-  sessionwin.once('ready-to-show', () => {
+  sessionwin.once('ready-to-show', async () => {
+    const appsWithIcons = await getInstalledAppsWithIcons();
+    sessionwin.webContents.send('preload-apps', appsWithIcons);
     setTimeout(() => {
       sessionwin.maximize();
       sessionwin.show();
@@ -213,22 +235,29 @@ async function startCortexSession() {
   registerHotkeys();
 }
 
-// IPC Handlers
 ipcMain.handle('get-installed-apps', async () => {
-  try { return await getInstalledApps(); }
-  catch (err) { console.error('Failed to get installed apps:', err); return []; }
+  const apps = await getInstalledApps();
+  const safeApps = apps.map(app => ({
+    name: String(app.name || ''),
+    path: String(app.path || ''),
+    icon: typeof app.icon === 'string' ? app.icon : null,
+  }));
+  return safeApps;
 });
+
+ipcMain.handle('get-all-apps-with-icons', async () => {
+  const apps = await getInstalledAppsWithIcons();
+  return apps;
+});
+
 ipcMain.handle('get-recent-apps', () => recentApps);
 ipcMain.handle('mark-app-used', (_, app) => markAppAsUsed(app));
 ipcMain.handle('save-session', async () => { await saveSession(); stopPollingWindowState(); workspaceManager.stopAutoHide && workspaceManager.stopAutoHide(); sessionWindow.close(); return { ok: true }; });
 ipcMain.handle('load-session', () => loadSession());
 ipcMain.on('open-window', async (_, type) => { if (type === 'start-session') await startCortexSession(); });
 ipcMain.on('update-session', (_, tab) => updateSessionData(tab));
-//choose app outdated
 ipcMain.handle('choose-app', async () => { const result = await dialog.showOpenDialog({ title: 'Choose an App', defaultPath: '/Applications', properties: ['openFile','dontAddToRecent'], }); if (result.canceled||!result.filePaths.length) return null; const appPath = result.filePaths[0]; if (!appPath.endsWith('.app')) return null; const appName = path.basename(appPath, '.app'); const newTab = { type:'app_opened', name:appName, path:appPath, windowTitle:appName, isActive:true, addedAt:new Date().toISOString(), launchedViaCortex:true }; updateSessionData(newTab); return newTab; });
-//launch app outdated
 ipcMain.handle('launch-app', (_, appPath) => launchApp(appPath));
-//app control outdated
 ipcMain.handle('app-control', async (_, { app, action, payload }) => { const driver = appDrivers[app]; if (driver?.[action] instanceof Function) { try { if (app==='chrome'&&action==='openTab') { if (!isAppInWorkspace('Google Chrome')) await driver.openNewWindowWithTab(payload); else await driver.openTab(payload); updateSessionData({ type:'app_opened', name:'Google Chrome', path:'/Applications/Google Chrome.app', windowTitle:payload, isActive:true, launchedViaCortex:true }); return; } await driver[action](payload); if (['openTab','launch','openNewWindowWithTab'].includes(action)) { updateSessionData({ type:'app_opened', name:app, path:'/Applications/Google Chrome.app', windowTitle:payload, isActive:true, launchedViaCortex:true }); } } catch (err) { console.error(`❌ Failed to perform ${action} on ${app}:`, err); } } else { console.error(`❌ Unknown app/action: ${app}/${action}`); } });
 ipcMain.handle('hide-background-apps', () => workspaceManager.hideBackgroundApps());
 ipcMain.handle('show-all-apps', () => workspaceManager.showAllApps());
@@ -239,19 +268,13 @@ ipcMain.handle('resume-workspace', () => workspaceManager.resumeWorkspace());
 ipcMain.handle('clear-workspace', async () => { return await clearWorkspace(); });
 ipcMain.handle('get-session-data', () => getSessionData());
 ipcMain.on('hide-overlay', (event, { reason }) => { if (overlayWindow&&!overlayWindow.isDestroyed()) overlayWindow.hide(); if (reason==='escape') { if (overlayOpenedFromGlobal) app.hide(); overlayOpenedFromGlobal=false; } else if (reason==='shift') { if (sessionWindow&&!sessionWindow.isDestroyed()) sessionWindow.show(); if (launcherWindow&&!launcherWindow.isDestroyed()) launcherWindow.show(); overlayOpenedFromGlobal=false; } });
-ipcMain.handle('smart-launch-app', async (_, app) => {
-  try {
-    const result = await smartLaunchApp(app);
-    return { success: true, result };
-  } catch (error) {
-    console.error('Smart launch failed:', error);
-    return { success: false, error: error.message };
-  }
+ipcMain.handle('smart-launch-app', async (event, app) => {
+  const result = await smartLaunchApp(app);
+  return result;
 });
 ipcMain.handle('open-chrome-search', async (event, query) => {
   try {
     openChromeWithSearch(query, (status) => {
-      // Optionally log or handle status updates here if you want
       console.log('[Chrome Search]', status.message);
     });
     return { success: true };
@@ -260,7 +283,9 @@ ipcMain.handle('open-chrome-search', async (event, query) => {
     return { success: false, error: error.message };
   }
 });
-
+ipcMain.handle('get-app-icon', async (event, appPath) => {
+  return await extractIcon(appPath);
+});
 
 app.on('activate', () => {
   const dashboardVisible = sessionWindow && !sessionWindow.isDestroyed() && sessionWindow.isVisible();

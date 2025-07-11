@@ -1,14 +1,14 @@
 const { contextBridge, ipcRenderer } = require('electron');
 
 contextBridge.exposeInMainWorld('electron', {
-  // GPT and session APIs
   askGPT: (payload) => ipcRenderer.invoke('ask-gpt', payload),
   summarizeSession: (eventLog) => ipcRenderer.invoke('summarize-session', eventLog),
   interpretCommand: (command) => ipcRenderer.invoke('interpret-command', command),
   saveSession: () => ipcRenderer.invoke('save-session'),
   chooseApp: () => ipcRenderer.invoke('choose-app'),
   getInstalledApps: () => ipcRenderer.invoke('get-installed-apps'),
-  launchApp: (appPath) => ipcRenderer.invoke('launch-app', appPath), //outdated
+  getAllAppsWithIcons: () => ipcRenderer.invoke('get-all-apps-with-icons'),
+  launchApp: (appPath) => ipcRenderer.invoke('launch-app', appPath),
   smartLaunchApp: (app) => ipcRenderer.invoke('smart-launch-app', app),
   getRecentApps: () => ipcRenderer.invoke('get-recent-apps'),
   markAppUsed: (app) => ipcRenderer.invoke('mark-app-used', app),
@@ -21,15 +21,14 @@ contextBridge.exposeInMainWorld('electron', {
   clearWorkspace: () => ipcRenderer.invoke('clear-workspace'),
   openWindow: (type) => ipcRenderer.send('open-window', type),
   openChromeWithSearch: (query) => ipcRenderer.invoke('open-chrome-search', query),
+  getAppIcon: (appPath) => ipcRenderer.invoke('get-app-icon', appPath),
 
-  // Live workspace updates
   onLiveWorkspaceUpdate: (callback) => {
     ipcRenderer.on('live-workspace-update', (event, liveWorkspace) => {
       callback(liveWorkspace);
     });
   },
 
-  // Session log streaming
   getSessionData: () => ipcRenderer.invoke('get-session-data'),
   onSessionLogEntry: (cb) => {
     ipcRenderer.on('session-log-entry', (_, entry) => cb(entry));

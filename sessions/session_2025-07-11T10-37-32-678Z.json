@@ -1,0 +1,625 @@
+{
+  "sessionName": "Session_2025-07-11T10:32:29.036Z",
+  "createdAt": "2025-07-11T10:32:29.037Z",
+  "liveWorkspace": {
+    "apps": [],
+    "activeAppId": null,
+    "activeWindowId": null
+  },
+  "eventLog": [
+    {
+      "type": "session_started",
+      "timestamp": "2025-07-11T10:32:29.037Z",
+      "data": {
+        "type": "session_started",
+        "sessionName": "Session_2025-07-11T10:32:29.036Z"
+      }
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T10:32:32.774Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T10:32:35.238Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T10:32:38.253Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T10:32:41.211Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T10:32:44.234Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T10:32:47.235Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T10:32:50.236Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T10:32:53.229Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T10:32:56.258Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T10:32:59.272Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T10:33:02.233Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T10:33:05.286Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T10:33:08.281Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T10:33:11.511Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T10:33:14.273Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T10:33:17.258Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T10:33:20.313Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T10:33:23.262Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T10:33:26.273Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T10:33:29.317Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T10:33:32.292Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T10:33:35.285Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T10:33:38.281Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T10:33:41.291Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T10:33:44.290Z",
+      "appName": "Electron",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:33:47.513Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:33:50.475Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:33:53.430Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:33:56.476Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:33:59.472Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:34:02.445Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:34:05.473Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:34:08.487Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:34:11.687Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:34:14.477Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:34:17.559Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:34:20.440Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T10:34:23.383Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:34:26.515Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:34:29.503Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:34:32.452Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:34:35.455Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:34:38.444Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:34:41.462Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:34:44.541Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:34:47.468Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:34:50.545Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:34:53.538Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:34:56.508Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:34:59.518Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:35:02.563Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:35:05.586Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:35:08.568Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:35:11.697Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:35:14.593Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:35:17.606Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:35:20.597Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:35:23.637Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:35:26.620Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:35:29.639Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:35:32.611Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:35:35.636Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:35:38.650Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:35:41.609Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:35:44.654Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:35:47.612Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:35:50.662Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:35:53.677Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:35:56.656Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:35:59.640Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:36:02.673Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:36:05.669Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:36:08.681Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:36:11.818Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:36:14.689Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:36:17.706Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:36:20.695Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:36:23.720Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:36:26.729Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:36:29.771Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:36:32.733Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:36:35.733Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:36:38.730Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:36:41.745Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:36:44.746Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:36:47.760Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:36:50.768Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:36:53.694Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:36:56.688Z",
+      "appName": "Google Chrome",
+      "windowTitle": "sewrbnrV+5MAAAAASUVORK5CYII= (16×16)"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:36:59.754Z",
+      "appName": "Google Chrome",
+      "windowTitle": "sewrbnrV+5MAAAAASUVORK5CYII= (16×16)"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:37:02.746Z",
+      "appName": "Google Chrome",
+      "windowTitle": "sewrbnrV+5MAAAAASUVORK5CYII= (16×16)"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:37:05.742Z",
+      "appName": "Google Chrome",
+      "windowTitle": "sewrbnrV+5MAAAAASUVORK5CYII= (16×16)"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:37:08.789Z",
+      "appName": "Google Chrome",
+      "windowTitle": "sewrbnrV+5MAAAAASUVORK5CYII= (16×16)"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:37:11.931Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:37:14.810Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:37:17.795Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T10:37:20.763Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T10:37:23.623Z",
+      "appName": "Code",
+      "windowTitle": "appDiscovery.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T10:37:26.671Z",
+      "appName": "Code",
+      "windowTitle": "appDiscovery.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T10:37:29.683Z",
+      "appName": "Code",
+      "windowTitle": ""
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T10:37:32.666Z",
+      "appName": "Code",
+      "windowTitle": "appDiscovery.js — cortex"
+    }
+  ]
+}

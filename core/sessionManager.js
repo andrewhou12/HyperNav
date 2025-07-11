@@ -143,6 +143,7 @@ module.exports = {
   launchApp,
   startSession,
   startPollingWindowState,
+  onWorkspaceChange,
   stopPollingWindowState,
   isAppInWorkspace,
   getSessionData,

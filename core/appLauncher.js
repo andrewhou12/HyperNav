@@ -30,66 +30,60 @@ async function smartLaunchApp(appInfo, onStatus = () => {}) {
         onStatus({ type: 'success', message: `${name} launched.` });
       }
     });
-    return;
+    return { message: `${name} launched.` };
   }
 
   if (isInWorkspace) {
     onStatus({ type: 'info', message: `${name} is already in Cortex workspace.` });
-    exec(`osascript -e 'tell application "${name}" to activate'`);
-    return;
+    exec(`osascript -e 'tell application "${name}" to reopen' -e 'tell application "${name}" to activate'`);
+    return { message: `${name} is already in workspace.` };
   }
 
   if (isRunning && !isInWorkspace) {
-    onStatus({ type: 'warning', message: `${name} is already running outside Cortex. Press ⏎ to bring it in.` });
-    return;
+    onStatus({ type: 'info', message: `${name} is already running outside Cortex. Adding to workspace...` });
+
+    // updateSessionData({
+    //   type: 'app_opened',
+    //   name,
+    //   path,
+    //   windowTitle: name,
+    //   isActive: true,
+    //   launchedViaCortex: false,
+    // });
+
+    exec(`osascript -e 'tell application "${name}" to reopen' -e 'tell application "${name}" to activate'`);
+    return { message: `${name} was already running—added to Cortex.` };
   }
 
   onStatus({ type: 'info', message: `Launching ${name}...` });
   exec(`open "${path}"`, (err) => {
     if (!err) {
-      // updateSessionData({
-      //   type: 'app_opened',
-      //   name,
-      //   path,
-      //   windowTitle: name,
-      //   isActive: true,
-      //   launchedViaCortex: true,
-      // });
       onStatus({ type: 'success', message: `${name} launched.` });
     } else {
       onStatus({ type: 'error', message: `Failed to launch ${name}.` });
     }
   });
+  return { message: `${name} launched.` };
 }
 
 async function openChromeWithSearch(query, onStatus = () => {}) {
-
-console.log('hello, I am running');
-
   const name = 'Google Chrome';
-  const path = '/Applications/Google Chrome.app';
-  const runningApps = await getRunningApps();
-  const isRunning = runningApps.includes(name);
-  const isInWorkspace = isAppInWorkspace(name);
-
   const searchURL = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
 
-  if (isInWorkspace) {
-    onStatus({ type: 'info', message: `${name} is already in Cortex workspace. Opening search...` });
+  // 🔍 Check if a Cortex Chrome instance (with correct user-data-dir) is running
+  const cortexPIDs = chromeDriver.getCortexChromePIDs();
+  const hasActiveCortexChrome = cortexPIDs.length > 0;
+
+  if (hasActiveCortexChrome) {
+    onStatus({ type: 'info', message: `${name} (Cortex) is already running. Opening tab...` });
     chromeDriver.openTab(searchURL);
+    return;
+  } else {
+    onStatus({ type: 'info', message: `Launching ${name} (Cortex) with search...` });
+    chromeDriver.openNewWindowWithTab(searchURL);
     return;
   }
 
-  if (isRunning && !isInWorkspace) {
-    onStatus({ type: 'info', message: `${name} is running outside Cortex. Opening search...` });
-    chromeDriver.openTab(searchURL);
-    return;
-  }
-
-  onStatus({ type: 'info', message: `Launching ${name} with search...` });
-  chromeDriver.openNewWindowWithTab(searchURL);
-
-  console.log('this is running');
 
   // updateSessionData({
   //   type: 'app_opened',
@@ -105,5 +99,5 @@ console.log('hello, I am running');
 
 module.exports = {
   smartLaunchApp,
-  openChromeWithSearch,
+  openChromeWithSearch
 };
