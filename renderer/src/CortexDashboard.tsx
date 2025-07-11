@@ -4,9 +4,11 @@ import { AppStack } from "./components/AppStack";
 import { EnhancedSessionSidebar } from "./components/EnhancedSessionSidebar";
 import { SpatialNavigator } from "./components/SpatialNavigator";
 import { InfiniteCanvas } from "./components/InfiniteCanvas";
+import { SmartLauncher } from "./components/SmartLauncher";
 import { Button } from "./components/ui/button";
 import { ResizablePanelGroup, ResizablePanel, ResizableHandle } from "./components/ui/resizable";
 import { Grid3X3, Map, Plus } from "lucide-react";
+import toast, {Toaster} from 'react-hot-toast';
 
 export function CortexDashboard() {
   const [isPaused, setIsPaused] = useState(false);
@@ -14,8 +16,9 @@ export function CortexDashboard() {
   const [autoHideEnabled, setAutoHideEnabled] = useState(true);
   const [expandedStacks, setExpandedStacks] = useState<string[]>([]);
   const [quickNavOpen, setQuickNavOpen] = useState(false);
+  const [smartLauncherOpen, setSmartLauncherOpen] = useState(false);
   const [viewMode, setViewMode] = useState<'grid' | 'canvas'>('grid');
-  const [isNotebookExpanded, setIsNotebookExpanded] = useState(false)
+  const [isNotebookExpanded, setIsNotebookExpanded] = useState(false);
 
   const firstPauseRun = useRef(true);
 
@@ -41,14 +44,19 @@ export function CortexDashboard() {
       if (e.altKey && e.key === 'Tab') {
         setQuickNavOpen(true);
       }
-      if (e.key === 'Escape' && quickNavOpen) {
-        setQuickNavOpen(false);
+      if (e.altKey && (e.key === 'Enter' || e.code === 'Enter')) {
+        setSmartLauncherOpen(prev => !prev);
+      }
+
+      if (e.key === 'Escape') {
+        if (quickNavOpen) setQuickNavOpen(false);
+        if (smartLauncherOpen) setSmartLauncherOpen(false);
       }
     };
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [quickNavOpen]);
+  }, [quickNavOpen, smartLauncherOpen]);
 
   const handleChangeIsPaused = (val: SetStateAction<boolean>) => {
     setIsPaused(prev => {
@@ -99,6 +107,46 @@ export function CortexDashboard() {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
+      <Toaster
+        position="bottom-center"
+        toastOptions={{
+          className: `
+            glass 
+            rounded-xl 
+            border border-border 
+            shadow-lg 
+            text-foreground 
+            backdrop-blur-xl 
+            px-4 py-3
+            text-sm
+          `,
+          duration: 2000,
+          success: {
+            className: `
+              glass 
+              border border-border 
+              text-foreground 
+              bg-[hsl(var(--primary)/0.9)] 
+              text-[hsl(var(--primary-foreground))]
+              rounded-xl
+              px-4 py-3
+              shadow-lg
+            `
+          },
+          error: {
+            className: `
+              glass 
+              border border-border 
+              text-foreground 
+              bg-[hsl(var(--destructive)/0.9)] 
+              text-[hsl(var(--destructive-foreground))]
+              rounded-xl
+              px-4 py-3
+              shadow-lg
+            `
+          },
+        }}
+      />
       <TopNavigationBar
         sessionName={'New Session'}
         isPaused={isPaused}
@@ -120,37 +168,36 @@ export function CortexDashboard() {
                   <div>
                     <h1 className="text-2xl font-semibold text-foreground mb-1">Workspace</h1>
                     <p className="text-xs text-muted-foreground">
-                      {workspace.apps.filter(app => app.id === workspace.activeAppId).length} active • {workspace.apps.reduce((acc, app) => acc + app.tabs.length, 0)} total items
-                    </p>
+  {(workspace.apps?.filter(app => app.id === workspace.activeAppId)?.length || 0)} active • 
+  {(workspace.apps?.reduce((acc, app) => acc + (app.tabs?.length || 0), 0) || 0)} total items
+</p>
                   </div>
                   <div className="flex items-center gap-2">
-                  <button
-  onClick={() => setViewMode('grid')}
-  className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
-    viewMode === 'grid'
-      ? 'bg-primary text-primary-foreground hover:bg-primary/90'
-      : 'bg-muted text-muted-foreground hover:bg-gray-300'
-  }`}
-  title="Grid View"
->
-  <Grid3X3 className="w-4 h-4" />
-  Grid
-</button>
+                    <button
+                      onClick={() => setViewMode('grid')}
+                      className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                        viewMode === 'grid'
+                          ? 'bg-primary text-primary-foreground hover:bg-primary/90'
+                          : 'bg-muted text-muted-foreground hover:bg-gray-300'
+                      }`}
+                      title="Grid View"
+                    >
+                      <Grid3X3 className="w-4 h-4" />
+                      Grid
+                    </button>
 
-<button
-  onClick={() => setViewMode('canvas')}
-  className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
-    viewMode === 'canvas'
-      ? 'bg-primary text-primary-foreground hover:bg-primary/90'
-      : 'bg-muted text-muted-foreground hover:bg-gray-300'
-  }`}
-  title="Canvas View"
->
-  <Map className="w-4 h-4" />
-  Canvas
-</button>
-
-
+                    <button
+                      onClick={() => setViewMode('canvas')}
+                      className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                        viewMode === 'canvas'
+                          ? 'bg-primary text-primary-foreground hover:bg-primary/90'
+                          : 'bg-muted text-muted-foreground hover:bg-gray-300'
+                      }`}
+                      title="Canvas View"
+                    >
+                      <Map className="w-4 h-4" />
+                      Canvas
+                    </button>
                   </div>
                 </div>
 
@@ -189,16 +236,9 @@ export function CortexDashboard() {
                       <span>Cortex Intelligence</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <Button
-                        size="sm"
-                        onClick={() => console.log('Create new app/tab')}
-                        className="h-6 px-2 bg-primary hover:bg-primary/90 text-primary-foreground"
-                      >
-                        <Plus className="w-3 h-3" />
-                      </Button>
-                      <kbd className="px-2 py-1 bg-muted rounded text-xs">⌘</kbd>
-                      <kbd className="px-2 py-1 bg-muted rounded text-xs">T</kbd>
-                      <span>New App/Tab</span>
+                      <kbd className="px-2 py-1 bg-muted rounded text-xs">⌥</kbd>
+                      <kbd className="px-2 py-1 bg-muted rounded text-xs">Return</kbd>
+                      <span>Smart Launcher</span>
                     </div>
                   </div>
                 </div>
@@ -215,7 +255,7 @@ export function CortexDashboard() {
               onPauseToggle={() => handleChangeIsPaused(prev => !prev)}
               onSave={handleSave}
               onSettings={() => console.log('Settings opened')}
-              isNotebookExpanded = {isNotebookExpanded}
+              isNotebookExpanded={isNotebookExpanded}
               onNotebookExpand={() => setIsNotebookExpanded(!isNotebookExpanded)}
             />
           </ResizablePanel>
@@ -229,6 +269,31 @@ export function CortexDashboard() {
             isOpen={quickNavOpen}
             onClose={() => setQuickNavOpen(false)}
           />
+        </div>
+      )}
+
+      {smartLauncherOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/20 backdrop-blur-sm">
+          <SmartLauncher
+  isVisible={smartLauncherOpen}
+  onClose={() => setSmartLauncherOpen(false)}
+  onChromeSearch={(query) => {
+    if (window.electron?.openChromeWithSearch) {
+      toast.loading(`Opening Chrome search for “${query}”`, { id: 'chrome-search' });
+
+      window.electron.openChromeWithSearch(query)
+        .then(() => {
+          toast.success('Search opened in Chrome', { id: 'chrome-search' });
+        })
+        .catch((err) => {
+          console.error('Failed to open Chrome search:', err);
+          toast.error('Failed to open Chrome search', { id: 'chrome-search' });
+        });
+    } else {
+      toast.error('Search function unavailable');
+    }
+  }}
+/>
         </div>
       )}
 

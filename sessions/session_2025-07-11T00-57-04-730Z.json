@@ -1,0 +1,2285 @@
+{
+  "sessionName": "Session_2025-07-11T00:29:16.886Z",
+  "createdAt": "2025-07-11T00:29:16.887Z",
+  "liveWorkspace": {
+    "apps": [
+      {
+        "type": "app_opened",
+        "name": "Minecraft",
+        "path": "/Applications/Minecraft.app",
+        "windowTitle": "Minecraft",
+        "isActive": true,
+        "launchedViaCortex": true,
+        "addedAt": "2025-07-11T00:29:22.904Z"
+      }
+    ],
+    "activeAppId": null,
+    "activeWindowId": null
+  },
+  "eventLog": [
+    {
+      "type": "session_started",
+      "timestamp": "2025-07-11T00:29:16.887Z",
+      "data": {
+        "type": "session_started",
+        "sessionName": "Session_2025-07-11T00:29:16.886Z"
+      }
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T00:29:20.056Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "app_opened",
+      "timestamp": "2025-07-11T00:29:22.904Z",
+      "data": {
+        "type": "app_opened",
+        "name": "Minecraft",
+        "path": "/Applications/Minecraft.app",
+        "windowTitle": "Minecraft",
+        "isActive": true,
+        "launchedViaCortex": true
+      }
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T00:29:23.054Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T00:29:32.081Z",
+      "appName": "Minecraft Launcher",
+      "windowTitle": "Minecraft Launcher"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T00:29:35.071Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T00:29:38.122Z",
+      "appName": "Code",
+      "windowTitle": "appDiscovery.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T00:29:41.126Z",
+      "appName": "Code",
+      "windowTitle": "appDiscovery.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T00:29:44.136Z",
+      "appName": "Code",
+      "windowTitle": "appDiscovery.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T00:29:47.088Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T00:29:50.082Z",
+      "appName": "Code",
+      "windowTitle": "appDiscovery.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T00:29:53.149Z",
+      "appName": "Code",
+      "windowTitle": "appDiscovery.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T00:29:56.145Z",
+      "appName": "Code",
+      "windowTitle": "appDiscovery.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T00:29:59.152Z",
+      "appName": "Code",
+      "windowTitle": "appDiscovery.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T00:30:02.142Z",
+      "appName": "Code",
+      "windowTitle": "appDiscovery.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T00:30:05.121Z",
+      "appName": "Code",
+      "windowTitle": "appDiscovery.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T00:30:08.130Z",
+      "appName": "Code",
+      "windowTitle": "appDiscovery.js — cortex"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:30:11.363Z",
+      "appName": "Google Chrome",
+      "windowTitle": "SmartLauncher App Integration"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:30:14.291Z",
+      "appName": "Google Chrome",
+      "windowTitle": "SmartLauncher App Integration"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:30:17.250Z",
+      "appName": "Google Chrome",
+      "windowTitle": "SmartLauncher App Integration"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:30:20.318Z",
+      "appName": "Google Chrome",
+      "windowTitle": "SmartLauncher App Integration"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:30:23.279Z",
+      "appName": "Google Chrome",
+      "windowTitle": "SmartLauncher App Integration"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:30:26.307Z",
+      "appName": "Google Chrome",
+      "windowTitle": "SmartLauncher App Integration"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:30:29.329Z",
+      "appName": "Google Chrome",
+      "windowTitle": "SmartLauncher App Integration"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:30:32.302Z",
+      "appName": "Google Chrome",
+      "windowTitle": "SmartLauncher App Integration"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:30:35.266Z",
+      "appName": "Google Chrome",
+      "windowTitle": "SmartLauncher App Integration"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:30:38.288Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:30:41.353Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:30:44.273Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:30:47.339Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:30:50.302Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:30:53.358Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:30:56.372Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:30:59.363Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:31:02.372Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:31:05.358Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:31:08.339Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:31:11.370Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:31:14.385Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:31:17.385Z",
+      "appName": "Google Chrome",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:31:20.368Z",
+      "appName": "Google Chrome",
+      "windowTitle": "SmartLauncher App Integration"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:31:23.335Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex Product Map - Google Docs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:31:26.414Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex Product Map - Google Docs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:31:29.417Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex Product Map - Google Docs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:31:32.370Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex Product Map - Google Docs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:31:35.434Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex Product Map - Google Docs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:31:38.434Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex Product Map - Google Docs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:31:41.394Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex Product Map - Google Docs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:31:44.441Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex Product Map - Google Docs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:31:47.433Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex Product Map - Google Docs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:31:50.450Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex Product Map - Google Docs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:31:53.374Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex Product Map - Google Docs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:31:56.419Z",
+      "appName": "Google Chrome",
+      "windowTitle": "SmartLauncher App Integration"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:31:59.436Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:32:02.447Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:32:05.470Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:32:08.447Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:32:11.470Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:32:14.477Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:32:17.449Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:32:20.445Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:32:23.455Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:32:26.450Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:32:29.418Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:32:32.489Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:32:35.440Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:32:38.512Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:32:41.451Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:32:44.467Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:32:47.459Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:32:50.480Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:32:53.543Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:32:56.505Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:32:59.567Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:33:02.547Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:33:05.509Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:33:08.567Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:33:11.530Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:33:14.564Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:33:17.562Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:33:20.575Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:33:23.522Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:33:26.585Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:33:29.585Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:33:32.612Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:33:35.599Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:33:38.609Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:33:41.554Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:33:44.548Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:33:47.560Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:33:50.558Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:33:53.583Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:33:56.539Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:33:59.596Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:34:02.639Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:34:05.615Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:34:08.615Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:34:11.597Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:34:14.860Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:34:17.665Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:34:20.586Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:34:23.618Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:34:26.619Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:34:29.661Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:34:32.658Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:34:35.679Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:34:38.614Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:34:41.628Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:34:44.675Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:34:47.679Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:34:50.681Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:34:53.684Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:34:56.697Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:34:59.706Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:35:02.672Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:35:05.703Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:35:08.719Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:35:11.701Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:35:14.981Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:35:17.703Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:35:20.688Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:35:23.674Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:35:26.689Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:35:29.694Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:35:32.863Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:35:35.714Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:35:38.774Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:35:41.807Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:35:44.708Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:35:47.783Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:35:50.783Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:35:53.780Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:35:56.820Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:35:59.806Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:36:02.804Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:36:05.816Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:36:08.815Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:36:11.823Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:36:15.078Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:36:17.827Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:36:20.826Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:36:23.823Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:36:26.815Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:36:29.825Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:36:32.825Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:36:35.859Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:36:38.868Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:36:41.827Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:36:44.824Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:36:47.892Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:36:50.883Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:36:53.896Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:36:56.888Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:36:59.887Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:37:02.911Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:37:05.914Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:37:08.915Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:37:11.917Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:37:15.251Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:37:17.939Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:37:20.906Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:37:23.898Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:37:26.906Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:37:29.944Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:37:32.950Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:37:35.903Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:37:38.940Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:37:41.972Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:37:44.948Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:37:47.924Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:37:50.964Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:37:53.981Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:37:56.979Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:37:59.994Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:38:02.995Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:38:05.992Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:38:09.007Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:38:12.000Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:38:15.150Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:38:17.954Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:38:21.013Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:38:23.992Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:38:27.032Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:38:30.042Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:38:33.032Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:38:36.042Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:38:39.043Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:38:42.063Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:38:45.034Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:38:48.062Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:38:51.056Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:38:54.074Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:38:57.064Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:39:00.076Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:39:03.087Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:39:06.086Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:39:09.097Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:39:12.116Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:39:15.253Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:39:18.112Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:39:21.114Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:39:24.099Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:39:27.071Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:39:30.151Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:39:33.123Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:39:36.149Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:39:39.146Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:39:42.152Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:39:45.155Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:39:48.165Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:39:51.167Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:39:54.165Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:39:57.157Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:40:00.157Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:40:03.189Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:40:06.206Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:40:09.182Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:40:12.202Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:40:15.267Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:40:18.186Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:40:21.214Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:40:24.213Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:40:27.219Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:40:30.232Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:40:33.231Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:40:36.240Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:40:39.247Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:40:42.256Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:40:45.210Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:40:48.274Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:40:51.244Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:40:54.263Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:40:57.252Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:41:00.238Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:41:03.249Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:41:06.276Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:41:09.281Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:41:12.302Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:41:15.390Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:41:18.340Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:41:21.313Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:41:24.326Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:41:27.348Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:41:30.382Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:41:33.391Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:41:36.367Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:41:39.355Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:41:42.380Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:41:45.409Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:41:48.401Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:41:51.390Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:41:54.409Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:41:57.451Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:42:00.449Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:42:03.485Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:42:06.454Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:42:09.486Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:42:12.493Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:42:15.507Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:42:18.507Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:42:21.537Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:42:24.521Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:42:27.561Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:42:30.532Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:42:33.537Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:42:36.550Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:42:39.564Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:42:42.572Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:42:45.601Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:42:48.590Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:42:51.627Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:42:54.614Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:42:57.632Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:43:00.671Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:43:03.663Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:43:06.630Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:43:09.638Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:43:12.698Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:43:15.710Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:43:18.690Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:43:21.677Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:43:24.691Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:43:27.707Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:43:30.689Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:43:33.718Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:43:36.687Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:43:39.723Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:43:42.721Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:43:45.801Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:43:48.775Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:43:51.750Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:43:54.788Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:43:57.792Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:44:00.773Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:44:03.807Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:44:06.796Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:44:09.820Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:44:12.854Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:44:15.864Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:44:18.872Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:44:21.855Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:44:24.846Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:44:27.857Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:44:30.870Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:44:33.877Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:44:36.940Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:44:39.888Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:44:42.924Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:44:45.915Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:44:48.940Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:44:51.937Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:44:54.961Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:44:57.953Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:45:00.962Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:45:03.972Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:45:06.977Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:45:09.985Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:45:12.993Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:45:16.033Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:45:19.015Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:45:22.037Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:45:25.040Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:45:28.042Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:45:31.068Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:45:34.084Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:45:37.073Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:45:40.084Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:45:43.078Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:45:46.097Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:45:49.129Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:45:52.107Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:45:55.156Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T00:45:58.046Z",
+      "appName": "loginwindow",
+      "windowTitle": ""
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T00:46:01.049Z",
+      "appName": "loginwindow",
+      "windowTitle": ""
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T00:46:32.730Z",
+      "appName": "loginwindow",
+      "windowTitle": ""
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T00:46:35.458Z",
+      "appName": "loginwindow",
+      "windowTitle": ""
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T00:46:38.891Z",
+      "appName": "loginwindow",
+      "windowTitle": ""
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T00:46:41.890Z",
+      "appName": "loginwindow",
+      "windowTitle": ""
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T00:46:44.530Z",
+      "appName": "loginwindow",
+      "windowTitle": ""
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T00:46:47.516Z",
+      "appName": "loginwindow",
+      "windowTitle": ""
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T00:46:50.531Z",
+      "appName": "loginwindow",
+      "windowTitle": ""
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T00:46:53.536Z",
+      "appName": "loginwindow",
+      "windowTitle": ""
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T00:46:56.545Z",
+      "appName": "loginwindow",
+      "windowTitle": ""
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T00:46:59.544Z",
+      "appName": "loginwindow",
+      "windowTitle": ""
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T00:47:02.544Z",
+      "appName": "loginwindow",
+      "windowTitle": ""
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T00:47:05.567Z",
+      "appName": "loginwindow",
+      "windowTitle": ""
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T00:47:08.580Z",
+      "appName": "loginwindow",
+      "windowTitle": ""
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T00:47:11.583Z",
+      "appName": "loginwindow",
+      "windowTitle": ""
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T00:47:14.578Z",
+      "appName": "loginwindow",
+      "windowTitle": ""
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T00:47:17.586Z",
+      "appName": "loginwindow",
+      "windowTitle": ""
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T00:52:05.146Z",
+      "appName": "loginwindow",
+      "windowTitle": ""
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T00:52:07.951Z",
+      "appName": "loginwindow",
+      "windowTitle": ""
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T00:52:11.786Z",
+      "appName": "loginwindow",
+      "windowTitle": ""
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T00:52:13.933Z",
+      "appName": "loginwindow",
+      "windowTitle": ""
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T00:52:16.947Z",
+      "appName": "loginwindow",
+      "windowTitle": ""
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T00:52:19.966Z",
+      "appName": "loginwindow",
+      "windowTitle": ""
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T00:52:22.971Z",
+      "appName": "loginwindow",
+      "windowTitle": ""
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T00:52:25.981Z",
+      "appName": "loginwindow",
+      "windowTitle": ""
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T00:52:28.979Z",
+      "appName": "loginwindow",
+      "windowTitle": ""
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T00:52:32.450Z",
+      "appName": "loginwindow",
+      "windowTitle": ""
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T00:52:35.022Z",
+      "appName": "loginwindow",
+      "windowTitle": ""
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T00:52:38.008Z",
+      "appName": "loginwindow",
+      "windowTitle": ""
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T00:52:40.978Z",
+      "appName": "loginwindow",
+      "windowTitle": ""
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T00:52:44.012Z",
+      "appName": "loginwindow",
+      "windowTitle": ""
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:56:32.656Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:56:33.918Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:56:36.979Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:56:39.852Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T00:56:42.907Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Productivity HUD Ideas"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T00:56:45.715Z",
+      "appName": "Spotify",
+      "windowTitle": "Spotify Premium"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T00:56:48.744Z",
+      "appName": "Spotify",
+      "windowTitle": "Spotify Premium"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T00:56:51.703Z",
+      "appName": "Spotify",
+      "windowTitle": "Ado - 千本桜"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T00:56:54.730Z",
+      "appName": "Spotify",
+      "windowTitle": "Ado - 千本桜"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T00:56:57.797Z",
+      "appName": "Spotify",
+      "windowTitle": "Ado - 千本桜"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T00:57:00.749Z",
+      "appName": "Code",
+      "windowTitle": "appDiscovery.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T00:57:03.735Z",
+      "appName": "Code",
+      "windowTitle": "appDiscovery.js — cortex"
+    }
+  ]
+}
