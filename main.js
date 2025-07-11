@@ -133,6 +133,7 @@ function createSessionWindow() {
     stopPollingWindowState();
     unregisterHotkeys();
     workspaceManager.stopAutoHide && workspaceManager.stopAutoHide();
+    chromeDriver.quitCortexChromeInstances();
     win.destroy();
     sessionWindow = null;
   });

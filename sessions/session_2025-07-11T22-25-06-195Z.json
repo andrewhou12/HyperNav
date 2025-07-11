@@ -1,0 +1,43 @@
+{
+  "sessionName": "Session_2025-07-11T22:24:51.777Z",
+  "createdAt": "2025-07-11T22:24:51.778Z",
+  "liveWorkspace": {
+    "apps": [],
+    "activeAppId": null,
+    "activeWindowId": null
+  },
+  "eventLog": [
+    {
+      "type": "session_started",
+      "timestamp": "2025-07-11T22:24:51.778Z",
+      "data": {
+        "type": "session_started",
+        "sessionName": "Session_2025-07-11T22:24:51.777Z"
+      }
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T22:24:54.953Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T22:24:57.944Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T22:25:00.988Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T22:25:04.067Z",
+      "appName": "Google Chrome",
+      "windowTitle": "google docs - Google Search"
+    }
+  ]
+}

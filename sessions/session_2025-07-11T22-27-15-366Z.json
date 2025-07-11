@@ -1,0 +1,31 @@
+{
+  "sessionName": "Session_2025-07-11T22:27:06.504Z",
+  "createdAt": "2025-07-11T22:27:06.505Z",
+  "liveWorkspace": {
+    "apps": [],
+    "activeAppId": null,
+    "activeWindowId": null
+  },
+  "eventLog": [
+    {
+      "type": "session_started",
+      "timestamp": "2025-07-11T22:27:06.505Z",
+      "data": {
+        "type": "session_started",
+        "sessionName": "Session_2025-07-11T22:27:06.504Z"
+      }
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T22:27:09.663Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T22:27:12.805Z",
+      "appName": "Google Chrome",
+      "windowTitle": "New Tab"
+    }
+  ]
+}
