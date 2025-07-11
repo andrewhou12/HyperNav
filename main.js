@@ -101,7 +101,9 @@ function createWindow() {
     width: 1200,
     height: 800,
     icon: iconPath,
-    webPreferences: { preload: path.join(__dirname, 'preload.js') },
+    webPreferences: { preload: path.join(__dirname, 'preload.js'),
+      webSecurity: false,
+     },
   });
   win.loadURL('http://localhost:5173/');
   win.on('closed', () => { launcherWindow = null; });
@@ -119,7 +121,9 @@ function createSessionWindow() {
     height: bounds.height,
     x: bounds.x,
     y: bounds.y,
-    webPreferences: { preload: path.join(__dirname, 'preload.js') },
+    webPreferences: { preload: path.join(__dirname, 'preload.js'),
+      webSecurity: false,  //currently needed to display appicons in smartlauncher, will need to overhaul in the future
+     },
   });
   win.loadURL('http://localhost:5173/session');
 
@@ -216,8 +220,6 @@ async function startCortexSession() {
   toggleDockAutohide(true);
   const sessionwin = createSessionWindow();
   sessionwin.once('ready-to-show', async () => {
-    const appsWithIcons = await getInstalledAppsWithIcons();
-    sessionwin.webContents.send('preload-apps', appsWithIcons);
     setTimeout(() => {
       sessionwin.maximize();
       sessionwin.show();
@@ -245,10 +247,6 @@ ipcMain.handle('get-installed-apps', async () => {
   return safeApps;
 });
 
-ipcMain.handle('get-all-apps-with-icons', async () => {
-  const apps = await getInstalledAppsWithIcons();
-  return apps;
-});
 
 ipcMain.handle('get-recent-apps', () => recentApps);
 ipcMain.handle('mark-app-used', (_, app) => markAppAsUsed(app));

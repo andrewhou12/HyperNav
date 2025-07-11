@@ -1,0 +1,1039 @@
+{
+  "sessionName": "Session_2025-07-11T21:24:14.053Z",
+  "createdAt": "2025-07-11T21:24:14.053Z",
+  "liveWorkspace": {
+    "apps": [],
+    "activeAppId": null,
+    "activeWindowId": null
+  },
+  "eventLog": [
+    {
+      "type": "session_started",
+      "timestamp": "2025-07-11T21:24:14.053Z",
+      "data": {
+        "type": "session_started",
+        "sessionName": "Session_2025-07-11T21:24:14.053Z"
+      }
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:24:17.376Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:24:20.240Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:24:23.243Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:24:26.222Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:24:29.210Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:24:32.218Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:24:35.238Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:24:38.234Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:24:41.239Z",
+      "appName": "Code",
+      "windowTitle": "appDiscovery.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:24:44.274Z",
+      "appName": "Code",
+      "windowTitle": "appDiscovery.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:24:47.254Z",
+      "appName": "Code",
+      "windowTitle": "appDiscovery.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:24:50.243Z",
+      "appName": "Code",
+      "windowTitle": "appDiscovery.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:24:53.264Z",
+      "appName": "Code",
+      "windowTitle": "appDiscovery.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:24:56.281Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:24:59.254Z",
+      "appName": "Code",
+      "windowTitle": "preload.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:25:02.278Z",
+      "appName": "Code",
+      "windowTitle": "preload.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:25:05.266Z",
+      "appName": "Code",
+      "windowTitle": "preload.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:25:08.282Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:25:11.294Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:25:14.334Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:25:17.334Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:25:20.305Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:25:23.318Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:25:26.306Z",
+      "appName": "Code",
+      "windowTitle": "appDiscovery.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:25:29.342Z",
+      "appName": "Code",
+      "windowTitle": "appDiscovery.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:25:32.305Z",
+      "appName": "Code",
+      "windowTitle": "appDiscovery.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:25:35.341Z",
+      "appName": "Code",
+      "windowTitle": "index.css — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:25:38.334Z",
+      "appName": "Code",
+      "windowTitle": "appDiscovery.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:25:41.338Z",
+      "appName": "Code",
+      "windowTitle": "appDiscovery.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:25:44.328Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:25:47.344Z",
+      "appName": "Code",
+      "windowTitle": ""
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:25:50.322Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:25:53.405Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:25:56.380Z",
+      "appName": "Code",
+      "windowTitle": "appDiscovery.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:25:59.353Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:26:02.405Z",
+      "appName": "Code",
+      "windowTitle": "appDiscovery.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:26:05.423Z",
+      "appName": "Code",
+      "windowTitle": "appDiscovery.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:26:08.409Z",
+      "appName": "Code",
+      "windowTitle": "appDiscovery.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:26:11.379Z",
+      "appName": "Code",
+      "windowTitle": "appDiscovery.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:26:14.422Z",
+      "appName": "Code",
+      "windowTitle": "appDiscovery.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:26:17.423Z",
+      "appName": "Code",
+      "windowTitle": "appDiscovery.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:26:20.434Z",
+      "appName": "Code",
+      "windowTitle": "appDiscovery.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:26:23.434Z",
+      "appName": "Code",
+      "windowTitle": "appDiscovery.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:26:26.435Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:26:29.399Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:26:32.413Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:26:35.472Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:26:38.412Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:26:41.476Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:26:44.479Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:26:47.423Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T21:26:50.579Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Cortex Future Updates - Google Docs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T21:26:53.546Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T21:26:56.594Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T21:26:59.571Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:27:02.549Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:27:05.459Z",
+      "appName": "Code",
+      "windowTitle": "preload.js — cortex"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T21:27:08.731Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T21:27:11.585Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T21:27:14.638Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T21:27:17.646Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:27:20.476Z",
+      "appName": "Code",
+      "windowTitle": "preload.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:27:23.474Z",
+      "appName": "Code",
+      "windowTitle": "preload.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:27:26.508Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:27:29.524Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T21:27:32.674Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T21:27:35.704Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T21:27:38.610Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T21:27:41.628Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T21:27:44.684Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T21:27:47.689Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:27:50.583Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:27:53.526Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:27:56.592Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:27:59.563Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:28:02.615Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:28:05.607Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:28:08.608Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:28:11.575Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:28:14.616Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:28:17.623Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:28:20.640Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:28:23.631Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:28:26.643Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:28:29.627Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:28:32.645Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:28:35.660Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:28:38.650Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:28:41.678Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:28:44.690Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:28:47.685Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:28:50.679Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:28:53.700Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:28:56.704Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:28:59.708Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:29:02.715Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:29:05.714Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:29:08.707Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:29:11.683Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:29:14.723Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:29:17.734Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:29:20.739Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:29:23.723Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:29:26.747Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:29:29.733Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:29:32.764Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:29:35.822Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:29:38.768Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:29:41.783Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:29:44.792Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:29:47.797Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:29:50.786Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:29:53.792Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:29:56.806Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:29:59.803Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:30:02.858Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:30:05.829Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:30:08.821Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:30:11.802Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:30:14.840Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:30:17.846Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:30:20.852Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:30:23.860Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:30:26.822Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:30:29.824Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:30:32.873Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:30:35.903Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:30:38.884Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:30:41.891Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:30:44.900Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:30:47.904Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:30:50.907Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:30:53.889Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:30:56.923Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:30:59.920Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:31:02.932Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:31:05.926Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:31:08.935Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:31:11.924Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:31:14.963Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:31:17.955Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:31:20.965Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:31:23.962Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:31:26.980Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:31:29.955Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:31:32.975Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:31:36.005Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:31:38.957Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:31:41.990Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:31:44.961Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:31:47.976Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:31:50.961Z",
+      "appName": "Code",
+      "windowTitle": "preload.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:31:54.010Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:31:56.982Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T21:32:00.083Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T21:32:03.161Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T21:32:06.097Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T21:32:09.149Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T21:32:12.125Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T21:32:15.161Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T21:32:18.113Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T21:32:21.167Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T21:32:24.141Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T21:32:27.171Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T21:32:30.148Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Electron IPC Serialization Error"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:32:33.032Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:32:36.036Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:32:39.097Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:32:42.084Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T21:32:45.029Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    }
+  ]
+}
