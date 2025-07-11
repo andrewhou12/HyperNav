@@ -20,11 +20,30 @@ type ResultItem =
   | { type: "app"; app: AppItem }
   | { type: "chrome"; query: string };
 
-export function SmartLauncher({
-  isVisible,
-  onClose,
-  onChromeSearch
-}: SmartLauncherProps) {
+function AppListItem({ app, isSelected, onClick }: { app: AppItem; isSelected: boolean; onClick: () => void; }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: -10 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.1 }}
+      className={`flex items-center space-x-3 px-3 py-3 rounded-lg cursor-pointer ${
+        isSelected ? "bg-primary text-primary-foreground" : "hover:bg-muted/50"
+      }`}
+      onClick={onClick}
+    >
+      <img
+        src={app.icon || '/icons/default-app.png'}
+        alt=""
+        className="w-6 h-6 rounded flex-shrink-0"
+      />
+      <div className="flex-1">
+        <div className="font-medium">{app.name}</div>
+      </div>
+    </motion.div>
+  );
+}
+
+export function SmartLauncher({ isVisible, onClose, onChromeSearch }: SmartLauncherProps) {
   const [availableApps, setAvailableApps] = useState<AppItem[]>([]);
   const [recentApps, setRecentApps] = useState<AppItem[]>([]);
   const [query, setQuery] = useState("");
@@ -47,7 +66,7 @@ export function SmartLauncher({
 
   useEffect(() => {
     if (!isVisible) return;
-    window.electron.getInstalledApps?.()
+    window.electron.getAllAppsWithIcons?.()
       .then(setAvailableApps)
       .catch(console.error);
     window.electron.getRecentApps?.()
@@ -62,15 +81,15 @@ export function SmartLauncher({
 
   const handleKeyDown = (e: KeyboardEvent) => {
     if (!isVisible) return;
-  
+
     if (e.key === "Escape" || (e.altKey && e.key === "Enter")) {
       onClose();
       return;
     }
-  
+
     const selected = results[selectedIndex];
     if (!selected) return;
-  
+
     if (e.key === "Enter" && e.shiftKey) {
       if (onChromeSearch && query.trim()) {
         toast.loading(`Opening Chrome search for “${query}”`, { id: 'action' });
@@ -80,25 +99,31 @@ export function SmartLauncher({
       }
       return;
     }
-  
+
     if (e.key === "Enter") {
       if (selected.type === "app") {
-        toast.loading(`Launching ${selected.app.name}…`, { id: 'action' });
+        const appName = selected.app.name;
+        toast.loading(`Launching ${appName}…`, { id: 'action' });
+
         window.electron.smartLaunchApp?.(selected.app)
           .then((res: { message?: string }) => {
-            toast.success(res?.message || "App launched", { id: 'action' });
+            const message = res?.message || `${appName} launched.`;
+            toast.success(message, { id: 'action' });
             onClose();
           })
           .catch(() => {
-            toast.error("Failed to launch app", { id: 'action' });
+            toast.error(`Failed to launch ${appName}.`, { id: 'action' });
             onClose();
           });
-      } else {
-        toast.loading("Opening Chrome search…", { id: 'action' });
+
+      } else if (selected.type === "chrome") {
+        const searchMessage = `Opening Chrome search for “${selected.query}”`;
+        toast.loading(searchMessage, { id: 'action' });
         onChromeSearch?.(selected.query);
         toast.success("Search opened", { id: 'action' });
         onClose();
       }
+
       return;
     }
 
@@ -190,78 +215,62 @@ export function SmartLauncher({
                     {filteredApps.length > 0 ? "Apps" : "Search"}
                   </div>
                   <div className="space-y-1">
-                    {results.map((result, idx) => (
-                      <motion.div
-                        key={result.type === "app" ? result.app.path : `search-${idx}`}
-                        initial={{ opacity: 0, x: -10 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: idx * 0.05 }}
-                        className={`flex items-center space-x-3 px-3 py-3 rounded-lg cursor-pointer ${
-                          idx === selectedIndex
-                            ? "bg-primary text-primary-foreground"
-                            : "hover:bg-muted/50"
-                        }`}
-                        onClick={() => {
-                          setSelectedIndex(idx);
-                          const sel = results[idx];
-                          if (sel.type === "app") {
-                            toast.loading(`Launching ${sel.app.name}…`, { id: 'action' });
-                            window.electron.smartLaunchApp?.(sel.app)
-                              .then((res: { message?: string }) => {
-                                toast.success(res?.message || "App launched", { id: 'action' });
-                                onClose();
-                              })
-                              .catch(() => {
-                                toast.error("Failed to launch app", { id: 'action' });
-                                onClose();
-                              });
-                          } else {
-                            toast.loading("Opening Chrome search…", { id: 'action' });
-                            onChromeSearch(sel.query);
-                            toast.success("Search opened", { id: 'action' });
-                            onClose();
-                          }
-                        }}
-                      >
-                        {result.type === "app" ? (
-                          <>
-                            <img src={result.app.icon} alt="" className="w-6 h-6 rounded flex-shrink-0" />
-                            <div className="flex-1">
-                              <div className="font-medium">{result.app.name}</div>
-                            </div>
-                          </>
-                        ) : (
-                          <>
+                    {results.map((result, idx) => {
+                      if (result.type === "app") {
+                        return (
+                          <AppListItem
+                            key={result.app.path}
+                            app={result.app}
+                            isSelected={idx === selectedIndex}
+                            onClick={() => {
+                              setSelectedIndex(idx);
+                              const appName = result.app.name;
+                              toast.loading(`Launching ${appName}…`, { id: 'action' });
+                              window.electron.smartLaunchApp?.(result.app)
+                                .then((res: { message?: string }) => {
+                                  const message = res?.message || `${appName} launched.`;
+                                  toast.success(message, { id: 'action' });
+                                  onClose();
+                                })
+                                .catch(() => {
+                                  toast.error(`Failed to launch ${appName}.`, { id: 'action' });
+                                  onClose();
+                                });
+                            }}
+                          />
+                        );
+                      } else {
+                        return (
+                          <motion.div
+                            key={`search-${idx}`}
+                            initial={{ opacity: 0, x: -10 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.1 }}
+                            className={`flex items-center space-x-3 px-3 py-3 rounded-lg cursor-pointer ${
+                              idx === selectedIndex ? "bg-primary text-primary-foreground" : "hover:bg-muted/50"
+                            }`}
+                            onClick={() => {
+                              setSelectedIndex(idx);
+                              toast.loading("Opening Chrome search…", { id: 'action' });
+                              onChromeSearch?.(result.query);
+                              toast.success("Search opened", { id: 'action' });
+                              onClose();
+                            }}
+                          >
                             <Search className="w-6 h-6 flex-shrink-0" />
                             <div className="flex-1">
                               <div className="font-medium">Search in Chrome: “{result.query}”</div>
                               <div className="text-xs text-muted-foreground">Web Search</div>
                             </div>
-                          </>
-                        )}
-                      </motion.div>
-                    ))}
+                          </motion.div>
+                        );
+                      }
+                    })}
                   </div>
                 </div>
               </motion.div>
             )}
           </AnimatePresence>
-
-          {query && results.length === 0 && (
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="glass rounded-xl p-8 text-center"
-            >
-              <Search className="w-8 h-8 text-muted-foreground mx-auto mb-3" />
-              <div className="font-medium text-muted-foreground mb-2">No apps found</div>
-              <div className="text-sm text-muted-foreground">
-                Try a different search or press
-                <span className="px-2 py-1 bg-muted rounded text-xs mx-1">⇧ + ↵</span>
-                to search in Chrome
-              </div>
-            </motion.div>
-          )}
         </motion.div>
       </div>
     </motion.div>

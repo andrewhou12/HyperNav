@@ -1,0 +1,1119 @@
+{
+  "sessionName": "Session_2025-07-11T08:30:54.630Z",
+  "createdAt": "2025-07-11T08:30:54.631Z",
+  "liveWorkspace": {
+    "apps": [],
+    "activeAppId": null,
+    "activeWindowId": null
+  },
+  "eventLog": [
+    {
+      "type": "session_started",
+      "timestamp": "2025-07-11T08:30:54.631Z",
+      "data": {
+        "type": "session_started",
+        "sessionName": "Session_2025-07-11T08:30:54.630Z"
+      }
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:30:57.799Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:31:00.774Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:31:36.840Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:31:39.862Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:31:42.911Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:31:45.904Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:31:48.925Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:31:51.927Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:31:54.887Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:31:57.921Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:32:00.871Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:32:03.879Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:32:06.944Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:32:09.924Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:32:12.962Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:32:24.979Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:32:27.993Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:32:30.964Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:32:33.941Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:32:36.933Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:32:39.941Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:32:55.023Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:33:16.054Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:33:19.074Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:33:22.057Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:33:25.088Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:33:28.021Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:33:31.032Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:33:34.036Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:33:43.046Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:33:46.070Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:33:49.076Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:33:52.095Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:33:55.114Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:33:58.122Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:34:01.080Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:34:04.088Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:34:07.093Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:34:10.077Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:34:13.146Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:34:16.144Z",
+      "appName": "Finder",
+      "windowTitle": "Searching “This Mac”"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:34:19.116Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:34:22.147Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:34:25.121Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:34:34.130Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:34:37.134Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:34:40.149Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:34:43.196Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:34:46.265Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:34:49.308Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:34:52.283Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:34:55.327Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:34:58.329Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:35:01.312Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:35:04.320Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:35:07.343Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:35:10.331Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:35:13.359Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:35:16.335Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:35:19.338Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:35:22.358Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:35:25.382Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:35:28.362Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:35:31.343Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:35:34.384Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:35:37.343Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:35:40.382Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:35:43.376Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:35:46.340Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:35:49.332Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:35:52.402Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:35:55.343Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:35:58.393Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:36:01.416Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:36:04.346Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:36:07.417Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:36:10.405Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:36:13.369Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:36:16.378Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:36:19.421Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:36:22.390Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:36:25.424Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:36:28.457Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:36:31.471Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:36:34.484Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:36:37.492Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:36:40.444Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:36:43.476Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:36:46.496Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:36:49.493Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:36:52.516Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:36:55.460Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:36:58.512Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:37:01.345Z",
+      "appName": "Code",
+      "windowTitle": "preload.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:37:04.415Z",
+      "appName": "Code",
+      "windowTitle": "preload.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:37:07.381Z",
+      "appName": "Code",
+      "windowTitle": "preload.js — cortex"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:37:10.512Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:37:13.487Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:37:16.550Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:37:19.565Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:37:22.495Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:37:25.487Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:37:28.564Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:37:31.563Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:37:34.581Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:37:37.573Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:37:40.540Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:37:43.583Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:37:46.574Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:37:49.593Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:37:52.628Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:37:55.571Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:37:58.566Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:38:01.622Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:38:04.622Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:38:07.634Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:38:10.605Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:38:13.626Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:38:16.616Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:38:19.570Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:38:22.586Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:38:25.663Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:38:28.609Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:38:31.610Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:38:34.617Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:38:37.657Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:38:40.686Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:38:43.677Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:38:46.570Z",
+      "appName": "Code",
+      "windowTitle": "appLauncher.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:38:49.534Z",
+      "appName": "Code",
+      "windowTitle": "appLauncher.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:38:52.555Z",
+      "appName": "Code",
+      "windowTitle": "appLauncher.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:38:55.551Z",
+      "appName": "Code",
+      "windowTitle": "appLauncher.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:38:58.581Z",
+      "appName": "Code",
+      "windowTitle": "appLauncher.js — cortex"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:39:01.678Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:39:04.635Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:39:07.663Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:39:10.649Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:39:13.724Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:39:16.741Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:39:19.684Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:39:22.734Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:39:25.689Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:39:28.682Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:39:31.687Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:39:34.676Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:39:37.697Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:39:40.724Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:39:43.785Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:39:46.618Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:39:49.650Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:39:52.815Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:39:55.774Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:39:58.726Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:40:01.803Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:40:04.809Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:40:07.812Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:40:10.745Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:40:13.809Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:40:16.815Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:40:19.810Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:40:22.825Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:40:25.840Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:40:28.840Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:40:31.868Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:40:34.792Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:40:37.866Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:40:40.846Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:40:43.860Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:40:46.864Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:40:49.860Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:40:52.880Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:40:55.719Z",
+      "appName": "Code",
+      "windowTitle": "preload.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:40:58.707Z",
+      "appName": "Code",
+      "windowTitle": "preload.js — cortex"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:41:01.843Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:41:04.896Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:41:07.899Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:41:10.922Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:41:13.928Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:41:16.899Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T08:41:19.906Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Validate macOS apps"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T08:41:22.817Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "session_paused",
+      "timestamp": "2025-07-11T08:41:23.468Z",
+      "data": {
+        "type": "session_paused"
+      }
+    },
+    {
+      "type": "session_paused",
+      "timestamp": "2025-07-11T08:41:23.470Z",
+      "data": {
+        "type": "session_paused"
+      }
+    }
+  ]
+}
