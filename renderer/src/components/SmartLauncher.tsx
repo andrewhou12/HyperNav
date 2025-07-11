@@ -66,7 +66,7 @@ export function SmartLauncher({ isVisible, onClose, onChromeSearch }: SmartLaunc
 
   useEffect(() => {
     if (!isVisible) return;
-    window.electron.getAllAppsWithIcons?.()
+    window.electron.getInstalledApps?.()
       .then(setAvailableApps)
       .catch(console.error);
     window.electron.getRecentApps?.()

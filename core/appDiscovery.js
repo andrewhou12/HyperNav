@@ -2,6 +2,8 @@ const { exec } = require('child_process');
 const path = require('path');
 const fs = require('fs');
 const { app, nativeImage } = require('electron');
+const { fileIconToBuffer } = require('file-icon');
+
 
 const iconCacheDir = path.join(app.getPath('userData'), 'app-icons');
 if (!fs.existsSync(iconCacheDir)) {
@@ -10,29 +12,19 @@ if (!fs.existsSync(iconCacheDir)) {
 
 async function extractIcon(appPath) {
   try {
-    const icnsPath = path.join(appPath, 'Contents', 'Resources');
-    const files = fs.readdirSync(icnsPath);
-    const icnsFile = files.find(file => file.endsWith('.icns'));
-
-    if (!icnsFile) return null;
-
-    const fullIcnsPath = path.join(icnsPath, icnsFile);
-    const appNameMatch = appPath.match(/([^/]+)\.app$/);
-    const appNameSafe = appNameMatch ? appNameMatch[1].replace(/\s+/g, '_') : 'app';
+    const appNameSafe = path.basename(appPath, '.app').replace(/\s+/g, '_');
     const outputPngPath = path.join(iconCacheDir, `${appNameSafe}.png`);
 
-    if (!fs.existsSync(outputPngPath)) {
-      await new Promise((resolve, reject) => {
-        exec(`sips -s format png "${fullIcnsPath}" --out "${outputPngPath}"`, (err) => {
-          if (err) return reject(err);
-          resolve();
-        });
-      });
+    if (fs.existsSync(outputPngPath)) {
+      return `file://${outputPngPath}`;
     }
 
-    const image = nativeImage.createFromPath(outputPngPath);
-    return image.toDataURL();
+    const buffer = await fileIconToBuffer(appPath, { size: 64 });
+    const dataURL = `data:image/png;base64,${buffer.toString('base64')}`;
 
+    fs.writeFileSync(outputPngPath, buffer);
+
+    return dataURL;
   } catch (err) {
     console.error(`❌ Failed to extract icon for ${appPath}:`, err);
     return null;
@@ -49,28 +41,20 @@ const isValidAppPath = (appPath) => {
 
 async function getInstalledApps() {
   return new Promise((resolve, reject) => {
-    exec(`mdfind "kMDItemContentType == 'com.apple.application-bundle'"`, (err, stdout) => {
+    exec(`mdfind "kMDItemContentType == 'com.apple.application-bundle'"`, async (err, stdout) => {
       if (err) return reject(err);
       const appPaths = stdout.split('\n').filter(Boolean).filter(isValidAppPath);
-
-      const apps = appPaths.map(appPath => {
+ 
+      const apps = await Promise.all(appPaths.map(async (appPath) => {
         const nameMatch = appPath.match(/([^/]+)\.app$/);
         const name = nameMatch ? nameMatch[1] : appPath;
-        return { name, path: appPath };  // No icons here (lean)
-      });
+        const icon = await extractIcon(appPath);  
+        return { name, path: appPath, icon };
+      }));
 
       resolve(apps);
     });
   });
-}
-
-async function getInstalledAppsWithIcons() {
-  const apps = await getInstalledApps();
-  const appsWithIcons = await Promise.all(apps.map(async (app) => {
-    const icon = await extractIcon(app.path);
-    return { ...app, icon };
-  }));
-  return appsWithIcons;
 }
 
 function getRunningApps() {
@@ -85,7 +69,6 @@ function getRunningApps() {
 
 module.exports = {
   getInstalledApps,
-  getInstalledAppsWithIcons,
   getRunningApps,
   extractIcon
 };
