@@ -27,7 +27,7 @@ const chromeDriver = {
         .map(line => line.trim().match(/^(\d+)\s+/))
         .filter(Boolean)
         .map(match => match[1]);
-console.log(pids);
+
 
       return pids;  // Array of PIDs (may be one or multiple)
     } catch (e) {
@@ -41,9 +41,9 @@ console.log(pids);
       console.log("⛔ No Cortex Chrome instance found.");
       return;
     }
+    const safeURL = url.replace(/"/g, '\\"'); // Escape any double quotes in the URL
   
     const pid = pids[0];
-    console.log("PID", pid)
    
     exec(`osascript -e 'tell application "System Events"
         set visible of (first process whose unix id is ${pid}) to true
@@ -55,7 +55,7 @@ console.log(pids);
           make new window
         end if
         tell front window
-          set newTab to make new tab with properties {URL:"https://gmail.com"}
+          set newTab to make new tab with properties {URL:"${safeURL}"}
           set active tab index to (index of newTab)
         end tell
       end tell'`,  (err) => {
@@ -103,7 +103,28 @@ console.log(pids);
         end tell
       end tell'
     `);
-  }
+  },
+
+  quitCortexChromeInstances: () => {
+    const pids = chromeDriver.getCortexChromePIDs();
+    if (!pids || pids.length === 0) {
+      console.log("⛔ No Cortex Chrome instance found.");
+      return;
+    }
+  
+    pids.forEach((pid) => {
+      exec(`kill -9 ${pid}`, (err) => {
+        if (err) {
+          console.error(`❌ Failed to force kill Chrome process with PID ${pid}:`, err.message);
+        } else {
+          console.log(`✅ Force killed Chrome process with PID ${pid}`);
+        }
+      });
+    });
+  },
+
+
+  
 };
 
 module.exports = {
