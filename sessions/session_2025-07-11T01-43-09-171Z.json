@@ -1,0 +1,101 @@
+{
+  "sessionName": "Session_2025-07-11T01:42:27.922Z",
+  "createdAt": "2025-07-11T01:42:27.923Z",
+  "liveWorkspace": {
+    "apps": [
+      {
+        "type": "app_opened",
+        "name": "Visual Studio Code",
+        "path": "/Users/andrewhou/Downloads/Visual Studio Code.app",
+        "windowTitle": "Visual Studio Code",
+        "isActive": true,
+        "launchedViaCortex": true,
+        "addedAt": "2025-07-11T01:43:03.568Z"
+      }
+    ],
+    "activeAppId": null,
+    "activeWindowId": null
+  },
+  "eventLog": [
+    {
+      "type": "session_started",
+      "timestamp": "2025-07-11T01:42:27.923Z",
+      "data": {
+        "type": "session_started",
+        "sessionName": "Session_2025-07-11T01:42:27.922Z"
+      }
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T01:42:31.158Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T01:42:34.128Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T01:42:37.114Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T01:42:46.143Z",
+      "appName": "Minecraft Launcher",
+      "windowTitle": "Minecraft Launcher"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T01:42:49.138Z",
+      "appName": "Minecraft Launcher",
+      "windowTitle": "Minecraft Launcher"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T01:42:52.165Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T01:42:55.152Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T01:42:58.175Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T01:43:01.160Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "app_opened",
+      "timestamp": "2025-07-11T01:43:03.568Z",
+      "data": {
+        "type": "app_opened",
+        "name": "Visual Studio Code",
+        "path": "/Users/andrewhou/Downloads/Visual Studio Code.app",
+        "windowTitle": "Visual Studio Code",
+        "isActive": true,
+        "launchedViaCortex": true
+      }
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T01:43:07.140Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    }
+  ]
+}

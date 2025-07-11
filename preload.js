@@ -7,7 +7,11 @@ contextBridge.exposeInMainWorld('electron', {
   interpretCommand: (command) => ipcRenderer.invoke('interpret-command', command),
   saveSession: () => ipcRenderer.invoke('save-session'),
   chooseApp: () => ipcRenderer.invoke('choose-app'),
-  launchApp: (appPath) => ipcRenderer.invoke('launch-app', appPath),
+  getInstalledApps: () => ipcRenderer.invoke('get-installed-apps'),
+  launchApp: (appPath) => ipcRenderer.invoke('launch-app', appPath), //outdated
+  smartLaunchApp: (app) => ipcRenderer.invoke('smart-launch-app', app),
+  getRecentApps: () => ipcRenderer.invoke('get-recent-apps'),
+  markAppUsed: (app) => ipcRenderer.invoke('mark-app-used', app),
   hideBackgroundApps: () => ipcRenderer.invoke('hide-background-apps'),
   showAllApps: () => ipcRenderer.invoke('show-all-apps'),
   startAutoHide: () => ipcRenderer.invoke('start-auto-hide'),
@@ -16,6 +20,7 @@ contextBridge.exposeInMainWorld('electron', {
   resumeWorkspace: () => ipcRenderer.invoke('resume-workspace'),
   clearWorkspace: () => ipcRenderer.invoke('clear-workspace'),
   openWindow: (type) => ipcRenderer.send('open-window', type),
+  openChromeWithSearch: (query) => ipcRenderer.invoke('open-chrome-search', query),
 
   // Live workspace updates
   onLiveWorkspaceUpdate: (callback) => {
