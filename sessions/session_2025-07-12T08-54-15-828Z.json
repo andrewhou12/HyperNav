@@ -1,0 +1,107 @@
+{
+  "sessionName": "Session_2025-07-12T08:53:39.289Z",
+  "createdAt": "2025-07-12T08:53:39.289Z",
+  "liveWorkspace": {
+    "apps": [
+      {
+        "type": "app_opened",
+        "name": "Visual Studio Code",
+        "path": "/Users/andrewhou/Downloads/Visual Studio Code.app",
+        "windowTitle": "Visual Studio Code",
+        "isActive": true,
+        "launchedViaCortex": true,
+        "addedAt": "2025-07-12T08:53:53.985Z"
+      }
+    ],
+    "activeAppId": null,
+    "activeWindowId": null
+  },
+  "eventLog": [
+    {
+      "type": "session_started",
+      "timestamp": "2025-07-12T08:53:39.289Z",
+      "data": {
+        "type": "session_started",
+        "sessionName": "Session_2025-07-12T08:53:39.289Z"
+      }
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T08:53:42.622Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T08:53:45.461Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T08:53:48.468Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T08:53:51.444Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "app_opened",
+      "timestamp": "2025-07-12T08:53:53.985Z",
+      "data": {
+        "type": "app_opened",
+        "name": "Visual Studio Code",
+        "path": "/Users/andrewhou/Downloads/Visual Studio Code.app",
+        "windowTitle": "Visual Studio Code",
+        "isActive": true,
+        "launchedViaCortex": true
+      }
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T08:53:57.471Z",
+      "appName": "Code",
+      "windowTitle": "appDiscovery.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T08:54:00.465Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T08:54:03.491Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T08:54:06.492Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T08:54:09.534Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T08:54:12.504Z",
+      "appName": "Code",
+      "windowTitle": "appDiscovery.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T08:54:15.533Z",
+      "appName": "Code",
+      "windowTitle": "appDiscovery.js — cortex"
+    }
+  ]
+}
