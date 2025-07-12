@@ -1,0 +1,151 @@
+{
+  "sessionName": "Session_2025-07-11T22:57:59.882Z",
+  "createdAt": "2025-07-11T22:57:59.882Z",
+  "liveWorkspace": {
+    "apps": [],
+    "activeAppId": null,
+    "activeWindowId": null
+  },
+  "eventLog": [
+    {
+      "type": "session_started",
+      "timestamp": "2025-07-11T22:57:59.883Z",
+      "data": {
+        "type": "session_started",
+        "sessionName": "Session_2025-07-11T22:57:59.882Z"
+      }
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T22:58:03.072Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T22:58:06.038Z",
+      "appName": "Electron",
+      "windowTitle": "Cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T22:58:09.044Z",
+      "appName": "Electron",
+      "windowTitle": "Cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T22:58:12.027Z",
+      "appName": "Electron",
+      "windowTitle": "Cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T22:58:15.050Z",
+      "appName": "Electron",
+      "windowTitle": "Cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T22:58:18.050Z",
+      "appName": "Electron",
+      "windowTitle": "Cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T22:58:21.056Z",
+      "appName": "Code",
+      "windowTitle": "main.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T22:58:24.057Z",
+      "appName": "Code",
+      "windowTitle": "OverlayApp.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T22:58:27.090Z",
+      "appName": "Code",
+      "windowTitle": "OverlayApp.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T22:58:30.072Z",
+      "appName": "Code",
+      "windowTitle": "OverlayApp.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T22:58:33.073Z",
+      "appName": "Code",
+      "windowTitle": "OverlayApp.tsx — cortex"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T22:58:36.251Z",
+      "appName": "Google Chrome",
+      "windowTitle": "React Overlay Refactor"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T22:58:39.223Z",
+      "appName": "Google Chrome",
+      "windowTitle": "React Overlay Refactor"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T22:58:42.210Z",
+      "appName": "Google Chrome",
+      "windowTitle": "React Overlay Refactor"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T22:58:45.220Z",
+      "appName": "Google Chrome",
+      "windowTitle": "React Overlay Refactor"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T22:58:48.217Z",
+      "appName": "Google Chrome",
+      "windowTitle": "React Overlay Refactor"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T22:58:51.222Z",
+      "appName": "Google Chrome",
+      "windowTitle": "React Overlay Refactor"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-11T22:58:54.211Z",
+      "appName": "Google Chrome",
+      "windowTitle": "React Overlay Refactor"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T22:58:57.114Z",
+      "appName": "Code",
+      "windowTitle": "preload.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T22:59:00.110Z",
+      "appName": "Code",
+      "windowTitle": "preload.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T22:59:03.170Z",
+      "appName": "Code",
+      "windowTitle": "preload.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-11T22:59:06.129Z",
+      "appName": "Code",
+      "windowTitle": "preload.js — cortex"
+    }
+  ]
+}

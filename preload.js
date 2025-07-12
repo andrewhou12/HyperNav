@@ -21,6 +21,7 @@ contextBridge.exposeInMainWorld('electron', {
   openWindow: (type) => ipcRenderer.send('open-window', type),
   openChromeWithSearch: (query) => ipcRenderer.invoke('open-chrome-search', query),
   getAppIcon: (appPath) => ipcRenderer.invoke('get-app-icon', appPath),
+  hideOverlay: (reason) => ipcRenderer.send('hide-overlay', { reason }),
 
   onLiveWorkspaceUpdate: (callback) => {
     ipcRenderer.on('live-workspace-update', (event, liveWorkspace) => {
@@ -38,8 +39,10 @@ contextBridge.exposeInMainWorld('electron', {
 
   ipcRenderer: {
     send: (channel, ...args) => ipcRenderer.send(channel, ...args),
-    onShow: (cb) => ipcRenderer.on('show-overlay', () => cb()),
+    onShow: (cb) => ipcRenderer.on('show-overlay', (event, overlayType) => cb(event, overlayType)),
     onHide: (cb) => ipcRenderer.on('hide-overlay', () => cb()),
+    removeShow: (cb) => ipcRenderer.removeListener('show-overlay', cb),
+removeHide: (cb) => ipcRenderer.removeListener('hide-overlay', cb),
   },
 
 });

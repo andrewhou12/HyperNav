@@ -17,7 +17,7 @@ interface NavigatorItem {
 
 interface QuickNavigatorProps {
   isOpen: boolean;
-  onClose: () => void;
+  onClose: (reason?: 'escape' | 'shift' | 'other') => void;
 }
 
 interface NavigationLevel {
@@ -390,18 +390,18 @@ switch (e.key) {
     }
     break;
 
-  case "Enter":
-    e.preventDefault();
-    const currentItem = getItemAtPosition(selectedPosition.x, selectedPosition.y);
-    if (currentItem) {
-      if (currentItem.type === "app" && currentItem.activeTab) {
-        console.log(`Activating ${currentItem.title} - switching to tab: ${currentItem.activeTab}`);
-      } else {
-        console.log(`Activating: ${currentItem.title}`);
+    case "Enter":
+      e.preventDefault();
+      const currentItem = getItemAtPosition(selectedPosition.x, selectedPosition.y);
+      if (currentItem) {
+        if (currentItem.type === "app" && currentItem.activeTab) {
+          console.log(`Activating ${currentItem.title} - switching to tab: ${currentItem.activeTab}`);
+        } else {
+          console.log(`Activating: ${currentItem.title}`);
+        }
+        onClose('escape');  // ✅ Use new prop-based close with reason
       }
-      window.electron.ipcRenderer.send('hide-overlay');
-    }
-    break;
+      break;
 
   case "Alt": // Option key - go back
     e.preventDefault();
@@ -410,17 +410,17 @@ switch (e.key) {
     }
     break;
 
-  case "Escape":
+    case "Escape":
       e.preventDefault();
-      window.electron.ipcRenderer.send('hide-overlay', { reason: 'escape' });
+      onClose('escape');
       setSelectedPosition(currentAppPosition);
       break;
   
-  case "Shift":
-      e. preventDefault();
-      window.electron.ipcRenderer.send('hide-overlay', { reason: 'shift' });
-      setSelectedPosition(currentAppPosition);
-      break;
+      case "Shift":
+        e.preventDefault();
+        onClose('shift');
+        setSelectedPosition(currentAppPosition);
+        break;
 }
 
     };
