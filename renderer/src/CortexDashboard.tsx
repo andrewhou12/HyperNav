@@ -23,21 +23,73 @@ export function CortexDashboard() {
   const firstPauseRun = useRef(true);
 
   const [workspace, setWorkspace] = useState({
-    apps: [],
-    activeAppId: null,
+    apps: [
+      {
+        id: 'chrome-1',
+        name: 'Google Chrome',
+        icon: 'chrome',
+        path: '/Applications/Google Chrome.app',
+        tabs: [
+          { id: 'tab-1', title: 'ChatGPT', url: 'https://chat.openai.com', isActive: true },
+          { id: 'tab-2', title: 'GitHub - cortex', url: 'https://github.com' }
+        ]
+      },
+      {
+        id: 'slack-1',
+        name: 'Slack',
+        icon: 'slack',
+        path: '/Applications/Slack.app',
+        tabs: [
+          { id: 'tab-3', title: '#cortex-team', isActive: false },
+          { id: 'tab-4', title: '#product-updates', isActive: true }
+        ]
+      },
+      {
+        id: 'code-1',
+        name: 'VS Code',
+        icon: 'vscode',
+        path: '/Applications/Visual Studio Code.app',
+        tabs: [
+          { id: 'tab-5', title: 'cortex/SmartLauncher.tsx', isActive: false },
+          { id: 'tab-6', title: 'cortex/CortexDashboard.tsx', isActive: true }
+        ]
+      }
+    ],
+    activeAppId: 'chrome-1',
     activeWindowId: null,
   });
+  
 
+  // ✅ NEW STATE: App icon map
+  const [appIcons, setAppIcons] = useState<Record<string, string>>({});
+
+  // ✅ NEW: Fetch icons when workspace apps change
   useEffect(() => {
-    window.electron.onLiveWorkspaceUpdate((liveWorkspace) => {
-      setWorkspace(liveWorkspace);
-      if (liveWorkspace.activeAppId) {
-        setExpandedStacks(prev =>
-          prev.includes(liveWorkspace.activeAppId) ? prev : [...prev, liveWorkspace.activeAppId]
-        );
+    async function loadIcons() {
+      const icons = {};
+      for (const app of workspace.apps) {
+        if (!app.path) continue;
+        const icon = await window.electron.getAppIcon?.(app.path);
+        if (icon) icons[app.id] = icon;
       }
-    });
-  }, []);
+      setAppIcons(icons);
+    }
+
+    if (workspace.apps.length > 0) {
+      loadIcons();
+    }
+  }, [workspace.apps]);
+
+  // useEffect(() => {
+  //   window.electron.onLiveWorkspaceUpdate((liveWorkspace) => {
+  //     setWorkspace(liveWorkspace);
+  //     if (liveWorkspace.activeAppId) {
+  //       setExpandedStacks(prev =>
+  //         prev.includes(liveWorkspace.activeAppId) ? prev : [...prev, liveWorkspace.activeAppId]
+  //       );
+  //     }
+  //   });
+  // }, []);
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -213,6 +265,7 @@ export function CortexDashboard() {
                         isActive={app.id === workspace.activeAppId}
                         onToggleExpanded={() => handleToggleStack(app.id)}
                         onTabClick={handleTabClick}
+                        customIcon={appIcons[app.id]}
                       />
                     ))}
                   </div>
