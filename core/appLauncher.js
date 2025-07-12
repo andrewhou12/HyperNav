@@ -19,14 +19,14 @@ async function smartLaunchApp(appInfo, onStatus = () => {}) {
       if (err) {
         onStatus({ type: 'error', message: `Failed to launch ${name}.` });
       } else {
-        updateSessionData({
-          type: 'app_opened',
-          name,
-          path,
-          windowTitle: name,
-          isActive: true,
-          launchedViaCortex: true,
-        });
+        // updateSessionData({
+        //   type: 'app_opened',
+        //   name,
+        //   path,
+        //   windowTitle: name,
+        //   isActive: true,
+        //   launchedViaCortex: true,
+        // });
         onStatus({ type: 'success', message: `${name} launched.` });
       }
     });
