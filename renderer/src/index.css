@@ -9,6 +9,7 @@
     /* Core Design System Colors */
     --background: 220 15% 97%;
     --foreground: 220 25% 15%;
+    --transparent-bg: 0 0% 0% / 0%;
 
     --card: 0 0% 100%;
     --card-foreground: 220 25% 15%;
@@ -177,6 +178,14 @@
   .accent-glow {
     box-shadow: 0 0 20px hsl(var(--accent-glow)), var(--glass-shadow);
   }
+
+  .transparent-bg {
+    background-color: hsl(var(--transparent-bg)) !important;
+    backdrop-filter: none !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
 }
 
 @layer utilities {

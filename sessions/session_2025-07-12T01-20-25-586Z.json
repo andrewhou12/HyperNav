@@ -1,0 +1,835 @@
+{
+  "sessionName": "Session_2025-07-12T01:13:14.592Z",
+  "createdAt": "2025-07-12T01:13:14.592Z",
+  "liveWorkspace": {
+    "apps": [],
+    "activeAppId": null,
+    "activeWindowId": null
+  },
+  "eventLog": [
+    {
+      "type": "session_started",
+      "timestamp": "2025-07-12T01:13:14.592Z",
+      "data": {
+        "type": "session_started",
+        "sessionName": "Session_2025-07-12T01:13:14.592Z"
+      }
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:13:17.763Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:13:20.738Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:13:23.761Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:13:32.767Z",
+      "appName": "Minecraft Launcher",
+      "windowTitle": "Minecraft Launcher"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:13:35.791Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:13:38.784Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:13:41.772Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:13:47.775Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:13:50.775Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:13:53.793Z",
+      "appName": "Code",
+      "windowTitle": "CortexDashboard.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:13:56.791Z",
+      "appName": "Code",
+      "windowTitle": "CortexDashboard.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:13:59.794Z",
+      "appName": "Code",
+      "windowTitle": "CortexDashboard.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:14:02.791Z",
+      "appName": "Code",
+      "windowTitle": "CortexLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:14:05.840Z",
+      "appName": "Code",
+      "windowTitle": "CortexLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:14:08.808Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:14:11.854Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:14:14.827Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:14:17.881Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:14:20.881Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:14:23.893Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:14:26.887Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:14:29.895Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:14:32.908Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:14:35.926Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:14:38.917Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:14:41.899Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:14:44.892Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-12T01:14:47.994Z",
+      "appName": "Google Chrome",
+      "windowTitle": "React Overlay Refactor"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:14:56.937Z",
+      "appName": "Minecraft Launcher",
+      "windowTitle": ""
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:14:59.950Z",
+      "appName": "Minecraft Launcher",
+      "windowTitle": "Minecraft Launcher"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:15:03.022Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:15:05.986Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:15:08.982Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:15:11.954Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:15:14.996Z",
+      "appName": "Code",
+      "windowTitle": "CortexDashboard.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:15:17.968Z",
+      "appName": "Code",
+      "windowTitle": "CortexDashboard.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:15:20.960Z",
+      "appName": "Code",
+      "windowTitle": "CortexDashboard.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:15:23.960Z",
+      "appName": "Code",
+      "windowTitle": "CortexDashboard.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:15:26.999Z",
+      "appName": "Code",
+      "windowTitle": "OverlayApp.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:15:30.010Z",
+      "appName": "Code",
+      "windowTitle": "OverlayApp.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:15:32.966Z",
+      "appName": "Code",
+      "windowTitle": "OverlayApp.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:15:36.032Z",
+      "appName": "Code",
+      "windowTitle": "OverlayApp.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:15:39.034Z",
+      "appName": "Code",
+      "windowTitle": "OverlayApp.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:15:42.001Z",
+      "appName": "Code",
+      "windowTitle": "OverlayApp.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:15:45.020Z",
+      "appName": "Code",
+      "windowTitle": "OverlayApp.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:15:48.041Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:15:51.046Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:15:54.087Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:15:57.052Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:16:00.004Z",
+      "appName": "Code",
+      "windowTitle": "SmartLauncher.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:16:03.053Z",
+      "appName": "Code",
+      "windowTitle": "CortexDashboard.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:16:06.073Z",
+      "appName": "Code",
+      "windowTitle": "CortexDashboard.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:16:09.044Z",
+      "appName": "Code",
+      "windowTitle": "CortexDashboard.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:16:12.064Z",
+      "appName": "Code",
+      "windowTitle": "CortexDashboard.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:16:15.044Z",
+      "appName": "Code",
+      "windowTitle": "CortexDashboard.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:16:18.044Z",
+      "appName": "Code",
+      "windowTitle": "CortexDashboard.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:16:21.055Z",
+      "appName": "Code",
+      "windowTitle": "CortexDashboard.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:16:24.078Z",
+      "appName": "Code",
+      "windowTitle": "CortexDashboard.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:16:27.060Z",
+      "appName": "Code",
+      "windowTitle": "OverlayApp.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:16:30.130Z",
+      "appName": "Code",
+      "windowTitle": "OverlayApp.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:16:33.089Z",
+      "appName": "Code",
+      "windowTitle": "OverlayApp.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:16:36.092Z",
+      "appName": "Code",
+      "windowTitle": "OverlayApp.tsx — cortex"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-12T01:16:39.284Z",
+      "appName": "Google Chrome",
+      "windowTitle": "React Overlay Refactor"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-12T01:16:42.223Z",
+      "appName": "Google Chrome",
+      "windowTitle": "React Overlay Refactor"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-12T01:16:45.209Z",
+      "appName": "Google Chrome",
+      "windowTitle": "React Overlay Refactor"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-12T01:16:48.232Z",
+      "appName": "Google Chrome",
+      "windowTitle": "React Overlay Refactor"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-12T01:16:51.269Z",
+      "appName": "Google Chrome",
+      "windowTitle": "React Overlay Refactor"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-12T01:16:54.239Z",
+      "appName": "Google Chrome",
+      "windowTitle": "React Overlay Refactor"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-12T01:16:57.274Z",
+      "appName": "Google Chrome",
+      "windowTitle": "React Overlay Refactor"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-12T01:17:00.273Z",
+      "appName": "Google Chrome",
+      "windowTitle": "React Overlay Refactor"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-12T01:17:03.292Z",
+      "appName": "Google Chrome",
+      "windowTitle": "React Overlay Refactor"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-12T01:17:06.320Z",
+      "appName": "Google Chrome",
+      "windowTitle": "React Overlay Refactor"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-12T01:17:09.296Z",
+      "appName": "Google Chrome",
+      "windowTitle": "React Overlay Refactor"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:17:12.127Z",
+      "appName": "Problem Reporter",
+      "windowTitle": "Problem Report for launcher"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-12T01:17:15.260Z",
+      "appName": "Google Chrome",
+      "windowTitle": "React Overlay Refactor"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:17:18.139Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-12T01:17:21.244Z",
+      "appName": "Google Chrome",
+      "windowTitle": "React Overlay Refactor"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-12T01:17:24.260Z",
+      "appName": "Google Chrome",
+      "windowTitle": "React Overlay Refactor"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-12T01:17:27.285Z",
+      "appName": "Google Chrome",
+      "windowTitle": "React Overlay Refactor"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-12T01:17:30.265Z",
+      "appName": "Google Chrome",
+      "windowTitle": "React Overlay Refactor"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-12T01:17:33.340Z",
+      "appName": "Google Chrome",
+      "windowTitle": "React Overlay Refactor"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-12T01:17:36.300Z",
+      "appName": "Google Chrome",
+      "windowTitle": "ChatGPT"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-12T01:17:39.295Z",
+      "appName": "Google Chrome",
+      "windowTitle": "ChatGPT"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-12T01:17:42.300Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Toast integration in overlay"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-12T01:17:45.298Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Toast integration in overlay"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-12T01:17:48.303Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Using Toasts Properly"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-12T01:17:51.370Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Using Toasts Properly"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-12T01:17:54.320Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Using Toasts Properly"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-12T01:17:57.388Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Using Toasts Properly"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-12T01:18:00.352Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Using Toasts Properly"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-12T01:18:03.364Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Using Toasts Properly"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-12T01:18:06.358Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Using Toasts Properly"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-12T01:18:09.386Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Using Toasts Properly"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-12T01:18:12.393Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Using Toasts Properly"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-12T01:18:15.374Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Using Toasts Properly"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-12T01:18:18.404Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Using Toasts Properly"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-12T01:18:21.397Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Using Toasts Properly"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-12T01:18:24.372Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Using Toasts Properly"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:18:27.266Z",
+      "appName": "Code",
+      "windowTitle": "OverlayApp.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:18:30.266Z",
+      "appName": "Code",
+      "windowTitle": "OverlayApp.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:18:33.259Z",
+      "appName": "Code",
+      "windowTitle": "OverlayApp.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:18:36.322Z",
+      "appName": "Code",
+      "windowTitle": "OverlayApp.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:18:39.269Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:18:42.326Z",
+      "appName": "Electron",
+      "windowTitle": "Cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:18:51.285Z",
+      "appName": "Electron",
+      "windowTitle": "Cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:18:54.331Z",
+      "appName": "Electron",
+      "windowTitle": "Cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:18:57.348Z",
+      "appName": "Electron",
+      "windowTitle": "Cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:19:00.293Z",
+      "appName": "Electron",
+      "windowTitle": "Cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:19:03.326Z",
+      "appName": "Electron",
+      "windowTitle": "Cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:19:06.326Z",
+      "appName": "Figma",
+      "windowTitle": "Cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:19:09.365Z",
+      "appName": "Figma",
+      "windowTitle": "Cortex"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-12T01:19:12.506Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Using Toasts Properly"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-12T01:19:15.452Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Using Toasts Properly"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-12T01:19:18.506Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Using Toasts Properly"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-12T01:19:21.451Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Using Toasts Properly"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-12T01:19:24.443Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Using Toasts Properly"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-12T01:19:27.440Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Using Toasts Properly"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-12T01:19:30.470Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Using Toasts Properly"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-12T01:19:33.552Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Using Toasts Properly"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-12T01:19:36.546Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Using Toasts Properly"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-12T01:19:39.479Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Using Toasts Properly"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-12T01:19:42.475Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Using Toasts Properly"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-12T01:19:45.497Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Using Toasts Properly"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-12T01:19:48.548Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Using Toasts Properly"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-12T01:19:51.542Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Using Toasts Properly"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-12T01:19:54.562Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Using Toasts Properly"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-12T01:19:57.556Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Using Toasts Properly"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-12T01:20:00.546Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Using Toasts Properly"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-12T01:20:03.514Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Using Toasts Properly"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-12T01:20:06.565Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Using Toasts Properly"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:20:09.411Z",
+      "appName": "Code",
+      "windowTitle": "OverlayApp.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:20:12.462Z",
+      "appName": "Code",
+      "windowTitle": "OverlayApp.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:20:15.423Z",
+      "appName": "Code",
+      "windowTitle": "OverlayApp.tsx — cortex"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-12T01:20:18.602Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Using Toasts Properly"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:20:21.424Z",
+      "appName": "Code",
+      "windowTitle": "OverlayApp.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-12T01:20:24.434Z",
+      "appName": "Code",
+      "windowTitle": "OverlayApp.tsx — cortex"
+    }
+  ]
+}

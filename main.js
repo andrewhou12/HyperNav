@@ -166,16 +166,17 @@ function createSessionWindow() {
 
 function createOverlayWindow() {
   const { bounds } = screen.getPrimaryDisplay();
-  const panelWidth = 896;
-  const panelHeight = 860;
+  const defaultWidth = 896;
+  const defaultHeight = 860;
 
   overlayWindow = new BrowserWindow({
-    x: Math.round((bounds.width - panelWidth) / 2),
-    y: Math.round((bounds.height - panelHeight) / 2),
-    width: panelWidth,
-    height: panelHeight,
+    x: Math.round((bounds.width - defaultWidth) / 2),
+    y: Math.round((bounds.height - defaultHeight) / 2),
+    width: defaultWidth,
+    height: defaultHeight,
     frame: false,
     transparent: true,
+    roundedCorners: true,
     vibrancy: 'under-window',
     thickFrame: false,
     backgroundColor: '#00000000',
@@ -185,29 +186,88 @@ function createOverlayWindow() {
     skipTaskbar: true,
     movable: false,
     fullscreenable: false,
-    webPreferences: { preload: path.join(__dirname, 'preload.js'), backgroundThrottling: false },
+    webPreferences: { preload: path.join(__dirname, 'preload.js'), backgroundThrottling: false, webSecurity: false },
   });
+
   overlayWindow.loadURL('http://localhost:5173/overlay');
   overlayWindow.hide();
-  overlayWindow.on('blur', () => { if (!overlayWindow.isDestroyed()) overlayWindow.hide(); });
-  overlayWindow.on('show', () => overlayWindow.webContents.send('show-overlay'));
-  overlayWindow.on('hide', () => overlayWindow.webContents.send('hide-overlay'));
+
+  overlayWindow.on('blur', () => {
+    if (!overlayWindow.isDestroyed()) overlayWindow.hide();
+  });
+
   overlayWindow.on('closed', () => { overlayWindow = null; });
+}
+
+function showOverlay(type) {
+  if (!overlayWindow) return;
+
+  const { bounds } = screen.getPrimaryDisplay();
+  let width = 896, height = 860;
+
+  switch (type) {
+    case 'navigator':
+      width = 896; height = 860;
+      break;
+    case 'launcher': //estimated for now, switch to dynamically sized in the future
+      width = 800; height = 470;
+      break;
+    case 'ai':
+      width = 600; height = 500;
+      break;
+    case 'utilities':
+      width = 500; height = 300;
+      break;
+    default:
+      break;
+  }
+
+  overlayWindow.setBounds({
+    x: Math.round((bounds.width - width) / 2),
+    y: Math.round((bounds.height - height) / 2),
+    width,
+    height,
+  });
+
+  overlayWindow.show();
+  overlayWindow.focus();
+  overlayWindow.webContents.send('show-overlay', type);
+}
+
+function hideOverlay() {
+  if (overlayWindow && !overlayWindow.isDestroyed()) {
+    overlayWindow.hide();
+    overlayWindow.webContents.send('hide-overlay');
+  }
 }
 
 function registerHotkeys() {
   if (hotkeysEnabled) return;
   hotkeysEnabled = true;
+
   globalShortcut.register('Option+Tab', () => {
-    if (overlayWindow?.isVisible()) overlayWindow.hide();
+    if (overlayWindow?.isVisible()) hideOverlay();
     else {
       overlayOpenedFromGlobal = true;
       if (launcherWindow?.isVisible()) launcherWindow.hide();
       if (sessionWindow?.isVisible()) sessionWindow.hide();
-      overlayWindow.show();
+      showOverlay('navigator');
     }
   });
-  globalShortcut.register('Option+Space', () => {});
+
+  globalShortcut.register('Option+Return', () => {
+    if (overlayWindow?.isVisible()) hideOverlay();
+    else {
+      overlayOpenedFromGlobal = true;
+      if (launcherWindow?.isVisible()) launcherWindow.hide();
+      if (sessionWindow?.isVisible()) sessionWindow.hide();
+      showOverlay('launcher');
+    }
+  });
+
+  // Optional: Add more hotkeys here, e.g.
+  // globalShortcut.register('Option+I', () => showOverlay('ai'));
+  // globalShortcut.register('Option+U', () => showOverlay('utilities'));
 }
 
 function unregisterHotkeys() {
@@ -266,7 +326,17 @@ ipcMain.handle('pause-workspace', () => workspaceManager.pauseWorkspace());
 ipcMain.handle('resume-workspace', () => workspaceManager.resumeWorkspace());
 ipcMain.handle('clear-workspace', async () => { return await clearWorkspace(); });
 ipcMain.handle('get-session-data', () => getSessionData());
-ipcMain.on('hide-overlay', (event, { reason }) => { if (overlayWindow&&!overlayWindow.isDestroyed()) overlayWindow.hide(); if (reason==='escape') { if (overlayOpenedFromGlobal) app.hide(); overlayOpenedFromGlobal=false; } else if (reason==='shift') { if (sessionWindow&&!sessionWindow.isDestroyed()) sessionWindow.show(); if (launcherWindow&&!launcherWindow.isDestroyed()) launcherWindow.show(); overlayOpenedFromGlobal=false; } });
+ipcMain.on('hide-overlay', (event, { reason }) => {
+  hideOverlay();
+  if (reason === 'escape') {
+    if (overlayOpenedFromGlobal) app.hide();
+    overlayOpenedFromGlobal = false;
+  } else if (reason === 'shift') {
+    if (sessionWindow && !sessionWindow.isDestroyed()) sessionWindow.show();
+    if (launcherWindow && !launcherWindow.isDestroyed()) launcherWindow.show();
+    overlayOpenedFromGlobal = false;
+  }
+});
 ipcMain.handle('smart-launch-app', async (event, app) => {
   const result = await smartLaunchApp(app);
   return result;

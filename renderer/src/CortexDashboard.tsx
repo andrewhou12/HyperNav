@@ -275,8 +275,9 @@ export function CortexDashboard() {
       {smartLauncherOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/20 backdrop-blur-sm">
           <SmartLauncher
-  isVisible={smartLauncherOpen}
+  isOpen={smartLauncherOpen}
   onClose={() => setSmartLauncherOpen(false)}
+  withBackdrop={true}
   onChromeSearch={(query) => {
     if (window.electron?.openChromeWithSearch) {
       toast.loading(`Opening Chrome search for “${query}”`, { id: 'chrome-search' });
