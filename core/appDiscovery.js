@@ -3,6 +3,7 @@ const path = require('path');
 const fs = require('fs');
 const { app, nativeImage } = require('electron');
 const { fileIconToBuffer } = require('file-icon');
+const os = require('os');
 
 
 const iconCacheDir = path.join(app.getPath('userData'), 'app-icons');
@@ -31,13 +32,15 @@ async function extractIcon(appPath) {
   }
 }
 
-const isValidAppPath = (appPath) => {
-  return (
-    appPath.startsWith('/Applications/') ||
-    appPath.startsWith('/System/Applications/') ||
-    appPath.startsWith(`${process.env.HOME}/Applications/`)
-  );
-};
+function isValidAppPath(appPath) {
+  const allowedDirs = [
+    '/Applications',
+    '/System/Applications',
+    path.join(os.homedir(), 'Applications'),
+    path.join(os.homedir(), 'Downloads'), // optional
+  ];
+  return allowedDirs.some(dir => appPath.startsWith(dir));
+}
 
 async function getInstalledApps() {
   return new Promise((resolve, reject) => {
