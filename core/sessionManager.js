@@ -78,13 +78,6 @@ async function startSession() {
   setInitiallyHiddenApps(apps.map(app => app));
   console.log('✅ initiallyHiddenApps set:', apps);
 
-  try {
-    await hideApps(apps); // ✅ This now blocks properly
-    console.log("✅ All apps hidden.");
-  } catch (err) {
-    console.warn("⚠️ Some apps failed to hide:", err);
-  }
-
   updateSessionData({
     type: 'session_started',
     sessionName: sessionData.sessionName
