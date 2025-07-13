@@ -1,124 +1,144 @@
 {
-  "sessionName": "Session_2025-07-07T22:12:41.998Z",
-  "createdAt": "2025-07-07T22:12:41.999Z",
+  "sessionName": "Session_2025-07-13T06:15:13.671Z",
+  "createdAt": "2025-07-13T06:15:13.672Z",
   "liveWorkspace": {
-    "apps": [],
-    "activeAppId": null,
-    "activeWindowId": null
+    "apps": [
+      {
+        "id": "Code-1752387321319",
+        "name": "Code",
+        "path": null,
+        "windows": []
+      }
+    ],
+    "activeAppId": "Code-1752387321319",
+    "activeWindowId": 46672
   },
   "eventLog": [
     {
       "type": "session_started",
-      "timestamp": "2025-07-07T22:12:41.999Z",
+      "timestamp": "2025-07-13T06:15:17.167Z",
       "data": {
-        "sessionName": "Session_2025-07-07T22:12:41.998Z"
+        "type": "session_started",
+        "sessionName": "Session_2025-07-13T06:15:13.671Z"
       }
     },
     {
       "type": "poll_snapshot",
-      "timestamp": "2025-07-07T22:12:45.194Z",
+      "timestamp": "2025-07-13T06:15:18.445Z",
       "appName": "Electron",
       "windowTitle": "New Session"
     },
     {
       "type": "poll_snapshot",
-      "timestamp": "2025-07-07T22:12:48.185Z",
+      "timestamp": "2025-07-13T06:15:19.459Z",
       "appName": "Electron",
       "windowTitle": "New Session"
     },
     {
       "type": "poll_snapshot",
-      "timestamp": "2025-07-07T22:12:51.199Z",
+      "timestamp": "2025-07-13T06:15:20.353Z",
       "appName": "Electron",
       "windowTitle": "New Session"
     },
     {
       "type": "poll_snapshot",
-      "timestamp": "2025-07-07T22:13:02.632Z",
+      "timestamp": "2025-07-13T06:15:21.319Z",
+      "appName": "Code",
+      "windowTitle": "CortexDashboard.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:15:22.341Z",
+      "appName": "Code",
+      "windowTitle": "CortexDashboard.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:15:23.344Z",
+      "appName": "Code",
+      "windowTitle": "CortexDashboard.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:15:24.357Z",
+      "appName": "Code",
+      "windowTitle": "CortexDashboard.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:15:25.359Z",
+      "appName": "Code",
+      "windowTitle": "CortexDashboard.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:15:26.354Z",
       "appName": "Electron",
       "windowTitle": "New Session"
     },
     {
       "type": "poll_snapshot",
-      "timestamp": "2025-07-07T22:13:05.615Z",
+      "timestamp": "2025-07-13T06:15:27.343Z",
       "appName": "Electron",
       "windowTitle": "New Session"
     },
     {
       "type": "poll_snapshot",
-      "timestamp": "2025-07-07T22:13:08.587Z",
-      "appName": "Electron",
-      "windowTitle": ""
-    },
-    {
-      "type": "poll_snapshot",
-      "timestamp": "2025-07-07T22:13:11.645Z",
+      "timestamp": "2025-07-13T06:15:28.380Z",
       "appName": "Electron",
       "windowTitle": "New Session"
     },
     {
       "type": "poll_snapshot",
-      "timestamp": "2025-07-07T22:13:14.652Z",
+      "timestamp": "2025-07-13T06:15:29.383Z",
       "appName": "Electron",
       "windowTitle": "New Session"
     },
     {
       "type": "poll_snapshot",
-      "timestamp": "2025-07-07T22:13:17.660Z",
+      "timestamp": "2025-07-13T06:15:30.387Z",
       "appName": "Electron",
       "windowTitle": "New Session"
     },
     {
       "type": "poll_snapshot",
-      "timestamp": "2025-07-07T22:14:09.462Z",
+      "timestamp": "2025-07-13T06:15:31.400Z",
       "appName": "Electron",
       "windowTitle": "New Session"
     },
     {
       "type": "poll_snapshot",
-      "timestamp": "2025-07-07T22:14:12.463Z",
+      "timestamp": "2025-07-13T06:15:32.389Z",
       "appName": "Electron",
       "windowTitle": "New Session"
     },
     {
       "type": "poll_snapshot",
-      "timestamp": "2025-07-07T22:14:15.445Z",
+      "timestamp": "2025-07-13T06:15:33.393Z",
       "appName": "Electron",
       "windowTitle": "New Session"
     },
     {
       "type": "poll_snapshot",
-      "timestamp": "2025-07-07T22:14:18.490Z",
+      "timestamp": "2025-07-13T06:15:34.393Z",
       "appName": "Electron",
       "windowTitle": "New Session"
     },
     {
       "type": "poll_snapshot",
-      "timestamp": "2025-07-07T22:14:21.442Z",
+      "timestamp": "2025-07-13T06:15:35.420Z",
       "appName": "Electron",
       "windowTitle": "New Session"
     },
     {
       "type": "poll_snapshot",
-      "timestamp": "2025-07-07T22:14:24.489Z",
+      "timestamp": "2025-07-13T06:15:36.387Z",
       "appName": "Electron",
       "windowTitle": "New Session"
     },
     {
       "type": "poll_snapshot",
-      "timestamp": "2025-07-07T22:14:27.455Z",
-      "appName": "Electron",
-      "windowTitle": "New Session"
-    },
-    {
-      "type": "poll_snapshot",
-      "timestamp": "2025-07-07T22:14:30.522Z",
-      "appName": "Electron",
-      "windowTitle": "New Session"
-    },
-    {
-      "type": "poll_snapshot",
-      "timestamp": "2025-07-07T22:14:33.504Z",
+      "timestamp": "2025-07-13T06:15:37.407Z",
       "appName": "Electron",
       "windowTitle": "New Session"
     }

@@ -8,7 +8,7 @@ import { SmartLauncher } from "./components/SmartLauncher";
 import { Button } from "./components/ui/button";
 import { ResizablePanelGroup, ResizablePanel, ResizableHandle } from "./components/ui/resizable";
 import { Grid3X3, Map, Plus } from "lucide-react";
-import toast, {Toaster} from 'react-hot-toast';
+import toast, { Toaster } from 'react-hot-toast';
 
 export function CortexDashboard() {
   const [isPaused, setIsPaused] = useState(false);
@@ -23,47 +23,13 @@ export function CortexDashboard() {
   const firstPauseRun = useRef(true);
 
   const [workspace, setWorkspace] = useState({
-    apps: [
-      {
-        id: 'chrome-1',
-        name: 'Google Chrome',
-        icon: 'chrome',
-        path: '/Applications/Google Chrome.app',
-        tabs: [
-          { id: 'tab-1', title: 'ChatGPT', url: 'https://chat.openai.com', isActive: true },
-          { id: 'tab-2', title: 'GitHub - cortex', url: 'https://github.com' }
-        ]
-      },
-      {
-        id: 'slack-1',
-        name: 'Slack',
-        icon: 'slack',
-        path: '/Applications/Slack.app',
-        tabs: [
-          { id: 'tab-3', title: '#cortex-team', isActive: false },
-          { id: 'tab-4', title: '#product-updates', isActive: true }
-        ]
-      },
-      {
-        id: 'code-1',
-        name: 'VS Code',
-        icon: 'vscode',
-        path: '/Applications/Visual Studio Code.app',
-        tabs: [
-          { id: 'tab-5', title: 'cortex/SmartLauncher.tsx', isActive: false },
-          { id: 'tab-6', title: 'cortex/CortexDashboard.tsx', isActive: true }
-        ]
-      }
-    ],
-    activeAppId: 'chrome-1',
+    apps: [],
+    activeAppId: null,
     activeWindowId: null,
   });
-  
 
-  // ✅ NEW STATE: App icon map
   const [appIcons, setAppIcons] = useState<Record<string, string>>({});
 
-  // ✅ NEW: Fetch icons when workspace apps change
   useEffect(() => {
     async function loadIcons() {
       const icons = {};
@@ -80,16 +46,20 @@ export function CortexDashboard() {
     }
   }, [workspace.apps]);
 
-  // useEffect(() => {
-  //   window.electron.onLiveWorkspaceUpdate((liveWorkspace) => {
-  //     setWorkspace(liveWorkspace);
-  //     if (liveWorkspace.activeAppId) {
-  //       setExpandedStacks(prev =>
-  //         prev.includes(liveWorkspace.activeAppId) ? prev : [...prev, liveWorkspace.activeAppId]
-  //       );
-  //     }
-  //   });
-  // }, []);
+  useEffect(() => {
+    const unsubscribe = window.electron.onLiveWorkspaceUpdate((liveWorkspace) => {
+      setWorkspace(liveWorkspace);
+      if (liveWorkspace.activeAppId) {
+        setExpandedStacks(prev =>
+          prev.includes(liveWorkspace.activeAppId) ? prev : [...prev, liveWorkspace.activeAppId]
+        );
+      }
+    });
+
+    return () => {
+      if (unsubscribe) unsubscribe();
+    };
+  }, []);
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -254,13 +224,13 @@ export function CortexDashboard() {
                 </div>
 
                 {viewMode === 'grid' ? (
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 justify-center">
                     {workspace.apps.map(app => (
                       <AppStack
                         key={app.id}
                         name={app.name}
                         icon={app.icon}
-                        tabs={app.tabs}
+                        tabs={app.tabs || []}
                         isExpanded={expandedStacks.includes(app.id)}
                         isActive={app.id === workspace.activeAppId}
                         onToggleExpanded={() => handleToggleStack(app.id)}

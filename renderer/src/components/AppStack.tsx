@@ -1,6 +1,16 @@
 import { useState } from "react";
 import { Chrome, Slack, Folder, MoreHorizontal, X, GripVertical } from "lucide-react";
 
+// ✅ Define controllable apps
+const CONTROLLABLE_APPS = new Set([
+  "Google Chrome",
+  "VS Code",
+]);
+
+function isControllableApp(appName: string): boolean {
+  return CONTROLLABLE_APPS.has(appName);
+}
+
 interface Tab {
   id: string;
   title: string;
@@ -17,7 +27,7 @@ interface AppStackProps {
   onCloseApp?: () => void;
   onCloseTab?: (tabId: string) => void;
   onDragStart?: () => void;
-  customIcon?: string; // ✅ added
+  customIcon?: string;
 }
 
 const iconMap = {
@@ -40,16 +50,18 @@ export function AppStack({
   onCloseApp,
   onCloseTab,
   onDragStart,
-  customIcon // ✅ added
+  customIcon
 }: AppStackProps) {
   const [hoveredTab, setHoveredTab] = useState<string | null>(null);
   const IconComponent = iconMap[icon];
   const activeTabs = tabs.filter(tab => tab.isActive).length;
+  const appIsControllable = isControllableApp(name);
 
   return (
     <div 
       className={`
-        group rounded-xl border transition-all duration-200 relative w-full aspect-square flex flex-col
+        group rounded-xl border transition-all duration-200 relative
+        w-full max-w-[280px] aspect-square flex flex-col
         ${isActive 
           ? 'bg-background border-2 border-primary shadow-dashboard' 
           : 'bg-dashboard-stack hover:bg-dashboard-stack-hover border-border hover:shadow-dashboard-hover'
@@ -76,17 +88,25 @@ export function AppStack({
 
       {/* Stack Header */}
       <div className="flex flex-col items-center gap-2 p-3">
-        <div className={`
-          p-2 rounded-lg transition-colors
-          ${isActive ? 'bg-card border border-primary' : 'bg-card group-hover:bg-muted/50'}
-        `}>
+        <div
+          className={`
+            w-12 h-12 rounded-xl overflow-hidden transition-colors
+            ${isActive ? 'bg-card border border-primary' : 'bg-card group-hover:bg-muted/50'}
+          `}
+        >
           {customIcon ? (
-            <img src={customIcon} alt="" className="w-5 h-5 rounded-sm object-cover" />
+            <img
+              src={customIcon}
+              alt=""
+              className="w-full h-full object-cover"
+            />
           ) : (
-            <IconComponent className={`w-5 h-5 ${isActive ? 'text-primary' : 'text-muted-foreground'}`} />
+            <IconComponent
+              className={`w-full h-full ${isActive ? 'text-primary' : 'text-muted-foreground'}`}
+            />
           )}
         </div>
-        
+
         <div className="text-center min-w-0">
           <h3 className="font-medium text-card-foreground truncate text-sm">{name}</h3>
           <p className="text-xs text-muted-foreground mt-1">
@@ -104,41 +124,48 @@ export function AppStack({
         )}
       </div>
 
-      {/* Always Visible Tabs */}
+      {/* Tabs */}
       {tabs.length > 0 && (
-        <div className="flex-1 px-4 pb-4 overflow-hidden">
+        <div className="flex-1 px-4 pb-4 overflow-visible">
           <div className="flex flex-wrap gap-2">
-            {tabs.map((tab) => (
-              <div
-                key={tab.id}
-                className={`
-                  relative group/tab px-2 py-1 rounded text-xs truncate max-w-32 transition-colors cursor-pointer
-                  ${tab.isActive 
-                    ? 'bg-background text-foreground border-2 border-primary' 
-                    : 'bg-muted/50 text-muted-foreground hover:bg-muted/70'
-                  }
-                `}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  onTabClick?.(tab.id);
-                }}
-                onMouseEnter={() => setHoveredTab(tab.id)}
-                onMouseLeave={() => setHoveredTab(null)}
-              >
-                {tab.title}
-                {hoveredTab === tab.id && (
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      onCloseTab?.(tab.id);
-                    }}
-                    className="absolute -top-1 -right-1 w-4 h-4 bg-destructive/20 hover:bg-destructive/40 rounded-full flex items-center justify-center"
-                  >
-                    <X className="w-2 h-2 text-destructive" />
-                  </button>
-                )}
-              </div>
-            ))}
+            {tabs.map((tab) => {
+              const isHovered = hoveredTab === tab.id;
+              const interactive = appIsControllable;
+
+              return (
+                <div
+                  key={tab.id}
+                  className={`
+                    relative px-3 py-2 pr-5 rounded text-xs truncate max-w-32 transition-colors
+                    ${tab.isActive
+                      ? 'bg-background text-foreground border-2 border-primary'
+                      : 'bg-muted/50 text-muted-foreground'
+                    }
+                    ${interactive ? 'cursor-pointer group/tab hover:bg-muted/70' : 'cursor-default'}
+                  `}
+                  onClick={(e) => {
+                    if (!interactive) return;
+                    e.stopPropagation();
+                    onTabClick?.(tab.id);
+                  }}
+                  onMouseEnter={() => interactive && setHoveredTab(tab.id)}
+                  onMouseLeave={() => interactive && setHoveredTab(null)}
+                >
+                  {tab.title}
+                  {interactive && isHovered && (
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onCloseTab?.(tab.id);
+                      }}
+                      className="absolute top-0.5 right-0.5 w-4 h-4 bg-destructive/20 hover:bg-destructive/40 rounded-full flex items-center justify-center"
+                    >
+                      <X className="w-2 h-2 text-destructive" />
+                    </button>
+                  )}
+                </div>
+              );
+            })}
           </div>
         </div>
       )}

@@ -2,8 +2,8 @@ const path = require('path');
 const fs = require('fs');
 const { exec } = require('child_process');
 const activeWin = require('active-win');
-const { getActiveChromeTabInfo } = require('../utils/chromeTracker');
-const { hideApps } = require("../utils/applescript");
+const { getActiveChromeTabInfo, getChromeWindowsAndTabs } = require('../utils/chromeTracker');
+const { getOpenApps, hideApps } = require('../utils/applescript');
 
 const sessionDir = path.join(__dirname, '..', 'sessions');
 let sessionData = null;
@@ -11,36 +11,14 @@ let pollInterval = null;
 let pollingActive = false;
 let lastFocus = {};
 let mainWindow = null;
-
+let initiallyHiddenApps = new Set();
 
 function setMainWindow(win) {
   mainWindow = win;
 }
 
-
-function startSession() {
-  // 1) Initialize sessionData
-  sessionData = {
-    sessionName: `Session_${new Date().toISOString()}`,
-    createdAt:   new Date().toISOString(),
-    liveWorkspace: { apps: [], activeAppId: null, activeWindowId: null },
-    eventLog: []
-  };
-  console.log("🟢 New session started:", sessionData.sessionName);
-
-  // 2) Use updateSessionData to record & emit the “session_started” event
-  updateSessionData({
-    type: 'session_started',
-    sessionName: sessionData.sessionName
-  });
-
-  // 3) Kick off polling & UI update
-  startPollingWindowState();
-  mainWindow.webContents.send('live-workspace-update', sessionData.liveWorkspace);
-}
-
-function onWorkspaceChange() {
-  mainWindow.webContents.send('live-workspace-update', sessionData.liveWorkspace);
+function setInitiallyHiddenApps(appNames) {
+  initiallyHiddenApps = new Set(appNames);
 }
 
 function getSessionData() {
@@ -51,26 +29,75 @@ function updateSessionData(item) {
   if (!sessionData) return;
 
   const timestamp = new Date().toISOString();
-  // Build our log entry
   const entry = { type: item.type, timestamp, data: item };
 
-  // If it’s an app_opened, update liveWorkspace as well
   if (item.type === "app_opened") {
     const alreadyExists = sessionData.liveWorkspace.apps.some(a => a.path === item.path);
     if (!alreadyExists && item.launchedViaCortex) {
-      sessionData.liveWorkspace.apps.push({ ...item, addedAt: timestamp });
-      // also emit a workspace update
-      mainWindow.webContents.send('live-workspace-update', sessionData.liveWorkspace);
+      const newApp = {
+        id: item.id || `${item.name}-${Date.now()}`,
+        name: item.name,
+        icon: item.icon || "folder",
+        path: item.path,
+        windows: []
+      };
+      sessionData.liveWorkspace.apps.push(newApp);
+      mainWindow?.webContents.send('live-workspace-update', sessionData.liveWorkspace);
     }
-  } 
-
-  // Push into our in-memory log
-  sessionData.eventLog.push(entry);
-
-  // Emit that single new entry to the renderer
-  if (mainWindow) {
-    mainWindow.webContents.send('session-log-entry', entry);
+  } else if (item.type === "tab_closed") {
+    for (const app of sessionData.liveWorkspace.apps) {
+      if (app.windows) {
+        for (const win of app.windows) {
+          win.tabs = win.tabs?.filter(tab => tab.id !== item.tabId);
+        }
+      }
+    }
+    mainWindow?.webContents.send('live-workspace-update', sessionData.liveWorkspace);
   }
+
+  sessionData.eventLog.push(entry);
+  mainWindow?.webContents.send('session-log-entry', entry);
+}
+
+async function startSession() {
+  sessionData = {
+    sessionName: `Session_${new Date().toISOString()}`,
+    createdAt: new Date().toISOString(),
+    liveWorkspace: { apps: [], activeAppId: null, activeWindowId: null },
+    eventLog: []
+  };
+  console.log("🟢 New session started:", sessionData.sessionName);
+
+  // 👇 Wrap getOpenApps in a Promise so we can await it
+  const apps = await new Promise(resolve => getOpenApps(resolve));
+  if (!apps) {
+    console.warn("⚠️ No open apps returned by getOpenApps");
+    return;
+  }
+
+  setInitiallyHiddenApps(apps.map(app => app));
+  console.log('✅ initiallyHiddenApps set:', apps);
+
+  try {
+    await hideApps(apps); // ✅ This now blocks properly
+    console.log("✅ All apps hidden.");
+  } catch (err) {
+    console.warn("⚠️ Some apps failed to hide:", err);
+  }
+
+  updateSessionData({
+    type: 'session_started',
+    sessionName: sessionData.sessionName
+  });
+
+  startPollingWindowState();
+  mainWindow?.webContents.send('live-workspace-update', sessionData.liveWorkspace);
+}
+
+
+
+function onWorkspaceChange() {
+  mainWindow?.webContents.send('live-workspace-update', sessionData.liveWorkspace);
 }
 
 function saveSession() {
@@ -89,49 +116,94 @@ function launchApp(appPath) {
 }
 
 async function pollActiveWindow() {
-  const win = await activeWin();
-  if (!win) return;
+  try {
+    const win = await activeWin();
+    if (!win) return;
 
-  const { title, owner } = win;
-  const appName = owner.name;
-  const timestamp = new Date().toISOString();
+    const { title, owner, id: windowId } = win;
+    const appName = owner.name;
+    const timestamp = new Date().toISOString();
 
-  const event = {
-    type: appName === 'Google Chrome' ? 'tab_focus' : 'poll_snapshot',
-    timestamp,
-    appName,
-    windowTitle: title
-  };
+    const event = {
+      type: appName === 'Google Chrome' ? 'tab_focus' : 'poll_snapshot',
+      timestamp,
+      appName,
+      windowTitle: title
+    };
 
-  sessionData.eventLog.push(event);
-  lastFocus = { appName, windowTitle: title, timestamp };
+    sessionData.eventLog.push(event);
+    lastFocus = { appName, windowTitle: title, timestamp };
+
+    let matchingApp = sessionData.liveWorkspace.apps.find(app => app.name === appName);
+    if (matchingApp) {
+      sessionData.liveWorkspace.activeAppId = matchingApp.id;
+      sessionData.liveWorkspace.activeWindowId = windowId;
+
+      for (const app of sessionData.liveWorkspace.apps) {
+        for (const win of app.windows || []) {
+          win.isActive = false;
+          win.tabs = win.tabs?.map(tab => ({ ...tab, isActive: false })) || [];
+        }
+      }
+
+      if (appName === 'Google Chrome') {
+        try {
+          const chromeWindows = await getChromeWindowsAndTabs();
+          matchingApp.windows = chromeWindows.map(cw => ({
+            id: cw.id,
+            title: cw.title,
+            isActive: cw.id === windowId,
+            tabs: cw.tabs.map(tab => ({
+              id: tab.id,
+              title: tab.title,
+              url: tab.url,
+              isActive: tab.isActive
+            }))
+          }));
+        } catch (err) {
+          console.warn("⚠️ Failed to get Chrome windows and tabs:", err);
+        }
+      }
+
+      mainWindow?.webContents.send('live-workspace-update', sessionData.liveWorkspace);
+    }
+
+    if (!matchingApp && !initiallyHiddenApps.has(appName)) {
+      matchingApp = {
+        id: `${appName}-${Date.now()}`,
+        name: appName,
+        path: null,
+        windows: []
+      };
+      sessionData.liveWorkspace.apps.push(matchingApp);
+    }
+
+    console.log(sessionData.liveWorkspace);
+  } catch (err) {
+    console.error("❌ pollActiveWindow error:", err);
+  }
 }
 
 function startPollingWindowState() {
-  if (pollInterval) {
-    // already polling—no-op
-    return;
-  }
+  if (pollInterval) return;
 
   console.log("🟢 Started polling session state.");
   pollingActive = true;
   pollInterval = setInterval(async () => {
     if (!pollingActive) return;
     await pollActiveWindow();
-  }, 3000);
+  }, 1000);
 }
 
 function stopPollingWindowState() {
-  if (!pollInterval) {
-    // not polling—no-op
-    return;
-  }
+  if (!pollInterval) return;
 
   pollingActive = false;
   clearInterval(pollInterval);
   pollInterval = null;
   console.log("🛑 Stopped polling session state.");
 }
+
 function isAppInWorkspace(appName) {
   return sessionData?.liveWorkspace?.apps?.some(app => app.name === appName);
 }
@@ -147,5 +219,6 @@ module.exports = {
   stopPollingWindowState,
   isAppInWorkspace,
   getSessionData,
-  setMainWindow
+  setMainWindow,
+  setInitiallyHiddenApps
 };

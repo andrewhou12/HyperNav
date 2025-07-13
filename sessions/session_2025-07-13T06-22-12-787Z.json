@@ -1,0 +1,644 @@
+{
+  "sessionName": "Session_2025-07-13T06:20:25.126Z",
+  "createdAt": "2025-07-13T06:20:25.127Z",
+  "liveWorkspace": {
+    "apps": [
+      {
+        "id": "Code-1752387685851",
+        "name": "Code",
+        "path": null,
+        "windows": []
+      }
+    ],
+    "activeAppId": "Code-1752387685851",
+    "activeWindowId": 46672
+  },
+  "eventLog": [
+    {
+      "type": "session_started",
+      "timestamp": "2025-07-13T06:20:28.406Z",
+      "data": {
+        "type": "session_started",
+        "sessionName": "Session_2025-07-13T06:20:25.126Z"
+      }
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:20:29.652Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:20:30.617Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:20:31.569Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:20:32.560Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:20:33.592Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:20:34.599Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:20:35.595Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:20:36.604Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:20:37.628Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:20:38.625Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:20:39.620Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:20:40.610Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:20:41.643Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:20:42.635Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:20:43.622Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:20:44.651Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:20:45.654Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:20:46.629Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:20:47.657Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:20:48.670Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:20:49.636Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:20:50.675Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:20:51.673Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:20:52.652Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:20:53.692Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:20:54.698Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:20:55.661Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:20:56.703Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:20:57.716Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:20:58.683Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:20:59.717Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:21:00.714Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:21:01.692Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:21:02.726Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:21:03.714Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:21:04.710Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:21:05.723Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:21:06.768Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:21:07.722Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:21:08.760Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:21:09.733Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:21:10.727Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:21:11.769Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:21:12.775Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:21:13.735Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:21:14.864Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:21:15.764Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:21:16.753Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:21:17.771Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:21:18.795Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:21:19.761Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:21:20.810Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:21:21.783Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:21:22.766Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:21:23.834Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:21:24.803Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:21:25.851Z",
+      "appName": "Code",
+      "windowTitle": "CortexDashboard.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:21:26.797Z",
+      "appName": "Code",
+      "windowTitle": "CortexDashboard.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:21:27.787Z",
+      "appName": "Code",
+      "windowTitle": "CortexDashboard.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:21:28.798Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:21:29.832Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:21:30.841Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:21:31.808Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:21:32.855Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:21:33.852Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:21:34.845Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:21:35.853Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:21:36.872Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:21:37.830Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:21:38.868Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:21:39.877Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:21:40.887Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-13T06:21:42.246Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Workspace Manager Update"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-13T06:21:43.023Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Workspace Manager Update"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-13T06:21:44.036Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Workspace Manager Update"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-13T06:21:44.985Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Workspace Manager Update"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-13T06:21:45.984Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Workspace Manager Update"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-13T06:21:46.965Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Workspace Manager Update"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-13T06:21:47.993Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Workspace Manager Update"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-13T06:21:49.043Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Workspace Manager Update"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-13T06:21:50.008Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Workspace Manager Update"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-13T06:21:51.055Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Workspace Manager Update"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-13T06:21:52.008Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Workspace Manager Update"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-13T06:21:53.037Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Workspace Manager Update"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-13T06:21:54.045Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Workspace Manager Update"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-13T06:21:55.064Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Workspace Manager Update"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-13T06:21:56.040Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Workspace Manager Update"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-13T06:21:57.042Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Workspace Manager Update"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-13T06:21:58.029Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Workspace Manager Update"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-13T06:21:59.026Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Workspace Manager Update"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-13T06:22:00.058Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Workspace Manager Update"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-13T06:22:01.079Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Workspace Manager Update"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-13T06:22:02.034Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Workspace Manager Update"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-13T06:22:03.063Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Workspace Manager Update"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-13T06:22:04.047Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Workspace Manager Update"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-13T06:22:05.045Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Workspace Manager Update"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-13T06:22:06.056Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Workspace Manager Update"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-13T06:22:07.117Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Workspace Manager Update"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-13T06:22:08.100Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Workspace Manager Update"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-13T06:22:09.081Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Workspace Manager Update"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-13T06:22:10.128Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Workspace Manager Update"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-13T06:22:11.080Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Workspace Manager Update"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-13T06:22:12.000Z",
+      "appName": "Code",
+      "windowTitle": "CortexDashboard.tsx — cortex"
+    }
+  ]
+}
