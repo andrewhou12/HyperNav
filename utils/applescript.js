@@ -26,36 +26,48 @@ function getOpenApps(callback) {
   );
 }
 function hideApps(apps) {
-  apps.forEach(app => {
-    // 1) System Events flag
-    exec(
-      `osascript -e 'tell application "System Events" to set visible of process "${app}" to false'`,
-      err => {
-        if (err) console.warn(`⚠️ [${app}] SysEvents hide failed:`, err.message);
-        else       console.log(`🔨 [${app}] SysEvents hide sent`);
-        
-        // 2) Always follow up with the app-level hide
+  return Promise.all(
+    apps.map(app => {
+      return new Promise(resolve => {
+        // 1) System Events hide
         exec(
-          `osascript -e 'tell application "${app}" to hide'`,
-          fbErr => {
-            if (fbErr) console.error(`❌ [${app}] app-level hide failed:`, fbErr.message);
-            else       console.log(`🔨 [${app}] app-level hide sent`);
+          `osascript -e 'tell application "System Events" to set visible of process "${app}" to false'`,
+          err => {
+            if (err) {
+              console.warn(`⚠️ [${app}] SysEvents hide failed:`, err.message);
+            } else {
+              console.log(`🔨 [${app}] SysEvents hide sent`);
+            }
 
-            // 3) Final check
-            getAppVisibility(app, finalVisible => {
-              if (finalVisible === false) {
-                console.log(`✅ [${app}] is now hidden.`);
-              } else if (finalVisible === true) {
-                console.error(`❌ [${app}] STILL visible after both attempts!`);
-              } else {
-                console.warn(`⚠️ [${app}] visibility unknown after hide.`);
+            // 2) App-level hide fallback
+            exec(
+              `osascript -e 'tell application "${app}" to hide'`,
+              fbErr => {
+                if (fbErr) {
+                  console.error(`❌ [${app}] app-level hide failed:`, fbErr.message);
+                } else {
+                  console.log(`🔨 [${app}] app-level hide sent`);
+                }
+
+                // 3) Final visibility check
+                getAppVisibility(app, finalVisible => {
+                  if (finalVisible === false) {
+                    console.log(`✅ [${app}] is now hidden.`);
+                  } else if (finalVisible === true) {
+                    console.error(`❌ [${app}] STILL visible after both attempts!`);
+                  } else {
+                    console.warn(`⚠️ [${app}] visibility unknown after hide.`);
+                  }
+
+                  resolve(); // Always resolve to allow Promise.all to finish
+                });
               }
-            });
+            );
           }
         );
-      }
-    );
-  });
+      });
+    })
+  );
 }
 // Show the specified apps via AppleScript
 function showApps(apps) {

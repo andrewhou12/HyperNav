@@ -277,25 +277,30 @@ function unregisterHotkeys() {
 }
 
 async function startCortexSession() {
-  const hiddenApps = await clearWorkspace();
+  const hiddenApps = await clearWorkspace(); // wait for hideApps to fully complete
+  updateSessionData({ type: 'workspace_cleared', items: hiddenApps });
+
   toggleDockAutohide(true);
+  registerHotkeys();
+
   const sessionwin = createSessionWindow();
   sessionwin.once('ready-to-show', async () => {
-    setTimeout(() => {
+    // Optional: shorten or remove timeout if unnecessary
+    setTimeout(async () => {
       sessionwin.maximize();
       sessionwin.show();
+
       if (launcherWindow && !launcherWindow.isDestroyed()) {
         launcherWindow.close();
         launcherWindow = null;
       }
+
+      sessionManager.setMainWindow(sessionwin);
+      await startSession();       // polling + session setup
+      startAutoHide();            // overlay visibility sync
+      createOverlayWindow();      // floating HUD etc.
     }, 2000);
-    sessionManager.setMainWindow(sessionwin);
-    startSession();
-    startAutoHide();
-    createOverlayWindow();
   });
-  updateSessionData({ type: 'workspace_cleared', items: hiddenApps });
-  registerHotkeys();
 }
 
 ipcMain.handle('get-installed-apps', async () => {
