@@ -32,13 +32,16 @@ export function CortexDashboard() {
 
   useEffect(() => {
     async function loadIcons() {
-      const icons = {};
+      const icons: Record<string, string> = {};
       for (const app of workspace.apps) {
         if (!app.path) continue;
         const icon = await window.electron.getAppIcon?.(app.path);
         if (icon) icons[app.id] = icon;
+       
       }
+      
       setAppIcons(icons);
+      console.log(icons);
     }
 
     if (workspace.apps.length > 0) {

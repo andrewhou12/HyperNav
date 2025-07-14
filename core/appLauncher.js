@@ -86,6 +86,14 @@ async function openChromeWithSearch(query, onStatus = () => {}) {
   if (hasActiveCortexChrome) {
     onStatus({ type: 'info', message: `${name} (Cortex) is already running. Opening tab...` });
     chromeDriver.openTab(searchURL);
+    updateSessionData({
+      type: 'app_opened',
+      name,
+      path: '/Applications/Google Chrome.app',
+      windowTitle: name,
+      isActive: true,
+      launchedViaCortex: true,
+    });
     return;
   }
 
@@ -95,7 +103,7 @@ async function openChromeWithSearch(query, onStatus = () => {}) {
   updateSessionData({
     type: 'app_opened',
     name,
-    path: null,
+    path: '/Applications/Google Chrome.app',
     windowTitle: name,
     isActive: true,
     launchedViaCortex: true,

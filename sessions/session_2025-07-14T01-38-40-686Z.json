@@ -1,0 +1,304 @@
+{
+  "sessionName": "Session_2025-07-14T01:37:54.794Z",
+  "createdAt": "2025-07-14T01:37:54.795Z",
+  "liveWorkspace": {
+    "apps": [
+      {
+        "id": "Google Chrome-934519725",
+        "name": "Google Chrome",
+        "icon": "chrome",
+        "path": null,
+        "tabs": [
+          {
+            "id": "tab-gxtzxe3w3zk",
+            "title": "BROKEN_WINDOW",
+            "isActive": false
+          }
+        ],
+        "windows": []
+      }
+    ],
+    "activeAppId": null,
+    "activeWindowId": null
+  },
+  "eventLog": [
+    {
+      "type": "session_started",
+      "timestamp": "2025-07-14T01:37:55.208Z",
+      "data": {
+        "type": "session_started",
+        "sessionName": "Session_2025-07-14T01:37:54.794Z"
+      }
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T01:37:56.431Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T01:37:57.385Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T01:37:58.354Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T01:37:59.368Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T01:38:00.542Z",
+      "appName": "Google Chrome",
+      "windowTitle": "gmail - Google Search"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T01:38:01.540Z",
+      "appName": "Google Chrome",
+      "windowTitle": "gmail - Google Search"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T01:38:02.495Z",
+      "appName": "Google Chrome",
+      "windowTitle": "gmail - Google Search"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T01:38:03.419Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T01:38:04.417Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T01:38:05.393Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T01:38:06.415Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T01:38:07.397Z",
+      "appName": "Code",
+      "windowTitle": "chromeTracker.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T01:38:08.587Z",
+      "appName": "Code",
+      "windowTitle": "chromeTracker.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T01:38:09.450Z",
+      "appName": "Code",
+      "windowTitle": "chromeTracker.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T01:38:10.462Z",
+      "appName": "Code",
+      "windowTitle": "chromeTracker.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T01:38:11.459Z",
+      "appName": "Code",
+      "windowTitle": "chromeTracker.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T01:38:12.440Z",
+      "appName": "Code",
+      "windowTitle": "chromeTracker.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T01:38:13.467Z",
+      "appName": "Code",
+      "windowTitle": "chromeTracker.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T01:38:14.453Z",
+      "appName": "Code",
+      "windowTitle": "chromeTracker.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T01:38:15.464Z",
+      "appName": "Code",
+      "windowTitle": "chromeTracker.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T01:38:16.472Z",
+      "appName": "Code",
+      "windowTitle": "chromeTracker.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T01:38:17.454Z",
+      "appName": "Code",
+      "windowTitle": "chromeTracker.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T01:38:18.496Z",
+      "appName": "Code",
+      "windowTitle": "chromeTracker.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T01:38:19.476Z",
+      "appName": "Code",
+      "windowTitle": "chromeTracker.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T01:38:20.488Z",
+      "appName": "Code",
+      "windowTitle": "chromeTracker.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T01:38:21.500Z",
+      "appName": "Code",
+      "windowTitle": "chromeTracker.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T01:38:22.464Z",
+      "appName": "Code",
+      "windowTitle": "chromeTracker.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T01:38:23.493Z",
+      "appName": "Code",
+      "windowTitle": "chromeTracker.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T01:38:24.514Z",
+      "appName": "Code",
+      "windowTitle": "chromeTracker.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T01:38:25.498Z",
+      "appName": "Code",
+      "windowTitle": "chromeTracker.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T01:38:26.514Z",
+      "appName": "Code",
+      "windowTitle": "chromeTracker.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T01:38:27.487Z",
+      "appName": "Code",
+      "windowTitle": "chromeTracker.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T01:38:28.490Z",
+      "appName": "Code",
+      "windowTitle": "chromeTracker.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T01:38:29.538Z",
+      "appName": "Code",
+      "windowTitle": "chromeTracker.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T01:38:30.505Z",
+      "appName": "Code",
+      "windowTitle": "chromeTracker.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T01:38:31.505Z",
+      "appName": "Code",
+      "windowTitle": "chromeTracker.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T01:38:32.535Z",
+      "appName": "Code",
+      "windowTitle": "chromeTracker.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T01:38:33.542Z",
+      "appName": "Code",
+      "windowTitle": "chromeTracker.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T01:38:34.510Z",
+      "appName": "Code",
+      "windowTitle": "chromeTracker.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T01:38:35.530Z",
+      "appName": "Code",
+      "windowTitle": "chromeTracker.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T01:38:36.567Z",
+      "appName": "Code",
+      "windowTitle": "chromeTracker.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T01:38:37.536Z",
+      "appName": "Code",
+      "windowTitle": "chromeTracker.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T01:38:38.559Z",
+      "appName": "Code",
+      "windowTitle": "chromeTracker.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T01:38:39.537Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T01:38:40.526Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    }
+  ]
+}
