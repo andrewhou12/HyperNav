@@ -33,7 +33,7 @@ function updateSessionData(item) {
 
   if (item.type === "app_opened") {
     const alreadyExists = sessionData.liveWorkspace.apps.some(a => a.path === item.path);
-    if (!alreadyExists && item.launchedViaCortex) {
+    if (!alreadyExists) {
       const newApp = {
         id: item.id || `${item.name}-${Date.now()}`,
         name: item.name,
@@ -119,6 +119,7 @@ async function pollActiveWindow() {
 
     const { title, owner, id: windowId } = win;
     const appName = owner.name;
+    const appPath = owner.path;
     const timestamp = new Date().toISOString();
 
     const event = {
@@ -192,7 +193,7 @@ async function pollActiveWindow() {
       matchingApp = {
         id: `${appName}-${Date.now()}`,
         name: appName,
-        path: null,
+        path: appPath || null,
         windows: []
       };
       sessionData.liveWorkspace.apps.push(matchingApp);

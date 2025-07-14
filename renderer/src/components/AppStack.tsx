@@ -53,7 +53,7 @@ export function AppStack({
   customIcon
 }: AppStackProps) {
   const [hoveredTab, setHoveredTab] = useState<string | null>(null);
-  const IconComponent = iconMap[icon];
+  const IconComponent = icon in iconMap ? iconMap[icon] : Folder;
   const activeTabs = tabs.filter(tab => tab.isActive).length;
   const appIsControllable = isControllableApp(name);
 
@@ -109,9 +109,11 @@ export function AppStack({
 
         <div className="text-center min-w-0">
           <h3 className="font-medium text-card-foreground truncate text-sm">{name}</h3>
-          <p className="text-xs text-muted-foreground mt-1">
-            {tabs.length} {tabs.length === 1 ? 'item' : 'items'}
-          </p>
+          {tabs.length > 0 && (
+  <p className="text-xs text-muted-foreground mt-1">
+    {tabs.length} {tabs.length === 1 ? 'item' : 'items'}
+  </p>
+)}
           {activeTabs > 0 && (
             <p className="text-xs text-primary">
               {activeTabs} active
