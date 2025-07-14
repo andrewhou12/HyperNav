@@ -146,16 +146,6 @@ function createSessionWindow() {
       const previouslyHidden = workspaceManager.getPreviouslyHiddenApps();
       if (previouslyHidden?.length) showApps(previouslyHidden);
     }
-    const sessionData = getSessionData();
-    const wasChromeTracked = sessionData?.liveWorkspace?.apps?.some(
-      app => app.name.toLowerCase() === "google chrome"
-    );
-    if (wasChromeTracked) {
-      exec(`osascript -e 'tell application "Google Chrome" to quit'`, (err) => {
-        if (err) console.error("❌ Chrome quit failed:", err.message);
-        else console.log("🧼 Chrome instance quit successfully.");
-      });
-    }
     createWindow();
   });
 
