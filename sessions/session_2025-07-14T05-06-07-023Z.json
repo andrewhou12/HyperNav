@@ -1,0 +1,346 @@
+{
+  "sessionName": "Session_2025-07-14T05:05:15.352Z",
+  "createdAt": "2025-07-14T05:05:15.353Z",
+  "liveWorkspace": {
+    "apps": [
+      {
+        "id": "Minecraft-1752469521459",
+        "name": "Minecraft",
+        "icon": "folder",
+        "path": "/Applications/Minecraft.app",
+        "windows": []
+      },
+      {
+        "id": "Google Chrome-1752469531951",
+        "name": "Google Chrome",
+        "icon": "folder",
+        "path": "/Applications/Google Chrome.app",
+        "windows": []
+      },
+      {
+        "id": "Minecraft Launcher-1752469543985",
+        "name": "Minecraft Launcher",
+        "path": null,
+        "windows": []
+      }
+    ],
+    "activeAppId": "Minecraft Launcher-1752469543985",
+    "activeWindowId": 73519
+  },
+  "eventLog": [
+    {
+      "type": "session_started",
+      "timestamp": "2025-07-14T05:05:15.730Z",
+      "data": {
+        "type": "session_started",
+        "sessionName": "Session_2025-07-14T05:05:15.352Z"
+      }
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T05:05:16.902Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T05:05:17.924Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T05:05:18.892Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T05:05:19.921Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T05:05:20.920Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "app_opened",
+      "timestamp": "2025-07-14T05:05:21.459Z",
+      "data": {
+        "type": "app_opened",
+        "name": "Minecraft",
+        "path": "/Applications/Minecraft.app",
+        "windowTitle": "Minecraft",
+        "isActive": true,
+        "launchedViaCortex": true
+      }
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T05:05:21.927Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T05:05:22.928Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T05:05:25.947Z",
+      "appName": "Electron",
+      "windowTitle": "Cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T05:05:26.967Z",
+      "appName": "Electron",
+      "windowTitle": "Cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T05:05:27.951Z",
+      "appName": "Electron",
+      "windowTitle": "Cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T05:05:28.912Z",
+      "appName": "Electron",
+      "windowTitle": "Cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T05:05:29.936Z",
+      "appName": "Electron",
+      "windowTitle": "Cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T05:05:30.951Z",
+      "appName": "Electron",
+      "windowTitle": "Cortex"
+    },
+    {
+      "type": "app_opened",
+      "timestamp": "2025-07-14T05:05:31.951Z",
+      "data": {
+        "type": "app_opened",
+        "name": "Google Chrome",
+        "path": "/Applications/Google Chrome.app",
+        "windowTitle": "Google Chrome",
+        "isActive": true,
+        "launchedViaCortex": true
+      }
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T05:05:31.970Z",
+      "appName": "Electron",
+      "windowTitle": "Cortex"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T05:05:34.243Z",
+      "appName": "Google Chrome",
+      "windowTitle": "chrome - Google Search"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T05:05:35.096Z",
+      "appName": "Google Chrome",
+      "windowTitle": "chrome - Google Search"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T05:05:36.055Z",
+      "appName": "Google Chrome",
+      "windowTitle": "chrome - Google Search"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T05:05:37.101Z",
+      "appName": "Google Chrome",
+      "windowTitle": "chrome - Google Search"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T05:05:37.992Z",
+      "appName": "Electron",
+      "windowTitle": "Cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T05:05:38.977Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T05:05:39.967Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T05:05:40.985Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T05:05:41.982Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T05:05:42.975Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T05:05:43.985Z",
+      "appName": "Minecraft Launcher",
+      "windowTitle": "Minecraft Launcher"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T05:05:44.994Z",
+      "appName": "Minecraft Launcher",
+      "windowTitle": "Minecraft Launcher"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T05:05:45.977Z",
+      "appName": "Minecraft Launcher",
+      "windowTitle": "Minecraft Launcher"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T05:05:47.012Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T05:05:48.033Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T05:05:48.978Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T05:05:50.026Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T05:05:51.044Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T05:05:52.011Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T05:05:53.052Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T05:05:54.052Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T05:05:55.013Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T05:05:56.059Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T05:05:57.073Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T05:05:58.049Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T05:05:59.059Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T05:06:00.100Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T05:06:01.111Z",
+      "appName": "Code",
+      "windowTitle": "applescript.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T05:06:02.071Z",
+      "appName": "Code",
+      "windowTitle": "applescript.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T05:06:03.052Z",
+      "appName": "Code",
+      "windowTitle": "applescript.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T05:06:04.060Z",
+      "appName": "Code",
+      "windowTitle": "applescript.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T05:06:05.067Z",
+      "appName": "Code",
+      "windowTitle": "applescript.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T05:06:06.093Z",
+      "appName": "Code",
+      "windowTitle": "applescript.js — cortex"
+    }
+  ]
+}

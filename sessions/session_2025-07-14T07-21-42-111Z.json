@@ -1,0 +1,177 @@
+{
+  "sessionName": "Session_2025-07-14T07:21:01.574Z",
+  "createdAt": "2025-07-14T07:21:01.575Z",
+  "liveWorkspace": {
+    "apps": [
+      {
+        "id": "Google Chrome-1752477666787",
+        "name": "Google Chrome",
+        "icon": "folder",
+        "path": "/Applications/Google Chrome.app",
+        "windows": []
+      },
+      {
+        "id": "Music-1752477687278",
+        "name": "Music",
+        "path": "/System/Applications/Music.app",
+        "windows": []
+      }
+    ],
+    "activeAppId": "Music-1752477687278",
+    "activeWindowId": 74747
+  },
+  "eventLog": [
+    {
+      "type": "session_started",
+      "timestamp": "2025-07-14T07:21:02.024Z",
+      "data": {
+        "type": "session_started",
+        "sessionName": "Session_2025-07-14T07:21:01.574Z"
+      }
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:21:03.226Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:21:04.204Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:21:05.252Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:21:06.284Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "app_opened",
+      "timestamp": "2025-07-14T07:21:06.787Z",
+      "data": {
+        "type": "app_opened",
+        "name": "Google Chrome",
+        "path": "/Applications/Google Chrome.app",
+        "windowTitle": "Google Chrome",
+        "isActive": true,
+        "launchedViaCortex": true
+      }
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:21:08.375Z",
+      "appName": "Google Chrome",
+      "windowTitle": "docs - Google Search"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:21:09.349Z",
+      "appName": "Google Chrome",
+      "windowTitle": "docs - Google Search"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:21:10.389Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Google Docs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:21:11.367Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Google Docs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:21:12.351Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Google Docs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:21:13.462Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Game Start - Google Docs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:21:14.375Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Game Start - Google Docs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:21:15.341Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Game Start - Google Docs"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:21:16.410Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Game Start - Google Docs"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:21:27.278Z",
+      "appName": "Music",
+      "windowTitle": "Music"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:21:28.268Z",
+      "appName": "Music",
+      "windowTitle": "Music"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:21:29.266Z",
+      "appName": "Music",
+      "windowTitle": "Music"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:21:36.308Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:21:37.332Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:21:38.298Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:21:39.333Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:21:40.317Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:21:41.309Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    }
+  ]
+}

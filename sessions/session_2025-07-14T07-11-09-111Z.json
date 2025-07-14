@@ -1,0 +1,1785 @@
+{
+  "sessionName": "Session_2025-07-14T07:06:14.654Z",
+  "createdAt": "2025-07-14T07:06:14.655Z",
+  "liveWorkspace": {
+    "apps": [
+      {
+        "id": "Google Chrome-1752476777788",
+        "name": "Google Chrome",
+        "icon": "folder",
+        "path": "/Applications/Google Chrome.app",
+        "windows": []
+      },
+      {
+        "id": "FaceTime-1752476801368",
+        "name": "FaceTime",
+        "path": "/System/Applications/FaceTime.app",
+        "windows": []
+      }
+    ],
+    "activeAppId": "Google Chrome-1752476777788",
+    "activeWindowId": 73219
+  },
+  "eventLog": [
+    {
+      "type": "session_started",
+      "timestamp": "2025-07-14T07:06:15.096Z",
+      "data": {
+        "type": "session_started",
+        "sessionName": "Session_2025-07-14T07:06:14.654Z"
+      }
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:06:16.274Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:06:17.303Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "app_opened",
+      "timestamp": "2025-07-14T07:06:17.788Z",
+      "data": {
+        "type": "app_opened",
+        "name": "Google Chrome",
+        "path": "/Applications/Google Chrome.app",
+        "windowTitle": "Google Chrome",
+        "isActive": true,
+        "launchedViaCortex": true
+      }
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:06:18.445Z",
+      "appName": "Google Chrome",
+      "windowTitle": "New Tab"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:06:19.394Z",
+      "appName": "Google Chrome",
+      "windowTitle": "docs - Google Search"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:06:20.390Z",
+      "appName": "Google Chrome",
+      "windowTitle": "chrome - Google Search"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:06:21.406Z",
+      "appName": "Google Chrome",
+      "windowTitle": "chrome - Google Search"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:06:22.282Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:06:23.281Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:06:24.310Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:06:25.304Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:06:26.308Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:06:28.284Z",
+      "appName": "Discord",
+      "windowTitle": "Discord Updater"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:06:29.454Z",
+      "appName": "Discord",
+      "windowTitle": " - Discord"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:06:30.315Z",
+      "appName": "Discord",
+      "windowTitle": " - Discord"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:06:31.355Z",
+      "appName": "Discord",
+      "windowTitle": " - Discord"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:06:32.317Z",
+      "appName": "Discord",
+      "windowTitle": "Friends - Discord"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:06:33.338Z",
+      "appName": "Discord",
+      "windowTitle": "Friends - Discord"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:06:34.323Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:06:35.360Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:06:36.333Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:06:37.348Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:06:38.338Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:06:39.331Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:06:41.368Z",
+      "appName": "FaceTime",
+      "windowTitle": "FaceTime"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:06:42.344Z",
+      "appName": "FaceTime",
+      "windowTitle": "FaceTime"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:06:43.356Z",
+      "appName": "FaceTime",
+      "windowTitle": "FaceTime"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:06:44.366Z",
+      "appName": "FaceTime",
+      "windowTitle": "FaceTime"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:06:45.353Z",
+      "appName": "FaceTime",
+      "windowTitle": "FaceTime"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:06:46.406Z",
+      "appName": "FaceTime",
+      "windowTitle": "FaceTime"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:06:47.379Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:06:48.356Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:06:49.429Z",
+      "appName": "Code",
+      "windowTitle": "sessionManager.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:06:50.409Z",
+      "appName": "Code",
+      "windowTitle": "sessionManager.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:06:51.378Z",
+      "appName": "Code",
+      "windowTitle": "sessionManager.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:06:52.424Z",
+      "appName": "Code",
+      "windowTitle": "sessionManager.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:06:53.423Z",
+      "appName": "Code",
+      "windowTitle": "sessionManager.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:06:54.393Z",
+      "appName": "Code",
+      "windowTitle": "sessionManager.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:06:55.436Z",
+      "appName": "Code",
+      "windowTitle": "sessionManager.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:06:56.446Z",
+      "appName": "Code",
+      "windowTitle": "sessionManager.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:06:57.405Z",
+      "appName": "Code",
+      "windowTitle": "sessionManager.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:06:58.426Z",
+      "appName": "Code",
+      "windowTitle": "sessionManager.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:06:59.423Z",
+      "appName": "Code",
+      "windowTitle": "sessionManager.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:00.408Z",
+      "appName": "Code",
+      "windowTitle": "sessionManager.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:01.439Z",
+      "appName": "Code",
+      "windowTitle": "sessionManager.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:02.456Z",
+      "appName": "Code",
+      "windowTitle": "sessionManager.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:03.413Z",
+      "appName": "Code",
+      "windowTitle": "sessionManager.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:04.447Z",
+      "appName": "Code",
+      "windowTitle": "sessionManager.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:05.467Z",
+      "appName": "Code",
+      "windowTitle": "sessionManager.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:06.441Z",
+      "appName": "Code",
+      "windowTitle": "sessionManager.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:07.455Z",
+      "appName": "Code",
+      "windowTitle": "sessionManager.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:08.452Z",
+      "appName": "Code",
+      "windowTitle": "sessionManager.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:09.446Z",
+      "appName": "Code",
+      "windowTitle": "sessionManager.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:10.477Z",
+      "appName": "Code",
+      "windowTitle": "sessionManager.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:11.500Z",
+      "appName": "Code",
+      "windowTitle": "sessionManager.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:12.465Z",
+      "appName": "Code",
+      "windowTitle": "sessionManager.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:13.484Z",
+      "appName": "Code",
+      "windowTitle": "sessionManager.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:14.507Z",
+      "appName": "Code",
+      "windowTitle": "sessionManager.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:15.480Z",
+      "appName": "Code",
+      "windowTitle": "sessionManager.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:16.502Z",
+      "appName": "Code",
+      "windowTitle": "sessionManager.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:17.504Z",
+      "appName": "Code",
+      "windowTitle": "sessionManager.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:18.509Z",
+      "appName": "Code",
+      "windowTitle": "sessionManager.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:19.538Z",
+      "appName": "Code",
+      "windowTitle": "sessionManager.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:20.514Z",
+      "appName": "Code",
+      "windowTitle": "sessionManager.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:21.499Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:22.493Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:23.550Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:24.517Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:25.557Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:26.565Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:27.551Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:28.575Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:29.577Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:30.555Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:31.593Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:32.661Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:33.574Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:34.609Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:35.612Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:36.595Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:37.625Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:38.623Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:39.619Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:40.626Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:41.641Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:42.620Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:43.611Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:44.620Z",
+      "appName": "Code",
+      "windowTitle": "icon_32x32.png — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:45.595Z",
+      "appName": "Code",
+      "windowTitle": "icon_32x32.png — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:46.652Z",
+      "appName": "Code",
+      "windowTitle": "icon_32x32.png — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:47.645Z",
+      "appName": "Code",
+      "windowTitle": "icon_32x32.png — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:48.641Z",
+      "appName": "Code",
+      "windowTitle": "icon_32x32.png — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:49.672Z",
+      "appName": "Code",
+      "windowTitle": "icon_32x32.png — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:50.641Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:51.640Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:52.675Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:53.698Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:54.684Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:55.672Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:56.697Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:57.696Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:58.709Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:07:59.718Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:08:00.692Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:08:01.730Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:08:02.720Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:08:03.726Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:08:04.741Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:08:05.704Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:08:06.730Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:08:07.751Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:08:08.759Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:08:09.751Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:08:10.718Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:08:11.760Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:08:12.740Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:08:13.733Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:08:14.755Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:08:15.750Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:08:16.874Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:08:17.886Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:08:18.888Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:08:19.902Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:08:20.893Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:08:21.890Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:08:22.912Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:08:23.924Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:08:24.918Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:08:25.926Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:08:26.922Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:08:27.949Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:08:28.938Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:08:29.930Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:08:30.928Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:08:31.942Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:08:32.928Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:08:33.940Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:08:34.953Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:08:35.929Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:08:36.984Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:08:37.978Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:08:38.990Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:08:39.990Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:08:40.972Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:08:41.999Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:08:42.991Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:08:43.989Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:08:45.004Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:08:45.990Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:08:46.953Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:08:47.910Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:08:48.871Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:08:49.885Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:08:50.889Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:08:51.924Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:08:52.922Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:08:53.914Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:08:54.888Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:08:55.918Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:08:56.931Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:08:57.915Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:08:58.922Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:09:00.020Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:09:01.032Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:09:02.079Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:09:03.082Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:09:04.074Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:09:05.053Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:09:06.078Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:09:07.076Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:09:08.065Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:09:09.082Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:09:10.069Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:09:11.109Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:09:11.952Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:09:12.957Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:09:14.009Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:09:15.011Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:09:15.974Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:09:16.981Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:09:18.029Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:09:18.999Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:09:19.995Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:09:21.001Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:09:22.177Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:09:23.165Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:09:24.160Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:09:25.163Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:09:26.177Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:09:27.184Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:09:28.180Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:09:29.162Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:09:30.186Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:09:31.194Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:09:32.203Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:09:33.217Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:09:34.213Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:09:35.223Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:09:36.223Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:09:37.240Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:09:38.248Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:09:39.226Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:09:40.311Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:09:41.221Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:09:42.240Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:09:43.253Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:09:44.260Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:09:45.269Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:09:46.282Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:09:47.274Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:09:48.290Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:09:49.294Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:09:50.269Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:09:51.281Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:09:52.295Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:09:53.306Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:09:54.307Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:09:55.317Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:09:56.319Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:09:57.332Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:09:58.341Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:09:59.307Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:10:00.329Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:10:01.336Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:10:02.303Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:10:03.199Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:10:04.200Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:10:05.283Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:10:06.228Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:10:07.211Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:10:08.356Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:10:09.331Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:10:10.344Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:10:11.382Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:10:12.391Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:10:13.336Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:10:14.420Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:10:15.407Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:10:16.355Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:10:17.393Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:10:18.394Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:10:19.381Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:10:20.399Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:10:21.406Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:10:22.464Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:10:23.423Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:10:24.419Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:10:25.420Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:10:26.435Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:10:27.427Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:10:28.449Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:10:29.443Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:10:30.452Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:10:31.445Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:10:32.490Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:10:33.466Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:10:34.501Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:10:35.478Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:10:36.469Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:10:37.472Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:10:38.496Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:10:39.501Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:10:40.490Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:10:41.541Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:10:42.527Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:10:43.502Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T07:10:44.490Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Git push error fix"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:10:45.371Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:10:46.385Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:10:47.386Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:10:48.435Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:10:49.416Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:10:50.429Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:10:51.390Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:10:52.416Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:10:53.454Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:10:54.411Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:10:55.480Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:10:56.434Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:10:57.418Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:10:58.448Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:10:59.479Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:11:00.481Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:11:01.477Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:11:02.472Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:11:03.459Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:11:04.496Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:11:05.475Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:11:06.483Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:11:07.489Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:11:08.476Z",
+      "appName": "Code",
+      "windowTitle": "AppStack.tsx — cortex"
+    }
+  ]
+}
