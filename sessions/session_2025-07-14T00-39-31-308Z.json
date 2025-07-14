@@ -1,0 +1,213 @@
+{
+  "sessionName": "Session_2025-07-14T00:39:00.570Z",
+  "createdAt": "2025-07-14T00:39:00.571Z",
+  "liveWorkspace": {
+    "apps": [
+      {
+        "id": "Google Chrome-1752453545862",
+        "name": "Google Chrome",
+        "icon": "folder",
+        "path": null,
+        "windows": []
+      }
+    ],
+    "activeAppId": "Google Chrome-1752453545862",
+    "activeWindowId": 69539
+  },
+  "eventLog": [
+    {
+      "type": "session_started",
+      "timestamp": "2025-07-14T00:39:00.971Z",
+      "data": {
+        "type": "session_started",
+        "sessionName": "Session_2025-07-14T00:39:00.570Z"
+      }
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T00:39:02.118Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T00:39:03.109Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T00:39:04.118Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T00:39:05.150Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "app_opened",
+      "timestamp": "2025-07-14T00:39:05.862Z",
+      "data": {
+        "type": "app_opened",
+        "name": "Google Chrome",
+        "path": null,
+        "windowTitle": "Google Chrome",
+        "isActive": true,
+        "launchedViaCortex": true
+      }
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T00:39:07.290Z",
+      "appName": "Google Chrome",
+      "windowTitle": "gmail - Google Search"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T00:39:08.507Z",
+      "appName": "Google Chrome",
+      "windowTitle": "gmail - Google Search"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T00:39:09.290Z",
+      "appName": "Google Chrome",
+      "windowTitle": "gmail - Google Search"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T00:39:10.234Z",
+      "appName": "Google Chrome",
+      "windowTitle": "gmail - Google Search"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T00:39:11.186Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T00:39:12.181Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T00:39:13.171Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T00:39:14.148Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T00:39:15.146Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T00:39:16.313Z",
+      "appName": "Google Chrome",
+      "windowTitle": "docs - Google Search"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T00:39:17.281Z",
+      "appName": "Google Chrome",
+      "windowTitle": "docs - Google Search"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T00:39:18.306Z",
+      "appName": "Google Chrome",
+      "windowTitle": "docs - Google Search"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T00:39:19.230Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T00:39:20.171Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T00:39:21.171Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T00:39:22.181Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T00:39:23.186Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T00:39:24.198Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T00:39:25.177Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T00:39:26.200Z",
+      "appName": "Code",
+      "windowTitle": "sessionManager.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T00:39:27.205Z",
+      "appName": "Code",
+      "windowTitle": "sessionManager.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T00:39:28.186Z",
+      "appName": "Code",
+      "windowTitle": "sessionManager.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T00:39:29.226Z",
+      "appName": "Code",
+      "windowTitle": "sessionManager.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T00:39:30.211Z",
+      "appName": "Code",
+      "windowTitle": "sessionManager.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T00:39:31.213Z",
+      "appName": "Code",
+      "windowTitle": "sessionManager.js — cortex"
+    }
+  ]
+}

@@ -19,14 +19,14 @@ async function smartLaunchApp(appInfo, onStatus = () => {}) {
       if (err) {
         onStatus({ type: 'error', message: `Failed to launch ${name}.` });
       } else {
-        // updateSessionData({
-        //   type: 'app_opened',
-        //   name,
-        //   path,
-        //   windowTitle: name,
-        //   isActive: true,
-        //   launchedViaCortex: true,
-        // });
+        updateSessionData({
+          type: 'app_opened',
+          name,
+          path,
+          windowTitle: name,
+          isActive: true,
+          launchedViaCortex: true,
+        });
         onStatus({ type: 'success', message: `${name} launched.` });
       }
     });
@@ -42,22 +42,31 @@ async function smartLaunchApp(appInfo, onStatus = () => {}) {
   if (isRunning && !isInWorkspace) {
     onStatus({ type: 'info', message: `${name} is already running outside Cortex. Adding to workspace...` });
 
-    // updateSessionData({
-    //   type: 'app_opened',
-    //   name,
-    //   path,
-    //   windowTitle: name,
-    //   isActive: true,
-    //   launchedViaCortex: false,
-    // });
+    updateSessionData({
+      type: 'app_opened',
+      name,
+      path,
+      windowTitle: name,
+      isActive: true,
+      launchedViaCortex: false,
+    });
 
     exec(`osascript -e 'tell application "${name}" to reopen' -e 'tell application "${name}" to activate'`);
     return { message: `${name} was already running—added to Cortex.` };
   }
 
+  // Standard app launch (not running and not multi-instance)
   onStatus({ type: 'info', message: `Launching ${name}...` });
   exec(`open "${path}"`, (err) => {
     if (!err) {
+      updateSessionData({
+        type: 'app_opened',
+        name,
+        path,
+        windowTitle: name,
+        isActive: true,
+        launchedViaCortex: true,
+      });
       onStatus({ type: 'success', message: `${name} launched.` });
     } else {
       onStatus({ type: 'error', message: `Failed to launch ${name}.` });
@@ -78,21 +87,19 @@ async function openChromeWithSearch(query, onStatus = () => {}) {
     onStatus({ type: 'info', message: `${name} (Cortex) is already running. Opening tab...` });
     chromeDriver.openTab(searchURL);
     return;
-  } else {
-    onStatus({ type: 'info', message: `Launching ${name} (Cortex) with search...` });
-    chromeDriver.openNewWindowWithTab(searchURL);
-    return;
   }
 
+  onStatus({ type: 'info', message: `Launching ${name} (Cortex) with search...` });
+  chromeDriver.openNewWindowWithTab(searchURL);
 
-  // updateSessionData({
-  //   type: 'app_opened',
-  //   name,
-  //   path,
-  //   windowTitle: name,
-  //   isActive: true,
-  //   launchedViaCortex: true,
-  // });
+  updateSessionData({
+    type: 'app_opened',
+    name,
+    path: null,
+    windowTitle: name,
+    isActive: true,
+    launchedViaCortex: true,
+  });
 
   onStatus({ type: 'success', message: `${name} launched with search.` });
 }
