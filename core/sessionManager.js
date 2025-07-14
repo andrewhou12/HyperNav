@@ -56,7 +56,11 @@ function updateSessionData(item) {
   }
 
   sessionData.eventLog.push(entry);
-  mainWindow?.webContents.send('session-log-entry', entry);
+
+  if (mainWindow && !mainWindow.isDestroyed()) {
+    mainWindow?.webContents.send('session-log-entry', entry);
+  }
+  
 }
 
 async function startSession() {
@@ -132,6 +136,7 @@ async function pollActiveWindow() {
       sessionData.liveWorkspace.activeAppId = matchingApp.id;
       sessionData.liveWorkspace.activeWindowId = windowId;
 
+      // Clear active flags from all tracked apps
       for (const app of sessionData.liveWorkspace.apps) {
         for (const win of app.windows || []) {
           win.isActive = false;
@@ -153,6 +158,23 @@ async function pollActiveWindow() {
               isActive: tab.isActive
             }))
           }));
+
+          // 🔍 Extract active tab and log session update
+          const activeWindow = chromeWindows.find(w => w.id === windowId);
+          const activeTab = activeWindow?.tabs.find(tab => tab.isActive);
+
+          if (activeTab) {
+            updateSessionData({
+              type: 'tab_changed',
+              source: 'poller',
+              appName,
+              windowTitle: activeTab.title,
+              url: activeTab.url,
+              windowId,
+              tabId: activeTab.id,
+              timestamp
+            });
+          }
         } catch (err) {
           console.warn("⚠️ Failed to get Chrome windows and tabs:", err);
         }
@@ -161,7 +183,12 @@ async function pollActiveWindow() {
       mainWindow?.webContents.send('live-workspace-update', sessionData.liveWorkspace);
     }
 
-    if (!matchingApp && !initiallyHiddenApps.has(appName)) {
+    // Add new app if it's not already tracked, not hidden, and not excluded
+    if (
+      !matchingApp &&
+      !initiallyHiddenApps.has(appName) &&
+      appName !== "Code"
+    ) {
       matchingApp = {
         id: `${appName}-${Date.now()}`,
         name: appName,

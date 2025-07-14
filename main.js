@@ -130,10 +130,12 @@ function createSessionWindow() {
   win.on('close', async (e) => {
     e.preventDefault();
     await saveSession();
+    chromeDriver.quitCortexChromeInstances();
     stopPollingWindowState();
+    stopAutoHide();
     unregisterHotkeys();
     workspaceManager.stopAutoHide && workspaceManager.stopAutoHide();
-    chromeDriver.quitCortexChromeInstances();
+    
     win.destroy();
     sessionWindow = null;
   });
