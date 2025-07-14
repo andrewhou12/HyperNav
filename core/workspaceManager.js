@@ -12,6 +12,9 @@ const {
 } = require("./sessionManager");
 const { toggleDockAutohide } = require("./systemUIManager");
 const { updateSessionData } = require('./sessionManager');
+const activeWin = require("active-win"); 
+const chromeDriver = require("./drivers/chromeDriver"); // contains getCortexChromePIDs()
+
 
 let autoHideInterval = null;
 let prevActiveApp = null;

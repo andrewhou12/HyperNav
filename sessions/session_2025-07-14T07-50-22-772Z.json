@@ -1,0 +1,51 @@
+{
+  "sessionName": "Session_2025-07-14T07:48:45.206Z",
+  "createdAt": "2025-07-14T07:48:45.207Z",
+  "liveWorkspace": {
+    "apps": [
+      {
+        "id": "Google Chrome-1752479330414",
+        "name": "Google Chrome",
+        "icon": "folder",
+        "path": "/Applications/Google Chrome.app",
+        "windows": []
+      }
+    ],
+    "activeAppId": null,
+    "activeWindowId": null
+  },
+  "eventLog": [
+    {
+      "type": "session_started",
+      "timestamp": "2025-07-14T07:48:45.631Z",
+      "data": {
+        "type": "session_started",
+        "sessionName": "Session_2025-07-14T07:48:45.206Z"
+      }
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:48:46.812Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T07:48:47.801Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "app_opened",
+      "timestamp": "2025-07-14T07:48:50.414Z",
+      "data": {
+        "type": "app_opened",
+        "name": "Google Chrome",
+        "path": "/Applications/Google Chrome.app",
+        "windowTitle": "Google Chrome",
+        "isActive": true,
+        "launchedViaCortex": true
+      }
+    }
+  ]
+}
