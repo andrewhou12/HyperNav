@@ -7,7 +7,6 @@ contextBridge.exposeInMainWorld('electron', {
   saveSession: () => ipcRenderer.invoke('save-session'),
   chooseApp: () => ipcRenderer.invoke('choose-app'),
   getInstalledApps: () => ipcRenderer.invoke('get-installed-apps'),
-  launchApp: (appPath) => ipcRenderer.invoke('launch-app', appPath),
   smartLaunchApp: (app) => ipcRenderer.invoke('smart-launch-app', app),
   getRecentApps: () => ipcRenderer.invoke('get-recent-apps'),
   markAppUsed: (app) => ipcRenderer.invoke('mark-app-used', app),

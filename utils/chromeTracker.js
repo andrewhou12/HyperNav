@@ -1,86 +1,86 @@
-const { exec } = require("child_process");
+const CDP = require("chrome-remote-interface");
 
-function getActiveChromeTabInfo(callback, delayMs = 300) {
-  setTimeout(() => {
-    const script = `
-      tell application "Google Chrome"
-        if exists (front window) then
-          set tabTitle to title of active tab of front window
-          set tabURL to URL of active tab of front window
-          return tabTitle & "|||" & tabURL
-        end if
-      end tell
-    `;
+async function getActiveChromeTabInfo(callback, delayMs = 300) {
+  setTimeout(async () => {
+    try {
+      const targets = await CDP.List({ port: 9222 });
+      const activeTab = targets.find(t =>
+        t.type === "page" &&
+        !t.url.startsWith("devtools://") &&
+        t.url !== "about:blank"
+      );
 
-    exec(`osascript -e '${script}'`, (err, stdout) => {
-      if (err || !stdout) return callback(null);
+      if (!activeTab) return callback(null);
 
-      const [title, url] = stdout.trim().split("|||").map((s) => s?.trim());
-      const isValid = url && !url.startsWith("chrome://") && url !== "about:blank";
+      const client = await CDP({ target: activeTab, port: 9222 });
+      const { Runtime } = client;
 
-      if (isValid) {
+      const titleResult = await Runtime.evaluate({ expression: "document.title" });
+      const urlResult = await Runtime.evaluate({ expression: "window.location.href" });
+
+      const title = titleResult.result.value;
+      const url = urlResult.result.value;
+
+      if (url && !url.startsWith("chrome://") && url !== "about:blank") {
         callback({ title, url });
       } else {
         callback(null);
       }
-    });
+
+      await client.close();
+    } catch (err) {
+      console.error("❌ getActiveChromeTabInfo error:", err.message);
+      callback(null);
+    }
   }, delayMs);
 }
+async function getChromeWindowsAndTabs() {
+  try {
+    const targets = await CDP.List({ port: 9222 });
+    const pages = targets.filter(t =>
+      t.type === "page" &&
+      !t.url.startsWith("devtools://")
+    );
 
-function getChromeWindowsAndTabs() {
-  return new Promise((resolve) => {
-    const script = `
-      set output to ""
-      tell application "Google Chrome"
-        set windowCount to count of windows
-        repeat with w from 1 to windowCount
-          set win to window w
-          set winTitle to title of active tab of win
-          set winId to id of win
-          set output to output & winId & "[[[" & winTitle & "[[["
+    const result = await Promise.all(
+      pages.map(async (target) => {
+        try {
+          const client = await CDP({ target, port: 9222 });
+          const { Runtime } = client;
 
-          set tabList to ""
-          set tabCount to number of tabs in win
-          repeat with t from 1 to tabCount
-            set tabItem to tab t of win
-            set tabTitle to title of tabItem
-            set tabURL to URL of tabItem
-            set tabActive to (index of active tab of win is equal to t)
-            set tabList to tabList & tabTitle & "|||" & tabURL & "|||" & tabActive & "~~~"
-          end repeat
+          const titleEval = await Runtime.evaluate({ expression: "document.title" });
+          const title = titleEval.result.value;
 
-          set output to output & tabList & "###"
-        end repeat
-      end tell
-      return output
-    `;
+          const url = target.url;
+          const isActive = target.attached || false;
 
-    exec(`osascript -e '${script}'`, (err, stdout) => {
-      if (err || !stdout) return resolve([]);
+          await client.close();
 
-      const rawWindows = stdout.trim().split("###").filter(Boolean);
-      const result = rawWindows.map(block => {
-        const [id, title, tabsRaw] = block.split("[[[");
-        const tabs = (tabsRaw || '').split("~~~").filter(Boolean).map(row => {
-          const [tabTitle, tabURL, activeFlag] = row.split("|||");
           return {
-            id: `tab-${Math.random().toString(36).slice(2)}`,
-            title: tabTitle?.trim(),
-            url: tabURL?.trim(),
-            isActive: activeFlag?.trim() === "true"
+            id: target.id,
+            title: title,
+            tabs: [
+              {
+                id: target.id,
+                title: title,
+                url: url,
+                isActive: isActive
+              }
+            ]
           };
-        });
+        } catch (innerErr) {
+          console.warn("⚠️ Failed to evaluate target:", target.id, innerErr.message);
+          return null;
+        }
+      })
+    );
 
-        return {
-          id: id.trim(),
-          title: title.trim(),
-          tabs
-        };
-      });
-
-      resolve(result);
-    });
-  });
+    return result.filter(Boolean);
+  } catch (err) {
+    console.error("❌ getChromeWindowsAndTabs error:", err.message);
+    return [];
+  }
 }
+
 
 module.exports = { getActiveChromeTabInfo, getChromeWindowsAndTabs };

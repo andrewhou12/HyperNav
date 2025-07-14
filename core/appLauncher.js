@@ -4,8 +4,10 @@ const { exec } = require('child_process');
 const { isAppInWorkspace, updateSessionData } = require('./sessionManager');
 const { getRunningApps } = require('./appDiscovery');
 const chromeDriver = require('./drivers/chromeDriver');
+const { chromeSessionProfile } = require('./drivers/chromeDriver');
 
 const MULTI_INSTANCE_APPS = ['Google Chrome', 'Visual Studio Code'];
+const CDP_PORT = 9222;
 
 async function smartLaunchApp(appInfo, onStatus = () => {}) {
   const { name, path } = appInfo;
@@ -13,6 +15,34 @@ async function smartLaunchApp(appInfo, onStatus = () => {}) {
   const isRunning = runningApps.includes(name);
   const isInWorkspace = isAppInWorkspace(name);
 
+  // Special handling for launching Chrome with CDP support
+  const isChrome = name === 'Google Chrome';
+
+  if (isChrome) {
+    const launchCmd = `/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome --user-data-dir="${chromeSessionProfile}" --remote-debugging-port=${CDP_PORT}`;
+
+    onStatus({ type: 'info', message: `Launching Chrome (Cortex) with CDP support...` });
+
+    exec(launchCmd, (err) => {
+      if (err) {
+        onStatus({ type: 'error', message: `Failed to launch Chrome.` });
+      } else {
+        updateSessionData({
+          type: 'app_opened',
+          name,
+          path,
+          windowTitle: name,
+          isActive: true,
+          launchedViaCortex: true,
+        });
+        onStatus({ type: 'success', message: `Chrome launched.` });
+      }
+    });
+
+    return { message: `Chrome launched.` };
+  }
+
+  // Launch multi-instance apps with -n
   if (MULTI_INSTANCE_APPS.includes(name)) {
     onStatus({ type: 'info', message: `Launching new ${name} instance...` });
     exec(`open -n "${path}"`, (err) => {
@@ -33,12 +63,14 @@ async function smartLaunchApp(appInfo, onStatus = () => {}) {
     return { message: `${name} launched.` };
   }
 
+  // Already in workspace
   if (isInWorkspace) {
     onStatus({ type: 'info', message: `${name} is already in Cortex workspace.` });
     exec(`osascript -e 'tell application "${name}" to reopen' -e 'tell application "${name}" to activate'`);
     return { message: `${name} is already in workspace.` };
   }
 
+  // Running outside workspace
   if (isRunning && !isInWorkspace) {
     onStatus({ type: 'info', message: `${name} is already running outside Cortex. Adding to workspace...` });
 
@@ -55,7 +87,7 @@ async function smartLaunchApp(appInfo, onStatus = () => {}) {
     return { message: `${name} was already running—added to Cortex.` };
   }
 
-  // Standard app launch (not running and not multi-instance)
+  // Default app launch
   onStatus({ type: 'info', message: `Launching ${name}...` });
   exec(`open "${path}"`, (err) => {
     if (!err) {
@@ -72,6 +104,7 @@ async function smartLaunchApp(appInfo, onStatus = () => {}) {
       onStatus({ type: 'error', message: `Failed to launch ${name}.` });
     }
   });
+
   return { message: `${name} launched.` };
 }
 

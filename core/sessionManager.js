@@ -137,47 +137,54 @@ async function pollActiveWindow() {
       sessionData.liveWorkspace.activeAppId = matchingApp.id;
       sessionData.liveWorkspace.activeWindowId = windowId;
 
-      // Clear active flags from all tracked apps
+      // Clear active flags from all apps/tabs
       for (const app of sessionData.liveWorkspace.apps) {
-        for (const win of app.windows || []) {
-          win.isActive = false;
-          win.tabs = win.tabs?.map(tab => ({ ...tab, isActive: false })) || [];
-        }
+        app.windows = [];
+        app.tabs = app.tabs?.map(tab => ({ ...tab, isActive: false })) || [];
       }
 
       if (appName === 'Google Chrome') {
         try {
-          const chromeWindows = await getChromeWindowsAndTabs();
-          matchingApp.windows = chromeWindows.map(cw => ({
-            id: cw.id,
-            title: cw.title,
-            isActive: cw.id === windowId,
-            tabs: cw.tabs.map(tab => ({
-              id: tab.id,
-              title: tab.title,
-              url: tab.url,
-              isActive: tab.isActive
-            }))
-          }));
+          const tabs = await getChromeWindowsAndTabs(); // new function
 
-          // 🔍 Extract active tab and log session update
-          const activeWindow = chromeWindows.find(w => w.id === windowId);
-          const activeTab = activeWindow?.tabs.find(tab => tab.isActive);
+          // Group tabs by logical app name
+          const grouped = {};
+          for (const tab of tabs) {
+            if (!grouped[tab.appName]) grouped[tab.appName] = [];
+            grouped[tab.appName].push(tab);
+          }
 
-          if (activeTab) {
-            updateSessionData({
-              type: 'tab_changed',
-              source: 'poller',
-              appName,
-              windowTitle: activeTab.title,
-              url: activeTab.url,
-              windowId,
-              tabId: activeTab.id,
-              timestamp
-            });
+          for (const [logicalAppName, tabGroup] of Object.entries(grouped)) {
+            let chromeApp = sessionData.liveWorkspace.apps.find(app => app.name === logicalAppName);
+
+            if (!chromeApp) {
+              chromeApp = {
+                id: `${logicalAppName}-${Date.now()}`,
+                name: logicalAppName,
+                path: appPath,
+                tabs: []
+              };
+              sessionData.liveWorkspace.apps.push(chromeApp);
+            }
+
+            chromeApp.tabs = tabGroup;
+
+            const activeTab = tabGroup.find(tab => tab.isActive);
+            if (activeTab) {
+              updateSessionData({
+                type: 'tab_changed',
+                source: 'poller',
+                appName: logicalAppName,
+                windowTitle: activeTab.title,
+                url: activeTab.url,
+                windowId,
+                tabId: activeTab.id,
+                timestamp
+              });
+            }
           }
         } catch (err) {
-          console.warn("⚠️ Failed to get Chrome windows and tabs:", err);
+          console.warn("⚠️ Failed to get Chrome tabs:", err);
         }
       }
 
@@ -194,7 +201,8 @@ async function pollActiveWindow() {
         id: `${appName}-${Date.now()}`,
         name: appName,
         path: appPath || null,
-        windows: []
+        windows: [],
+        tabs: []
       };
       sessionData.liveWorkspace.apps.push(matchingApp);
     }
@@ -204,6 +212,7 @@ async function pollActiveWindow() {
     console.error("❌ pollActiveWindow error:", err);
   }
 }
+
 
 function startPollingWindowState() {
   if (pollInterval) return;
