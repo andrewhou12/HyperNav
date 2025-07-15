@@ -50,7 +50,7 @@ export const CortexHUD: React.FC<CortexHUDProps> = ({
         }
       }
       if (event.key === 'Escape' && isExpanded) {
-        setIsExpanded(false);
+        toggleHUD()
       }
     };
 
@@ -64,6 +64,17 @@ export const CortexHUD: React.FC<CortexHUDProps> = ({
       document.body.style.overflow = '';
     };
   }, []);
+
+  useEffect(() => {
+    const handleBlur = () => {
+      if (isExpanded) toggleHUD();
+    };
+  
+    window.addEventListener('blur', handleBlur);
+    return () => {
+      window.removeEventListener('blur', handleBlur);
+    };
+  }, [isExpanded]);
 
   // Resize HUD window after animation completes
   const toggleHUD = () => {
