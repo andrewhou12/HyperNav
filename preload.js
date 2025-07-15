@@ -28,8 +28,13 @@ contextBridge.exposeInMainWorld('electron', {
       callback(liveWorkspace);
     });
   },
+ 
 
   getSessionData: () => ipcRenderer.invoke('get-session-data'),
+  getLiveWorkspace: () => {
+    console.log('🧠 preload: invoking get-live-workspace');
+    return ipcRenderer.invoke('get-live-workspace');
+  },
   onSessionLogEntry: (cb) => {
     ipcRenderer.on('session-log-entry', (_, entry) => cb(entry));
   },

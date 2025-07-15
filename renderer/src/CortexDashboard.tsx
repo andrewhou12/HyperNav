@@ -330,6 +330,8 @@ export function CortexDashboard() {
           <SpatialNavigator
             isOpen={quickNavOpen}
             onClose={() => setQuickNavOpen(false)}
+            workspace={workspace}
+            appIcons={appIcons}
           />
         </div>
       )}

@@ -11,10 +11,15 @@ let pollInterval = null;
 let pollingActive = false;
 let lastFocus = {};
 let mainWindow = null;
+let overlayWindow = null;
 let initiallyHiddenApps = new Set();
 
 function setMainWindow(win) {
   mainWindow = win;
+}
+
+function setOverlayWindow(win) {
+  overlayWindow = win;
 }
 
 function setInitiallyHiddenApps(appNames) {
@@ -23,6 +28,11 @@ function setInitiallyHiddenApps(appNames) {
 
 function getSessionData() {
   return sessionData;
+}
+function getLiveWorkspace() {
+  console.log('📦 sessionManager: getLiveWorkspace called');
+  console.log(sessionData?.liveWorkspace);
+  return sessionData?.liveWorkspace;
 }
 
 function updateSessionData(item) {
@@ -43,6 +53,8 @@ function updateSessionData(item) {
       };
       sessionData.liveWorkspace.apps.push(newApp);
       mainWindow?.webContents.send('live-workspace-update', sessionData.liveWorkspace);
+      overlayWindow?.webContents.send?.('live-workspace-update', sessionData.liveWorkspace);
+      
     }
   } else if (item.type === "tab_closed") {
     for (const app of sessionData.liveWorkspace.apps) {
@@ -204,7 +216,6 @@ async function pollActiveWindow() {
       sessionData.liveWorkspace.apps.push(matchingApp);
     }
 
-    console.log(sessionData.liveWorkspace);
   } catch (err) {
     console.error("❌ pollActiveWindow error:", err);
   }
@@ -246,6 +257,8 @@ module.exports = {
   stopPollingWindowState,
   isAppInWorkspace,
   getSessionData,
+  getLiveWorkspace,
   setMainWindow,
-  setInitiallyHiddenApps
+  setInitiallyHiddenApps,
+  setOverlayWindow
 };
