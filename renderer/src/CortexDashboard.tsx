@@ -78,16 +78,24 @@ export function CortexDashboard() {
       if (e.altKey && (e.key === 'Enter' || e.code === 'Enter')) {
         setSmartLauncherOpen(prev => !prev);
       }
+      if (e.altKey && e.code === 'Space') {
+        setAiOpen(prev => !prev);
+      }
+      if (e.altKey && e.code === 'KeyU') {
+        setUtilitiesOpen(prev => !prev);
+      }
 
       if (e.key === 'Escape') {
         if (quickNavOpen) setQuickNavOpen(false);
         if (smartLauncherOpen) setSmartLauncherOpen(false);
+        if (aiOpen) setAiOpen(false);
+        if (utilitiesOpen) setUtilitiesOpen(false);
       }
     };
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [quickNavOpen, smartLauncherOpen]);
+  }, [quickNavOpen, smartLauncherOpen, aiOpen, utilitiesOpen]);
 
   const handleChangeIsPaused = (val: SetStateAction<boolean>) => {
     setIsPaused(prev => {
