@@ -1,11 +1,15 @@
-
 import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Calculator, Clock, ClipboardList, StickyNote, ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { QuickNotes } from './utilities/QuickNotes';
 import { CalculatorTool } from './utilities/CalculatorTool';
 import { TimerSuite } from './utilities/TimerSuite';
 import { ClipboardManager } from './utilities/ClipboardManager';
+
+interface CortexUtilitiesProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
 
 interface Tool {
   id: string;
@@ -21,19 +25,12 @@ const tools: Tool[] = [
   { id: 'clipboard', name: 'Clipboard', icon: ClipboardList, component: ClipboardManager },
 ];
 
-export const CortexUtilities: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
+export const CortexUtilities: React.FC<CortexUtilitiesProps> = ({ isOpen, onClose }) => {
   const [selectedTool, setSelectedTool] = useState(0);
   const utilRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      // Option + Shift to toggle HUD
-      if (event.altKey && event.shiftKey && !event.repeat) {
-        event.preventDefault();
-        setIsOpen(prev => !prev);
-      }
-      
       // Arrow keys to navigate tools when HUD is open
       if (isOpen && !event.repeat) {
         if (event.key === 'ArrowLeft') {
@@ -46,14 +43,14 @@ export const CortexUtilities: React.FC = () => {
           setSelectedTool(newIndex);
         } else if (event.key === 'Escape') {
           event.preventDefault();
-          setIsOpen(false);
+          onClose();
         }
       }
     };
 
     const handleClickOutside = (event: MouseEvent) => {
       if (utilRef.current && !utilRef.current.contains(event.target as Node)) {
-        setIsOpen(false);
+        onClose();
       }
     };
 
@@ -64,14 +61,11 @@ export const CortexUtilities: React.FC = () => {
       document.removeEventListener('keydown', handleKeyDown);
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [isOpen, selectedTool]);
+  }, [isOpen, selectedTool, onClose]);
 
   const CurrentTool = tools[selectedTool].component;
 
-  // Don't render anything when closed
-  if (!isOpen) {
-    return null;
-  }
+  if (!isOpen) return null;
 
   return (
     <div className="fixed bottom-4 right-4 z-50" ref={utilRef}>
@@ -93,7 +87,7 @@ export const CortexUtilities: React.FC = () => {
             <h2 className="text-lg font-semibold text-foreground">Cortex Utilities</h2>
           </div>
           <button
-            onClick={() => setIsOpen(false)}
+            onClick={onClose}
             className="p-1 rounded-lg hover:bg-muted transition-colors"
           >
             <X className="w-4 h-4" />
@@ -144,7 +138,7 @@ export const CortexUtilities: React.FC = () => {
           </button>
         </div>
 
-        {/* Tool Content - Fixed height for consistency */}
+        {/* Tool Content */}
         <div className="h-96 overflow-y-auto custom-scrollbar">
           <CurrentTool />
         </div>

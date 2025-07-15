@@ -21,6 +21,7 @@ contextBridge.exposeInMainWorld('electron', {
   openChromeWithSearch: (query) => ipcRenderer.invoke('open-chrome-search', query),
   getAppIcon: (appPath) => ipcRenderer.invoke('get-app-icon', appPath),
   hideOverlay: (reason) => ipcRenderer.send('hide-overlay', { reason }),
+  resizeHUDWindow: (size) => ipcRenderer.send('resize-hud-window', size),
 
   onLiveWorkspaceUpdate: (callback) => {
     ipcRenderer.on('live-workspace-update', (event, liveWorkspace) => {

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { SpatialNavigator } from './components/SpatialNavigator';
 import { SmartLauncher } from './components/SmartLauncher';
-// import { InlineAI } from './components/InlineAI';
-// import { Utilities } from './components/Utilities';
+import { CortexInlineAssistant } from './components/CortexInlineAssistant';
+import { CortexUtilities } from './components/CortexUtilities';
 import { Toaster, toast } from 'react-hot-toast';
 
 export default function OverlayApp() {
@@ -69,10 +69,10 @@ export default function OverlayApp() {
         );
 
       case 'ai':
-        return <InlineAI isOpen={isOpen} onClose={handleClose} />;
+        return <CortexInlineAssistant isOpen={isOpen} onClose={handleClose} />;
 
       case 'utilities':
-        return <Utilities isOpen={isOpen} onClose={handleClose} />;
+        return <CortexUtilities isOpen={isOpen} onClose={handleClose} />;
 
       default:
         return null;
