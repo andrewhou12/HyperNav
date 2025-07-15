@@ -41,6 +41,8 @@ interface NavigationLevel {
   parentPosition?: { x: number; y: number }; // Store the position we came from
 }
 
+
+
 // Enhanced data with 3-level hierarchy
 const navigatorData: NavigatorItem[] = [
   {
@@ -269,6 +271,14 @@ export function SpatialNavigator({ isOpen, onClose, workspace, appIcons }: Quick
     }
   }
  
+  const sanitizeItemForIPC = (item: NavigatorItem) => ({
+    id: item.id,
+    title: item.title,
+    subtitle: item.subtitle,
+    type: item.type,
+    parent: item.parent,
+    activeTab: item.activeTab,
+  });
   // Reset to root level and focus search input when opened
 
   //navigatordata from liveworkspace:
@@ -435,17 +445,22 @@ switch (e.key) {
     break;
 
     case "Enter":
-      e.preventDefault();
-      const currentItem = getItemAtPosition(selectedPosition.x, selectedPosition.y);
-      if (currentItem) {
-        if (currentItem.type === "app" && currentItem.activeTab) {
-          console.log(`Activating ${currentItem.title} - switching to tab: ${currentItem.activeTab}`);
-        } else {
-          console.log(`Activating: ${currentItem.title}`);
-        }
-        onClose('escape');  // ✅ Use new prop-based close with reason
-      }
-      break;
+  e.preventDefault();
+  const currentItem = getItemAtPosition(selectedPosition.x, selectedPosition.y);
+  if (currentItem) {
+    // Trigger backend activation (Electron → IPC → appnavigator.js)
+    window.electron?.activateNavigatorItem?.(sanitizeItemForIPC(currentItem));
+
+    // Optionally: Log for dev
+    if (currentItem.type === "app" && currentItem.activeTab) {
+      console.log(`Activating ${currentItem.title} — switching to tab: ${currentItem.activeTab}`);
+    } else {
+      console.log(`Activating: ${currentItem.title}`);
+    }
+
+    onClose('escape');
+  }
+  break;
 
   case "Alt": // Option key - go back
     e.preventDefault();
@@ -477,13 +492,17 @@ switch (e.key) {
     if (item.children && canGoDeeper) {
       navigateToChildren(item);
     } else {
-      // Activate item
+      // Send item to backend to handle activation (tab or app)
+      window.electron?.activateNavigatorItem?.(sanitizeItemForIPC(currentItem));
+  
+      // Optional: dev log
       if (item.type === "app" && item.activeTab) {
-        console.log(`Activating ${item.title} - switching to tab: ${item.activeTab}`);
+        console.log(`Activating ${item.title} — switching to tab: ${item.activeTab}`);
       } else {
         console.log(`Activating: ${item.title}`);
       }
-      onClose();
+  
+      onClose('escape');
     }
   };
 

@@ -22,6 +22,7 @@ contextBridge.exposeInMainWorld('electron', {
   getAppIcon: (appPath) => ipcRenderer.invoke('get-app-icon', appPath),
   hideOverlay: (reason) => ipcRenderer.send('hide-overlay', { reason }),
   resizeHUDWindow: (size) => ipcRenderer.send('resize-hud-window', size),
+  activateNavigatorItem: (item) => ipcRenderer.invoke('activate-navigator-item', item),
 
   onLiveWorkspaceUpdate: (callback) => {
     ipcRenderer.on('live-workspace-update', (event, liveWorkspace) => {
