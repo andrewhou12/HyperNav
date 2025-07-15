@@ -65,6 +65,7 @@ function updateSessionData(item) {
       }
     }
     mainWindow?.webContents.send('live-workspace-update', sessionData.liveWorkspace);
+    overlayWindow?.webContents.send?.('live-workspace-update', sessionData.liveWorkspace);
   }
 
   sessionData.eventLog.push(entry);
@@ -101,12 +102,14 @@ async function startSession() {
 
   startPollingWindowState();
   mainWindow?.webContents.send('live-workspace-update', sessionData.liveWorkspace);
+  overlayWindow?.webContents.send?.('live-workspace-update', sessionData.liveWorkspace);
 }
 
 
 
 function onWorkspaceChange() {
   mainWindow?.webContents.send('live-workspace-update', sessionData.liveWorkspace);
+  overlayWindow?.webContents.send?.('live-workspace-update', sessionData.liveWorkspace);
 }
 
 function saveSession() {
@@ -173,6 +176,7 @@ async function pollActiveWindow() {
               name: 'Google Chrome',
               path: appPath,
               tabs: []
+
             };
             sessionData.liveWorkspace.apps.push(chromeApp);
           }
@@ -198,6 +202,7 @@ async function pollActiveWindow() {
       }
 
       mainWindow?.webContents.send('live-workspace-update', sessionData.liveWorkspace);
+      overlayWindow?.webContents.send?.('live-workspace-update', sessionData.liveWorkspace);
     }
 
     // Add new app if not tracked and not excluded

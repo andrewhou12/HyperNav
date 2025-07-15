@@ -40,7 +40,12 @@ const chromeDriver = {
   async openTab(url) {
     try {
       const target = await CDP.New({ url, port: CDP_PORT });
-      await CDP.Activate({ targetId: target.id, port: CDP_PORT });
+      console.log("🆕 Created new target:", target);
+  
+      const client = await CDP({ port: CDP_PORT });
+      await client.Target.activateTarget({ targetId: target.id });
+  
+      await client.close();
       console.log("✅ Opened new tab:", url);
     } catch (err) {
       console.error("❌ Failed to open new tab via CDP:", err.message);

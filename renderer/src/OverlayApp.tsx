@@ -38,17 +38,6 @@ export default function OverlayApp() {
       console.log("🔁 liveWorkspace update via listener:", liveWorkspace);
       setWorkspace(liveWorkspace);
     });
-  
-    if (window.electron.getLiveWorkspace) {
-      console.log("Calling getLiveWorkspace...");
-      window.electron.getLiveWorkspace().then(liveWorkspace => {
-        console.log("✅ Received liveWorkspace:", liveWorkspace);
-        setWorkspace(liveWorkspace);
-      }).catch(err => {
-        console.error("❌ getLiveWorkspace error:", err);
-      });
-    }
-  
     return () => {
       if (unsubscribe) unsubscribe();
     };

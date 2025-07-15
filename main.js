@@ -5,7 +5,10 @@ const { exec } = require('child_process');
 require('dotenv').config();
 const { getInstalledApps, getInstalledAppsWithIcons, extractIcon } = require('./core/appDiscovery');
 const { smartLaunchApp, openChromeWithSearch } = require('./core/appLauncher');
-
+const { activateApp,
+  activateChromeTabById,
+  activateNavigatorItem,
+  activateByAppId} = require('./core/appNavigator');
 const RECENT_APPS_FILE = path.join(app.getPath('userData'), 'recent-apps.json');
 let recentApps = [];
 
@@ -475,6 +478,20 @@ ipcMain.on('resize-hud-window', (event, { width, height }) => {
     }, true); // animate = true
   }
 });
+ipcMain.handle('activate-navigator-item', async (_e, item) => {
+  try {
+    await activateNavigatorItem(item);
+  } catch (err) {
+    console.error("❌ Failed to activate item via navigator:", err);
+  }
+});
+
+ipcMain.handle('request-live-workspace-push', () => {
+
+const workspace = getLiveWorkspace();
+sessionWindow?.webContents.send('live-workspace-update', workspace);
+overlayWindow?.webContents.send('live-workspace-update', workspace);
+})
 
 app.on('activate', () => {
   const dashboardVisible = sessionWindow && !sessionWindow.isDestroyed() && sessionWindow.isVisible();
