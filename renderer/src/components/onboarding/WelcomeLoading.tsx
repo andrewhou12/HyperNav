@@ -33,7 +33,7 @@ const WelcomeLoading: React.FC<WelcomeLoadingProps> = ({ onComplete }) => {
         <div className="mb-12 relative">
           <div className="w-24 h-24 mx-auto glass rounded-3xl flex items-center justify-center animate-glow p-4">
             <img 
-              src="/lovable-uploads/217235f9-296e-4613-9f8e-bed9993048df.png" 
+              src="/icons/cortexlogov1invert.svg"
               alt="Cortex Logo" 
               className="w-full h-full object-contain"
             />

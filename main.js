@@ -111,6 +111,23 @@ function createWindow() {
   launcherWindow = win;
 }
 
+function createOnboarding() {
+  const onboardingWin = new BrowserWindow({
+    width: 1200,
+    height: 800,
+    icon: iconPath,
+    webPreferences: { preload: path.join(__dirname, 'preload.js'),
+      webSecurity: false,
+     },
+  });
+  onboardingWin.loadURL('http://localhost:5173/onboarding');
+
+  onboardingWin.on('closed', () => {
+
+    createWindow();
+  })
+}
+
 function createSessionWindow() {
   const { bounds } = screen.getPrimaryDisplay();
   const win = new BrowserWindow({
@@ -455,5 +472,5 @@ app.on('activate', () => {
 
 app.whenReady().then(async () => {
   await loadRecentApps();
-  createWindow();
+  createOnboarding();
 });
