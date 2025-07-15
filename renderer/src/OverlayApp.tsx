@@ -8,6 +8,51 @@ import { Toaster, toast } from 'react-hot-toast';
 export default function OverlayApp() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeOverlay, setActiveOverlay] = useState(null);  // 'navigator' | 'launcher' | 'ai' | 'utilities'
+  const [workspace, setWorkspace] = useState({
+    apps: [],
+    activeAppId: null,
+    activeWindowId: null
+  });
+  
+  const [appIcons, setAppIcons] = useState<Record<string, string>>({});
+
+  useEffect(() => {
+    async function loadIcons() {
+      const icons: Record<string, string> = {};
+      for (const app of workspace.apps) {
+        if (!app.path) continue;
+        const icon = await window.electron.getAppIcon?.(app.path);
+        if (icon) icons[app.id] = icon;
+      }
+      setAppIcons(icons);
+    }
+  
+    if (workspace.apps.length > 0) {
+      loadIcons();
+    }
+  }, [workspace.apps]);
+
+  useEffect(() => {
+    console.log("Overlay useEffect mounted");
+    const unsubscribe = window.electron.onLiveWorkspaceUpdate?.((liveWorkspace) => {
+      console.log("🔁 liveWorkspace update via listener:", liveWorkspace);
+      setWorkspace(liveWorkspace);
+    });
+  
+    if (window.electron.getLiveWorkspace) {
+      console.log("Calling getLiveWorkspace...");
+      window.electron.getLiveWorkspace().then(liveWorkspace => {
+        console.log("✅ Received liveWorkspace:", liveWorkspace);
+        setWorkspace(liveWorkspace);
+      }).catch(err => {
+        console.error("❌ getLiveWorkspace error:", err);
+      });
+    }
+  
+    return () => {
+      if (unsubscribe) unsubscribe();
+    };
+  }, []);
 
   useEffect(() => {
     const handleShow = (_, overlayType) => {
@@ -54,7 +99,14 @@ export default function OverlayApp() {
   const renderOverlay = () => {
     switch (activeOverlay) {
       case 'navigator':
-        return <SpatialNavigator isOpen={isOpen} onClose={handleClose} />;
+  return (
+    <SpatialNavigator
+      isOpen={isOpen}
+      onClose={handleClose}
+      workspace={workspace}
+      appIcons={appIcons}
+    />
+  );
 
       case 'launcher':
         return (

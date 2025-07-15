@@ -61,7 +61,8 @@ const {
   updateSessionData,
   launchApp,
   startSession,
-  stopPollingWindowState
+  stopPollingWindowState,
+  getLiveWorkspace
 } = require('./core/sessionManager');
 
 const {
@@ -204,6 +205,7 @@ function createOverlayWindow() {
 
   overlayWindow.loadURL('http://localhost:5173/overlay');
   overlayWindow.hide();
+  sessionManager.setOverlayWindow(overlayWindow);
 
   overlayWindow.on('blur', () => {
     if (!overlayWindow.isDestroyed()) overlayWindow.hide();
@@ -410,7 +412,20 @@ ipcMain.handle('stop-auto-hide', () => workspaceManager.stopAutoHide());
 ipcMain.handle('pause-workspace', () => workspaceManager.pauseWorkspace());
 ipcMain.handle('resume-workspace', () => workspaceManager.resumeWorkspace());
 ipcMain.handle('clear-workspace', async () => { return await clearWorkspace(); });
-ipcMain.handle('get-session-data', () => getSessionData());
+ipcMain.handle('get-session-data', () => ({
+  liveWorkspace: getSessionData()
+}));
+ipcMain.handle('get-live-workspace', () => {
+  console.log("🛰️ main: get-live-workspace handler invoked");
+  try {
+    const data = getLiveWorkspace();
+    console.log("🧩 sessionData.liveWorkspace:", data);
+    return data;
+  } catch (err) {
+    console.error("❌ Error in getLiveWorkspace handler:", err);
+    return null;
+  }
+});
 ipcMain.on('hide-overlay', (event, { reason }) => {
   hideOverlay();
   if (reason === 'escape') {
