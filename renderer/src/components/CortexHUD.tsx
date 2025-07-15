@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import {
   Brain,
+  Map,
+  Wrench,
   PenTool,
   StickyNote,
   Rocket,
@@ -161,19 +163,19 @@ export const CortexHUD: React.FC<CortexHUDProps> = ({
           <div className="grid grid-cols-2 gap-2 mb-4">
             {[
               {
-                icon: <Brain className="w-5 h-5 text-primary mb-2" />,
+                icon: <Map className="w-5 h-5 text-primary mb-2" />,
                 label: 'Spatial Nav',
                 sub: 'Navigate workspace',
               },
               {
-                icon: <PenTool className="w-5 h-5 text-accent mb-2" />,
+                icon: <Brain className="w-5 h-5 text-accent mb-2" />,
                 label: 'Inline GPT',
                 sub: 'AI assistance',
               },
               {
-                icon: <StickyNote className="w-5 h-5 text-orange-500 mb-2" />,
-                label: 'Session Notes',
-                sub: 'Quick capture',
+                icon: <Wrench className="w-5 h-5 text-orange-500 mb-2" />,
+                label: 'Quick Utilities',
+                sub: 'Tool Suite',
               },
               {
                 icon: <Rocket className="w-5 h-5 text-green-500 mb-2" />,
