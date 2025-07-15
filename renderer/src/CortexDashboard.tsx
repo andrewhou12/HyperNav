@@ -10,8 +10,9 @@ import { CortexUtilities } from "./components/CortexUtilities";
 import { CortexHUD } from "./components/CortexHUD";
 import { Button } from "./components/ui/button";
 import { ResizablePanelGroup, ResizablePanel, ResizableHandle } from "./components/ui/resizable";
-import { Grid3X3, Map, Plus } from "lucide-react";
+import { Grid3X3, Map, Bot, Plus } from "lucide-react";
 import toast, { Toaster } from 'react-hot-toast';
+import { CortexChat } from "./components/CortexChat";
 
 export function CortexDashboard() {
   const [isPaused, setIsPaused] = useState(false);
@@ -22,7 +23,7 @@ export function CortexDashboard() {
   const [smartLauncherOpen, setSmartLauncherOpen] = useState(false);
   const [utilitiesOpen, setUtilitiesOpen] = useState(false);
   const [aiOpen, setAiOpen] = useState(false);
-  const [viewMode, setViewMode] = useState<'grid' | 'canvas'>('grid');
+  const [viewMode, setViewMode] = useState<'grid' | 'canvas' | 'intelligence'>('grid');
   const [isNotebookExpanded, setIsNotebookExpanded] = useState(false);
 
   const firstPauseRun = useRef(true);
@@ -228,6 +229,20 @@ export function CortexDashboard() {
                       <Map className="w-4 h-4" />
                       Canvas
                     </button>
+                    <button
+                      onClick={() => setViewMode('intelligence')}
+                      className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                        viewMode === 'intelligence'
+                          ? 'bg-primary text-primary-foreground hover:bg-primary/90'
+                          : 'bg-muted text-muted-foreground hover:bg-gray-300'
+                      }`}
+                      title="Intelligence View"
+                    >
+                      <Bot className="w-4 h-4 mr-2" />
+                      Intelligence
+                    </button>
+
+
                   </div>
                 </div>
 
@@ -247,32 +262,40 @@ export function CortexDashboard() {
                       />
                     ))}
                   </div>
-                ) : (
+                 ) : viewMode === 'canvas' ? (
                   <div className="h-[600px] border border-border rounded-xl overflow-hidden">
                     <InfiniteCanvas />
                   </div>
-                )}
-
-                <div className="mt-12 p-4 bg-card border border-border rounded-xl">
-                  <h3 className="text-sm font-medium text-foreground mb-3">Keyboard Shortcuts</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 text-xs text-muted-foreground">
-                    <div className="flex items-center gap-2">
-                      <kbd className="px-2 py-1 bg-muted rounded text-xs">⌥</kbd>
-                      <kbd className="px-2 py-1 bg-muted rounded text-xs">Tab</kbd>
-                      <span>Spatial Navigator</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <kbd className="px-2 py-1 bg-muted rounded text-xs">⌥</kbd>
-                      <kbd className="px-2 py-1 bg-muted rounded text-xs">Space</kbd>
-                      <span>Cortex Intelligence</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <kbd className="px-2 py-1 bg-muted rounded text-xs">⌥</kbd>
-                      <kbd className="px-2 py-1 bg-muted rounded text-xs">Return</kbd>
-                      <span>Smart Launcher</span>
-                    </div>
+                ) : (
+                  <div className="h-[calc(100vh-12rem)] border border-border rounded-xl overflow-hidden">
+                    <CortexChat />
                   </div>
-                </div>
+                )}
+<div className="mt-12 p-4 bg-card border border-border rounded-xl">
+  <h3 className="text-sm font-medium text-foreground mb-3">Keyboard Shortcuts</h3>
+  <div className="flex flex-wrap justify-between gap-x-6 gap-y-3 text-xs text-muted-foreground">
+    <div className="flex items-center gap-2">
+      <kbd className="px-2 py-1 bg-muted rounded text-xs">⌥</kbd>
+      <kbd className="px-2 py-1 bg-muted rounded text-xs">Tab</kbd>
+      <span>Spatial Navigator</span>
+    </div>
+    <div className="flex items-center gap-2">
+      <kbd className="px-2 py-1 bg-muted rounded text-xs">⌥</kbd>
+      <kbd className="px-2 py-1 bg-muted rounded text-xs">Return</kbd>
+      <span>Smart Launcher</span>
+    </div>
+    <div className="flex items-center gap-2">
+      <kbd className="px-2 py-1 bg-muted rounded text-xs">⌥</kbd>
+      <kbd className="px-2 py-1 bg-muted rounded text-xs">Space</kbd>
+      <span>Cortex Intelligence</span>
+    </div>
+    <div className="flex items-center gap-2">
+      <kbd className="px-2 py-1 bg-muted rounded text-xs">⌥</kbd>
+      <kbd className="px-2 py-1 bg-muted rounded text-xs">U</kbd>
+      <span>Quick Utilities</span>
+    </div>
+  </div>
+</div>
 
               </div>
             </div>
