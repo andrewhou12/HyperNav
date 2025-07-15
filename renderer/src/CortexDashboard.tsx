@@ -5,6 +5,9 @@ import { EnhancedSessionSidebar } from "./components/EnhancedSessionSidebar";
 import { SpatialNavigator } from "./components/SpatialNavigator";
 import { InfiniteCanvas } from "./components/InfiniteCanvas";
 import { SmartLauncher } from "./components/SmartLauncher";
+import { CortexInlineAssistant } from "./components/CortexInlineAssistant";
+import { CortexUtilities } from "./components/CortexUtilities";
+import { CortexHUD } from "./components/CortexHUD";
 import { Button } from "./components/ui/button";
 import { ResizablePanelGroup, ResizablePanel, ResizableHandle } from "./components/ui/resizable";
 import { Grid3X3, Map, Plus } from "lucide-react";
@@ -17,6 +20,8 @@ export function CortexDashboard() {
   const [expandedStacks, setExpandedStacks] = useState<string[]>([]);
   const [quickNavOpen, setQuickNavOpen] = useState(false);
   const [smartLauncherOpen, setSmartLauncherOpen] = useState(false);
+  const [utilitiesOpen, setUtilitiesOpen] = useState(false);
+  const [aiOpen, setAiOpen] = useState(false);
   const [viewMode, setViewMode] = useState<'grid' | 'canvas'>('grid');
   const [isNotebookExpanded, setIsNotebookExpanded] = useState(false);
 
@@ -321,6 +326,24 @@ export function CortexDashboard() {
     }
   }}
 />
+        </div>
+      )}
+
+{utilitiesOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/20 backdrop-blur-sm">
+          <CortexUtilities
+            isOpen={utilitiesOpen}
+            onClose={() => setUtilitiesOpen(false)}
+          />
+        </div>
+      )}
+
+{aiOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/20 backdrop-blur-sm">
+          <CortexInlineAssistant
+            isOpen={aiOpen}
+            onClose={() => setAiOpen(false)}
+          />
         </div>
       )}
 
