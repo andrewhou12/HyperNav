@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Chrome, Slack, Folder, MoreHorizontal, X, GripVertical } from "lucide-react";
+import { Chrome, Slack, Folder, MoreHorizontal, X, GripVertical, MinusCircle } from "lucide-react";
 
 // ✅ Define controllable apps
 const CONTROLLABLE_APPS = new Set([
@@ -25,6 +25,7 @@ interface AppStackProps {
   isActive?: boolean;
   onTabClick?: (tabId: string) => void;
   onCloseApp?: () => void;
+  onRemoveFromWorkspace?: () => void;
   onCloseTab?: (tabId: string) => void;
   onDragStart?: () => void;
   customIcon?: string;
@@ -50,6 +51,7 @@ export function AppStack({
   onCloseApp,
   onCloseTab,
   onDragStart,
+  onRemoveFromWorkspace,
   customIcon
 }: AppStackProps) {
   const [hoveredTab, setHoveredTab] = useState<string | null>(null);
@@ -75,16 +77,29 @@ export function AppStack({
         <GripVertical className="w-3 h-3 text-muted-foreground" />
       </div>
 
-      {/* Close Button */}
-      <button
-        onClick={(e) => {
-          e.stopPropagation();
-          onCloseApp?.();
-        }}
-        className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 p-1 hover:bg-destructive/20 rounded transition-all"
-      >
-        <X className="w-3 h-3 text-muted-foreground hover:text-destructive" />
-      </button>
+       {/* Close + Remove buttons */}
+       <div className="absolute top-2 right-2 flex gap-1 opacity-0 group-hover:opacity-100">
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              onRemoveFromWorkspace?.();
+            }}
+            className="p-1 hover:bg-muted/30 rounded transition-all"
+            title="Remove from workspace"
+          >
+            <MinusCircle className="w-4 h-4 text-muted-foreground hover:text-foreground" />
+          </button>
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            onCloseApp?.();
+          }}
+          className="p-1 hover:bg-destructive/20 rounded transition-all"
+          title="Close app"
+        >
+          <X className="w-3 h-3 text-muted-foreground hover:text-destructive" />
+        </button>
+      </div>
 
       {/* Stack Header */}
       <div className="flex flex-col items-center gap-2 p-3">

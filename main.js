@@ -65,7 +65,8 @@ const {
   launchApp,
   startSession,
   stopPollingWindowState,
-  getLiveWorkspace
+  getLiveWorkspace,
+  removeAppFromWorkspace,
 } = require('./core/sessionManager');
 
 const {
@@ -80,7 +81,7 @@ const chromeDriver = require('./core/drivers/chromeDriver');
 const vscodeDriver = require('./core/drivers/vscode');
 const workspaceManager = require('./core/workspaceManager');
 const { toggleDockAutohide } = require('./core/systemUIManager');
-const { showApps } = require('./utils/applescript');
+const { showApps, quitAppByName } = require('./utils/applescript');
 const sessionManager = require('./core/sessionManager');
 
 app.setName("Cortex");
@@ -492,6 +493,26 @@ const workspace = getLiveWorkspace();
 sessionWindow?.webContents.send('live-workspace-update', workspace);
 overlayWindow?.webContents.send('live-workspace-update', workspace);
 })
+
+ipcMain.handle('close-app', async (event, appId) => {
+  console.log(`🛑 Closing app with id: ${appId}`);
+
+  const sessionData = getSessionData();
+
+  const app = sessionData.liveWorkspace?.apps.find(a => a.id === appId);
+  if (!app) {
+    console.warn("⚠️ App not found in session data:", appId);
+    return false;
+  }
+
+  quitAppByName(app.name);
+  return removeAppFromWorkspace(appId);
+});
+
+// Remove the app from the workspace (but don't kill it)
+ipcMain.handle('remove-app-from-workspace', async (event, appId) => {
+  return removeAppFromWorkspace(appId);
+});
 
 app.on('activate', () => {
   const dashboardVisible = sessionWindow && !sessionWindow.isDestroyed() && sessionWindow.isVisible();

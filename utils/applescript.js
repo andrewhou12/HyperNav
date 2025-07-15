@@ -8,6 +8,24 @@ function getAppVisibility(app, callback) {
   });
 }
 
+function quitAppByName(appName) {
+  const script = `
+    tell application "System Events"
+      if exists (application process "${appName}") then
+        tell application "${appName}" to quit
+      end if
+    end tell
+  `;
+
+  exec(`osascript -e '${script.replace(/'/g, "\\'")}'`, (error, stdout, stderr) => {
+    if (error) {
+      console.error(`❌ Failed to quit app "${appName}":`, stderr);
+    } else {
+      console.log(`✅ App "${appName}" quit successfully.`);
+    }
+  });
+}
+
 function getOpenApps(callback) {
   exec(
     `osascript -e 'tell application "System Events" to get name of (processes where background only is false)'`,
@@ -100,5 +118,6 @@ module.exports = {
   hideApps,
   showApps,
   getActiveApp,
-  getAppVisibility
+  getAppVisibility,
+  quitAppByName
 };

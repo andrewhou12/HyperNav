@@ -141,10 +141,22 @@ export function CortexDashboard() {
     );
   };
 
+  
+
   const handleTabClick = (tabId: string) => {
     console.log('Tab clicked:', tabId);
   };
 
+
+  const handleCloseApp = (appId: string) => {
+    console.log("Closing app:", appId);
+    window.electron.closeApp?.(appId);
+  };
+  
+  const handleRemoveFromWorkspace = (appId: string) => {
+    console.log("Removing app from workspace:", appId);
+    window.electron.removeAppFromWorkspace?.(appId);
+  };
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <Toaster
@@ -268,6 +280,8 @@ export function CortexDashboard() {
                         onToggleExpanded={() => handleToggleStack(app.id)}
                         onTabClick={handleTabClick}
                         customIcon={appIcons[app.id]}
+                        onCloseApp={() => handleCloseApp(app.id)}                
+                        onRemoveFromWorkspace={() => handleRemoveFromWorkspace(app.id)} 
                       />
                     ))}
                   </div>

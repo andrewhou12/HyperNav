@@ -13,6 +13,7 @@ let lastFocus = {};
 let mainWindow = null;
 let overlayWindow = null;
 let initiallyHiddenApps = new Set();
+let lastRunningAppNames = new Set(); 
 
 function setMainWindow(win) {
   mainWindow = win;
@@ -66,6 +67,9 @@ function updateSessionData(item) {
     }
     mainWindow?.webContents.send('live-workspace-update', sessionData.liveWorkspace);
     overlayWindow?.webContents.send?.('live-workspace-update', sessionData.liveWorkspace);
+  }
+  else if (item.type === "app_quit") {
+    console.log(`📝 Logged app quit: ${item.name}`);
   }
 
   sessionData.eventLog.push(entry);
@@ -200,6 +204,7 @@ async function pollActiveWindow() {
           console.warn("⚠️ Failed to get Chrome tabs:", err);
         }
       }
+      
 
       mainWindow?.webContents.send('live-workspace-update', sessionData.liveWorkspace);
       overlayWindow?.webContents.send?.('live-workspace-update', sessionData.liveWorkspace);
@@ -219,7 +224,44 @@ async function pollActiveWindow() {
         tabs: []
       };
       sessionData.liveWorkspace.apps.push(matchingApp);
+
+      mainWindow?.webContents.send('live-workspace-update', sessionData.liveWorkspace);
+overlayWindow?.webContents.send?.('live-workspace-update', sessionData.liveWorkspace);
     }
+
+  // 🔍 Detect quit apps
+try {
+  const currentRunningAppNames = await new Promise(resolve => getOpenApps(resolve));
+  const currentSet = new Set(currentRunningAppNames);
+
+  // Check for apps that were in the workspace but are no longer running
+  for (const prevAppName of lastRunningAppNames) {
+    if (!currentSet.has(prevAppName)) {
+      const wasInWorkspace = sessionData.liveWorkspace.apps.find(app => app.name === prevAppName);
+      if (wasInWorkspace) {
+        console.log(`❌ App quit detected: ${prevAppName}`);
+
+        updateSessionData({
+          type: 'app_quit',
+          name: wasInWorkspace.name,
+          path: wasInWorkspace.path,
+          id: wasInWorkspace.id
+        });
+
+        // You can soft-remove or hard-remove here
+        sessionData.liveWorkspace.apps = sessionData.liveWorkspace.apps.filter(app => app.name !== prevAppName);
+
+        mainWindow?.webContents.send('live-workspace-update', sessionData.liveWorkspace);
+        overlayWindow?.webContents.send?.('live-workspace-update', sessionData.liveWorkspace);
+      }
+    }
+  }
+
+  // Update for next poll
+  lastRunningAppNames = currentSet;
+} catch (err) {
+  console.warn("⚠️ Failed to get running apps for quit detection:", err);
+}
 
   } catch (err) {
     console.error("❌ pollActiveWindow error:", err);
@@ -251,6 +293,24 @@ function isAppInWorkspace(appName) {
   return sessionData?.liveWorkspace?.apps?.some(app => app.name === appName);
 }
 
+function removeAppFromWorkspace(appId) {
+  const index = sessionData.liveWorkspace.apps.findIndex(a => a.id === appId);
+  if (index !== -1) {
+    const app = sessionData.liveWorkspace.apps[index];
+    sessionData.liveWorkspace.apps.splice(index, 1);
+
+    if (sessionData.liveWorkspace.activeAppId === appId) {
+      sessionData.liveWorkspace.activeAppId = null;
+    }
+
+    console.log(`🧹 Removed "${app.name}" from workspace`);
+
+    mainWindow.webContents.send('live-workspace-update', sessionData.liveWorkspace);
+    overlayWindow.webContents.send('live-workspace-update', sessionData.liveWorkspace);
+  }
+}
+
+
 module.exports = {
   saveSession,
   loadSession,
@@ -265,5 +325,7 @@ module.exports = {
   getLiveWorkspace,
   setMainWindow,
   setInitiallyHiddenApps,
-  setOverlayWindow
+  setOverlayWindow,
+  removeAppFromWorkspace,
+  sessionData
 };

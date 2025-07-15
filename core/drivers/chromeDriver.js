@@ -66,6 +66,7 @@ const chromeDriver = {
       console.error("❌ Failed to close active tab:", err.message);
     }
   },
+//not using swap tabs anymore
 
   async swapTab(index) {
     try {
