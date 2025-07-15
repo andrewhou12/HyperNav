@@ -7,7 +7,6 @@ contextBridge.exposeInMainWorld('electron', {
   saveSession: () => ipcRenderer.invoke('save-session'),
   chooseApp: () => ipcRenderer.invoke('choose-app'),
   getInstalledApps: () => ipcRenderer.invoke('get-installed-apps'),
-  launchApp: (appPath) => ipcRenderer.invoke('launch-app', appPath),
   smartLaunchApp: (app) => ipcRenderer.invoke('smart-launch-app', app),
   getRecentApps: () => ipcRenderer.invoke('get-recent-apps'),
   markAppUsed: (app) => ipcRenderer.invoke('mark-app-used', app),
@@ -22,6 +21,7 @@ contextBridge.exposeInMainWorld('electron', {
   openChromeWithSearch: (query) => ipcRenderer.invoke('open-chrome-search', query),
   getAppIcon: (appPath) => ipcRenderer.invoke('get-app-icon', appPath),
   hideOverlay: (reason) => ipcRenderer.send('hide-overlay', { reason }),
+  resizeHUDWindow: (size) => ipcRenderer.send('resize-hud-window', size),
 
   onLiveWorkspaceUpdate: (callback) => {
     ipcRenderer.on('live-workspace-update', (event, liveWorkspace) => {

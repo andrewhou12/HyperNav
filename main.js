@@ -84,6 +84,7 @@ let hotkeysEnabled = false;
 let overlayWindow;
 let launcherWindow;
 let sessionWindow;
+let hudWindow;
 let overlayOpenedFromGlobal = false;
 
 const appDrivers = { chrome: chromeDriver, vscode: vscodeDriver };
@@ -108,6 +109,23 @@ function createWindow() {
   win.loadURL('http://localhost:5173/');
   win.on('closed', () => { launcherWindow = null; });
   launcherWindow = win;
+}
+
+function createOnboarding() {
+  const onboardingWin = new BrowserWindow({
+    width: 1200,
+    height: 800,
+    icon: iconPath,
+    webPreferences: { preload: path.join(__dirname, 'preload.js'),
+      webSecurity: false,
+     },
+  });
+  onboardingWin.loadURL('http://localhost:5173/onboarding');
+
+  onboardingWin.on('closed', () => {
+
+    createWindow();
+  })
 }
 
 function createSessionWindow() {
@@ -135,6 +153,12 @@ function createSessionWindow() {
     stopAutoHide();
     unregisterHotkeys();
     workspaceManager.stopAutoHide && workspaceManager.stopAutoHide();
+    if (overlayWindow) {
+      overlayWindow.destroy();
+    }
+    if (hudWindow) {
+      hudWindow.destroy();
+    }
     
     win.destroy();
     sessionWindow = null;
@@ -157,15 +181,12 @@ function createSessionWindow() {
 }
 
 function createOverlayWindow() {
-  const { bounds } = screen.getPrimaryDisplay();
-  const defaultWidth = 896;
-  const defaultHeight = 860;
 
   overlayWindow = new BrowserWindow({
-    x: Math.round((bounds.width - defaultWidth) / 2),
-    y: Math.round((bounds.height - defaultHeight) / 2),
-    width: defaultWidth,
-    height: defaultHeight,
+    x: 0, //temporary
+    y: 0,
+    width: 100,
+    height: 100,
     frame: false,
     transparent: true,
     roundedCorners: true,
@@ -191,36 +212,84 @@ function createOverlayWindow() {
   overlayWindow.on('closed', () => { overlayWindow = null; });
 }
 
+
+function createHUDWindow() {
+  const MARGIN_RIGHT = 24;
+const MARGIN_BOTTOM = 24;
+const COLLAPSED_WIDTH = 220;
+const COLLAPSED_HEIGHT = 70;
+
+  const { bounds } = screen.getPrimaryDisplay();
+
+  const x = bounds.x + bounds.width - COLLAPSED_WIDTH - MARGIN_RIGHT;
+  const y = bounds.y + bounds.height - COLLAPSED_HEIGHT - MARGIN_BOTTOM;
+
+  hudWindow = new BrowserWindow({
+    x,
+    y,
+    width: COLLAPSED_WIDTH,
+    height: COLLAPSED_HEIGHT,
+    frame: false,
+    transparent: true,
+    roundedCorners: true,
+    vibrancy: 'under-window',
+    thickFrame: false,
+    backgroundColor: '#00000000',
+    hasShadow: false,
+    resizable: false, // can be set to true if you want animated resizing
+    alwaysOnTop: true,
+    skipTaskbar: true,
+    movable: false,
+    fullscreenable: false,
+    webPreferences: {
+      preload: path.join(__dirname, 'preload.js'),
+      backgroundThrottling: false,
+      webSecurity: false,
+    },
+  });
+
+  hudWindow.loadURL('http://localhost:5173/hud');
+
+  hudWindow.on('closed', () => {
+    hudWindow = null;
+  });
+}
+
 function showOverlay(type) {
   if (!overlayWindow) return;
 
   const { bounds } = screen.getPrimaryDisplay();
   let width = 896, height = 860;
+  let x, y;
 
   switch (type) {
     case 'navigator':
       width = 896; height = 860;
       break;
-    case 'launcher': //estimated for now, switch to dynamically sized in the future
+    case 'launcher':
       width = 800; height = 470;
       break;
     case 'ai':
-      width = 600; height = 500;
+      width = 450; height = 450;
+      x = bounds.width - width - 24;
+      y = bounds.height - height - 24;
       break;
     case 'utilities':
-      width = 500; height = 300;
+      width = 550; height = 650;
+      x = bounds.width - width - 24;
+      y = bounds.height - height - 24;
       break;
     default:
       break;
   }
 
-  overlayWindow.setBounds({
-    x: Math.round((bounds.width - width) / 2),
-    y: Math.round((bounds.height - height) / 2),
-    width,
-    height,
-  });
+  // Recalculate x/y for center-aligned overlays
+  if (x === undefined || y === undefined) {
+    x = Math.round((bounds.width - width) / 2);
+    y = Math.round((bounds.height - height) / 2);
+  }
 
+  overlayWindow.setBounds({ x, y, width, height });
   overlayWindow.show();
   overlayWindow.focus();
   overlayWindow.webContents.send('show-overlay', type);
@@ -232,6 +301,8 @@ function hideOverlay() {
     overlayWindow.webContents.send('hide-overlay');
   }
 }
+
+
 
 function registerHotkeys() {
   if (hotkeysEnabled) return;
@@ -257,9 +328,25 @@ function registerHotkeys() {
     }
   });
 
-  // Optional: Add more hotkeys here, e.g.
-  // globalShortcut.register('Option+I', () => showOverlay('ai'));
-  // globalShortcut.register('Option+U', () => showOverlay('utilities'));
+  globalShortcut.register('Option+Space', () => {
+    if (overlayWindow?.isVisible()) hideOverlay();
+    else {
+      overlayOpenedFromGlobal = true;
+      if (launcherWindow?.isVisible()) launcherWindow.hide();
+      if (sessionWindow?.isVisible()) sessionWindow.hide();
+      showOverlay('ai');
+    }
+  });
+
+  globalShortcut.register('Option+U', () => {
+    if (overlayWindow?.isVisible()) hideOverlay();
+    else {
+      overlayOpenedFromGlobal = true;
+      if (launcherWindow?.isVisible()) launcherWindow.hide();
+      if (sessionWindow?.isVisible()) sessionWindow.hide();
+      showOverlay('utilities');
+    }
+  });
 }
 
 function unregisterHotkeys() {
@@ -291,6 +378,7 @@ async function startCortexSession() {
       await startSession();       // polling + session setup
       startAutoHide();            // overlay visibility sync
       createOverlayWindow();      // floating HUD etc.
+      createHUDWindow();
     }, 2000);
   });
 }
@@ -326,7 +414,12 @@ ipcMain.handle('get-session-data', () => getSessionData());
 ipcMain.on('hide-overlay', (event, { reason }) => {
   hideOverlay();
   if (reason === 'escape') {
-    if (overlayOpenedFromGlobal) app.hide();
+    if (overlayOpenedFromGlobal) {
+      overlayWindow.hide();
+      sessionWindow.hide();
+
+    }
+    hudWindow.show();
     overlayOpenedFromGlobal = false;
   } else if (reason === 'shift') {
     if (sessionWindow && !sessionWindow.isDestroyed()) sessionWindow.show();
@@ -353,6 +446,21 @@ ipcMain.handle('get-app-icon', async (event, appPath) => {
   return await extractIcon(appPath);
 });
 
+ipcMain.on('resize-hud-window', (event, { width, height }) => {
+  if (hudWindow) {
+    const { x, y } = hudWindow.getBounds();
+    const newX = x + hudWindow.getBounds().width - width;  // keep right-aligned
+    const newY = y + hudWindow.getBounds().height - height; // keep bottom-aligned
+
+    hudWindow.setBounds({
+      x: newX,
+      y: newY,
+      width,
+      height,
+    }, true); // animate = true
+  }
+});
+
 app.on('activate', () => {
   const dashboardVisible = sessionWindow && !sessionWindow.isDestroyed() && sessionWindow.isVisible();
   const launcherVisible  = launcherWindow && !launcherWindow.isDestroyed()  && launcherWindow.isVisible();
@@ -364,5 +472,5 @@ app.on('activate', () => {
 
 app.whenReady().then(async () => {
   await loadRecentApps();
-  createWindow();
+  createOnboarding();
 });

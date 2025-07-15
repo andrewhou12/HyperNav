@@ -29,6 +29,7 @@
   "dependencies": {
     "@electron/typescript-definitions": "^9.1.2",
     "active-win": "^8.2.1",
+    "chrome-remote-interface": "^0.33.3",
     "class-variance-authority": "^0.7.1",
     "dotenv": "^17.0.1",
     "file-icon": "^5.1.1",

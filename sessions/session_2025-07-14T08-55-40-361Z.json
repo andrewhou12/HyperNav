@@ -1,0 +1,718 @@
+{
+  "sessionName": "Session_2025-07-14T08:53:45.791Z",
+  "createdAt": "2025-07-14T08:53:45.792Z",
+  "liveWorkspace": {
+    "apps": [
+      {
+        "id": "Google Chrome-1752483228949",
+        "name": "Google Chrome",
+        "icon": "folder",
+        "path": "/Applications/Google Chrome.app",
+        "windows": [],
+        "tabs": []
+      }
+    ],
+    "activeAppId": "Google Chrome-1752483228949",
+    "activeWindowId": 73219
+  },
+  "eventLog": [
+    {
+      "type": "session_started",
+      "timestamp": "2025-07-14T08:53:46.181Z",
+      "data": {
+        "type": "session_started",
+        "sessionName": "Session_2025-07-14T08:53:45.791Z"
+      }
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:53:47.361Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:53:48.342Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "app_opened",
+      "timestamp": "2025-07-14T08:53:48.949Z",
+      "data": {
+        "type": "app_opened",
+        "name": "Google Chrome",
+        "path": "/Applications/Google Chrome.app",
+        "windowTitle": "Google Chrome",
+        "isActive": true,
+        "launchedViaCortex": true
+      }
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:53:49.341Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T08:53:50.587Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Restore pages?"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T08:53:51.451Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Restore pages?"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T08:53:52.510Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Restore pages?"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T08:53:53.467Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Restore pages?"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:53:54.362Z",
+      "appName": "Code",
+      "windowTitle": "appLauncher.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:53:55.380Z",
+      "appName": "Code",
+      "windowTitle": "appLauncher.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:53:56.353Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:53:57.377Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:53:58.392Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:53:59.392Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:54:00.385Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:54:01.401Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:54:02.388Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T08:54:03.503Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Restore pages?"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T08:54:04.547Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Restore pages?"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T08:54:05.526Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Restore pages?"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T08:54:06.543Z",
+      "appName": "Google Chrome",
+      "windowTitle": "docs - Google Search"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T08:54:07.533Z",
+      "appName": "Google Chrome",
+      "windowTitle": "docs - Google Search"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:54:08.409Z",
+      "appName": "Code",
+      "windowTitle": "appLauncher.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:54:09.416Z",
+      "appName": "Code",
+      "windowTitle": "appLauncher.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:54:10.422Z",
+      "appName": "Code",
+      "windowTitle": "appLauncher.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:54:11.435Z",
+      "appName": "Code",
+      "windowTitle": "appLauncher.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:54:12.454Z",
+      "appName": "Code",
+      "windowTitle": "appLauncher.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:54:13.427Z",
+      "appName": "Code",
+      "windowTitle": "appLauncher.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:54:14.464Z",
+      "appName": "Code",
+      "windowTitle": "appLauncher.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:54:15.469Z",
+      "appName": "Code",
+      "windowTitle": "appLauncher.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:54:16.450Z",
+      "appName": "Code",
+      "windowTitle": "appLauncher.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:54:17.471Z",
+      "appName": "Code",
+      "windowTitle": "appLauncher.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:54:18.485Z",
+      "appName": "Code",
+      "windowTitle": "appLauncher.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:54:19.453Z",
+      "appName": "Code",
+      "windowTitle": "appLauncher.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:54:20.469Z",
+      "appName": "Code",
+      "windowTitle": "appLauncher.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:54:21.496Z",
+      "appName": "Code",
+      "windowTitle": "appLauncher.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:54:22.465Z",
+      "appName": "Code",
+      "windowTitle": "appLauncher.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:54:23.499Z",
+      "appName": "Code",
+      "windowTitle": "appLauncher.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:54:24.503Z",
+      "appName": "Code",
+      "windowTitle": "appLauncher.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:54:25.477Z",
+      "appName": "Code",
+      "windowTitle": "appLauncher.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:54:26.502Z",
+      "appName": "Code",
+      "windowTitle": "appLauncher.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:54:27.523Z",
+      "appName": "Code",
+      "windowTitle": "appLauncher.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:54:28.495Z",
+      "appName": "Code",
+      "windowTitle": "appLauncher.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:54:29.526Z",
+      "appName": "Code",
+      "windowTitle": "appLauncher.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:54:30.531Z",
+      "appName": "Code",
+      "windowTitle": "appLauncher.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:54:31.505Z",
+      "appName": "Code",
+      "windowTitle": "appLauncher.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:54:32.563Z",
+      "appName": "Code",
+      "windowTitle": "appLauncher.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:54:33.535Z",
+      "appName": "Code",
+      "windowTitle": "appLauncher.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:54:34.511Z",
+      "appName": "Code",
+      "windowTitle": "appLauncher.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:54:35.561Z",
+      "appName": "Code",
+      "windowTitle": "appLauncher.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:54:36.545Z",
+      "appName": "Code",
+      "windowTitle": "appLauncher.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:54:37.526Z",
+      "appName": "Code",
+      "windowTitle": "appLauncher.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:54:38.571Z",
+      "appName": "Code",
+      "windowTitle": "appLauncher.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:54:39.577Z",
+      "appName": "Code",
+      "windowTitle": "appLauncher.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:54:40.548Z",
+      "appName": "Code",
+      "windowTitle": "appLauncher.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:54:41.586Z",
+      "appName": "Code",
+      "windowTitle": "appLauncher.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:54:42.583Z",
+      "appName": "Code",
+      "windowTitle": "appLauncher.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:54:43.563Z",
+      "appName": "Code",
+      "windowTitle": "appLauncher.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:54:44.598Z",
+      "appName": "Code",
+      "windowTitle": "appLauncher.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:54:45.606Z",
+      "appName": "Code",
+      "windowTitle": "appLauncher.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:54:46.571Z",
+      "appName": "Code",
+      "windowTitle": "appLauncher.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:54:47.606Z",
+      "appName": "Code",
+      "windowTitle": "appLauncher.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:54:48.603Z",
+      "appName": "Code",
+      "windowTitle": "appLauncher.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:54:49.604Z",
+      "appName": "Code",
+      "windowTitle": "appLauncher.js — cortex"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:54:50.612Z",
+      "appName": "Code",
+      "windowTitle": "appLauncher.js — cortex"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T08:54:51.793Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Refactor to CDP"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T08:54:52.719Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Refactor to CDP"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T08:54:53.738Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Refactor to CDP"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T08:54:54.743Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Refactor to CDP"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T08:54:55.748Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Refactor to CDP"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T08:54:56.767Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Refactor to CDP"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T08:54:57.773Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Refactor to CDP"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T08:54:58.764Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Refactor to CDP"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T08:54:59.784Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Refactor to CDP"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T08:55:00.786Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Refactor to CDP"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T08:55:01.761Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Refactor to CDP"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T08:55:02.792Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Refactor to CDP"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T08:55:03.794Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Refactor to CDP"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T08:55:04.788Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Refactor to CDP"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T08:55:05.788Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Refactor to CDP"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T08:55:06.784Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Refactor to CDP"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T08:55:07.804Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Refactor to CDP"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T08:55:08.802Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Refactor to CDP"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T08:55:09.818Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Refactor to CDP"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T08:55:10.815Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Refactor to CDP"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T08:55:11.804Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Refactor to CDP"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T08:55:12.827Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Refactor to CDP"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T08:55:13.818Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Refactor to CDP"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T08:55:14.824Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Refactor to CDP"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T08:55:15.828Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Refactor to CDP"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T08:55:16.823Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Refactor to CDP"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T08:55:17.838Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Refactor to CDP"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T08:55:18.840Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Refactor to CDP"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T08:55:19.830Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Refactor to CDP"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T08:55:20.842Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Refactor to CDP"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T08:55:21.842Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Refactor to CDP"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T08:55:22.840Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Refactor to CDP"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T08:55:23.850Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Refactor to CDP"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T08:55:24.861Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Refactor to CDP"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T08:55:25.869Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Refactor to CDP"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T08:55:26.865Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Refactor to CDP"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T08:55:27.870Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Refactor to CDP"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T08:55:28.859Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Refactor to CDP"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T08:55:29.878Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Refactor to CDP"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T08:55:30.887Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Refactor to CDP"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T08:55:31.886Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Refactor to CDP"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T08:55:32.902Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Refactor to CDP"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T08:55:33.917Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Refactor to CDP"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T08:55:34.901Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Refactor to CDP"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T08:55:35.919Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Refactor to CDP"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T08:55:36.942Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Refactor to CDP"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T08:55:37.910Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Refactor to CDP"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:55:38.821Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T08:55:39.832Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    }
+  ]
+}

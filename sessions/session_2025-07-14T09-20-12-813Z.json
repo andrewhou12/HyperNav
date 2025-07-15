@@ -1,0 +1,107 @@
+{
+  "sessionName": "Session_2025-07-14T09:15:29.948Z",
+  "createdAt": "2025-07-14T09:15:29.950Z",
+  "liveWorkspace": {
+    "apps": [
+      {
+        "id": "Google Chrome-1752484533840",
+        "name": "Google Chrome",
+        "icon": "folder",
+        "path": "/Applications/Google Chrome.app",
+        "windows": [],
+        "tabs": []
+      },
+      {
+        "id": "undefined-1752484536588",
+        "name": "undefined",
+        "path": "/Applications/Google Chrome.app",
+        "tabs": [
+          {
+            "id": "D451DC882A8DA1C1C5A4AFC33FF287F4",
+            "title": "Zotero - Offscreen Utility Page",
+            "tabs": [
+              {
+                "id": "D451DC882A8DA1C1C5A4AFC33FF287F4",
+                "title": "Zotero - Offscreen Utility Page",
+                "url": "chrome-extension://ekhagklcjbdpajgpjgmbionohlpdbjgc/offscreen/offscreen.html",
+                "isActive": false
+              }
+            ]
+          },
+          {
+            "id": "302FEC3D3AA9F7E0A90A342DE9693B0C",
+            "title": "",
+            "tabs": [
+              {
+                "id": "302FEC3D3AA9F7E0A90A342DE9693B0C",
+                "title": "",
+                "url": "chrome-extension://kjacjjdnoddnpbbcjilcajfhhbdhkpgk/src/offscreen/index.html",
+                "isActive": false
+              }
+            ]
+          },
+          {
+            "id": "15F0A8F048030CA20D56DC885DAC54DC",
+            "title": "chrome - Google Search",
+            "tabs": [
+              {
+                "id": "15F0A8F048030CA20D56DC885DAC54DC",
+                "title": "chrome - Google Search",
+                "url": "https://www.google.com/search?q=chrome",
+                "isActive": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "activeAppId": "Google Chrome-1752484533840",
+    "activeWindowId": 76033
+  },
+  "eventLog": [
+    {
+      "type": "session_started",
+      "timestamp": "2025-07-14T09:15:31.098Z",
+      "data": {
+        "type": "session_started",
+        "sessionName": "Session_2025-07-14T09:15:29.948Z"
+      }
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T09:15:32.294Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T09:15:33.291Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "app_opened",
+      "timestamp": "2025-07-14T09:15:33.840Z",
+      "data": {
+        "type": "app_opened",
+        "name": "Google Chrome",
+        "path": "/Applications/Google Chrome.app",
+        "windowTitle": "Google Chrome",
+        "isActive": true,
+        "launchedViaCortex": true
+      }
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-14T09:15:34.263Z",
+      "appName": "Electron",
+      "windowTitle": "New Session"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-14T09:15:36.530Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Restore pages?"
+    }
+  ]
+}
