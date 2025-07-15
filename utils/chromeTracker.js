@@ -37,36 +37,41 @@ async function getActiveChromeTabInfo(callback, delayMs = 300) {
 async function getChromeWindowsAndTabs() {
   try {
     const targets = await CDP.List({ port: 9222 });
+
     const pages = targets.filter(t =>
       t.type === "page" &&
-      !t.url.startsWith("devtools://")
+      t.url &&
+      !t.url.startsWith("devtools://") &&
+      !t.url.startsWith("chrome-extension://") &&
+      !t.url.startsWith("chrome://") &&
+      !t.url.startsWith("edge://")
     );
 
     const result = await Promise.all(
-      pages.map(async (target) => {
+      pages.map(async (target, index) => {
         try {
           const client = await CDP({ target, port: 9222 });
           const { Runtime } = client;
 
           const titleEval = await Runtime.evaluate({ expression: "document.title" });
-          const title = titleEval.result.value;
+          const title = titleEval.result?.value || "";
 
           const url = target.url;
+          const id = target.id || `tab-${index}-${Date.now()}`;
           const isActive = target.attached || false;
 
           await client.close();
 
+          if (!title || !url || !id) return null;
+
+          const appName = deriveAppNameFromURL(url) || "Unknown";
+
           return {
-            id: target.id,
-            title: title,
-            tabs: [
-              {
-                id: target.id,
-                title: title,
-                url: url,
-                isActive: isActive
-              }
-            ]
+            id,
+            title,
+            url,
+            isActive,
+            appName,
           };
         } catch (innerErr) {
           console.warn("⚠️ Failed to evaluate target:", target.id, innerErr.message);
@@ -80,6 +85,22 @@ async function getChromeWindowsAndTabs() {
     console.error("❌ getChromeWindowsAndTabs error:", err.message);
     return [];
   }
+}
+
+
+function deriveAppNameFromURL(url) {
+  try {
+    const hostname = new URL(url).hostname;
+    const parts = hostname.split('.');
+    if (parts.length >= 2) {
+      return capitalize(parts[parts.length - 2]); // notion.so → Notion
+    }
+  } catch {}
+  return null;
+}
+
+function capitalize(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
 
