@@ -122,6 +122,12 @@ async function pollActiveWindow() {
     const appPath = owner.path;
     const timestamp = new Date().toISOString();
 
+    // Skip invalid or garbage app names
+    if (!appName || appName === 'undefined') {
+      console.warn('⚠️ Skipping window — invalid app name:', appName);
+      return;
+    }
+
     const event = {
       type: appName === 'Google Chrome' ? 'tab_focus' : 'poll_snapshot',
       timestamp,
@@ -155,12 +161,13 @@ async function pollActiveWindow() {
           }
 
           for (const [logicalAppName, tabGroup] of Object.entries(grouped)) {
-            let chromeApp = sessionData.liveWorkspace.apps.find(app => app.name === logicalAppName);
+          
+            let chromeApp = sessionData.liveWorkspace.apps.find(app => app.name === 'Google Chrome');
 
             if (!chromeApp) {
               chromeApp = {
-                id: `${logicalAppName}-${Date.now()}`,
-                name: logicalAppName,
+                id: `Google Chrome-${Date.now()}`,
+                name: 'Google Chrome',
                 path: appPath,
                 tabs: []
               };
