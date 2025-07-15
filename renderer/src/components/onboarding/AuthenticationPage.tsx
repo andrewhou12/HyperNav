@@ -57,7 +57,7 @@ const AuthenticationPage: React.FC<AuthenticationPageProps> = ({ onSuccess }) =>
           <div className="text-center">
             <div className="w-16 h-16 mx-auto glass rounded-2xl flex items-center justify-center p-2 mb-6">
               <img 
-                src="/lovable-uploads/217235f9-296e-4613-9f8e-bed9993048df.png" 
+                src="/icons/cortexlogov1invert.svg"
                 alt="Cortex Logo" 
                 className="w-full h-full object-contain"
               />
