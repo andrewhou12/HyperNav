@@ -29,6 +29,7 @@ contextBridge.exposeInMainWorld('electron', {
       callback(liveWorkspace);
     });
   },
+  requestLiveWorkspacePush: () => ipcRenderer.invoke('request-live-workspace-push'),
  
 
   getSessionData: () => ipcRenderer.invoke('get-session-data'),
