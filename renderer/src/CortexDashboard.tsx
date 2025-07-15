@@ -57,6 +57,7 @@ export function CortexDashboard() {
 
   useEffect(() => {
     const unsubscribe = window.electron.onLiveWorkspaceUpdate((liveWorkspace) => {
+      console.log(liveWorkspace);
       setWorkspace(liveWorkspace);
       if (liveWorkspace.activeAppId) {
         setExpandedStacks(prev =>

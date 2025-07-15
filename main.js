@@ -486,6 +486,13 @@ ipcMain.handle('activate-navigator-item', async (_e, item) => {
   }
 });
 
+ipcMain.handle('request-live-workspace-push', () => {
+
+const workspace = getLiveWorkspace();
+sessionWindow?.webContents.send('live-workspace-update', workspace);
+overlayWindow?.webContents.send('live-workspace-update', workspace);
+})
+
 app.on('activate', () => {
   const dashboardVisible = sessionWindow && !sessionWindow.isDestroyed() && sessionWindow.isVisible();
   const launcherVisible  = launcherWindow && !launcherWindow.isDestroyed()  && launcherWindow.isVisible();

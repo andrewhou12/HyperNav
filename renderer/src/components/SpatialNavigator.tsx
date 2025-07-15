@@ -213,6 +213,8 @@ const navigatorData: NavigatorItem[] = [
 const GRID_COLS = 3;
 const GRID_ROWS = 3;
 
+
+
 export function SpatialNavigator({ isOpen, onClose, workspace, appIcons }: QuickNavigatorProps) {
   let currentAppPosition;
   currentAppPosition = {x: 0, y: 0}; //replace this with what actual current app is based on liveworkspace in the future
@@ -321,8 +323,10 @@ export function SpatialNavigator({ isOpen, onClose, workspace, appIcons }: Quick
       const timeout = setTimeout(() => {
         searchInputRef.current?.focus();
       }, 20);
+      console.log(workspace);
   
       return () => clearTimeout(timeout);
+      
     }
   }, [isOpen, workspace]);
 
@@ -446,7 +450,7 @@ switch (e.key) {
 
     case "Enter":
   e.preventDefault();
-  const currentItem = getItemAtPosition(selectedPosition.x, selectedPosition.y);
+   const currentItem = getItemAtPosition(selectedPosition.x, selectedPosition.y);
   if (currentItem) {
     // Trigger backend activation (Electron → IPC → appnavigator.js)
     window.electron?.activateNavigatorItem?.(sanitizeItemForIPC(currentItem));
@@ -493,7 +497,7 @@ switch (e.key) {
       navigateToChildren(item);
     } else {
       // Send item to backend to handle activation (tab or app)
-      window.electron?.activateNavigatorItem?.(sanitizeItemForIPC(currentItem));
+      window.electron?.activateNavigatorItem?.(sanitizeItemForIPC(item));
   
       // Optional: dev log
       if (item.type === "app" && item.activeTab) {
