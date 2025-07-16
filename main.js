@@ -260,7 +260,7 @@ const COLLAPSED_HEIGHT = 70;
 
   sessionManager.setHudWindow(hudWindow);
 
-  / Add focus/blur event listeners with state checking
+  // Add focus/blur event listeners with state checking
   hudWindow.on('focus', () => {
       console.log('🎯 HUD focused - stopping auto-hide');
       // Only stop auto-hide if it's currently active
