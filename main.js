@@ -1,6 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 const { app, BrowserWindow, globalShortcut, ipcMain, screen, dialog, clipboard } = require('electron');
+require('./core/gptRouter');
 const { exec } = require('child_process');
 require('dotenv').config();
 const { getInstalledApps, getInstalledAppsWithIcons, extractIcon } = require('./core/appDiscovery');
