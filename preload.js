@@ -1,6 +1,8 @@
 const { contextBridge, ipcRenderer } = require('electron');
 
 contextBridge.exposeInMainWorld('electron', {
+  getSettings: () => ipcRenderer.invoke('get-settings'),
+  saveSettings: (settings) => ipcRenderer.invoke('save-settings', settings),
   askGPT: (payload) => ipcRenderer.invoke('ask-gpt', payload),
   summarizeSession: (eventLog) => ipcRenderer.invoke('summarize-session', eventLog),
   interpretCommand: (command) => ipcRenderer.invoke('interpret-command', command),

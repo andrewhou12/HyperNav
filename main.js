@@ -9,6 +9,7 @@ const { activateApp,
   activateChromeTabById,
   activateNavigatorItem,
   activateByAppId} = require('./core/appNavigator');
+  const { loadSettings, saveSettings } = require('./settingsManager');
 const RECENT_APPS_FILE = path.join(app.getPath('userData'), 'recent-apps.json');
 let recentApps = [];
 
@@ -259,18 +260,24 @@ const COLLAPSED_HEIGHT = 70;
 
   sessionManager.setHudWindow(hudWindow);
 
-   // Add focus/blur event listeners
-   hudWindow.on('focus', () => {
-    console.log('🎯 HUD focused - stopping auto-hide');
-    stopAutoHide();
+  / Add focus/blur event listeners with state checking
+  hudWindow.on('focus', () => {
+      console.log('🎯 HUD focused - stopping auto-hide');
+      // Only stop auto-hide if it's currently active
+      if (autoHideInterval) {
+          stopAutoHide();
+      }
   });
-
+  
   hudWindow.on('blur', () => {
-    console.log('👋 HUD blurred - starting auto-hide');
-    // Small delay to prevent rapid toggling
-    setTimeout(() => {
-      startAutoHide();
-    }, 500);
+      console.log('👋 HUD blurred - starting auto-hide');
+      // Small delay to prevent rapid toggling
+      setTimeout(() => {
+          // Only start auto-hide if it's not already running
+          if (!autoHideInterval) {
+              startAutoHide();
+          }
+      }, 500);
   });
 
   hudWindow.on('closed', () => {
@@ -591,6 +598,14 @@ ipcMain.handle('open-inline-gpt', () => showOverlay('ai'));
 ipcMain.handle('open-utilities-overlay', () => showOverlay('utilities'));
 ipcMain.handle('open-smart-launcher', () => showOverlay('launcher'));
 ipcMain.handle('get-current-app', () => getLastFocusedApp());
+
+ipcMain.handle('get-settings', () => {
+  return loadSettings();
+});
+
+ipcMain.handle('save-settings', (_, newSettings) => {
+  saveSettings(newSettings);
+});
 
 
 app.on('activate', () => {

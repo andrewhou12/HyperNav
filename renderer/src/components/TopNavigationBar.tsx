@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Pause, Play, Eye, EyeOff, Settings, RefreshCw, User } from "lucide-react";
+import { Account } from "./Account";
 
 interface TopNavigationBarProps {
   sessionName?: string;
@@ -95,20 +96,17 @@ export function TopNavigationBar({
   </button>
 </div>
 
-{/* Right: User + Clock */}
+{/* Right: Account + Time */}
 <div className="flex items-center gap-4">
-  <button
-    className="p-2 rounded-full bg-muted text-muted-foreground hover:bg-gray-300 transition-all duration-200"
-    title="User Account"
-  >
-    <User className="w-4 h-4" />
-  </button>
-
-  <div className="text-sm text-muted-foreground font-mono">
-    {currentTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-  </div>
-</div>
-
+        <Account 
+          onExportData={() => console.log('Export data triggered')}
+          onDeleteData={() => console.log('Delete data triggered')}
+        />
+        
+        <div className="text-sm text-muted-foreground font-mono">
+          {currentTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+        </div>
+      </div>
     </div>
   );
 }

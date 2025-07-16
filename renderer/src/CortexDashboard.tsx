@@ -13,6 +13,8 @@ import { ResizablePanelGroup, ResizablePanel, ResizableHandle } from "./componen
 import { Grid3X3, Map, Bot, Plus } from "lucide-react";
 import toast, { Toaster } from 'react-hot-toast';
 import { CortexChat } from "./components/CortexChat";
+import { Settings } from "./components/Settings";
+
 
 export function CortexDashboard() {
   const [isPaused, setIsPaused] = useState(false);
@@ -23,7 +25,7 @@ export function CortexDashboard() {
   const [smartLauncherOpen, setSmartLauncherOpen] = useState(false);
   const [utilitiesOpen, setUtilitiesOpen] = useState(false);
   const [aiOpen, setAiOpen] = useState(false);
-  const [viewMode, setViewMode] = useState<'grid' | 'canvas' | 'intelligence'>('grid');
+  const [viewMode, setViewMode] = useState<'grid' | 'canvas' | 'intelligence' | 'settings'>('grid');
   const [isNotebookExpanded, setIsNotebookExpanded] = useState(false);
 
   const firstPauseRun = useRef(true);
@@ -208,7 +210,7 @@ export function CortexDashboard() {
         onPauseToggle={handleChangeIsPaused}
         onSave={handleSave}
         onAutoHideToggle={toggleAutoHide}
-        onSettingsClick={() => {}}
+        onSettingsClick={() => setViewMode('settings')}
       />
 
       <div className="flex flex-1 h-[calc(100vh-3.5rem-3rem)]">
@@ -238,7 +240,7 @@ export function CortexDashboard() {
                       Grid
                     </button>
 
-                    <button
+                    {/* <button
                       onClick={() => setViewMode('canvas')}
                       className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                         viewMode === 'canvas'
@@ -249,7 +251,15 @@ export function CortexDashboard() {
                     >
                       <Map className="w-4 h-4" />
                       Canvas
-                    </button>
+                    </button> 
+                    
+                    
+                    TO IMPLEMENT LATER ^^^^^^^^^
+                    */}
+
+
+                  
+
                     <button
                       onClick={() => setViewMode('intelligence')}
                       className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
@@ -267,7 +277,9 @@ export function CortexDashboard() {
                   </div>
                 </div>
 
-                {viewMode === 'grid' ? (
+                {viewMode === 'settings' ? (
+                  <Settings onBack={() => setViewMode('grid')} />
+                ) : viewMode === 'grid' ? (
                   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 justify-center">
                     {workspace.apps.map(app => (
                       <AppStack
@@ -331,7 +343,7 @@ export function CortexDashboard() {
               isPaused={isPaused}
               onPauseToggle={() => handleChangeIsPaused(prev => !prev)}
               onSave={handleSave}
-              onSettings={() => console.log('Settings opened')}
+              onSettings={() => setViewMode('settings')}
               isNotebookExpanded={isNotebookExpanded}
               onNotebookExpand={() => setIsNotebookExpanded(!isNotebookExpanded)}
             />
