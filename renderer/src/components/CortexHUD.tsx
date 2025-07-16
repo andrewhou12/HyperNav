@@ -4,8 +4,6 @@ import {
   Brain,
   Map,
   Wrench,
-  PenTool,
-  StickyNote,
   Rocket,
   Play,
   Pause,
@@ -25,21 +23,29 @@ interface CortexHUDProps {
   statusType?: 'idle' | 'tracking' | 'alert' | 'success';
   isVisible?: boolean;
   onVisibilityChange?: (visible: boolean) => void;
+  onActivateOverlay?: (type: 'navigator' | 'gpt' | 'utilities' | 'launcher') => void;
+  onToggleWorkspaceApp?: () => void;
+  onToggleSession?: () => void;
+  onGoToDashboard?: () => void;
 }
 
 export const CortexHUD: React.FC<CortexHUDProps> = ({
   className = '',
   isSessionActive = true,
   isCurrentAppInWorkspace = false,
-  currentApp = 'Chrome',
+  currentApp = 'Unknown',
   statusMessage = 'Tracking current window',
   statusType = 'tracking',
   isVisible = true,
   onVisibilityChange,
+  onActivateOverlay,
+  onToggleWorkspaceApp,
+  onToggleSession,
+  onGoToDashboard,
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
-  // Hotkey: Option + Space to toggle
+  // Hotkey: Option + Space
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.altKey && event.code === 'Space') {
@@ -48,11 +54,11 @@ export const CortexHUD: React.FC<CortexHUDProps> = ({
           onVisibilityChange?.(true);
           setIsExpanded(true);
         } else {
-          setIsExpanded((prev) => !prev);
+          setIsExpanded(prev => !prev);
         }
       }
       if (event.key === 'Escape' && isExpanded) {
-        toggleHUD()
+        toggleHUD();
       }
     };
 
@@ -71,14 +77,10 @@ export const CortexHUD: React.FC<CortexHUDProps> = ({
     const handleBlur = () => {
       if (isExpanded) toggleHUD();
     };
-  
     window.addEventListener('blur', handleBlur);
-    return () => {
-      window.removeEventListener('blur', handleBlur);
-    };
+    return () => window.removeEventListener('blur', handleBlur);
   }, [isExpanded]);
 
-  // Resize HUD window after animation completes
   const toggleHUD = () => {
     const newExpanded = !isExpanded;
     setIsExpanded(newExpanded);
@@ -89,6 +91,8 @@ export const CortexHUD: React.FC<CortexHUDProps> = ({
         newExpanded
           ? { width: 320, height: 430 }
           : { width: 220, height: 70 }
+
+          //w 220 h 70
       );
     }, delay);
   };
@@ -100,9 +104,7 @@ export const CortexHUD: React.FC<CortexHUDProps> = ({
       case 'success':
         return <CheckCircle className="w-3 h-3 text-green-500" />;
       case 'tracking':
-        return (
-          <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-        );
+        return <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />;
       default:
         return null;
     }
@@ -122,11 +124,8 @@ export const CortexHUD: React.FC<CortexHUDProps> = ({
         transition={{ type: 'spring', damping: 24, stiffness: 300 }}
         className="glass rounded-2xl w-[360px] overflow-hidden p-4"
       >
-        {/* Header - always shown */}
-        <div
-          className="flex items-center gap-3 cursor-pointer"
-          onClick={toggleHUD}
-        >
+        {/* Header */}
+        <div className="flex items-center gap-3 cursor-pointer" onClick={toggleHUD}>
           <img
             src="/icons/cortexlogov1invert.svg"
             alt="Cortex"
@@ -135,9 +134,7 @@ export const CortexHUD: React.FC<CortexHUDProps> = ({
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 mb-1">
               {getStatusIcon()}
-              <span className="text-xs font-medium text-muted-foreground truncate">
-                Cortex
-              </span>
+              <span className="text-xs font-medium text-muted-foreground truncate">Cortex</span>
             </div>
             {statusMessage && (
               <p className="text-xs text-muted-foreground leading-tight truncate">
@@ -147,45 +144,24 @@ export const CortexHUD: React.FC<CortexHUDProps> = ({
           </div>
         </div>
 
-        {/* Expanded content (fade + reveal) */}
+        {/* Expanded Panel */}
         <motion.div
-          animate={{
-            opacity: isExpanded ? 1 : 0,
-            height: isExpanded ? 'auto' : 0,
-          }}
+          animate={{ opacity: isExpanded ? 1 : 0, height: isExpanded ? 'auto' : 0 }}
           initial={false}
           transition={{ duration: 0.15 }}
-          className={`transition-opacity duration-150 mt-4 ${
-            isExpanded ? '' : 'pointer-events-none overflow-hidden'
-          }`}
+          className={`transition-opacity duration-150 mt-4 ${!isExpanded ? 'pointer-events-none overflow-hidden' : ''}`}
         >
-          {/* Tools Grid */}
+          {/* Tools */}
           <div className="grid grid-cols-2 gap-2 mb-4">
             {[
-              {
-                icon: <Map className="w-5 h-5 text-primary mb-2" />,
-                label: 'Spatial Nav',
-                sub: 'Navigate workspace',
-              },
-              {
-                icon: <Brain className="w-5 h-5 text-accent mb-2" />,
-                label: 'Inline GPT',
-                sub: 'AI assistance',
-              },
-              {
-                icon: <Wrench className="w-5 h-5 text-orange-500 mb-2" />,
-                label: 'Quick Utilities',
-                sub: 'Tool Suite',
-              },
-              {
-                icon: <Rocket className="w-5 h-5 text-green-500 mb-2" />,
-                label: 'Smart Launch',
-                sub: 'Quick access',
-              },
-            ].map((tool, i) => (
+              { icon: <Map className="w-5 h-5 text-primary mb-2" />, label: 'Spatial Nav', sub: 'Navigate workspace', type: 'navigator' },
+              { icon: <Brain className="w-5 h-5 text-accent mb-2" />, label: 'Inline GPT', sub: 'AI assistance', type: 'gpt' },
+              { icon: <Wrench className="w-5 h-5 text-orange-500 mb-2" />, label: 'Quick Utilities', sub: 'Tool Suite', type: 'utilities' },
+              { icon: <Rocket className="w-5 h-5 text-green-500 mb-2" />, label: 'Smart Launch', sub: 'Quick access', type: 'launcher' },
+            ].map(tool => (
               <button
                 key={tool.label}
-                onClick={() => console.log(`Opening ${tool.label}`)}
+                onClick={() => onActivateOverlay?.(tool.type as CortexHUDProps['onActivateOverlay'] extends ((type: infer T) => any) ? T : never)}
                 className="glass-hover p-3 rounded-xl text-left transition-all duration-150"
               >
                 {tool.icon}
@@ -198,21 +174,15 @@ export const CortexHUD: React.FC<CortexHUDProps> = ({
           {/* Current App */}
           <div className="border-t border-border/50 pt-3 pb-3">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-medium text-muted-foreground">
-                Current Window
-              </span>
-              <span className="text-xs font-medium text-foreground">
-                {currentApp}
-              </span>
+              <span className="text-xs font-medium text-muted-foreground">Current Window</span>
+              <span className="text-xs font-medium text-foreground">{currentApp}</span>
             </div>
           </div>
 
           {/* Session Controls */}
           <div className="border-t border-border/50 pt-3">
             <div className="flex items-center justify-between mb-3">
-              <span className="text-xs font-medium text-muted-foreground">
-                Session Control
-              </span>
+              <span className="text-xs font-medium text-muted-foreground">Session Control</span>
               <div className="flex items-center gap-1">
                 {getStatusIcon()}
                 <span className="text-xs text-muted-foreground">
@@ -223,21 +193,15 @@ export const CortexHUD: React.FC<CortexHUDProps> = ({
 
             <div className="flex gap-2 mb-3">
               <button
-                onClick={() =>
-                  console.log(isSessionActive ? 'Pause' : 'Resume')
-                }
+                onClick={onToggleSession}
                 className="flex items-center gap-2 px-3 py-2 bg-secondary hover:bg-secondary/80 rounded-lg text-xs font-medium transition-colors duration-150"
               >
-                {isSessionActive ? (
-                  <Pause className="w-3 h-3" />
-                ) : (
-                  <Play className="w-3 h-3" />
-                )}
+                {isSessionActive ? <Pause className="w-3 h-3" /> : <Play className="w-3 h-3" />}
                 {isSessionActive ? 'Pause' : 'Resume'}
               </button>
 
               <button
-                onClick={() => console.log('Dashboard')}
+                onClick={onGoToDashboard}
                 className="flex items-center gap-2 px-3 py-2 bg-secondary hover:bg-secondary/80 rounded-lg text-xs font-medium transition-colors duration-150"
               >
                 <Home className="w-3 h-3" />
@@ -246,27 +210,15 @@ export const CortexHUD: React.FC<CortexHUDProps> = ({
             </div>
 
             <button
-              onClick={() =>
-                console.log(
-                  isCurrentAppInWorkspace
-                    ? 'Remove from Workspace'
-                    : 'Add to Workspace'
-                )
-              }
+              onClick={onToggleWorkspaceApp}
               className={`w-full flex items-center justify-center gap-2 px-3 py-2 rounded-lg text-xs font-medium transition-colors duration-150 ${
                 isCurrentAppInWorkspace
                   ? 'bg-destructive hover:bg-destructive/90 text-destructive-foreground'
                   : 'bg-primary hover:bg-primary/90 text-primary-foreground'
               }`}
             >
-              {isCurrentAppInWorkspace ? (
-                <Minus className="w-3 h-3" />
-              ) : (
-                <Plus className="w-3 h-3" />
-              )}
-              {isCurrentAppInWorkspace
-                ? 'Remove from Workspace'
-                : 'Add to Workspace'}
+              {isCurrentAppInWorkspace ? <Minus className="w-3 h-3" /> : <Plus className="w-3 h-3" />}
+              {isCurrentAppInWorkspace ? 'Remove from Workspace' : 'Add to Workspace'}
             </button>
           </div>
         </motion.div>

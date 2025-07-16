@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Expand, Trash2, StickyNote, Minimize2 } from "lucide-react";
 import { Button } from "./ui/button";
+import { useSyncedNote } from "@/hooks/useSyncedNote";
 
 interface NotebookProps {
   onExpand?: () => void;
@@ -8,11 +9,11 @@ interface NotebookProps {
 }
 
 export function Notebook({ onExpand, isExpanded = false }: NotebookProps) {
-  const [content, setContent] = useState("");
+  
 
-  const handleClear = () => {
-    setContent("");
-  };
+  const { note: content, setNote: setContent, clearNote: handleClear } = useSyncedNote();
+
+
 
   return (
     <div 

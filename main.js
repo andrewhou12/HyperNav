@@ -1,6 +1,6 @@
 const path = require('path');
 const fs = require('fs');
-const { app, BrowserWindow, globalShortcut, ipcMain, screen, dialog } = require('electron');
+const { app, BrowserWindow, globalShortcut, ipcMain, screen, dialog, clipboard } = require('electron');
 const { exec } = require('child_process');
 require('dotenv').config();
 const { getInstalledApps, getInstalledAppsWithIcons, extractIcon } = require('./core/appDiscovery');
@@ -67,6 +67,7 @@ const {
   stopPollingWindowState,
   getLiveWorkspace,
   removeAppFromWorkspace,
+  addAppToWorkspace
 } = require('./core/sessionManager');
 
 const {
@@ -204,7 +205,7 @@ function createOverlayWindow() {
     skipTaskbar: true,
     movable: false,
     fullscreenable: false,
-    webPreferences: { preload: path.join(__dirname, 'preload.js'), backgroundThrottling: false, webSecurity: false },
+    webPreferences: { preload: path.join(__dirname, 'preload.js'), contextIsolation: true, backgroundThrottling: false, webSecurity: false },
   });
 
   overlayWindow.loadURL('http://localhost:5173/overlay');
@@ -256,6 +257,22 @@ const COLLAPSED_HEIGHT = 70;
 
   hudWindow.loadURL('http://localhost:5173/hud');
 
+  sessionManager.setHudWindow(hudWindow);
+
+   // Add focus/blur event listeners
+   hudWindow.on('focus', () => {
+    console.log('🎯 HUD focused - stopping auto-hide');
+    stopAutoHide();
+  });
+
+  hudWindow.on('blur', () => {
+    console.log('👋 HUD blurred - starting auto-hide');
+    // Small delay to prevent rapid toggling
+    setTimeout(() => {
+      startAutoHide();
+    }, 500);
+  });
+
   hudWindow.on('closed', () => {
     hudWindow = null;
   });
@@ -281,7 +298,7 @@ function showOverlay(type) {
       y = bounds.height - height - 24;
       break;
     case 'utilities':
-      width = 550; height = 650;
+      width = 500; height = 650;
       x = bounds.width - width - 24;
       y = bounds.height - height - 24;
       break;
@@ -381,13 +398,37 @@ async function startCortexSession() {
       }
 
       sessionManager.setMainWindow(sessionwin);
+      createHUDWindow();
       await startSession();       // polling + session setup
       startAutoHide();            // overlay visibility sync
       createOverlayWindow();      // floating HUD etc.
-      createHUDWindow();
     }, 2000);
   });
 }
+
+
+//HUD FUNCTIONS
+function openDashboardWindow() {
+  if (sessionWindow && !sessionWindow.isDestroyed()) {
+    sessionWindow.show();
+    sessionWindow.focus();
+  } else {
+    createSessionWindow();
+  }
+}
+
+function getLastFocusedApp() {
+  const sessionData = getSessionData();
+  const lastFocused = sessionData?.lastFocusedWindow;
+  if (!lastFocused) return null;
+
+  return {
+    name: lastFocused.appName,
+    title: lastFocused.windowTitle,
+    appId: lastFocused.appId || null, // optional: helpful for workspace tracking
+  };
+}
+
 
 ipcMain.handle('get-installed-apps', async () => {
   const apps = await getInstalledApps();
@@ -399,6 +440,15 @@ ipcMain.handle('get-installed-apps', async () => {
   return safeApps;
 });
 
+ipcMain.handle('get-clipboard-text', () => {
+  try {
+    const text = clipboard.readText();
+    return text;
+  } catch (err) {
+    console.error('❌ Failed to read clipboard:', err);
+    return '';
+  }
+});
 
 ipcMain.handle('get-recent-apps', () => recentApps);
 ipcMain.handle('mark-app-used', (_, app) => markAppAsUsed(app));
@@ -479,6 +529,20 @@ ipcMain.on('resize-hud-window', (event, { width, height }) => {
     }, true); // animate = true
   }
 });
+ipcMain.on('resize-overlay-window', (event, { width, height }) => {
+  if (overlayWindow) {
+    const { x, y, width: oldWidth, height: oldHeight } = overlayWindow.getBounds();
+    const newX = x + oldWidth - width;   // keep right-aligned
+    const newY = y + oldHeight - height; // keep bottom-aligned
+
+    overlayWindow.setBounds({
+      x: newX,
+      y: newY,
+      width,
+      height,
+    }, true); // animate resize
+  }
+});
 ipcMain.handle('activate-navigator-item', async (_e, item) => {
   try {
     await activateNavigatorItem(item);
@@ -513,6 +577,21 @@ ipcMain.handle('close-app', async (event, appId) => {
 ipcMain.handle('remove-app-from-workspace', async (event, appId) => {
   return removeAppFromWorkspace(appId);
 });
+
+ipcMain.handle('add-app-to-workspace', async (event, appId) => {
+  return addAppToWorkspace(appId);
+});
+ipcMain.handle('is-app-in-workspace', (event, appId) => {
+  return isAppInWorkspace(appId);
+});
+
+ipcMain.handle('open-dashboard', () => openDashboardWindow());
+ipcMain.handle('open-spatial-navigator', () => showOverlay('navigator'));
+ipcMain.handle('open-inline-gpt', () => showOverlay('ai'));
+ipcMain.handle('open-utilities-overlay', () => showOverlay('utilities'));
+ipcMain.handle('open-smart-launcher', () => showOverlay('launcher'));
+ipcMain.handle('get-current-app', () => getLastFocusedApp());
+
 
 app.on('activate', () => {
   const dashboardVisible = sessionWindow && !sessionWindow.isDestroyed() && sessionWindow.isVisible();

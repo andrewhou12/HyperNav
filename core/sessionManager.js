@@ -14,6 +14,7 @@ let mainWindow = null;
 let overlayWindow = null;
 let initiallyHiddenApps = new Set();
 let lastRunningAppNames = new Set(); 
+let lastUntrackedApp = null;
 
 function setMainWindow(win) {
   mainWindow = win;
@@ -23,6 +24,10 @@ function setOverlayWindow(win) {
   overlayWindow = win;
 }
 
+function setHudWindow(win) {
+  hudWindow = win;
+}
+
 function setInitiallyHiddenApps(appNames) {
   initiallyHiddenApps = new Set(appNames);
 }
@@ -30,6 +35,13 @@ function setInitiallyHiddenApps(appNames) {
 function getSessionData() {
   return sessionData;
 }
+function generateAppId(appName, appPath) {
+  if (appPath) {
+    return `app-${Buffer.from(appPath).toString('base64')}`;
+  }
+  return `app-${appName.replace(/\s+/g, '_').toLowerCase()}`;
+}
+
 function getLiveWorkspace() {
   console.log('📦 sessionManager: getLiveWorkspace called');
   console.log(sessionData?.liveWorkspace);
@@ -46,7 +58,7 @@ function updateSessionData(item) {
     const alreadyExists = sessionData.liveWorkspace.apps.some(a => a.path === item.path);
     if (!alreadyExists) {
       const newApp = {
-        id: item.id || `${item.name}-${Date.now()}`,
+        id: item.id || generateAppId(item.name, item.path),
         name: item.name,
         icon: item.icon || "folder",
         path: item.path,
@@ -55,6 +67,7 @@ function updateSessionData(item) {
       sessionData.liveWorkspace.apps.push(newApp);
       mainWindow?.webContents.send('live-workspace-update', sessionData.liveWorkspace);
       overlayWindow?.webContents.send?.('live-workspace-update', sessionData.liveWorkspace);
+      hudWindow?.webContents.send('live-workspace-update', sessionData.liveWorkspace);
       
     }
   } else if (item.type === "tab_closed") {
@@ -67,6 +80,7 @@ function updateSessionData(item) {
     }
     mainWindow?.webContents.send('live-workspace-update', sessionData.liveWorkspace);
     overlayWindow?.webContents.send?.('live-workspace-update', sessionData.liveWorkspace);
+    hudWindow?.webContents.send('live-workspace-update', sessionData.liveWorkspace);
   }
   else if (item.type === "app_quit") {
     console.log(`📝 Logged app quit: ${item.name}`);
@@ -107,6 +121,7 @@ async function startSession() {
   startPollingWindowState();
   mainWindow?.webContents.send('live-workspace-update', sessionData.liveWorkspace);
   overlayWindow?.webContents.send?.('live-workspace-update', sessionData.liveWorkspace);
+  hudWindow?.webContents.send('live-workspace-update', sessionData.liveWorkspace);
 }
 
 
@@ -114,6 +129,7 @@ async function startSession() {
 function onWorkspaceChange() {
   mainWindow?.webContents.send('live-workspace-update', sessionData.liveWorkspace);
   overlayWindow?.webContents.send?.('live-workspace-update', sessionData.liveWorkspace);
+  hudWindow?.webContents.send('live-workspace-update', sessionData.liveWorkspace);
 }
 
 function saveSession() {
@@ -131,6 +147,8 @@ function launchApp(appPath) {
   exec(`open "${appPath}"`);
 }
 
+
+
 async function pollActiveWindow() {
   try {
     const win = await activeWin();
@@ -140,131 +158,134 @@ async function pollActiveWindow() {
     const appName = owner.name;
     const appPath = owner.path;
     const timestamp = new Date().toISOString();
+    const appId = generateAppId(appName, appPath);
+    const CORTEX_APP_NAME = 'Electron';
 
-    // Skip invalid or garbage app names
-    if (!appName || appName === 'undefined') {
-      console.warn('⚠️ Skipping window — invalid app name:', appName);
-      return;
-    }
+    // Skip garbage/self-detection
+    if (!appName || appName === 'undefined' || appName === 'Cortex' || appName === CORTEX_APP_NAME) {
+      console.warn('⚠️ Skipping Cortex window or invalid app:', appName);
+    } else {
+      const event = {
+        type: appName === 'Google Chrome' ? 'tab_focus' : 'poll_snapshot',
+        timestamp,
+        appName,
+        windowTitle: title,
+      };
+      sessionData.eventLog.push(event);
+      lastFocus = { appName, windowTitle: title, timestamp };
 
-    const event = {
-      type: appName === 'Google Chrome' ? 'tab_focus' : 'poll_snapshot',
-      timestamp,
-      appName,
-      windowTitle: title
-    };
+      let matchingApp = sessionData.liveWorkspace.apps.find(app => {
+        const matches = app.id === appId;
+        if (!matches) {
+          console.log(`🔍 App ID mismatch: ${app.id} !== ${appId} for ${app.name}`);
+        }
+        return matches;
+      });
 
-    sessionData.eventLog.push(event);
-    lastFocus = { appName, windowTitle: title, timestamp };
+      if (matchingApp) {
+        sessionData.liveWorkspace.activeAppId = matchingApp.id;
+        sessionData.liveWorkspace.activeWindowId = windowId;
 
-    let matchingApp = sessionData.liveWorkspace.apps.find(app => app.name === appName);
-    if (matchingApp) {
-      sessionData.liveWorkspace.activeAppId = matchingApp.id;
-      sessionData.liveWorkspace.activeWindowId = windowId;
+        for (const app of sessionData.liveWorkspace.apps) {
+          app.windows = [];
+          app.tabs = app.tabs?.map(tab => ({ ...tab, isActive: false })) || [];
+        }
 
-      // Clear active flags
-      for (const app of sessionData.liveWorkspace.apps) {
-        app.windows = [];
-        app.tabs = app.tabs?.map(tab => ({ ...tab, isActive: false })) || [];
-      }
+        if (appName === 'Google Chrome') {
+          try {
+            const tabs = await getChromeWindowsAndTabs();
+            matchingApp.tabs = tabs;
 
-      if (appName === 'Google Chrome') {
-        try {
-          const tabs = await getChromeWindowsAndTabs();
-
-          let chromeApp = sessionData.liveWorkspace.apps.find(app => app.name === 'Google Chrome');
-
-          if (!chromeApp) {
-            chromeApp = {
-              id: `Google Chrome-${Date.now()}`,
-              name: 'Google Chrome',
-              path: appPath,
-              tabs: []
-
-            };
-            sessionData.liveWorkspace.apps.push(chromeApp);
+            const activeTab = tabs.find(tab => tab.isActive);
+            if (activeTab) {
+              updateSessionData({
+                type: 'tab_changed',
+                source: 'poller',
+                appName: 'Google Chrome',
+                windowTitle: activeTab.title,
+                url: activeTab.url,
+                windowId,
+                tabId: activeTab.id,
+                timestamp,
+              });
+            }
+          } catch (err) {
+            console.warn('⚠️ Failed to get Chrome tabs:', err);
           }
-
-          chromeApp.tabs = tabs;
-
-          const activeTab = tabs.find(tab => tab.isActive);
-          if (activeTab) {
-            updateSessionData({
-              type: 'tab_changed',
-              source: 'poller',
-              appName: 'Google Chrome',
-              windowTitle: activeTab.title,
-              url: activeTab.url,
-              windowId,
-              tabId: activeTab.id,
-              timestamp
-            });
-          }
-        } catch (err) {
-          console.warn("⚠️ Failed to get Chrome tabs:", err);
+        }
+      } else {
+        // Auto-add if not excluded
+        if (!initiallyHiddenApps.has(appName) && appName !== 'Code') {
+          matchingApp = {
+            id: appId,
+            name: appName,
+            path: appPath || null,
+            windows: [],
+            tabs: [],
+          };
+          sessionData.liveWorkspace.apps.push(matchingApp);
+          sessionData.liveWorkspace.activeAppId = matchingApp.id;
+          sessionData.liveWorkspace.activeWindowId = windowId;
+          console.log(`➕ Auto-added new app "${appName}" to workspace`);
+        } else {
+          lastUntrackedApp = {
+            id: appId,
+            name: appName,
+            path: appPath || null,
+            windows: [],
+            tabs: [],
+          };
+          console.log(`📦 Stored excluded app "${appName}" as untracked`);
         }
       }
-      
+
+      sessionData.liveWorkspace.lastFocusedWindow = {
+        appId,
+        appName,
+        windowTitle: title,
+        windowId,
+        timestamp,
+      };
 
       mainWindow?.webContents.send('live-workspace-update', sessionData.liveWorkspace);
       overlayWindow?.webContents.send?.('live-workspace-update', sessionData.liveWorkspace);
+      hudWindow?.webContents.send?.('live-workspace-update', sessionData.liveWorkspace);
     }
 
-    // Add new app if not tracked and not excluded
-    if (
-      !matchingApp &&
-      !initiallyHiddenApps.has(appName) &&
-      appName !== "Code"
-    ) {
-      matchingApp = {
-        id: `${appName}-${Date.now()}`,
-        name: appName,
-        path: appPath || null,
-        windows: [],
-        tabs: []
-      };
-      sessionData.liveWorkspace.apps.push(matchingApp);
+    // ✅ Always run this — even if Cortex or invalid app was skipped
+    try {
+      const currentRunningAppNames = await new Promise(resolve => getOpenApps(resolve));
+      const currentSet = new Set(currentRunningAppNames);
 
-      mainWindow?.webContents.send('live-workspace-update', sessionData.liveWorkspace);
-overlayWindow?.webContents.send?.('live-workspace-update', sessionData.liveWorkspace);
-    }
+      for (const prevAppName of lastRunningAppNames) {
+        if (!currentSet.has(prevAppName)) {
+          const wasInWorkspace = sessionData.liveWorkspace.apps.find(app => app.name === prevAppName);
+          if (wasInWorkspace) {
+            console.log(`❌ App quit detected: ${prevAppName}`);
 
-  // 🔍 Detect quit apps
-try {
-  const currentRunningAppNames = await new Promise(resolve => getOpenApps(resolve));
-  const currentSet = new Set(currentRunningAppNames);
+            updateSessionData({
+              type: 'app_quit',
+              name: wasInWorkspace.name,
+              path: wasInWorkspace.path,
+              id: wasInWorkspace.id,
+            });
 
-  // Check for apps that were in the workspace but are no longer running
-  for (const prevAppName of lastRunningAppNames) {
-    if (!currentSet.has(prevAppName)) {
-      const wasInWorkspace = sessionData.liveWorkspace.apps.find(app => app.name === prevAppName);
-      if (wasInWorkspace) {
-        console.log(`❌ App quit detected: ${prevAppName}`);
+            sessionData.liveWorkspace.apps = sessionData.liveWorkspace.apps.filter(app => app.name !== prevAppName);
 
-        updateSessionData({
-          type: 'app_quit',
-          name: wasInWorkspace.name,
-          path: wasInWorkspace.path,
-          id: wasInWorkspace.id
-        });
-
-        // You can soft-remove or hard-remove here
-        sessionData.liveWorkspace.apps = sessionData.liveWorkspace.apps.filter(app => app.name !== prevAppName);
-
-        mainWindow?.webContents.send('live-workspace-update', sessionData.liveWorkspace);
-        overlayWindow?.webContents.send?.('live-workspace-update', sessionData.liveWorkspace);
+            mainWindow?.webContents.send('live-workspace-update', sessionData.liveWorkspace);
+            overlayWindow?.webContents.send?.('live-workspace-update', sessionData.liveWorkspace);
+            hudWindow?.webContents.send?.('live-workspace-update', sessionData.liveWorkspace);
+          }
+        }
       }
-    }
-  }
 
-  // Update for next poll
-  lastRunningAppNames = currentSet;
-} catch (err) {
-  console.warn("⚠️ Failed to get running apps for quit detection:", err);
-}
+      lastRunningAppNames = currentSet;
+    } catch (err) {
+      console.warn('⚠️ Failed to get running apps for quit detection:', err);
+    }
 
   } catch (err) {
-    console.error("❌ pollActiveWindow error:", err);
+    console.error('❌ pollActiveWindow error:', err);
   }
 }
 
@@ -307,9 +328,38 @@ function removeAppFromWorkspace(appId) {
 
     mainWindow.webContents.send('live-workspace-update', sessionData.liveWorkspace);
     overlayWindow.webContents.send('live-workspace-update', sessionData.liveWorkspace);
+    hudWindow.webContents.send('live-workspace-update', sessionData.liveWorkspace);
   }
 }
 
+function addAppToWorkspace(appId) {
+  let app = sessionData.liveWorkspace.apps.find(a => a.id === appId);
+
+  // Fallback to lastUntrackedApp if not found
+  if (!app && lastUntrackedApp?.id === appId) {
+    app = lastUntrackedApp;
+    sessionData.liveWorkspace.apps.push(app);
+    lastUntrackedApp = null;
+
+    console.log(`➕ Added previously untracked app "${app.name}" to workspace`);
+  }
+
+  if (!app) {
+    console.warn(`❌ Failed to add app to workspace — no app found with id "${appId}"`);
+    return;
+  }
+
+  // Set as active app if none is active
+  if (!sessionData.liveWorkspace.activeAppId) {
+    sessionData.liveWorkspace.activeAppId = app.id;
+  }
+
+  mainWindow.webContents.send('live-workspace-update', sessionData.liveWorkspace);
+  overlayWindow.webContents.send('live-workspace-update', sessionData.liveWorkspace);
+  hudWindow.webContents.send('live-workspace-update', sessionData.liveWorkspace);
+
+  console.log(`✅ Added "${app.name}" to workspace`);
+}
 
 module.exports = {
   saveSession,
@@ -326,6 +376,8 @@ module.exports = {
   setMainWindow,
   setInitiallyHiddenApps,
   setOverlayWindow,
+  setHudWindow,
   removeAppFromWorkspace,
+  addAppToWorkspace,
   sessionData
 };

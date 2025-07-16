@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Copy, Edit, Save, X, Pin, ExternalLink, Trash2, ClipboardList } from 'lucide-react';
+import { Copy, Edit, Save, X, Pin, Trash2, ClipboardList } from 'lucide-react';
 
 interface ClipboardItem {
   id: string;
@@ -16,40 +16,17 @@ export const ClipboardManager: React.FC = () => {
   const [editContent, setEditContent] = useState('');
 
   useEffect(() => {
-    // Load from localStorage
     const saved = localStorage.getItem('cortex-clipboard-history');
     if (saved) {
-      const parsed = JSON.parse(saved).map((item: any) => ({
-        ...item,
-        timestamp: new Date(item.timestamp)
-      }));
-      setClipboardHistory(parsed);
-    } else {
-      // Mock data for demonstration
-      const mockData: ClipboardItem[] = [
-        {
-          id: '1',
-          content: 'Hello world! This is a sample clipboard item.',
-          timestamp: new Date(Date.now() - 5000),
-          isPinned: true,
-          type: 'text'
-        },
-        {
-          id: '2',
-          content: 'https://example.com/some-long-url-that-might-be-useful',
-          timestamp: new Date(Date.now() - 15000),
-          isPinned: false,
-          type: 'link'
-        },
-        {
-          id: '3',
-          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-          timestamp: new Date(Date.now() - 30000),
-          isPinned: false,
-          type: 'text'
-        }
-      ];
-      setClipboardHistory(mockData);
+      try {
+        const parsed = JSON.parse(saved).map((item: any) => ({
+          ...item,
+          timestamp: new Date(item.timestamp),
+        }));
+        setClipboardHistory(parsed);
+      } catch (e) {
+        console.warn('Failed to parse clipboard history');
+      }
     }
   }, []);
 
@@ -57,10 +34,39 @@ export const ClipboardManager: React.FC = () => {
     localStorage.setItem('cortex-clipboard-history', JSON.stringify(clipboardHistory));
   }, [clipboardHistory]);
 
+  useEffect(() => {
+    const syncClipboard = async () => {
+      try {
+        const content = await window.electron.getClipboardText();
+        if (!content || typeof content !== 'string' || content.trim() === '') return;
+
+        setClipboardHistory(prev => {
+          const isDuplicate = prev.some(item => item.content === content && !item.isPinned);
+          if (isDuplicate) return prev;
+
+          const newItem: ClipboardItem = {
+            id: Date.now().toString(),
+            content,
+            timestamp: new Date(),
+            isPinned: false,
+            type: content.startsWith('http') ? 'link' : 'text',
+          };
+
+          return [newItem, ...prev];
+        });
+      } catch (err) {
+        console.warn('Failed to read clipboard:', err);
+      }
+    };
+
+    window.addEventListener('focus', syncClipboard);
+    syncClipboard(); // run once on mount
+    return () => window.removeEventListener('focus', syncClipboard);
+  }, []);
+
   const handleCopy = async (content: string) => {
     try {
       await navigator.clipboard.writeText(content);
-      console.log('Copied to clipboard');
     } catch (err) {
       console.error('Failed to copy:', err);
     }
@@ -72,19 +78,15 @@ export const ClipboardManager: React.FC = () => {
   };
 
   const handleSave = (id: string) => {
-    setClipboardHistory(prev => 
-      prev.map(item => 
-        item.id === id ? { ...item, content: editContent } : item
-      )
+    setClipboardHistory(prev =>
+      prev.map(item => (item.id === id ? { ...item, content: editContent } : item))
     );
     setEditingId(null);
   };
 
   const handlePin = (id: string) => {
-    setClipboardHistory(prev => 
-      prev.map(item => 
-        item.id === id ? { ...item, isPinned: !item.isPinned } : item
-      )
+    setClipboardHistory(prev =>
+      prev.map(item => (item.id === id ? { ...item, isPinned: !item.isPinned } : item))
     );
   };
 
@@ -96,15 +98,13 @@ export const ClipboardManager: React.FC = () => {
     setClipboardHistory(prev => prev.filter(item => item.isPinned));
   };
 
-  const truncateText = (text: string, maxLength: number = 100) => {
-    return text.length > maxLength ? text.substring(0, maxLength) + '...' : text;
-  };
+  const truncateText = (text: string, maxLength = 100) =>
+    text.length > maxLength ? text.substring(0, maxLength) + '...' : text;
 
   const formatTimestamp = (date: Date) => {
     const now = new Date();
     const diffMs = now.getTime() - date.getTime();
     const diffMins = Math.floor(diffMs / 60000);
-    
     if (diffMins < 1) return 'Just now';
     if (diffMins < 60) return `${diffMins}m ago`;
     if (diffMins < 1440) return `${Math.floor(diffMins / 60)}h ago`;
@@ -136,12 +136,12 @@ export const ClipboardManager: React.FC = () => {
         ) : (
           clipboardHistory
             .sort((a, b) => (b.isPinned ? 1 : 0) - (a.isPinned ? 1 : 0))
-            .map((item) => (
+            .map(item => (
               <div
                 key={item.id}
                 className={`p-3 rounded-xl border transition-all ${
-                  item.isPinned 
-                    ? 'bg-primary/10 border-primary/30' 
+                  item.isPinned
+                    ? 'bg-primary/10 border-primary/30'
                     : 'bg-card/50 border-border hover:bg-card/80'
                 }`}
               >
@@ -178,45 +178,28 @@ export const ClipboardManager: React.FC = () => {
                   <div className="flex items-center gap-1">
                     {editingId === item.id ? (
                       <>
-                        <button
-                          onClick={() => handleSave(item.id)}
-                          className="p-1 rounded-lg hover:bg-muted transition-colors"
-                        >
+                        <button onClick={() => handleSave(item.id)} className="p-1 hover:bg-muted rounded-lg">
                           <Save className="w-4 h-4 text-primary" />
                         </button>
-                        <button
-                          onClick={() => setEditingId(null)}
-                          className="p-1 rounded-lg hover:bg-muted transition-colors"
-                        >
+                        <button onClick={() => setEditingId(null)} className="p-1 hover:bg-muted rounded-lg">
                           <X className="w-4 h-4" />
                         </button>
                       </>
                     ) : (
                       <>
-                        <button
-                          onClick={() => handleCopy(item.content)}
-                          className="p-1 rounded-lg hover:bg-muted transition-colors"
-                        >
+                        <button onClick={() => handleCopy(item.content)} className="p-1 hover:bg-muted rounded-lg">
                           <Copy className="w-4 h-4" />
                         </button>
-                        <button
-                          onClick={() => handleEdit(item.id, item.content)}
-                          className="p-1 rounded-lg hover:bg-muted transition-colors"
-                        >
+                        <button onClick={() => handleEdit(item.id, item.content)} className="p-1 hover:bg-muted rounded-lg">
                           <Edit className="w-4 h-4" />
                         </button>
                         <button
                           onClick={() => handlePin(item.id)}
-                          className={`p-1 rounded-lg hover:bg-muted transition-colors ${
-                            item.isPinned ? 'text-primary' : ''
-                          }`}
+                          className={`p-1 hover:bg-muted rounded-lg ${item.isPinned ? 'text-primary' : ''}`}
                         >
                           <Pin className="w-4 h-4" />
                         </button>
-                        <button
-                          onClick={() => handleDelete(item.id)}
-                          className="p-1 rounded-lg hover:bg-muted transition-colors text-destructive"
-                        >
+                        <button onClick={() => handleDelete(item.id)} className="p-1 hover:bg-muted rounded-lg text-destructive">
                           <Trash2 className="w-4 h-4" />
                         </button>
                       </>

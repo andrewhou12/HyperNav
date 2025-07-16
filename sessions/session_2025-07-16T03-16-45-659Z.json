@@ -1,0 +1,111 @@
+{
+  "sessionName": "Session_2025-07-16T03:15:21.872Z",
+  "createdAt": "2025-07-16T03:15:21.872Z",
+  "liveWorkspace": {
+    "apps": [
+      {
+        "id": "Google Chrome-1752635770182",
+        "name": "Google Chrome",
+        "icon": "folder",
+        "path": "/Applications/Google Chrome.app",
+        "windows": []
+      },
+      {
+        "id": "app-L0FwcGxpY2F0aW9ucy9Hb29nbGUgQ2hyb21lLmFwcA==",
+        "name": "Google Chrome",
+        "path": "/Applications/Google Chrome.app",
+        "windows": [],
+        "tabs": []
+      }
+    ],
+    "activeAppId": "app-L0FwcGxpY2F0aW9ucy9Hb29nbGUgQ2hyb21lLmFwcA==",
+    "activeWindowId": null,
+    "lastFocusedWindow": {
+      "appId": "app-L0FwcGxpY2F0aW9ucy9Hb29nbGUgQ2hyb21lLmFwcA==",
+      "appName": "Google Chrome",
+      "windowTitle": "Untitled",
+      "windowId": 99565,
+      "timestamp": "2025-07-16T03:16:12.545Z"
+    }
+  },
+  "eventLog": [
+    {
+      "type": "session_started",
+      "timestamp": "2025-07-16T03:15:22.268Z",
+      "data": {
+        "type": "session_started",
+        "sessionName": "Session_2025-07-16T03:15:21.872Z"
+      }
+    },
+    {
+      "type": "session_paused",
+      "timestamp": "2025-07-16T03:15:24.730Z",
+      "data": {
+        "type": "session_paused"
+      }
+    },
+    {
+      "type": "session_paused",
+      "timestamp": "2025-07-16T03:15:24.731Z",
+      "data": {
+        "type": "session_paused"
+      }
+    },
+    {
+      "type": "session_resumed",
+      "timestamp": "2025-07-16T03:15:40.191Z",
+      "data": {
+        "type": "session_resumed"
+      }
+    },
+    {
+      "type": "session_resumed",
+      "timestamp": "2025-07-16T03:15:40.193Z",
+      "data": {
+        "type": "session_resumed"
+      }
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-16T03:15:45.059Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Improve appId fallback"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-16T03:15:45.783Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Improve appId fallback"
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-16T03:15:52.825Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Improve appId fallback"
+    },
+    {
+      "type": "poll_snapshot",
+      "timestamp": "2025-07-16T03:15:56.278Z",
+      "appName": "Discord",
+      "windowTitle": "#general-chat💬 | Dark Knights - Discord"
+    },
+    {
+      "type": "app_opened",
+      "timestamp": "2025-07-16T03:16:10.182Z",
+      "data": {
+        "type": "app_opened",
+        "name": "Google Chrome",
+        "path": "/Applications/Google Chrome.app",
+        "windowTitle": "Google Chrome",
+        "isActive": true,
+        "launchedViaCortex": true
+      }
+    },
+    {
+      "type": "tab_focus",
+      "timestamp": "2025-07-16T03:16:12.545Z",
+      "appName": "Google Chrome",
+      "windowTitle": "Untitled"
+    }
+  ]
+}
