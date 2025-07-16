@@ -38,7 +38,7 @@ export function TopNavigationBar({
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 overflow-hidden">
             <img
-              src="/icons/cortexlogov1invert.svg"
+              src="/icons/cortexlogov3.svg"
               alt="Cortex logo"
               className="w-full h-full object-contain"
             />

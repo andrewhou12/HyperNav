@@ -127,7 +127,7 @@ export const CortexHUD: React.FC<CortexHUDProps> = ({
         {/* Header */}
         <div className="flex items-center gap-3 cursor-pointer" onClick={toggleHUD}>
           <img
-            src="/icons/cortexlogov1invert.svg"
+            src="/icons/cortexlogov3.svg"
             alt="Cortex"
             className="w-7 h-7 flex-shrink-0"
           />

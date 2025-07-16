@@ -100,7 +100,7 @@ export function CortexChat() {
       {/* Header */}
       <div className="flex items-center gap-3 p-4 border-b border-border bg-card">
       <img
-  src="/icons/cortexlogov1invert.svg"
+  src="/icons/cortexlogov3.svg"
   alt="Cortex logo"
   className="w-6 h-6 object-contain"
 />

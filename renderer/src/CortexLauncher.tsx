@@ -57,7 +57,7 @@ export function CortexLauncher() {
       <header className="relative z-10 p-6 flex items-center justify-between animate-fade-in">
         <div className="flex items-center group cursor-pointer">
           <img 
-            src="/icons/cortexlogov1invert.svg"
+            src="/icons/cortexlogov3.svg"
             alt="Cortex Logo" 
             className="w-12 h-12 transition-all duration-300 group-hover:scale-110 drop-shadow-sm"
           />

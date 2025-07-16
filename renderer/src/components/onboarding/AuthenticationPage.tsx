@@ -55,13 +55,13 @@ const AuthenticationPage: React.FC<AuthenticationPageProps> = ({ onSuccess }) =>
         <div className="glass rounded-3xl p-8 space-y-8 animate-scale-in">
           {/* Logo */}
           <div className="text-center">
-            <div className="w-16 h-16 mx-auto glass rounded-2xl flex items-center justify-center p-2 mb-6">
-              <img 
-                src="/icons/cortexlogov1invert.svg"
-                alt="Cortex Logo" 
-                className="w-full h-full object-contain"
-              />
-            </div>
+          <div className="w-16 h-16 mx-auto glass rounded-2xl flex items-center justify-center mb-6">
+    <img 
+      src="/icons/cortexlogov3.svg"
+      alt="Cortex Logo" 
+      className="w-full h-full object-contain" // or object-cover
+    />
+  </div>
             <h1 className="text-3xl font-bold text-foreground mb-2">
               {isSignIn ? 'Welcome Back' : 'Create Account'}
             </h1>

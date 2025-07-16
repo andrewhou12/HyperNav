@@ -20,7 +20,7 @@ export default function Onboarding() {
         <div className="glass rounded-3xl p-12 space-y-6">
           <div className="w-16 h-16 mx-auto glass rounded-2xl flex items-center justify-center p-2">
             <img 
-              src="/icons/cortexlogov1invert.svg"
+              src="/icons/cortexlogov3.svg"
               alt="Cortex Logo" 
               className="w-full h-full object-contain"
             />

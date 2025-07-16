@@ -68,7 +68,7 @@ const {
   stopPollingWindowState,
   getLiveWorkspace,
   removeAppFromWorkspace,
-  addAppToWorkspace
+  addAppToWorkspace,
 } = require('./core/sessionManager');
 
 const {
@@ -76,7 +76,8 @@ const {
   startAutoHide,
   stopAutoHide,
   pauseWorkspace,
-  resumeWorkspace
+  resumeWorkspace,
+  autoHideInterval
 } = require('./core/workspaceManager');
 
 const chromeDriver = require('./core/drivers/chromeDriver');

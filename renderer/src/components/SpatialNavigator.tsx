@@ -561,7 +561,7 @@ switch (e.key) {
           <div className="flex items-center justify-between gap-4 p-4 border-b border-gray-100">
           <div className="flex items-center gap-3">
             <img
-              src="/icons/cortexlogov1invert.svg"
+              src="/icons/cortexlogov3.svg"
               alt="Cortex Logo"
               className="h-8 w-8"
             />

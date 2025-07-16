@@ -379,5 +379,6 @@ module.exports = {
   setHudWindow,
   removeAppFromWorkspace,
   addAppToWorkspace,
+  
   sessionData
 };

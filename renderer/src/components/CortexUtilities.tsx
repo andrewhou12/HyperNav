@@ -104,7 +104,7 @@ export const CortexUtilities: React.FC<CortexUtilitiesProps> = ({ isOpen, onClos
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-3">
             <img
-              src="/icons/cortexlogov1invert.svg"
+              src="/icons/cortexlogov3.svg"
               alt="Cortex"
               className="w-6 h-6"
             />

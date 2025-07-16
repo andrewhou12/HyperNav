@@ -123,7 +123,8 @@ module.exports = {
   stopAutoHide,
   pauseWorkspace,
   resumeWorkspace,
-  getPreviouslyHiddenApps
+  getPreviouslyHiddenApps,
+  autoHideInterval
 };
 
 
