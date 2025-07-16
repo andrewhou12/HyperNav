@@ -86,6 +86,23 @@ function updateSessionData(item) {
     console.log(`📝 Logged app quit: ${item.name}`);
   }
 
+  else if (item.type === "session_paused") {
+
+    mainWindow.webContents.send('session-status-updated', true);
+    overlayWindow?.webContents.send('session-status-updated', true);
+    hudWindow?.webContents.send('session-status-updated', true);
+    console.log('session paused')
+  }
+
+  else if (item.type === "session_resumed") {
+
+    mainWindow.webContents.send('session-status-updated', false);
+    overlayWindow?.webContents.send('session-status-updated', false);
+    hudWindow?.webContents.send('session-status-updated', false);
+    console.log('session resumed')
+
+    
+  }
   sessionData.eventLog.push(entry);
 
   if (mainWindow && !mainWindow.isDestroyed()) {

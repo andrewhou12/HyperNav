@@ -5,6 +5,7 @@ contextBridge.exposeInMainWorld('electron', {
   saveSettings: (settings) => ipcRenderer.invoke('save-settings', settings),
   saveSession: () => ipcRenderer.invoke('save-session'),
   chooseApp: () => ipcRenderer.invoke('choose-app'),
+  askGPTWithContext: (payload) => ipcRenderer.invoke('ask-gpt-with-context', payload),
   askGPT: (payload) => ipcRenderer.invoke('ask-gpt', payload),
   summarizeSession: (eventLog) => ipcRenderer.invoke('summarize-session', eventLog),
   interpretCommand: (userInput) => ipcRenderer.invoke('interpret-command', userInput),
@@ -43,6 +44,15 @@ getCurrentApp: () => ipcRenderer.invoke('get-current-app'),
     ipcRenderer.on('live-workspace-update', (event, liveWorkspace) => {
       callback(liveWorkspace);
     });
+  },
+  onSessionStatusUpdated: (callback) => {
+    const listener = (_event, isPaused) => {
+      callback(isPaused);
+    };
+    ipcRenderer.on('session-status-updated', listener);
+
+    // Return unsubscribe handler
+    return () => ipcRenderer.removeListener('session-status-updated', listener);
   },
   requestLiveWorkspacePush: () => ipcRenderer.invoke('request-live-workspace-push'),
  

@@ -16,6 +16,17 @@ export default function HUD() {
     idle: "Ready to track window"
   };
 
+  //sync pause/resume session
+  useEffect(() => {
+    const unsubscribeSessionStatus = window.electron.onSessionStatusUpdated?.((isPaused) => {
+      setIsSessionActive(!isPaused); // Update local state based on broadcast
+    });
+  
+    return () => {
+      unsubscribeSessionStatus?.();
+    };
+  }, []);
+
   useEffect(() => {
     const unsubscribe = window.electron.onLiveWorkspaceUpdate?.((workspace) => {
       const focused = workspace?.lastFocusedWindow;
@@ -47,7 +58,6 @@ export default function HUD() {
         await window.electron.resumeWorkspace?.();
         toast.success('Session resumed');
       }
-      setIsSessionActive(prev => !prev);
     } catch (err) {
       toast.error('Failed to toggle session');
       console.error(err);
@@ -68,7 +78,7 @@ export default function HUD() {
       toast.error('No app ID available');
       return;
     }
-
+  
     try {
       if (isCurrentAppInWorkspace) {
         await window.electron.removeAppFromWorkspace?.(currentAppId);

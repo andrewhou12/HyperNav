@@ -112,6 +112,17 @@ export function CortexDashboard() {
     });
   };
 
+  useEffect(() => {
+    const unsubscribe = window.electron.onSessionStatusUpdated?.((paused) => {
+      console.log("📡 Session status broadcast received:", paused);
+      setIsPaused(paused); // Update internal state without re-sending command
+    });
+
+    return () => {
+      unsubscribe?.();
+    };
+  }, []);
+
   const handleSave = () => {
     window.electron.saveSession();
   };

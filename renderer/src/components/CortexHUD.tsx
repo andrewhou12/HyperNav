@@ -122,7 +122,9 @@ export const CortexHUD: React.FC<CortexHUDProps> = ({
         }}
         initial={false}
         transition={{ type: 'spring', damping: 24, stiffness: 300 }}
-        className="glass rounded-2xl w-[360px] overflow-hidden p-4"
+        className="glass rounded-md w-[360px] overflow-hidden p-4 border border-border/40"
+
+        /* used to be glass rounded-2xl but would get clipped in hudwindow*/
       >
         {/* Header */}
         <div className="flex items-center gap-3 cursor-pointer" onClick={toggleHUD}>
@@ -172,12 +174,12 @@ export const CortexHUD: React.FC<CortexHUDProps> = ({
           </div>
 
           {/* Current App */}
-          <div className="border-t border-border/50 pt-3 pb-3">
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-medium text-muted-foreground">Current Window</span>
-              <span className="text-xs font-medium text-foreground">{currentApp}</span>
-            </div>
-          </div>
+<div className="border-t border-border/50 pt-3 pb-3">
+  <div className="flex items-center justify-between">
+    <span className="text-xs font-medium text-muted-foreground">Current Window</span>
+    <span className="text-xs font-medium text-foreground">{currentApp}</span>
+  </div>
+</div>
 
           {/* Session Controls */}
           <div className="border-t border-border/50 pt-3">
@@ -192,13 +194,17 @@ export const CortexHUD: React.FC<CortexHUDProps> = ({
             </div>
 
             <div className="flex gap-2 mb-3">
-              <button
-                onClick={onToggleSession}
-                className="flex items-center gap-2 px-3 py-2 bg-secondary hover:bg-secondary/80 rounded-lg text-xs font-medium transition-colors duration-150"
-              >
-                {isSessionActive ? <Pause className="w-3 h-3" /> : <Play className="w-3 h-3" />}
-                {isSessionActive ? 'Pause' : 'Resume'}
-              </button>
+            <button
+  onClick={onToggleSession}
+  className={`flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-medium transition-colors duration-150 ${
+    isSessionActive
+      ? 'bg-secondary hover:bg-secondary/80 text-foreground'
+      : 'bg-blue-500 hover:bg-blue-600 text-white'
+  }`}
+>
+  {isSessionActive ? <Pause className="w-3 h-3" /> : <Play className="w-3 h-3" />}
+  {isSessionActive ? 'Pause' : 'Resume'}
+</button>
 
               <button
                 onClick={onGoToDashboard}

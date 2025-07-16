@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Clock, X, Play, Pause, Settings, ChevronUp, ChevronDown, FileText, Activity, CheckCircle, Chrome, MessageCircle, Timer, Search } from "lucide-react";
+import { Clock, X, Play, Pause, Settings, ChevronUp, ChevronDown, FileText, Activity, CheckCircle, Chrome, MessageCircle, Timer, Search, Eye, EyeOff } from "lucide-react";
 import { Notebook } from "./Notebook";
 
 interface SessionLogEntry {
@@ -30,7 +30,10 @@ export function EnhancedSessionSidebar({
   const [isLogsExpanded, setIsLogsExpanded] = useState(false);
   const [isSummaryExpanded, setIsSummaryExpanded] = useState(false);
   const [sessionLogs, setSessionLogs] = useState<SessionLogEntry[]>([]);
+  const [sessionSummary, setSessionSummary] = useState('');
+  const [lastUpdated, setLastUpdated] = useState<string>('');
   const sessionLogsRef = useRef<SessionLogEntry[]>([]);
+  const summaryTimer = useRef<NodeJS.Timeout | null>(null);
 
   const normalizeEntry = (item: any, index: number): SessionLogEntry => {
     const ts = new Date(item.timestamp).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
@@ -56,6 +59,18 @@ export function EnhancedSessionSidebar({
     return { id, icon, message, timestamp: ts, type };
   };
 
+  const generateSummary = async () => {
+    try {
+      const raw = await window.electron.getSessionData();
+      const eventLog = raw.eventLog;
+      const summary = await window.electron.summarizeSession(eventLog);
+      setSessionSummary(summary);
+      setLastUpdated(new Date().toLocaleTimeString());
+    } catch (err) {
+      console.error("❌ Failed to generate session summary:", err);
+    }
+  };
+
   useEffect(() => {
     const handler = (entry: any) => {
       const normalized = normalizeEntry(entry, sessionLogsRef.current.length);
@@ -71,6 +86,7 @@ export function EnhancedSessionSidebar({
       const initial = raw.eventLog.map(normalizeEntry);
       sessionLogsRef.current = initial;
       setSessionLogs(initial);
+      generateSummary();
     });
 
     window.electron.onSessionLogEntry(handler);
@@ -79,7 +95,15 @@ export function EnhancedSessionSidebar({
     };
   }, []);
 
-  const sessionSummary = "You began your session by opening Chrome and checking your inbox, followed by switching focus to a Google Docs document titled 'Q3 Launch Plan.' Later, you briefly viewed Slack and returned to Chrome to open a new tab. A short period of inactivity was detected before you saved the session. Your recent focus has been split between communication and document editing.";
+  useEffect(() => {
+    summaryTimer.current = setInterval(() => {
+      generateSummary();
+    }, 10 * 60 * 1000); // 10 minutes
+
+    return () => {
+      if (summaryTimer.current) clearInterval(summaryTimer.current);
+    };
+  }, []);
 
   const getLogTypeColor = (type: SessionLogEntry['type']) => {
     switch (type) {
@@ -102,80 +126,44 @@ export function EnhancedSessionSidebar({
           </h2>
         </div>
         <div className="flex items-center gap-2">
-          <button
-            onClick={onPauseToggle}
-            className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-all ${
-              isPaused
-                ? 'bg-primary text-primary-foreground hover:bg-primary/90'
-                : 'bg-muted text-muted-foreground hover:bg-gray-300'
-            }`}
-          >
+          <button onClick={onPauseToggle} className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-all ${isPaused ? 'bg-primary text-primary-foreground hover:bg-primary/90' : 'bg-muted text-muted-foreground hover:bg-gray-300'}`}>
             {isPaused ? <Play className="w-4 h-4" /> : <Pause className="w-4 h-4" />}
             {isPaused ? 'Resume' : 'Pause'}
           </button>
-  
-          <button
-  onClick={onSave}
-  className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium bg-muted text-muted-foreground hover:bg-gray-300 transition-all"
->
-  <X className="w-4 h-4" />Exit
-</button>
-  
-          <button
-            onClick={onSettings}
-            className="p-2 rounded-lg bg-muted text-muted-foreground hover:bg-gray-300 transition-all"
-          >
+          <button onClick={onSave} className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium bg-muted text-muted-foreground hover:bg-gray-300 transition-all">
+            <X className="w-4 h-4" />Exit
+          </button>
+          <button onClick={onSettings} className="p-2 rounded-lg bg-muted text-muted-foreground hover:bg-gray-300 transition-all">
             <Settings className="w-4 h-4" />
           </button>
         </div>
       </div>
-    
+
       {/* Main Content */}
       <div className="flex-1 overflow-hidden flex flex-col">
-    
         {/* Session Timeline */}
-        <div
-          className={`
-            flex flex-col transition-all duration-200
-            ${isLogsExpanded ? 'overflow-y-auto max-h-64' : 'h-auto'}
-          `}
-        >
-          <div
-            className="flex items-center justify-between p-4 cursor-pointer hover:bg-muted/30 transition-colors border-b border-border"
-            onClick={() => setIsLogsExpanded(!isLogsExpanded)}
-          >
+        <div className={`${isLogsExpanded ? 'overflow-y-auto max-h-64' : 'h-auto'} flex flex-col transition-all duration-200`}>
+          <div className="flex items-center justify-between p-4 cursor-pointer hover:bg-muted/30 transition-colors border-b border-border" onClick={() => setIsLogsExpanded(!isLogsExpanded)}>
             <h3 className="text-sm font-medium text-foreground flex items-center gap-2">
               <Activity className="w-4 h-4 text-primary" />
               Session Timeline
             </h3>
-            {isLogsExpanded ? (
-              <ChevronUp className="w-4 h-4 text-muted-foreground" />
-            ) : (
-              <ChevronDown className="w-4 h-4 text-muted-foreground" />
-            )}
+            {isLogsExpanded ? <ChevronUp className="w-4 h-4 text-muted-foreground" /> : <ChevronDown className="w-4 h-4 text-muted-foreground" />}
           </div>
-  
           {isLogsExpanded && (
             <div className="flex-1 overflow-y-auto">
               <div className="px-4 py-2 space-y-2">
                 {sessionLogs.map((log) => {
                   const IconComponent = typeof log.icon === 'string' ? FileText : log.icon;
                   return (
-                    <div
-                      key={log.id}
-                      className="flex items-center gap-3 py-2.5 px-3 hover:bg-muted/50 transition-colors rounded-md group border-l-2 border-transparent hover:border-primary/30"
-                    >
+                    <div key={log.id} className="flex items-center gap-3 py-2.5 px-3 hover:bg-muted/50 transition-colors rounded-md group border-l-2 border-transparent hover:border-primary/30">
                       <div className="text-sm flex-shrink-0">
                         <IconComponent className={`w-4 h-4 ${getLogTypeColor(log.type)}`} />
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center justify-between">
-                          <p className="text-sm text-foreground truncate">
-                            {log.message}
-                          </p>
-                          <span className="text-xs text-muted-foreground flex-shrink-0 ml-3">
-                            {log.timestamp}
-                          </span>
+                          <p className="text-sm text-foreground truncate">{log.message}</p>
+                          <span className="text-xs text-muted-foreground flex-shrink-0 ml-3">{log.timestamp}</span>
                         </div>
                       </div>
                     </div>
@@ -185,48 +173,36 @@ export function EnhancedSessionSidebar({
             </div>
           )}
         </div>
-    
+
         {/* Session Summary */}
         <div className="border-t border-border">
-          <div
-            className="flex items-center justify-between p-4 cursor-pointer hover:bg-muted/30 transition-colors"
-            onClick={() => setIsSummaryExpanded(!isSummaryExpanded)}
-          >
+          <div className="flex items-center justify-between p-4 cursor-pointer hover:bg-muted/30 transition-colors" onClick={() => setIsSummaryExpanded(!isSummaryExpanded)}>
             <h3 className="text-sm font-medium text-foreground flex items-center gap-2">
               <FileText className="w-4 h-4 text-primary" />
               Session Summary
             </h3>
-            {isSummaryExpanded ? (
-              <ChevronUp className="w-4 h-4 text-muted-foreground" />
-            ) : (
-              <ChevronDown className="w-4 h-4 text-muted-foreground" />
-            )}
+            {isSummaryExpanded ? <ChevronUp className="w-4 h-4 text-muted-foreground" /> : <ChevronDown className="w-4 h-4 text-muted-foreground" />}
           </div>
-  
           {isSummaryExpanded && (
             <div className="px-4 pb-4">
               <div className="p-4 rounded-lg bg-card border border-border">
                 <p className="text-sm text-muted-foreground leading-relaxed">{sessionSummary}</p>
                 <div className="mt-3 pt-3 border-t border-border">
                   <div className="flex items-center justify-between text-xs text-muted-foreground">
-                    <span>Last updated: {/* dynamic time here */}</span>
-                    <button className="text-primary hover:text-primary/80 transition-colors font-medium">
-                      Regenerate
-                    </button>
+                    <span>Last updated: {lastUpdated}</span>
+                    <button onClick={generateSummary} className="text-primary hover:text-primary/80 transition-colors font-medium">Regenerate</button>
                   </div>
                 </div>
               </div>
             </div>
           )}
         </div>
-    
+
         {/* Notebook */}
         <div className="border-t border-border p-4 flex-1">
           <Notebook onExpand={onNotebookExpand} isExpanded={isNotebookExpanded} />
         </div>
-    
       </div>
     </div>
   );
-  
 }

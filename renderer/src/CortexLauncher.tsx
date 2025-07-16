@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Play, FolderOpen, Settings, User, Loader2 } from 'lucide-react';
+import { Play, FolderOpen, Settings as LucideSettings, User, Loader2 } from 'lucide-react';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
+import { Settings } from "@/components/Settings";
+import { Account } from "@/components/Account";
 
 const LiveClock = ({ className = "" }) => {
   const [time, setTime] = useState(new Date());
@@ -24,6 +26,7 @@ const LiveClock = ({ className = "" }) => {
 
 export function CortexLauncher() {
   const [isLoading, setIsLoading] = useState<string | null>(null);
+  const [view, setView] = useState<'launcher' | 'settings'>('launcher');
 
   const handleStartSession = () => {
     setIsLoading('start');
@@ -70,85 +73,90 @@ export function CortexLauncher() {
         <div className="flex items-center gap-4">
           <LiveClock className="hidden sm:block" />
           <div className="flex items-center gap-3">
-            <Button variant="ghost" size="icon" className="w-9 h-9 rounded-full hover:bg-muted/50 transition-all duration-300 hover:scale-105">
-              <Settings className="w-4 h-4 text-muted-foreground" />
+            <Button variant="ghost" size="icon" className="w-9 h-9 rounded-full hover:bg-muted/50 transition-all duration-300 hover:scale-105"
+            onClick={() => setView('settings')}>
+              <LucideSettings className="w-4 h-4 text-muted-foreground" />
             </Button>
-            <Avatar className="w-9 h-9 ring-2 ring-border/50 hover:ring-primary/30 transition-all duration-300 cursor-pointer">
-              <AvatarFallback className="bg-muted text-muted-foreground text-sm font-medium">
-                <User className="w-4 h-4" />
-              </AvatarFallback>
-            </Avatar>
+            <Account 
+          onExportData={() => console.log('Export data triggered')}
+          onDeleteData={() => console.log('Delete data triggered')}
+        />
           </div>
         </div>
       </header>
 
       {/* Main */}
       <main className="flex-1 flex items-center justify-center p-6">
-        <div className="glass rounded-3xl p-8 w-full max-w-lg animate-fade-in relative">
-          <div className="text-center mb-8">
-            <h2 className="text-4xl font-bold bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent mb-3">
-              Welcome to Cortex
-            </h2>
-            <p className="text-muted-foreground text-lg mb-6">
-              Great Work Awaits
-            </p>
+  {view === 'launcher' && (
+    <div className="glass rounded-3xl p-8 w-full max-w-lg animate-fade-in relative">
+      <div className="text-center mb-8">
+        <h2 className="text-4xl font-bold bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent mb-3">
+          Welcome to Cortex
+        </h2>
+        <p className="text-muted-foreground text-lg mb-6">Great Work Awaits</p>
 
-            <div className="space-y-4">
-              <Button 
-                onClick={handleStartSession}
-                disabled={isLoading !== null}
-                className="w-full h-14 bg-primary hover:bg-primary/90 text-primary-foreground font-medium rounded-2xl transition-all duration-300 hover:scale-[1.02] hover:shadow-xl group relative overflow-hidden"
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute inset-0 bg-primary/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-glow-pulse" />
-                <div className="relative flex items-center justify-center gap-3">
-                  {isLoading === 'start' ? (
-                    <>
-                      <div className="flex gap-1">
-                        <div className="w-2 h-2 bg-current rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
-                        <div className="w-2 h-2 bg-current rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
-                        <div className="w-2 h-2 bg-current rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
-                      </div>
-                      <span className="text-lg">Initializing Session...</span>
-                    </>
-                  ) : (
-                    <>
-                      <Play className="w-5 h-5" />
-                      <span className="text-lg">Start New Session</span>
-                    </>
-                  )}
-                </div>
-              </Button>
-
-              <Button 
-                onClick={handleLoadSession}
-                disabled={isLoading !== null}
-                variant="outline"
-                className="w-full h-12 glass-hover border-border/50 text-foreground font-medium rounded-xl transition-all duration-300 hover:scale-[1.02] group relative overflow-hidden hover:bg-muted hover:text-muted-foreground"
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-muted/20 to-muted/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="relative flex items-center justify-center gap-2">
-                  {isLoading === 'load' ? (
-                    <>
-                      <div className="flex gap-1">
-                        <div className="w-1.5 h-1.5 bg-current rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
-                        <div className="w-1.5 h-1.5 bg-current rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
-                        <div className="w-1.5 h-1.5 bg-current rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
-                      </div>
-                      <span>Loading Session...</span>
-                    </>
-                  ) : (
-                    <>
-                      <FolderOpen className="w-4 h-4" />
-                      <span>Load Previous Session</span>
-                    </>
-                  )}
-                </div>
-              </Button>
+        <div className="space-y-4">
+          <Button 
+            onClick={handleStartSession}
+            disabled={isLoading !== null}
+            className="w-full h-14 bg-primary hover:bg-primary/90 text-primary-foreground font-medium rounded-2xl transition-all duration-300 hover:scale-[1.02] hover:shadow-xl group relative overflow-hidden"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0 bg-primary/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-glow-pulse" />
+            <div className="relative flex items-center justify-center gap-3">
+              {isLoading === 'start' ? (
+                <>
+                  <div className="flex gap-1">
+                    <div className="w-2 h-2 bg-current rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
+                    <div className="w-2 h-2 bg-current rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
+                    <div className="w-2 h-2 bg-current rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+                  </div>
+                  <span className="text-lg">Initializing Session...</span>
+                </>
+              ) : (
+                <>
+                  <Play className="w-5 h-5" />
+                  <span className="text-lg">Start New Session</span>
+                </>
+              )}
             </div>
-          </div>
+          </Button>
+
+          <Button 
+            onClick={handleLoadSession}
+            disabled={isLoading !== null}
+            variant="outline"
+            className="w-full h-12 glass-hover border-border/50 text-foreground font-medium rounded-xl transition-all duration-300 hover:scale-[1.02] group relative overflow-hidden hover:bg-muted hover:text-muted-foreground"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-muted/20 to-muted/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="relative flex items-center justify-center gap-2">
+              {isLoading === 'load' ? (
+                <>
+                  <div className="flex gap-1">
+                    <div className="w-1.5 h-1.5 bg-current rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
+                    <div className="w-1.5 h-1.5 bg-current rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
+                    <div className="w-1.5 h-1.5 bg-current rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+                  </div>
+                  <span>Loading Session...</span>
+                </>
+              ) : (
+                <>
+                  <FolderOpen className="w-4 h-4" />
+                  <span>Load Previous Session</span>
+                </>
+              )}
+            </div>
+          </Button>
         </div>
-      </main>
+      </div>
+    </div>
+  )}
+
+  {view === 'settings' && (
+    <Settings onBack={() => setView('launcher')} />
+  )}
+</main>
+
 
       {/* Loading Overlay */}
       {isLoading && (

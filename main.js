@@ -95,6 +95,8 @@ let launcherWindow;
 let sessionWindow;
 let hudWindow;
 let overlayOpenedFromGlobal = false;
+let isSessionPaused = false;
+global.cortexSettings = loadSettings();
 
 const appDrivers = { chrome: chromeDriver, vscode: vscodeDriver };
 
@@ -103,7 +105,7 @@ const iconPath = path.resolve(
   'renderer',
   'public',
   'icons',
-  'cortexlogov1.icns'
+  'cortexlogov2.icns'
 );
 
 function createWindow() {
@@ -179,7 +181,8 @@ function createSessionWindow() {
       const previouslyHidden = workspaceManager.getPreviouslyHiddenApps();
       if (previouslyHidden?.length) showApps(previouslyHidden);
     }
-    createWindow();
+    // createWindow();
+    //open launcher again giving bugs so removing temporarily
   });
 
   win.on('focus', () => unregisterHotkeys());
@@ -215,8 +218,27 @@ function createOverlayWindow() {
   overlayWindow.hide();
   sessionManager.setOverlayWindow(overlayWindow);
 
+    // Add focus/blur event listeners with state checking
+    overlayWindow.on('focus', () => {
+      console.log('🎯 overlay focused - stopping auto-hide');
+      if (autoHideInterval) {
+        stopAutoHide();
+      }
+    });
+    
+  
   overlayWindow.on('blur', () => {
     if (!overlayWindow.isDestroyed()) overlayWindow.hide();
+
+    console.log('👋 overlay blurred - attempting auto-hide...');
+      setTimeout(() => {
+        if (!autoHideInterval && !isSessionPaused) {
+          console.log('⚙️ Session active — starting auto-hide');
+          startAutoHide();
+        } else if (isSessionPaused) {
+          console.log('⏸️ Session is paused — skipping auto-hide');
+        }
+      }, 500);
   });
 
   overlayWindow.on('closed', () => { overlayWindow = null; });
@@ -264,22 +286,22 @@ const COLLAPSED_HEIGHT = 70;
 
   // Add focus/blur event listeners with state checking
   hudWindow.on('focus', () => {
-      console.log('🎯 HUD focused - stopping auto-hide');
-      // Only stop auto-hide if it's currently active
-      if (autoHideInterval) {
-          stopAutoHide();
-      }
+    console.log('🎯 HUD focused - stopping auto-hide');
+    if (autoHideInterval) {
+      stopAutoHide();
+    }
   });
   
   hudWindow.on('blur', () => {
-      console.log('👋 HUD blurred - starting auto-hide');
-      // Small delay to prevent rapid toggling
-      setTimeout(() => {
-          // Only start auto-hide if it's not already running
-          if (!autoHideInterval) {
-              startAutoHide();
-          }
-      }, 500);
+    console.log('👋 HUD blurred - attempting auto-hide...');
+    setTimeout(() => {
+      if (!autoHideInterval && !isSessionPaused) {
+        console.log('⚙️ Session active — starting auto-hide');
+        startAutoHide();
+      } else if (isSessionPaused) {
+        console.log('⏸️ Session is paused — skipping auto-hide');
+      }
+    }, 500);
   });
 
   hudWindow.on('closed', () => {
@@ -302,7 +324,7 @@ function showOverlay(type) {
       width = 800; height = 470;
       break;
     case 'ai':
-      width = 450; height = 450;
+      width = 384; height = 485;
       x = bounds.width - width - 24;
       y = bounds.height - height - 24;
       break;
@@ -439,6 +461,7 @@ function getLastFocusedApp() {
 }
 
 
+
 ipcMain.handle('get-installed-apps', async () => {
   const apps = await getInstalledApps();
   const safeApps = apps.map(app => ({
@@ -472,8 +495,8 @@ ipcMain.handle('hide-background-apps', () => workspaceManager.hideBackgroundApps
 ipcMain.handle('show-all-apps', () => workspaceManager.showAllApps());
 ipcMain.handle('start-auto-hide', () => workspaceManager.startAutoHide());
 ipcMain.handle('stop-auto-hide', () => workspaceManager.stopAutoHide());
-ipcMain.handle('pause-workspace', () => workspaceManager.pauseWorkspace());
-ipcMain.handle('resume-workspace', () => workspaceManager.resumeWorkspace());
+ipcMain.handle('pause-workspace', () => { pauseWorkspace(); isSessionPaused = true;});
+ipcMain.handle('resume-workspace', () => { resumeWorkspace(); isSessionPaused = false});
 ipcMain.handle('clear-workspace', async () => { return await clearWorkspace(); });
 ipcMain.handle('get-session-data', () => ({
   liveWorkspace: getSessionData()

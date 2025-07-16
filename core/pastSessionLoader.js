@@ -26,6 +26,12 @@ function loadRecentSessionEventLogs(limit = 3) {
 }
 
 function formatEventLogForGPT(eventLog) {
+  
+  if (!Array.isArray(eventLog)) {
+    console.warn("🛑 formatEventLogForGPT called with invalid eventLog:", eventLog);
+    return "No session activity found.";
+  }
+
   return eventLog.map(e => {
     const time = new Date(e.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
     const details = e.url

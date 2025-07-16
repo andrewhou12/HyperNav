@@ -1,0 +1,19 @@
+{
+  "sessionName": "Session_2025-07-16T20:53:54.723Z",
+  "createdAt": "2025-07-16T20:53:54.725Z",
+  "liveWorkspace": {
+    "apps": [],
+    "activeAppId": null,
+    "activeWindowId": null
+  },
+  "eventLog": [
+    {
+      "type": "session_started",
+      "timestamp": "2025-07-16T20:53:55.134Z",
+      "data": {
+        "type": "session_started",
+        "sessionName": "Session_2025-07-16T20:53:54.723Z"
+      }
+    }
+  ]
+}

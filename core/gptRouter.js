@@ -5,7 +5,7 @@ const { loadRecentSessionEventLogs, formatEventLogForGPT } = require('./pastSess
 
 // === 1. GPT Answering for User Queries ===
 
-async function askGPT({ userInput, currentContext = "", includeContext = true }) {
+async function askGPTWithContext({ userInput, currentContext = "", includeContext = true, chatHistory = [] }) {
   let systemPrompt = `You are Cortex, an AI productivity assistant. Respond clearly, briefly, and helpfully.\n\n`;
 
   if (includeContext) {
@@ -17,8 +17,10 @@ async function askGPT({ userInput, currentContext = "", includeContext = true })
     systemPrompt += `If relevant, you may suggest applying your answer to the user’s current workspace.`;
   }
 
+  // Construct message list
   const messages = [
     { role: "system", content: systemPrompt },
+    ...chatHistory, // full conversation history
     { role: "user", content: userInput }
   ];
 
@@ -30,10 +32,11 @@ async function askGPT({ userInput, currentContext = "", includeContext = true })
   return response.choices[0].message.content;
 }
 
-ipcMain.handle('ask-gpt', async (event, payload) => {
-  const { userInput, currentContext = "", includeContext = true } = payload;
+ipcMain.handle('ask-gpt-with-context', async (event, payload) => {
+  const { userInput, currentContext = "", includeContext = true, chatHistory = [] } = payload;
+
   try {
-    const response = await askGPT({ userInput, currentContext, includeContext });
+    const response = await askGPTWithContext({ userInput, currentContext, includeContext, chatHistory });
     return response;
   } catch (err) {
     console.error("❌ GPT handler error:", err);
@@ -84,7 +87,7 @@ async function interpretCommand(userText) {
   ];
 
   const response = await openai.chat.completions.create({
-    model: 'gpt-3.5-turbo',
+    model: 'gpt-4-turbo',
     messages,
     response_format: "json",
   });
@@ -106,7 +109,7 @@ async function routeUserInput({ userInput, currentContext = "" }) {
       content: `You are an intent router for a productivity assistant. 
 Decide what the user wants you to do. Return one of:
 
-- "askGPT" — general question, brainstorming, text analysis
+- "askGPTWithContext" — general question, brainstorming, text analysis using present and past session context
 - "summarizeSession" — request for session summary
 - "interpretCommand" — command like "add Chrome to workspace"
 
@@ -119,11 +122,22 @@ Respond with just the intent.`,
   ];
 
   const response = await openai.chat.completions.create({
-    model: 'gpt-3.5-turbo',
+    model: 'gpt-4-turbo',
     messages,
   });
 
   return response.choices[0].message.content.trim();
+}
+//askgpt from inlineAI
+
+
+async function askGPT({ messages }) {
+  const response = await openai.chat.completions.create({
+    model: 'gpt-4-turbo',
+    messages,
+  });
+
+  return response.choices[0].message.content;
 }
 
 ipcMain.handle('handle-user-input', async (event, { userInput, currentContext = "", eventLog = [] }) => {
@@ -131,8 +145,8 @@ ipcMain.handle('handle-user-input', async (event, { userInput, currentContext = 
     const intent = await routeUserInput({ userInput, currentContext });
 
     switch (intent) {
-      case "askGPT":
-        return await askGPT({ userInput, currentContext, includeContext: true });
+      case "askGPTWithContext":
+        return await askGPTWithContext({ userInput, currentContext, includeContext: true });
 
       case "summarizeSession":
         return await summarizeSession(eventLog);
@@ -148,7 +162,19 @@ ipcMain.handle('handle-user-input', async (event, { userInput, currentContext = 
     throw err;
   }
 });
+
+ipcMain.handle('ask-gpt', async (event, payload) => {
+  const { messages } = payload;
+  try {
+    const response = await askGPT({ messages });
+    return response;
+  } catch (err) {
+    console.error("❌ GPT handler error:", err);
+    throw err;
+  }
+});
 module.exports = {
+  askGPTWithContext,
   askGPT,
   summarizeSession,
   interpretCommand,

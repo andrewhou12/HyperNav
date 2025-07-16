@@ -44,7 +44,7 @@
       "buildResources": "renderer/public/icons"
     },
     "mac": {
-      "icon": "cortexlogov1.icns"
+      "icon": "cortexlogov2.icns"
     }
   }
 }

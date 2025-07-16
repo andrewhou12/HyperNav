@@ -14,6 +14,9 @@ export const ClipboardManager: React.FC = () => {
   const [clipboardHistory, setClipboardHistory] = useState<ClipboardItem[]>([]);
   const [editingId, setEditingId] = useState<string | null>(null);
   const [editContent, setEditContent] = useState('');
+  const [userClearedHistory, setUserClearedHistory] = useState(false);
+
+  
 
   useEffect(() => {
     const saved = localStorage.getItem('cortex-clipboard-history');
@@ -31,11 +34,12 @@ export const ClipboardManager: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('cortex-clipboard-history', JSON.stringify(clipboardHistory));
-  }, [clipboardHistory]);
-
-  useEffect(() => {
     const syncClipboard = async () => {
+
+      if (userClearedHistory) {
+        setUserClearedHistory(false); // Reset flag
+        return; // Skip this sync cycle
+      }
       try {
         const content = await window.electron.getClipboardText();
         if (!content || typeof content !== 'string' || content.trim() === '') return;
@@ -52,7 +56,9 @@ export const ClipboardManager: React.FC = () => {
             type: content.startsWith('http') ? 'link' : 'text',
           };
 
-          return [newItem, ...prev];
+          const updated = [newItem, ...prev];
+          localStorage.setItem('cortex-clipboard-history', JSON.stringify(updated));
+          return updated;
         });
       } catch (err) {
         console.warn('Failed to read clipboard:', err);
@@ -78,25 +84,34 @@ export const ClipboardManager: React.FC = () => {
   };
 
   const handleSave = (id: string) => {
-    setClipboardHistory(prev =>
-      prev.map(item => (item.id === id ? { ...item, content: editContent } : item))
+    const updated = clipboardHistory.map(item =>
+      item.id === id ? { ...item, content: editContent } : item
     );
+    setClipboardHistory(updated);
+    localStorage.setItem('cortex-clipboard-history', JSON.stringify(updated));
     setEditingId(null);
   };
 
   const handlePin = (id: string) => {
-    setClipboardHistory(prev =>
-      prev.map(item => (item.id === id ? { ...item, isPinned: !item.isPinned } : item))
+    const updated = clipboardHistory.map(item =>
+      item.id === id ? { ...item, isPinned: !item.isPinned } : item
     );
+    setClipboardHistory(updated);
+    localStorage.setItem('cortex-clipboard-history', JSON.stringify(updated));
   };
 
   const handleDelete = (id: string) => {
-    setClipboardHistory(prev => prev.filter(item => item.id !== id));
+    const updated = clipboardHistory.filter(item => item.id !== id);
+    setClipboardHistory(updated);
+    localStorage.setItem('cortex-clipboard-history', JSON.stringify(updated));
   };
 
   const handleClearAll = () => {
-    setClipboardHistory(prev => prev.filter(item => item.isPinned));
-  };
+    const updated = clipboardHistory.filter(item => item.isPinned);
+    setClipboardHistory(updated);
+    localStorage.setItem('cortex-clipboard-history', JSON.stringify(updated));
+    setUserClearedHistory(true);
+  };;
 
   const truncateText = (text: string, maxLength = 100) =>
     text.length > maxLength ? text.substring(0, maxLength) + '...' : text;

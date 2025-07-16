@@ -137,7 +137,7 @@ export function SmartLauncher({ isOpen, onClose, onChromeSearch, withBackdrop = 
       className="w-full max-w-2xl relative"
       onClick={e => e.stopPropagation()}
     >
-      <div className="glass rounded-2xl p-6 mb-4">
+      <div className="glass rounded-2xl p-6 mb-4 border border-border">
         <div className="relative">
           <Rocket className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground w-5 h-5" />
           <input
@@ -151,7 +151,7 @@ export function SmartLauncher({ isOpen, onClose, onChromeSearch, withBackdrop = 
         </div>
       </div>
 
-      <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="glass rounded-xl px-4 py-3 mb-4">
+      <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="glass rounded-xl px-4 py-3 mb-4 border border-border">
         <div className="flex items-center justify-center space-x-8 text-sm text-muted-foreground">
           <div className="flex items-center space-x-2">
             <span className="px-2 py-1 bg-muted rounded text-xs font-medium">↵</span>
@@ -168,7 +168,7 @@ export function SmartLauncher({ isOpen, onClose, onChromeSearch, withBackdrop = 
 
       <AnimatePresence>
         {results.length > 0 && (
-          <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }} className="glass rounded-xl overflow-hidden">
+          <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }} className="glass rounded-xl overflow-hidden border border-border">
             <div className="p-4">
               <div className="text-sm font-medium text-muted-foreground mb-3">{filteredApps.length > 0 ? "Apps" : "Search"}</div>
               <div className="space-y-1">

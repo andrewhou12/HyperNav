@@ -40,38 +40,55 @@ export const CortexInlineAssistant: React.FC<CortexInlineAssistantProps> = ({ is
   const [isExpanded, setIsExpanded] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
+//persist chat history:
 
+useEffect(() => {
+  const stored = localStorage.getItem('cortex-inline-history');
+  if (stored) {
+    try {
+      const parsed = JSON.parse(stored);
+      setMessages(parsed.map((m: any) => ({
+        ...m,
+        timestamp: new Date(m.timestamp)
+      })));
+    } catch (e) {
+      console.warn("Failed to parse chat history:", e);
+    }
+  }
+}, []);
   // Monitor text selection
   useEffect(() => {
     if (!isOpen) return;
-
-    const handleSelection = () => {
-      const selection = window.getSelection();
-      const selectedText = selection?.toString().trim();
-      
-      if (selectedText && selectedText.length > 10) {
-        const preview = selectedText.length > 40 ? selectedText.substring(0, 40) + '...' : selectedText;
+  
+    const tryInsertClipboardAsHighlight = async () => {
+      const clipboardText = await window.electron.getClipboardText?.();
+      const trimmed = clipboardText?.trim();
+  
+      if (trimmed && trimmed.length > 10) {
+        const preview = trimmed.length > 40 ? trimmed.slice(0, 40) + '...' : trimmed;
+  
         const newBubble: MemoryBubble = {
           id: `highlight-${Date.now()}`,
           type: 'highlight',
-          content: selectedText,
+          content: trimmed,
           preview
         };
-        
+  
         setMemoryBubbles(prev => {
-          // Remove existing highlight bubbles and add new one
           const filtered = prev.filter(b => b.type !== 'highlight');
           return [newBubble, ...filtered];
         });
+
+        setSelectedBubble(newBubble.id);
+        setInputValue('');
+        inputRef.current?.focus();
       }
     };
-
-    // Add event listeners
-    document.addEventListener('selectionchange', handleSelection);
-
-    return () => {
-      document.removeEventListener('selectionchange', handleSelection);
-    };
+  
+    setTimeout(() => {
+      tryInsertClipboardAsHighlight();
+    }, 100); // wait a frame after opening
+  
   }, [isOpen]);
 
   // Focus input when opened and handle escape key
@@ -92,41 +109,85 @@ export const CortexInlineAssistant: React.FC<CortexInlineAssistantProps> = ({ is
     return () => document.removeEventListener('keydown', handleEscape);
   }, [isOpen, onClose]);
 
-  const handleSendMessage = async () => {
+  const handleSendMessage = async ({ useContext }: { useContext: boolean }) => {
     if (!inputValue.trim()) return;
-
-    const userMessage: Message = {
+  
+    // Optionally use the latest highlight if none is selected
+    let contextBubble: MemoryBubble | undefined = undefined;
+    if (useContext) {
+      contextBubble = memoryBubbles.find(b => b.id === selectedBubble) ?? memoryBubbles[0];
+    }
+  
+    const newUserMessage: Message = {
       id: Date.now().toString(),
       type: 'user',
-      content: inputValue,
+      content: inputValue.trim(),
       timestamp: new Date(),
     };
-
-    setMessages(prev => [...prev, userMessage]);
+  
+    const updatedMessages = [...messages, newUserMessage];
+    setMessages(updatedMessages);
     setInputValue('');
     setIsTyping(true);
-
-    // Simulate AI response
-    setTimeout(() => {
+  
+    try {
+      const gptMessages = [
+        {
+          role: "system",
+          content: `You are Cortex, an AI assistant for productivity, translation, and explanation.${
+            contextBubble ? ` Consider this context: "${contextBubble.content}"` : ''
+          }`
+        },
+        ...updatedMessages.map((msg) => ({
+          role: msg.type === 'user' ? 'user' : 'assistant',
+          content: msg.content
+        })),
+      ];
+  
+      if (gptMessages.length < 2) {
+        console.warn("⚠️ Not enough messages to send to GPT.");
+        setIsTyping(false);
+        return;
+      }
+  
+      const response = await window.electron.askGPT({ messages: gptMessages });
+  
       const assistantMessage: Message = {
         id: (Date.now() + 1).toString(),
         type: 'assistant',
-        content: DEMO_RESPONSES[Math.floor(Math.random() * DEMO_RESPONSES.length)],
+        content: response,
         timestamp: new Date(),
       };
-      setMessages(prev => [...prev, assistantMessage]);
-      setIsTyping(false);
-    }, 1000);
+  
+      const fullConversation = [...updatedMessages, assistantMessage];
+      setMessages(fullConversation);
+      localStorage.setItem('cortex-inline-history', JSON.stringify(fullConversation));
+    } catch (err) {
+      console.error("GPT error:", err);
+    }
+  
+    setIsTyping(false);
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter') {
-      handleSendMessage();
+      e.preventDefault();
+  
+      if (e.shiftKey) {
+        handleSendMessage({ useContext: true });
+      } else {
+        handleSendMessage({ useContext: false });
+      }
     }
   };
 
   const handleBubbleClick = (bubbleId: string) => {
-    setSelectedBubble(selectedBubble === bubbleId ? null : bubbleId);
+    const bubble = memoryBubbles.find(b => b.id === bubbleId);
+    if (!bubble) return;
+  
+    setSelectedBubble(bubbleId);
+    setInputValue(bubble.content);
+    inputRef.current?.focus();
   };
 
   const handleRemoveBubble = (bubbleId: string, e: React.MouseEvent) => {
@@ -137,31 +198,38 @@ export const CortexInlineAssistant: React.FC<CortexInlineAssistantProps> = ({ is
     }
   };
 
-  const handleActionButton = (action: 'explain' | 'translate' | 'rephrase') => {
+  const handleActionButton = async (action: 'explain' | 'translate' | 'rephrase') => {
     if (!selectedBubble) return;
     
     const bubble = memoryBubbles.find(b => b.id === selectedBubble);
     if (!bubble) return;
-
-    let prompt = '';
+  
+    let prefix = '';
     switch (action) {
       case 'explain':
-        prompt = `Explain this: ${bubble.content}`;
+        prefix = `Explain this: `;
         break;
       case 'translate':
-        prompt = `Translate this to English: ${bubble.content}`;
+        prefix = `Translate this to English: `;
         break;
       case 'rephrase':
-        prompt = `Rephrase this: ${bubble.content}`;
+        prefix = `Rephrase this: `;
         break;
     }
-    setInputValue(prompt);
+  
+    const newInput = `${prefix}${bubble.content}`;
+    setInputValue(newInput);
     inputRef.current?.focus();
+
+  // Optional: immediately send
+  await new Promise(resolve => setTimeout(resolve, 100));
+  handleSendMessage();
   };
 
   const handleClearChat = () => {
     setMessages([]);
-    setIsTyping(false);
+  localStorage.removeItem('cortex-inline-history');
+  setIsTyping(false);
   };
 
   if (!isOpen) {
@@ -169,12 +237,12 @@ export const CortexInlineAssistant: React.FC<CortexInlineAssistantProps> = ({ is
   }
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 pointer-events-none">
+    <div className="fixed inset-0 z-50 flex items-center justify-center pointer-events-none">
       <div className={cn(
         "bg-white/95 backdrop-blur-xl rounded-2xl border border-border shadow-2xl pointer-events-auto",
         "animate-in slide-in-from-bottom-4 zoom-in-95 duration-300",
         "flex flex-col overflow-hidden",
-        isExpanded ? "w-[600px] h-[80vh]" : "w-96 h-auto max-h-[80vh]"
+        isExpanded ? "w-[600px] h-[100vh]" : "w-96 h-[100vh]"
       )}>
         {/* Header */}
         <div className="flex items-center justify-between p-4 border-b border-border/50">
@@ -187,45 +255,64 @@ export const CortexInlineAssistant: React.FC<CortexInlineAssistantProps> = ({ is
             </div>
           </div>
           <Button
-            onClick={() => setIsExpanded(!isExpanded)}
-            variant="ghost"
-            size="sm"
-            className="h-8 w-8 p-0"
-          >
-            {isExpanded ? <ChevronDown className="h-4 w-4" /> : <ChevronUp className="h-4 w-4" />}
-          </Button>
+  onClick={() => {
+    const next = !isExpanded;
+    setIsExpanded(next);
+
+    // Call Electron resize function
+    window.electron.resizeOverlayWindow?.(
+      next ? 600 : 384,   // width: match w-[600px] and w-96
+      next ? 700 : 485    // height: estimate or match target height
+    );
+  }}
+  variant="ghost"
+  size="sm"
+  className="h-8 w-8 p-0"
+>
+  {isExpanded ? <ChevronDown className="h-4 w-4" /> : <ChevronUp className="h-4 w-4" />}
+</Button>
         </div>
 
-        {/* Memory Layer - Bubbles */}
-        {memoryBubbles.length > 0 && (
-          <div className="p-4 border-b border-border/50">
-            <div className="flex flex-wrap gap-2">
-              {memoryBubbles.map((bubble) => (
-                <div
-                  key={bubble.id}
-                  onClick={() => handleBubbleClick(bubble.id)}
-                  className={cn(
-                    "relative group cursor-pointer rounded-lg px-3 py-2 text-xs border transition-all",
-                    selectedBubble === bubble.id
-                      ? "bg-primary/10 border-primary text-primary"
-                      : "bg-muted/50 border-border hover:bg-muted text-muted-foreground hover:text-foreground"
-                  )}
-                >
-                  <div className="flex items-center gap-2">
-                    <div className="h-2 w-2 rounded-full bg-blue-500" />
-                    <span className="truncate max-w-[120px]">{bubble.preview}</span>
-                    <button
-                      onClick={(e) => handleRemoveBubble(bubble.id, e)}
-                      className="opacity-0 group-hover:opacity-100 transition-opacity ml-1 text-muted-foreground hover:text-destructive"
-                    >
-                      <X className="h-3 w-3" />
-                    </button>
-                  </div>
-                </div>
-              ))}
+       {/* Memory Layer - Bubbles */}
+<div className="p-4 border-b border-border/50 h-[96px]">
+  {memoryBubbles.length > 0 ? (
+    <>
+      <div className="flex flex-wrap gap-2">
+        {memoryBubbles.map((bubble) => (
+          <div
+            key={bubble.id}
+            onClick={() => handleBubbleClick(bubble.id)}
+            className={cn(
+              "relative group cursor-pointer rounded-lg px-3 py-2 text-xs border transition-all",
+              selectedBubble === bubble.id
+                ? "bg-primary/10 border-primary text-primary"
+                : "bg-muted/50 border-border hover:bg-muted text-muted-foreground hover:text-foreground"
+            )}
+          >
+            <div className="flex items-center gap-2">
+              <div className="h-2 w-2 rounded-full bg-blue-500" />
+              <span className="truncate max-w-[120px]">{bubble.preview}</span>
+              <button
+                onClick={(e) => handleRemoveBubble(bubble.id, e)}
+                className="opacity-0 group-hover:opacity-100 transition-opacity ml-1 text-muted-foreground hover:text-destructive"
+              >
+                <X className="h-3 w-3" />
+              </button>
             </div>
           </div>
-        )}
+        ))}
+      </div>
+
+      <div className="mt-2 px-1 text-xs text-muted-foreground h-4">
+        {selectedBubble ? "Using highlighted context in this message." : null}
+      </div>
+    </>
+  ) : (
+    <div className="text-xs text-muted-foreground h-full flex items-center">
+      No context in clipboard
+    </div>
+  )}
+</div>
 
         {/* Chat Area */}
         <div className={cn(
@@ -242,7 +329,7 @@ export const CortexInlineAssistant: React.FC<CortexInlineAssistantProps> = ({ is
               </p>
               <p className="text-xs text-muted-foreground mt-1">
                 {memoryBubbles.length === 0 
-                  ? "Highlight text to create memory bubbles" 
+                  ? "Copy text to create memory bubbles" 
                   : "Select a memory bubble or ask me anything"
                 }
               </p>
@@ -302,7 +389,7 @@ export const CortexInlineAssistant: React.FC<CortexInlineAssistantProps> = ({ is
               />
             </div>
             <Button
-              onClick={handleSendMessage}
+              onClick={() => handleSendMessage({ useContext: false })}
               disabled={!inputValue.trim() || isTyping}
               size="sm"
               className="h-10 w-10 rounded-lg"
@@ -371,8 +458,8 @@ export const CortexInlineAssistant: React.FC<CortexInlineAssistantProps> = ({ is
           </div>
           
           <p className="text-xs text-muted-foreground mt-2 text-center">
-            Enter to send • Esc to close
-          </p>
+  Press <kbd>Enter</kbd> to send • <kbd>Esc</kbd> to close
+</p>
         </div>
       </div>
     </div>

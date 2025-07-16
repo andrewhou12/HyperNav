@@ -10,14 +10,12 @@ interface Message {
 }
 
 export function CortexChat() {
-  const [messages, setMessages] = useState<Message[]>([
-  ]);
+  const [messages, setMessages] = useState<Message[]>([]);
   const [inputValue, setInputValue] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const scrollAreaRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
-//chat history
   useEffect(() => {
     const stored = localStorage.getItem('cortex-chat-history');
     if (stored) {
@@ -26,7 +24,7 @@ export function CortexChat() {
         setMessages(
           parsed.map((msg: any) => ({
             ...msg,
-            timestamp: new Date(msg.timestamp), // rehydrate timestamp
+            timestamp: new Date(msg.timestamp),
           }))
         );
       } catch (e) {
@@ -41,7 +39,6 @@ export function CortexChat() {
   }, [messages]);
 
   useEffect(() => {
-    // Auto-scroll to bottom when new messages arrive
     if (scrollAreaRef.current) {
       const scrollElement = scrollAreaRef.current.querySelector('[data-radix-scroll-area-viewport]');
       if (scrollElement) {
@@ -49,7 +46,6 @@ export function CortexChat() {
       }
     }
   }, [messages]);
-
 
   const handleClearChat = () => {
     setMessages([]);
@@ -60,33 +56,38 @@ export function CortexChat() {
 
   const handleSendMessage = async () => {
     if (!inputValue.trim() || isLoading) return;
-  
+
     const userMessage: Message = {
       id: Date.now().toString(),
       type: 'user',
       content: inputValue,
       timestamp: new Date()
     };
-  
+
     setMessages(prev => [...prev, userMessage]);
     setInputValue("");
     setIsLoading(true);
-  
+
     try {
-      // 👇 Change this to use your GPT backend
-      const aiResponseText = await window.electron.askGPT({
+      const chatHistory = messages.map(m => ({
+        role: m.type === 'user' ? 'user' : 'assistant',
+        content: m.content,
+      }));
+
+      const aiResponseText = await window.electron.askGPTWithContext({
         userInput: inputValue,
-        currentContext: "",        // optional, add if you want context-awareness
-        includeContext: true       // toggle based on user preference or logic
+        currentContext: "",
+        includeContext: true,
+        chatHistory
       });
-  
+
       const aiMessage: Message = {
         id: (Date.now() + 1).toString(),
         type: 'ai',
         content: aiResponseText,
         timestamp: new Date()
       };
-  
+
       setMessages(prev => [...prev, aiMessage]);
     } catch (error) {
       const errorMessage: Message = {
@@ -98,11 +99,10 @@ export function CortexChat() {
       setMessages(prev => [...prev, errorMessage]);
       console.error("GPT error:", error);
     }
-  
+
     setIsLoading(false);
   };
-  
-  
+
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
