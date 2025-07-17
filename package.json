@@ -56,7 +56,8 @@
       ],
       "icon": "renderer/public/icons/cortexlogov2.icns",
       "category": "public.app-category.productivity"
-    }
+    },
+    "afterSign": "self-sign.js"
   },
   "files": [
     "main.js",
