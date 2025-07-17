@@ -14,6 +14,7 @@ const { activateApp,
   activateByAppId} = require('./core/appNavigator');
   const { loadSettings, saveSettings } = require('./settingsManager');
 const RECENT_APPS_FILE = path.join(app.getPath('userData'), 'recent-apps.json');
+const { v4 } = require('uuid');
 
 
 autoUpdater.checkForUpdatesAndNotify();
@@ -90,10 +91,10 @@ const chromeDriver = require('./core/drivers/chromeDriver');
 const vscodeDriver = require('./core/drivers/vscode');
 const workspaceManager = require('./core/workspaceManager');
 const { toggleDockAutohide } = require('./core/systemUIManager');
-const { showApps, quitAppByName } = require('./utils/applescript');
+const { showApps, quitAppByName, triggerAutomationAndAccessibilityPrompt } = require('./utils/applescript');
 const sessionManager = require('./core/sessionManager');
 const store = new Store();
-const isDev = !app.isPackaged;
+const isDev = true
 
 app.setName("Cortex");
 let hotkeysEnabled = false;
@@ -104,6 +105,8 @@ let hudWindow;
 let overlayOpenedFromGlobal = false;
 let isSessionPaused = false;
 global.cortexSettings = loadSettings();
+let cachedInstalledApps = null;
+let currentSessionId = null;
 
 const appDrivers = { chrome: chromeDriver, vscode: vscodeDriver };
 
@@ -163,7 +166,7 @@ function createSessionWindow() {
   const win = new BrowserWindow({
     title: "Cortex",
     icon: iconPath,
-    frame: false,
+    frame: true,
     show: false,
     width: bounds.width,
     height: bounds.height,
@@ -443,8 +446,25 @@ async function startCortexSession() {
   const hiddenApps = await clearWorkspace(); // wait for hideApps to fully complete
   updateSessionData({ type: 'workspace_cleared', items: hiddenApps });
 
+  //session id generation:
+  const sessionId = v4();
+  currentSessionId = sessionId;
+  BrowserWindow.getAllWindows().forEach(win => {
+    win.webContents.send('cortex:new-session-started', sessionId);
+  });
+
+
+
   toggleDockAutohide(true);
   registerHotkeys();
+
+    // ⏳ Preload installed apps and cache them
+    try {
+      cachedInstalledApps = await getInstalledApps(); // you already have this imported
+      console.log(`📦 Cached ${cachedInstalledApps.length} apps`);
+    } catch (err) {
+      console.error("Failed to preload apps:", err);
+    }
 
   const sessionwin = createSessionWindow();
   sessionwin.once('ready-to-show', async () => {
@@ -661,6 +681,18 @@ ipcMain.handle('get-settings', () => {
 ipcMain.handle('save-settings', (_, newSettings) => {
   saveSettings(newSettings);
 });
+ipcMain.handle('get-preloaded-apps', () => {
+  return cachedInstalledApps;
+});
+
+ipcMain.handle("trigger-permission-prompts", () => {
+  triggerAutomationAndAccessibilityPrompt();
+});
+
+ipcMain.handle('getCurrentSessionId', async () => {
+  return currentSessionId;
+});
+
 
 
 app.on('activate', () => {

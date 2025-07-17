@@ -4,6 +4,7 @@ contextBridge.exposeInMainWorld('electron', {
   getSettings: () => ipcRenderer.invoke('get-settings'),
   saveSettings: (settings) => ipcRenderer.invoke('save-settings', settings),
   saveSession: () => ipcRenderer.invoke('save-session'),
+  getPreloadedApps: () => ipcRenderer.invoke("get-preloaded-apps"),
   chooseApp: () => ipcRenderer.invoke('choose-app'),
   askGPTWithContext: (payload) => ipcRenderer.invoke('ask-gpt-with-context', payload),
   askGPT: (payload) => ipcRenderer.invoke('ask-gpt', payload),
@@ -16,6 +17,8 @@ contextBridge.exposeInMainWorld('electron', {
   markAppUsed: (app) => ipcRenderer.invoke('mark-app-used', app),
   hideBackgroundApps: () => ipcRenderer.invoke('hide-background-apps'),
   showAllApps: () => ipcRenderer.invoke('show-all-apps'),
+  triggerAutomationAndAccessibilityPrompt: () =>
+    ipcRenderer.invoke("trigger-permission-prompts"),
   startAutoHide: () => ipcRenderer.invoke('start-auto-hide'),
   stopAutoHide: () => ipcRenderer.invoke('stop-auto-hide'),
   pauseWorkspace: () => ipcRenderer.invoke('pause-workspace'),
@@ -40,9 +43,15 @@ openInlineGPT: () => ipcRenderer.invoke('open-inline-gpt'),
 openUtilitiesOverlay: () => ipcRenderer.invoke('open-utilities-overlay'),
 openSmartLauncher: () => ipcRenderer.invoke('open-smart-launcher'),
 getCurrentApp: () => ipcRenderer.invoke('get-current-app'),
+getCurrentSessionId: () => ipcRenderer.invoke('getCurrentSessionId'),
   onLiveWorkspaceUpdate: (callback) => {
     ipcRenderer.on('live-workspace-update', (event, liveWorkspace) => {
       callback(liveWorkspace);
+    });
+  },
+  onNewSessionStarted: (callback) => {
+    ipcRenderer.on('cortex:new-session-started', () => {
+      callback();
     });
   },
   onSessionStatusUpdated: (callback) => {

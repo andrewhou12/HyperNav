@@ -58,7 +58,22 @@ export function SmartLauncher({ isOpen, onClose, onChromeSearch, withBackdrop = 
 
   useEffect(() => {
     if (!isOpen) return;
-    window.electron.getInstalledApps?.().then(setAvailableApps).catch(console.error);
+  
+    const fetchApps = async () => {
+      try {
+        const cached = await window.electron.getPreloadedApps?.();
+        if (cached && cached.length > 0) {
+          setAvailableApps(cached);
+        } else {
+          const fresh = await window.electron.getInstalledApps?.();
+          setAvailableApps(fresh);
+        }
+      } catch (err) {
+        console.error("Failed to fetch apps:", err);
+      }
+    };
+  
+    fetchApps();
     window.electron.getRecentApps?.().then(setRecentApps).catch(console.error);
     inputRef.current?.focus();
   }, [isOpen]);

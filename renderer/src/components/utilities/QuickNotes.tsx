@@ -41,7 +41,7 @@ export const QuickNotes: React.FC<QuickNotesProps> = ({ isExpanded, onToggleExpa
         value={note}
         onChange={(e) => setNote(e.target.value)}
         placeholder="Jot something down…"
-        className={`w-full p-3 rounded-xl border border-border bg-card/50 resize-none focus:outline-none focus:ring-2 focus:ring-primary transition-all flex-1 ${
+        className={`w-full p-3 rounded-xl border border-border bg-card/50 resize-none focus:outline-none transition-all flex-1 ${
           isExpanded ? 'min-h-[400px]' : 'min-h-[250px]'
         }`}
       />

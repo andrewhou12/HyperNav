@@ -9,13 +9,14 @@ import SuccessAnimation from './SuccessAnimation';
 import AuthenticationPage from './AuthenticationPage';
 import IntroSlides from './IntroSlides';
 import HotkeyTrainer from './HotkeyTrainer';
+import MacPermissions from './MacPermissions';
 
 export type OnboardingStep = 
   | 'mindset'
-  | 'loading'
   | 'auth'
   | 'intro'
   | 'personalization'
+  | 'permissions'
   | 'success'
   | 'hotkeys'
   | 'complete';
@@ -40,6 +41,10 @@ const OnboardingFlow: React.FC<OnboardingFlowProps> = ({ onComplete }) => {
     setCurrentStep('success');
   };
 
+  const handleSkipPermissions = () => {
+    setCurrentStep('success');
+  };
+
   const handleSkipHotkeys = () => {
     setCurrentStep('complete');
     onComplete?.();
@@ -49,17 +54,11 @@ const OnboardingFlow: React.FC<OnboardingFlowProps> = ({ onComplete }) => {
     switch (currentStep) {
       case 'mindset':
         return (<MindsetSplash 
-          onComplete={() => handleStepComplete('loading')} />
+          onComplete={() => handleStepComplete('auth')} />
 
 
         );
       
-      case 'loading':
-        return (
-          <WelcomeLoading 
-            onComplete={() => handleStepComplete('auth')} 
-          />
-        );
       
       case 'auth':
         return (
@@ -78,10 +77,19 @@ const OnboardingFlow: React.FC<OnboardingFlowProps> = ({ onComplete }) => {
       case 'personalization':
         return (
           <PersonalizationPage 
-            onComplete={() => handleStepComplete('success')}
+            onComplete={() => handleStepComplete('permissions')}
             onSkip={handleSkipPersonalization}
           />
         );
+
+        case 'permissions':
+        return (
+          <MacPermissions 
+            onComplete={() => handleStepComplete('success')}
+            onSkip={handleSkipPermissions}
+          />
+        );
+      
       
       case 'success':
         return (

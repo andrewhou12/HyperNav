@@ -2,6 +2,9 @@
 const { ipcMain } = require('electron');
 const openai = require('./openaiClient');
 const { loadRecentSessionEventLogs, formatEventLogForGPT } = require('./pastSessionLoader');
+const {
+  getSessionData,
+} = require('./sessionManager');
 
 // === 1. GPT Answering for User Queries ===
 
@@ -9,8 +12,19 @@ async function askGPTWithContext({ userInput, currentContext = "", includeContex
   let systemPrompt = `You are Cortex, an AI productivity assistant. Respond clearly, briefly, and helpfully.\n\n`;
 
   if (includeContext) {
-    const pastEvents = loadRecentSessionEventLogs(3);
-    const formattedPast = formatEventLogForGPT(pastEvents);
+    // Load past saved logs (up to 3 recent sessions)
+    const pastEvents = loadRecentSessionEventLogs(3) || [];
+  
+    // Live session memory
+    sessionData = getSessionData();
+    const liveEvents = sessionData?.eventLog || [];
+  
+    // Merge and deduplicate (if needed)
+    const combinedEvents = [...pastEvents, ...liveEvents];
+  
+    console.log("🧠 Combined Event Logs:", combinedEvents);
+  
+    const formattedPast = formatEventLogForGPT(combinedEvents);
 
     systemPrompt += `User’s recent work timeline:\n${formattedPast}\n\n`;
     systemPrompt += `Current context:\n${currentContext}\n\n`;

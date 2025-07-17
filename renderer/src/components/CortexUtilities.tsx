@@ -27,7 +27,7 @@ export const CortexUtilities: React.FC<CortexUtilitiesProps> = ({ isOpen, onClos
   const handleExpand = (shouldExpand: boolean) => {
     setIsExpanded(shouldExpand);
     window.electron.resizeOverlayWindow(
-      shouldExpand ? 1000 : 550,
+      shouldExpand ? 1000 : 500,
       shouldExpand ? 1000 : 650
     );
   };

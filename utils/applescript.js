@@ -111,6 +111,32 @@ function getActiveApp(callback) {
   );
 }
 
+function triggerAutomationAndAccessibilityPrompt() {
+  // Accessibility Prompt: Requires control of System Events
+  exec(
+    `osascript -e 'tell application "System Events" to get name of every process'`,
+    (err, stdout, stderr) => {
+      if (err) {
+        console.warn("⚠️ Accessibility access not granted or rejected.");
+      } else {
+        console.log("✅ Accessibility permission check triggered.");
+      }
+    }
+  );
+
+  // Automation Prompt: Requires controlling another app (e.g., Chrome)
+  exec(
+    `osascript -e 'tell application "Google Chrome" to get the URL of active tab of front window'`,
+    (err, stdout, stderr) => {
+      if (err) {
+        console.warn("⚠️ Automation access to Google Chrome not granted.");
+      } else {
+        console.log("✅ Automation permission check triggered.");
+      }
+    }
+  );
+}
+
 
 
 module.exports = {
@@ -119,5 +145,6 @@ module.exports = {
   showApps,
   getActiveApp,
   getAppVisibility,
-  quitAppByName
+  quitAppByName,
+  triggerAutomationAndAccessibilityPrompt
 };

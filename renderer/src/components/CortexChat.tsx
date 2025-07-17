@@ -1,43 +1,121 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import { Send, Sparkles, ArrowUp, X } from "lucide-react";
 import { ScrollArea } from "./ui/scroll-area";
 
 interface Message {
   id: string;
-  type: 'user' | 'ai';
+  type: "user" | "ai";
   content: string;
   timestamp: Date;
 }
+
+interface PersistedChat {
+  sessionId: string;
+  messages: Omit<Message, "timestamp"> & { timestamp: string }[];
+}
+
+const STORAGE_KEY = "cortex-chat-history";
 
 export function CortexChat() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputValue, setInputValue] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [sessionId, setSessionId] = useState<string | null>(null);
   const scrollAreaRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
+  // --- Clear helper ---------------------------------------------------------
+  const handleClearChat = useCallback(() => {
+    console.log("[CortexChat] Clearing chat + storage");
+    setMessages([]);
+    setInputValue("");
+    setIsLoading(false);
+
+    localStorage.setItem(
+      STORAGE_KEY,
+      JSON.stringify({
+        sessionId,
+        messages: [],
+      })
+    );
+  }, [sessionId]);
+
+  // --- Ask main process for current session ID on mount ---------------------
   useEffect(() => {
-    const stored = localStorage.getItem('cortex-chat-history');
-    if (stored) {
+    (async () => {
       try {
-        const parsed = JSON.parse(stored);
-        setMessages(
-          parsed.map((msg: any) => ({
-            ...msg,
-            timestamp: new Date(msg.timestamp),
-          }))
-        );
-      } catch (e) {
-        console.warn("Failed to load saved chat:", e);
+        const sid = await window.electron?.getCurrentSessionId?.();
+        if (sid) {
+          console.log("[CortexChat] Got session ID:", sid);
+          setSessionId(sid);
+        }
+      } catch (err) {
+        console.warn("[CortexChat] Failed to get session id:", err);
       }
-    }
+    })();
   }, []);
 
+  // --- Listen for session changes via IPC -----------------------------------
   useEffect(() => {
-    if (messages.length === 0) return;
-    localStorage.setItem('cortex-chat-history', JSON.stringify(messages));
-  }, [messages]);
+    const handleNewSession = (_event: any, newSessionId?: string) => {
+      console.log("🧼 New session detected — clearing chat:", newSessionId);
+      if (newSessionId) setSessionId(newSessionId);
+      handleClearChat();
+    };
 
+    window.electron?.ipcRenderer?.on?.("cortex:new-session-started", handleNewSession);
+    return () => {
+      window.electron?.ipcRenderer?.removeListener?.("cortex:new-session-started", handleNewSession);
+    };
+  }, [handleClearChat]);
+
+  // --- Load from storage once sessionId is known ----------------------------
+  useEffect(() => {
+    if (!sessionId) return;
+    const stored = localStorage.getItem(STORAGE_KEY);
+    if (!stored) return;
+
+    try {
+      const parsed: PersistedChat = JSON.parse(stored);
+      if (parsed.sessionId !== sessionId) {
+        console.log(`[CortexChat] Dropping chat from old session ${parsed.sessionId} (current ${sessionId})`);
+        localStorage.setItem(
+          STORAGE_KEY,
+          JSON.stringify({
+            sessionId,
+            messages: [],
+          })
+        );
+        return;
+      }
+
+      setMessages(
+        parsed.messages.map((msg) => ({
+          ...msg,
+          timestamp: new Date(msg.timestamp),
+        }))
+      );
+    } catch (e) {
+      console.warn("[CortexChat] Failed to load saved chat:", e);
+    }
+  }, [sessionId]);
+
+  // --- Save to storage whenever messages change -----------------------------
+  useEffect(() => {
+    if (!sessionId) return;
+    localStorage.setItem(
+      STORAGE_KEY,
+      JSON.stringify({
+        sessionId,
+        messages: messages.map((m) => ({
+          ...m,
+          timestamp: m.timestamp.toISOString(),
+        })),
+      })
+    );
+  }, [messages, sessionId]);
+
+  // --- Scroll to bottom on message update -----------------------------------
   useEffect(() => {
     if (scrollAreaRef.current) {
       const scrollElement = scrollAreaRef.current.querySelector('[data-radix-scroll-area-viewport]');
@@ -47,30 +125,23 @@ export function CortexChat() {
     }
   }, [messages]);
 
-  const handleClearChat = () => {
-    setMessages([]);
-    setInputValue("");
-    setIsLoading(false);
-    localStorage.removeItem('cortex-chat-history');
-  };
-
   const handleSendMessage = async () => {
     if (!inputValue.trim() || isLoading) return;
 
     const userMessage: Message = {
       id: Date.now().toString(),
-      type: 'user',
+      type: "user",
       content: inputValue,
-      timestamp: new Date()
+      timestamp: new Date(),
     };
 
-    setMessages(prev => [...prev, userMessage]);
+    setMessages((prev) => [...prev, userMessage]);
     setInputValue("");
     setIsLoading(true);
 
     try {
-      const chatHistory = messages.map(m => ({
-        role: m.type === 'user' ? 'user' : 'assistant',
+      const chatHistory = messages.map((m) => ({
+        role: m.type === "user" ? "user" : "assistant",
         content: m.content,
       }));
 
@@ -78,33 +149,33 @@ export function CortexChat() {
         userInput: inputValue,
         currentContext: "",
         includeContext: true,
-        chatHistory
+        chatHistory,
       });
 
       const aiMessage: Message = {
         id: (Date.now() + 1).toString(),
-        type: 'ai',
+        type: "ai",
         content: aiResponseText,
-        timestamp: new Date()
+        timestamp: new Date(),
       };
 
-      setMessages(prev => [...prev, aiMessage]);
+      setMessages((prev) => [...prev, aiMessage]);
     } catch (error) {
+      console.error("GPT error:", error);
       const errorMessage: Message = {
         id: (Date.now() + 1).toString(),
-        type: 'ai',
+        type: "ai",
         content: "❌ Error fetching AI response. Please try again.",
-        timestamp: new Date()
+        timestamp: new Date(),
       };
-      setMessages(prev => [...prev, errorMessage]);
-      console.error("GPT error:", error);
+      setMessages((prev) => [...prev, errorMessage]);
     }
 
     setIsLoading(false);
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter' && !e.shiftKey) {
+    if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
       handleSendMessage();
     }
@@ -113,14 +184,13 @@ export function CortexChat() {
   const TypingIndicator = () => (
     <div className="flex items-center gap-1 p-4">
       <div className="flex space-x-1">
-        <div className="w-2 h-2 bg-muted-foreground/40 rounded-full animate-pulse" style={{ animationDelay: '0ms' }} />
-        <div className="w-2 h-2 bg-muted-foreground/40 rounded-full animate-pulse" style={{ animationDelay: '150ms' }} />
-        <div className="w-2 h-2 bg-muted-foreground/40 rounded-full animate-pulse" style={{ animationDelay: '300ms' }} />
+        <div className="w-2 h-2 bg-muted-foreground/40 rounded-full animate-pulse" style={{ animationDelay: "0ms" }} />
+        <div className="w-2 h-2 bg-muted-foreground/40 rounded-full animate-pulse" style={{ animationDelay: "150ms" }} />
+        <div className="w-2 h-2 bg-muted-foreground/40 rounded-full animate-pulse" style={{ animationDelay: "300ms" }} />
       </div>
       <span className="text-sm text-muted-foreground ml-2">Cortex is thinking...</span>
     </div>
   );
-
   // Landing state when no messages
   if (messages.length === 0 && !isLoading) {
     return (

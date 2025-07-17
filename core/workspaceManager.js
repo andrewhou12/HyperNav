@@ -20,6 +20,7 @@ let autoHideInterval = null;
 let prevActiveApp = null;
 let previouslyHiddenApps = [];
 let initiallyHiddenApps = new Set();
+const SELF_APP_NAMES = ['Electron', 'Cortex']; // dev and prod
 
 
 function setInitiallyHiddenApps(appNames) {
@@ -59,7 +60,12 @@ function clearWorkspace() {
 function hideBackgroundApps() {
   getActiveApp(activeApp => {
     const tracked = (getSessionData().liveWorkspace?.apps || []).map(a => a.name);
-    if (prevActiveApp && prevActiveApp !== activeApp && !tracked.includes(prevActiveApp)) {
+    if (
+      prevActiveApp &&
+      prevActiveApp !== activeApp &&
+      !tracked.includes(prevActiveApp) &&
+      !SELF_APP_NAMES.includes(prevActiveApp) // stops hiding cortex
+    ) {
       recordAndHide([prevActiveApp]);
     } 
     prevActiveApp = activeApp;
