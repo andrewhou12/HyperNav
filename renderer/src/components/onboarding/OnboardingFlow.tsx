@@ -28,14 +28,6 @@ const OnboardingFlow: React.FC<OnboardingFlowProps> = ({ onComplete }) => {
   const [currentStep, setCurrentStep] = useState<OnboardingStep>('mindset');
   const [user, setUser] = useState<any>(null);
 
-  useEffect(() => {
-    if (currentStep === 'mindset') {
-      const timer = setTimeout(() => {
-        setCurrentStep('loading');
-      }, 2500);
-      return () => clearTimeout(timer);
-    }
-  }, [currentStep]);
 
   const handleStepComplete = (nextStep: OnboardingStep, userData?: any) => {
     if (userData) {
@@ -56,7 +48,11 @@ const OnboardingFlow: React.FC<OnboardingFlowProps> = ({ onComplete }) => {
   const renderCurrentStep = () => {
     switch (currentStep) {
       case 'mindset':
-        return <MindsetSplash />;
+        return (<MindsetSplash 
+          onComplete={() => handleStepComplete('loading')} />
+
+
+        );
       
       case 'loading':
         return (

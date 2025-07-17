@@ -1,9 +1,16 @@
 import { useState, useEffect } from "react";
-import { Pause, Play, Eye, EyeOff, Settings, RefreshCw, User } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Pause, Play, Eye, EyeOff, Settings, HelpCircle, BookOpen, Target, Activity, Zap, Brain, RefreshCw } from "lucide-react";
 import { Account } from "./Account";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 interface TopNavigationBarProps {
-  sessionName?: string;
   isPaused?: boolean;
   backgroundAppsHidden?: boolean;
   autoHideEnabled?: boolean;
@@ -14,7 +21,6 @@ interface TopNavigationBarProps {
 }
 
 export function TopNavigationBar({
-  sessionName = 'Session',
   isPaused = false,
   backgroundAppsHidden = false,
   autoHideEnabled = true,
@@ -30,6 +36,12 @@ export function TopNavigationBar({
     return () => clearInterval(timer);
   }, []);
 
+
+  const sessionName = currentTime.toLocaleDateString('en-US', {
+    month: 'short',
+    day: 'numeric'
+  });
+
   return (
     <div className="h-14 px-6 bg-card border-b border-border flex items-center justify-between">
 
@@ -38,7 +50,7 @@ export function TopNavigationBar({
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 overflow-hidden">
             <img
-              src="/icons/cortexlogov3.svg"
+              src="./icons/cortexlogov3.svg"
               alt="Cortex logo"
               className="w-full h-full object-contain"
             />
@@ -102,6 +114,70 @@ export function TopNavigationBar({
           onExportData={() => console.log('Export data triggered')}
           onDeleteData={() => console.log('Delete data triggered')}
         />
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <button
+              className="p-2 rounded-full bg-muted text-muted-foreground hover:bg-muted/80 transition-all duration-200"
+              title="Help & Tips"
+            >
+              <HelpCircle className="w-4 h-4" />
+            </button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end" className="w-72">
+            <DropdownMenuItem asChild>
+              <Link to="/components/help/smart-launcher" className="flex items-center gap-3 p-3 cursor-pointer">
+                <BookOpen className="w-4 h-4 text-blue-500" />
+                <div>
+                  <div className="font-medium">Intro to Cortex</div>
+                  <div className="text-xs text-muted-foreground">Get started with Cortex basics</div>
+                </div>
+              </Link>
+            </DropdownMenuItem>
+            
+            <DropdownMenuItem asChild>
+              <Link to="/components/help/spatial-navigator" className="flex items-center gap-3 p-3 cursor-pointer">
+                <Target className="w-4 h-4 text-green-500" />
+                <div>
+                  <div className="font-medium">10x Your Focus with Spatial Navigator</div>
+                  <div className="text-xs text-muted-foreground">Master workspace organization</div>
+                </div>
+              </Link>
+            </DropdownMenuItem>
+            
+            <DropdownMenuItem asChild>
+              <Link to="/components/help/data-tracking" className="flex items-center gap-3 p-3 cursor-pointer">
+                <Activity className="w-4 h-4 text-purple-500" />
+                <div>
+                  <div className="font-medium">What Cortex Tracks & Why</div>
+                  <div className="text-xs text-muted-foreground">Understanding your productivity data</div>
+                </div>
+              </Link>
+            </DropdownMenuItem>
+            
+            <DropdownMenuSeparator />
+            
+            <DropdownMenuItem asChild>
+              <Link to="/components/help/keyboard-shortcuts" className="flex items-center gap-3 p-3 cursor-pointer">
+                <Zap className="w-4 h-4 text-yellow-500" />
+                <div>
+                  <div className="font-medium">Keyboard Shortcuts</div>
+                  <div className="text-xs text-muted-foreground">Work faster with hotkeys</div>
+                </div>
+              </Link>
+            </DropdownMenuItem>
+            
+            <DropdownMenuItem asChild>
+              <Link to="/components/help/ai-assistant" className="flex items-center gap-3 p-3 cursor-pointer">
+                <Brain className="w-4 h-4 text-indigo-500" />
+                <div>
+                  <div className="font-medium">AI Assistant Tips</div>
+                  <div className="text-xs text-muted-foreground">Get the most from Cortex Intelligence</div>
+                </div>
+              </Link>
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
+
         
         <div className="text-sm text-muted-foreground font-mono">
           {currentTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}

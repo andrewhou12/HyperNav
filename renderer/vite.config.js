@@ -1,20 +1,16 @@
-import { defineConfig } from 'vite'
-
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 import path from 'path';
-import tailwind from 'tailwindcss'
-
-
-
-// https://vite.dev/config/
 
 export default defineConfig({
+  base: './', // ✅ this is essential for Electron to resolve assets
   plugins: [react()],
   build: {
+    outDir: 'dist',
+    emptyOutDir: true,
     rollupOptions: {
       input: {
         main: path.resolve(__dirname, 'index.html'),
-        session: path.resolve(__dirname, 'session.html'),
       },
     },
   },
@@ -23,4 +19,4 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
-})
+});

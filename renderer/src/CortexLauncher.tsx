@@ -1,9 +1,17 @@
 import { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
 import { Button } from '@/components/ui/button';
-import { Play, FolderOpen, Settings as LucideSettings, User, Loader2 } from 'lucide-react';
+import { Play, FolderOpen, Settings as LucideSettings, User, Loader2, HelpCircle, Brain, Activity, Target, BookOpen, Zap } from 'lucide-react';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Settings } from "@/components/Settings";
 import { Account } from "@/components/Account";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const LiveClock = ({ className = "" }) => {
   const [time, setTime] = useState(new Date());
@@ -60,7 +68,7 @@ export function CortexLauncher() {
       <header className="relative z-10 p-6 flex items-center justify-between animate-fade-in">
         <div className="flex items-center group cursor-pointer">
           <img 
-            src="/icons/cortexlogov3.svg"
+            src="./icons/cortexlogov3.svg"
             alt="Cortex Logo" 
             className="w-12 h-12 transition-all duration-300 group-hover:scale-110 drop-shadow-sm"
           />

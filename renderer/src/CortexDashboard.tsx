@@ -213,7 +213,6 @@ export function CortexDashboard() {
         }}
       />
       <TopNavigationBar
-        sessionName={'New Session'}
         isPaused={isPaused}
         backgroundAppsHidden={backgroundAppsHidden}
         onBackgroundAppsToggle={handleChangeIsBackgroundAppsHidden}

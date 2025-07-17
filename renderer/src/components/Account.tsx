@@ -7,6 +7,15 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "./ui/dialog";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "./ui/dropdown-menu";
 import { Badge } from "./ui/badge";
+import { auth } from "../firebase";
+import {
+  onAuthStateChanged,
+  signOut,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+  GoogleAuthProvider,
+  signInWithPopup,
+} from "firebase/auth";
 
 interface CortexUser {
   email: string;
@@ -20,63 +29,77 @@ interface AccountProps {
 
 export function Account({ onExportData, onDeleteData }: AccountProps) {
   const [user, setUser] = useState<CortexUser | null>(null);
-  const [isSignInModalOpen, setIsSignInModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isCreatingAccount, setIsCreatingAccount] = useState(false);
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Load user from localStorage on mount
   useEffect(() => {
-    const savedUser = localStorage.getItem("cortexUser");
-    if (savedUser) {
-      try {
-        setUser(JSON.parse(savedUser));
-      } catch (error) {
-        console.error("Failed to parse user data:", error);
-        localStorage.removeItem("cortexUser");
+    const unsub = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUser({ email: user.email || "", uid: user.uid });
+      } else {
+        setUser(null);
       }
-    }
+    });
+    return () => unsub();
   }, []);
 
-  const handleSignIn = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email.trim()) return;
+    if (!email.trim() || !password.trim()) return;
 
     setIsSubmitting(true);
-    
-    // Simulate async operation
-    await new Promise(resolve => setTimeout(resolve, 500));
-    
-    const newUser: CortexUser = {
-      email: email.trim(),
-      uid: `mock-uid-${Date.now()}`
-    };
 
-    localStorage.setItem("cortexUser", JSON.stringify(newUser));
-    setUser(newUser);
-    setEmail("");
-    setIsSignInModalOpen(false);
-    setIsSubmitting(false);
+    try {
+      const method = isCreatingAccount
+        ? createUserWithEmailAndPassword
+        : signInWithEmailAndPassword;
+      const userCredential = await method(auth, email.trim(), password.trim());
+      const user = userCredential.user;
+      setUser({ email: user.email || "", uid: user.uid });
+      setIsModalOpen(false);
+      setEmail("");
+      setPassword("");
+    } catch (err: any) {
+      alert(err.message || "Authentication failed");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
-  const handleSignOut = () => {
-    localStorage.removeItem("cortexUser");
-    setUser(null);
+  const handleSignOut = async () => {
+    await signOut(auth);
+  };
+
+  const handleGoogleSignIn = async () => {
+    setIsSubmitting(true);
+    try {
+      const provider = new GoogleAuthProvider();
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+      setUser({ email: user.email || "", uid: user.uid });
+      setIsModalOpen(false);
+    } catch (err: any) {
+      alert(err.message || "Google Sign-in failed");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleExportData = () => {
     onExportData?.();
-    // Default export implementation
     const data = {
-      user: user,
+      user,
       exportDate: new Date().toISOString(),
-      sessions: [] // Would contain actual session data
+      sessions: [],
     };
-    
-    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
     const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
+    const a = document.createElement("a");
     a.href = url;
-    a.download = `cortex-export-${new Date().toISOString().split('T')[0]}.json`;
+    a.download = `cortex-export-${new Date().toISOString().split("T")[0]}.json`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -95,25 +118,24 @@ export function Account({ onExportData, onDeleteData }: AccountProps) {
     <>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button 
-            variant="ghost" 
-            size="sm"
-            className="relative p-2 rounded-full bg-muted text-muted-foreground hover:bg-muted/80 transition-all duration-200"
-          >
-            <User className="w-4 h-4" />
-            {user && (
-              <div className="absolute -top-1 -right-1 w-3 h-3 bg-primary rounded-full border-2 border-background" />
-            )}
-          </Button>
+        <Button
+  variant="ghost"
+  className="relative w-8 h-8 rounded-full bg-muted text-muted-foreground hover:bg-muted/80 p-0"
+>
+  <User className="w-4 h-4 mx-auto my-auto" />
+  {user && (
+    <div className="absolute -top-1 -right-1 w-3 h-3 bg-primary rounded-full border-2 border-background" />
+  )}
+</Button>
         </DropdownMenuTrigger>
-        
+
         <DropdownMenuContent align="end" className="w-80 p-0">
           <Card className="border-0 shadow-none">
             <CardHeader className="pb-3">
               <div className="flex items-center justify-between">
                 <CardTitle className="text-sm font-medium">Account</CardTitle>
                 {user ? (
-                  <Badge variant="secondary" className="text-xs">
+                  <Badge variant="secondary" className="text-xs bg-primary text-white">
                     Connected
                   </Badge>
                 ) : (
@@ -122,25 +144,24 @@ export function Account({ onExportData, onDeleteData }: AccountProps) {
                   </Badge>
                 )}
               </div>
-              
               {user ? (
                 <CardDescription className="flex items-center gap-2">
                   <Mail className="w-3 h-3" />
                   {user.email}
                 </CardDescription>
               ) : (
-                <CardDescription>
-                  Not signed in
-                </CardDescription>
+                <CardDescription>Not signed in</CardDescription>
               )}
             </CardHeader>
-            
+
             <CardContent className="pt-0 space-y-1">
               {!user ? (
-                <Button 
-                  onClick={() => setIsSignInModalOpen(true)}
+                <Button
+                  onClick={() => {
+                    setIsCreatingAccount(false);
+                    setIsModalOpen(true);
+                  }}
                   className="w-full justify-start hover:bg-primary focus:bg-primary"
-
                   variant="ghost"
                   size="sm"
                 >
@@ -148,7 +169,7 @@ export function Account({ onExportData, onDeleteData }: AccountProps) {
                   Connect Account
                 </Button>
               ) : (
-                <Button 
+                <Button
                   onClick={handleSignOut}
                   className="w-full justify-start text-destructive hover:text-destructive"
                   variant="ghost"
@@ -158,23 +179,23 @@ export function Account({ onExportData, onDeleteData }: AccountProps) {
                   Sign Out
                 </Button>
               )}
-              
+
               <DropdownMenuSeparator />
-              
-              <Button 
+
+              <Button
                 onClick={handleExportData}
-                className="w-full justify-start hover:bg-primary focus:bg-primary"
-                variant="ghost"
+                 className="w-full justify-start text hover:text-destructive"
+                  variant="ghost"
                 size="sm"
               >
                 <Download className="w-4 h-4 mr-2" />
                 Export Session Data
               </Button>
-              
-              <Button 
+
+              <Button
                 onClick={handleDeleteData}
-                className="w-full justify-start hover:bg-primary focus:bg-primary"
-                variant="ghost"
+                 className="w-full justify-start text hover:text-destructive"
+                  variant="ghost"
                 size="sm"
               >
                 <Trash2 className="w-4 h-4 mr-2" />
@@ -185,17 +206,41 @@ export function Account({ onExportData, onDeleteData }: AccountProps) {
         </DropdownMenuContent>
       </DropdownMenu>
 
-      {/* Sign In Modal */}
-      <Dialog open={isSignInModalOpen} onOpenChange={setIsSignInModalOpen}>
+      {/* Auth Modal */}
+      <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
         <DialogContent className="sm:max-w-md">
           <DialogHeader>
-            <DialogTitle>Connect Account</DialogTitle>
+            <DialogTitle>{isCreatingAccount ? "Create Account" : "Connect Account"}</DialogTitle>
             <DialogDescription>
-              Enter your email to connect your Cortex account. This will enable sync and cloud features.
+              {isCreatingAccount
+                ? "Create a new Cortex account to sync your workspace."
+                : "Sign in to your Cortex account to enable sync and cloud features."}
             </DialogDescription>
           </DialogHeader>
           
-          <form onSubmit={handleSignIn} className="space-y-4">
+          <Button
+  type="button"
+  variant="outline"
+  onClick={handleGoogleSignIn}
+  disabled={isSubmitting}
+  className="w-full flex items-center justify-center gap-2"
+>
+  <img src="/icons/google.svg" alt="Google" className="w-4 h-4" />
+  {isSubmitting ? "Signing in..." : "Continue with Google"}
+</Button>
+
+<div className="relative my-4">
+  <div className="absolute inset-0 flex items-center">
+    <span className="w-full border-t border-muted" />
+  </div>
+  <div className="relative flex justify-center text-xs uppercase text-muted-foreground">
+    <span className="bg-background px-2">Or</span>
+  </div>
+</div>
+
+
+
+          <form onSubmit={handleSubmit} className="space-y-4">
             <div className="space-y-2">
               <Label htmlFor="email">Email address</Label>
               <Input
@@ -208,28 +253,61 @@ export function Account({ onExportData, onDeleteData }: AccountProps) {
                 autoFocus
               />
             </div>
-            
+            <div className="space-y-2">
+              <Label htmlFor="password">Password</Label>
+              <Input
+                id="password"
+                type="password"
+                placeholder="Your password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </div>
+
             <div className="flex gap-2 pt-2">
-              <Button 
-                type="button" 
-                variant="outline" 
-                onClick={() => setIsSignInModalOpen(false)}
+              <Button
+                type="button"
+                variant="outline"
+                onClick={() => setIsModalOpen(false)}
                 className="flex-1"
               >
                 Cancel
               </Button>
-              <Button 
-                type="submit" 
-                disabled={isSubmitting || !email.trim()}
-                className="flex-1"
-              >
-                {isSubmitting ? "Connecting..." : "Connect"}
+              <Button type="submit" disabled={isSubmitting || !email.trim()} className="flex-1">
+                {isSubmitting
+                  ? isCreatingAccount
+                    ? "Creating..."
+                    : "Connecting..."
+                  : isCreatingAccount
+                  ? "Create"
+                  : "Connect"}
               </Button>
             </div>
           </form>
-          
-          <div className="text-xs text-muted-foreground text-center pt-2 border-t">
-            This is a mock sign-in for demonstration. No real authentication is performed.
+
+          <div className="text-xs text-muted-foreground text-center pt-3 border-t">
+            {isCreatingAccount ? (
+              <>
+                Already have an account?{" "}
+                <button
+                  onClick={() => setIsCreatingAccount(false)}
+                  className="underline text-foreground hover:text-primary"
+                >
+                  Sign In
+                </button>
+              </>
+            ) : (
+              <>
+                Don’t have an account?{" "}
+                <button
+                  onClick={() => setIsCreatingAccount(true)}
+                  className="underline text-foreground hover:text-primary"
+                >
+                  Create One
+                </button>
+              </>
+            )}
           </div>
         </DialogContent>
       </Dialog>

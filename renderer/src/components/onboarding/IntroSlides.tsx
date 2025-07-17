@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { ChevronLeft, ChevronRight, Focus, Zap, Command } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Focus, Zap, Command, Brain } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 interface IntroSlidesProps {
@@ -10,8 +10,8 @@ interface IntroSlidesProps {
 const slides = [
   {
     icon: Focus,
-    title: 'Stay Focused',
-    description: 'No more context switching. Keep your workspace distraction-free.',
+    title: 'Next Level Focus',
+    description: 'No more context switching. Keep your workspace and distraction and clutter-free.',
     color: 'from-primary to-primary/70'
   },
   {
@@ -25,6 +25,13 @@ const slides = [
     title: 'Total Control',
     description: 'Launch, switch, summarize, and stay in flow—Cortex is always at your fingertips.',
     color: 'from-primary to-accent'
+  },
+
+  {
+    icon: Brain,
+    title: 'Second Brain',
+    description: 'Cortex Intelligence remembers, anticipates, and adapts—powering the engine of your supercharged workspace.',
+    color: 'from-accent to-accent/70'
   }
 ];
 

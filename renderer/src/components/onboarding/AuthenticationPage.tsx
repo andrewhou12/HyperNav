@@ -4,6 +4,13 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Mail, Lock, Eye, EyeOff } from 'lucide-react';
+import { auth } from "../../firebase";
+import {
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+  GoogleAuthProvider,
+  signInWithPopup,
+} from "firebase/auth";
 
 interface AuthenticationPageProps {
   onSuccess: (userData: any) => void;
@@ -18,26 +25,58 @@ const AuthenticationPage: React.FC<AuthenticationPageProps> = ({ onSuccess }) =>
     confirmPassword: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Mock authentication - replace with Firebase Auth
-    const userData = {
-      email: formData.email,
-      name: formData.email.split('@')[0],
-      id: Math.random().toString(36).substr(2, 9)
-    };
-    onSuccess(userData);
+  
+    try {
+      let userCredential;
+      if (isSignIn) {
+        userCredential = await signInWithEmailAndPassword(
+          auth,
+          formData.email,
+          formData.password
+        );
+      } else {
+        if (formData.password !== formData.confirmPassword) {
+          alert("Passwords do not match");
+          return;
+        }
+        userCredential = await createUserWithEmailAndPassword(
+          auth,
+          formData.email,
+          formData.password
+        );
+      }
+  
+      const user = userCredential.user;
+      onSuccess({
+        email: user.email,
+        uid: user.uid,
+        name: user.displayName || user.email?.split("@")[0],
+      });
+    } catch (error: any) {
+      console.error("Firebase Auth Error:", error);
+      alert(error.message || "Authentication failed");
+    }
   };
+  
 
-  const handleGoogleSignIn = () => {
-    // Mock Google sign-in - replace with actual implementation
-    const userData = {
-      email: 'user@gmail.com',
-      name: 'Google User',
-      id: Math.random().toString(36).substr(2, 9)
-    };
-    onSuccess(userData);
+  const handleGoogleSignIn = async () => {
+    try {
+      const provider = new GoogleAuthProvider();
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+      onSuccess({
+        email: user.email,
+        uid: user.uid,
+        name: user.displayName || user.email?.split("@")[0],
+      });
+    } catch (error: any) {
+      console.error("Google Sign-in error:", error);
+      alert(error.message || "Google sign-in failed");
+    }
   };
+  
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData(prev => ({
@@ -57,7 +96,7 @@ const AuthenticationPage: React.FC<AuthenticationPageProps> = ({ onSuccess }) =>
           <div className="text-center">
           <div className="w-16 h-16 mx-auto glass rounded-2xl flex items-center justify-center mb-6">
     <img 
-      src="/icons/cortexlogov3.svg"
+      src="./icons/cortexlogov3.svg"
       alt="Cortex Logo" 
       className="w-full h-full object-contain" // or object-cover
     />

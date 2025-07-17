@@ -2,8 +2,8 @@
 
 const fs = require('fs');
 const path = require('path');
-
-const sessionsDir = path.join(__dirname, '..', 'sessions');
+const { app } = require('electron');
+const sessionsDir = path.join(app.getPath('userData'), 'sessions');
 
 function loadRecentSessionEventLogs(limit = 3) {
   if (!fs.existsSync(sessionsDir)) return [];

@@ -8,7 +8,8 @@
     "dev:electron": "wait-on http://localhost:5173 && electron .",
     "dev": "concurrently \"npm:dev:renderer\" \"npm:dev:electron\"",
     "start": "electron .",
-    "build": "electron-builder",
+    "build:renderer": "npm run build --prefix renderer",
+    "build": "npm run build:renderer && electron-builder && xattr -rd com.apple.quarantine dist/mac-arm64/Cortex.app && xattr -rd com.apple.quarantine dist/*.dmg",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Andrew Hou",
@@ -22,7 +23,7 @@
     "autoprefixer": "^10.4.21",
     "concurrently": "^9.2.0",
     "electron": "36.7.0",
-    "electron-builder": "^24.6.4",
+    "electron-builder": "^24.13.3",
     "typescript": "^5.8.3",
     "wait-on": "^8.0.3"
   },
@@ -32,19 +33,39 @@
     "chrome-remote-interface": "^0.33.3",
     "class-variance-authority": "^0.7.1",
     "dotenv": "^17.0.1",
+    "electron-store": "^10.1.0",
+    "electron-updater": "^6.6.2",
     "file-icon": "^5.1.1",
+    "firebase": "^11.10.0",
     "fuse.js": "^7.1.0",
+    "node-mac-permissions": "^2.5.0",
     "openai": "^5.8.2",
     "pnpm": "^10.12.4",
     "sharp": "^0.34.3"
   },
   "build": {
+    "appId": "com.cortexapp.cortex",
     "productName": "Cortex",
     "directories": {
       "buildResources": "renderer/public/icons"
     },
     "mac": {
-      "icon": "cortexlogov2.icns"
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "icon": "renderer/public/icons/cortexlogov2.icns",
+      "category": "public.app-category.productivity"
     }
-  }
+  },
+  "files": [
+    "main.js",
+    "preload.js",
+    "core/**/*",
+    "renderer/dist/**/*",
+    "package.json",
+    "settingsManager.js",
+    "!**/.cortex-chrome-profile",
+    "!.cortex-chrome-profile/**"
+  ]
 }

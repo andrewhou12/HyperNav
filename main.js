@@ -1,6 +1,8 @@
 const path = require('path');
 const fs = require('fs');
 const { app, BrowserWindow, globalShortcut, ipcMain, screen, dialog, clipboard } = require('electron');
+const Store = require('electron-store').default;
+const { autoUpdater } = require('electron-updater');
 require('./core/gptRouter');
 const { exec } = require('child_process');
 require('dotenv').config();
@@ -12,6 +14,9 @@ const { activateApp,
   activateByAppId} = require('./core/appNavigator');
   const { loadSettings, saveSettings } = require('./settingsManager');
 const RECENT_APPS_FILE = path.join(app.getPath('userData'), 'recent-apps.json');
+
+
+autoUpdater.checkForUpdatesAndNotify();
 let recentApps = [];
 
 function isValidMacApp(appPath) {
@@ -87,6 +92,9 @@ const workspaceManager = require('./core/workspaceManager');
 const { toggleDockAutohide } = require('./core/systemUIManager');
 const { showApps, quitAppByName } = require('./utils/applescript');
 const sessionManager = require('./core/sessionManager');
+const store = new Store();
+const isDev = true
+// !app.isPackaged;
 
 app.setName("Cortex");
 let hotkeysEnabled = false;
@@ -117,7 +125,13 @@ function createWindow() {
       webSecurity: false,
      },
   });
-  win.loadURL('http://localhost:5173/');
+  if (isDev) {
+    win.loadURL('http://localhost:5173/');
+  } else {
+    win.loadFile(path.join(__dirname, 'renderer/dist/index.html'), {
+      hash: '/',
+    });
+  }
   win.on('closed', () => { launcherWindow = null; });
   launcherWindow = win;
 }
@@ -131,10 +145,16 @@ function createOnboarding() {
       webSecurity: false,
      },
   });
-  onboardingWin.loadURL('http://localhost:5173/onboarding');
+  
+  if (isDev) {
+    onboardingWin.loadURL('http://localhost:5173#/onboarding');
+  } else {
+    win.loadURL(`file://${path.join(__dirname, 'renderer/dist/index.html')}#/onboarding`);
+  }
 
   onboardingWin.on('closed', () => {
-
+    
+    store.set('hasCompletedOnboarding', true);
     createWindow();
   })
 }
@@ -154,7 +174,11 @@ function createSessionWindow() {
       webSecurity: false,  //currently needed to display appicons in smartlauncher, will need to overhaul in the future
      },
   });
-  win.loadURL('http://localhost:5173/session');
+  if (isDev) {
+    win.loadURL('http://localhost:5173/#session');
+  } else {
+    win.loadURL(`file://${path.join(__dirname, 'renderer/dist/index.html')}#/session`);
+  }
 
   win.on('close', async (e) => {
     e.preventDefault();
@@ -214,7 +238,11 @@ function createOverlayWindow() {
     webPreferences: { preload: path.join(__dirname, 'preload.js'), contextIsolation: true, backgroundThrottling: false, webSecurity: false },
   });
 
-  overlayWindow.loadURL('http://localhost:5173/overlay');
+  if (isDev) {
+    overlayWindow.loadURL('http://localhost:5173/#overlay');
+  } else {
+    win.loadURL(`file://${path.join(__dirname, 'renderer/dist/index.html')}#/overlay`);
+  }
   overlayWindow.hide();
   sessionManager.setOverlayWindow(overlayWindow);
 
@@ -279,8 +307,11 @@ const COLLAPSED_HEIGHT = 70;
       webSecurity: false,
     },
   });
-
-  hudWindow.loadURL('http://localhost:5173/hud');
+  if (isDev) {
+    hudWindow.loadURL('http://localhost:5173/#hud');
+  } else {
+    win.loadURL(`file://${path.join(__dirname, 'renderer/dist/index.html')}#/hud`);
+  }
 
   sessionManager.setHudWindow(hudWindow);
 
@@ -644,5 +675,12 @@ app.on('activate', () => {
 
 app.whenReady().then(async () => {
   await loadRecentApps();
-  createOnboarding();
+
+  const hasCompleted = store.get('hasCompletedOnboarding');
+
+  if (isDev || !hasCompleted) {
+    createOnboarding();
+  } else {
+    createWindow();
+  }
 });

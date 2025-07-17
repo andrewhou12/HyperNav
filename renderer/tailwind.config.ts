@@ -4,7 +4,6 @@ export default {
   darkMode: ["class"],
   content: [
     "./index.html",
-    "./session.html",
     "./src/**/*.{js,ts,jsx,tsx}"
   ],
   prefix: "",

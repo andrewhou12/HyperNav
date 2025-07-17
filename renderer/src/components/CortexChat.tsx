@@ -137,7 +137,7 @@ export function CortexChat() {
           <div className="text-center mb-12">
             <div className="flex items-center justify-center gap-3 mb-6">
             <img
-            src="/icons/cortexlogov3.svg"
+            src="./icons/cortexlogov3.svg"
             alt="Cortex"
             className="w-7 h-7 flex-shrink-0"
           />
@@ -208,7 +208,7 @@ export function CortexChat() {
         <div></div> {/* Left spacer */}
         <div className="flex items-center gap-3 bg-card/80 backdrop-blur-sm rounded-full px-6 py-3 border border-border/50 shadow-sm">
         <img
-            src="/icons/cortexlogov3.svg"
+            src="./icons/cortexlogov3.svg"
             alt="Cortex"
             className="w-7 h-7 flex-shrink-0"
           />
