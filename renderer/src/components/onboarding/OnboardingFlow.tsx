@@ -107,6 +107,9 @@ const OnboardingFlow: React.FC<OnboardingFlowProps> = ({ onComplete }) => {
         );
       
       case 'complete':
+        if (window.electron?.onboardingComplete) {
+          window.electron.onboardingComplete();
+        }
         onComplete?.();
         return null;
       

@@ -1,7 +1,6 @@
 const path = require('path');
 const fs = require('fs');
 const { app, BrowserWindow, globalShortcut, ipcMain, screen, dialog, clipboard } = require('electron');
-const Store = require('electron-store').default;
 const { autoUpdater } = require('electron-updater');
 require('./core/gptRouter');
 const { exec } = require('child_process');
@@ -15,6 +14,7 @@ const { activateApp,
   const { loadSettings, saveSettings } = require('./settingsManager');
 const RECENT_APPS_FILE = path.join(app.getPath('userData'), 'recent-apps.json');
 const { v4 } = require('uuid');
+const ONBOARDING_FLAG_PATH = path.join(app.getPath('userData'), 'onboarding.json');
 
 
 autoUpdater.checkForUpdatesAndNotify();
@@ -22,6 +22,16 @@ let recentApps = [];
 
 function isValidMacApp(appPath) {
   return typeof appPath === 'string' && appPath.endsWith('.app') && fs.existsSync(appPath);
+}
+
+//onboarding logic
+
+function hasCompletedOnboarding() {
+  return fs.existsSync(ONBOARDING_FLAG_PATH);
+}
+
+function markOnboardingComplete() {
+  fs.writeFileSync(ONBOARDING_FLAG_PATH, JSON.stringify({ done: true }));
 }
 
 async function loadRecentApps() {
@@ -93,7 +103,6 @@ const workspaceManager = require('./core/workspaceManager');
 const { toggleDockAutohide } = require('./core/systemUIManager');
 const { showApps, quitAppByName, triggerAutomationAndAccessibilityPrompt } = require('./utils/applescript');
 const sessionManager = require('./core/sessionManager');
-const store = new Store();
 const isDev = false
 
 app.setName("Cortex");
@@ -156,7 +165,6 @@ function createOnboarding() {
 
   onboardingWin.on('closed', () => {
     
-    store.set('hasCompletedOnboarding', true);
     createWindow();
   })
 }
@@ -693,6 +701,10 @@ ipcMain.handle('getCurrentSessionId', async () => {
   return currentSessionId;
 });
 
+ipcMain.on('onboarding-complete', (event) => {
+  console.log('✅ Onboarding is complete');
+  markOnboardingComplete();
+});
 
 
 app.on('activate', () => {
@@ -707,9 +719,9 @@ app.on('activate', () => {
 app.whenReady().then(async () => {
   await loadRecentApps();
 
-  const hasCompleted = store.get('hasCompletedOnboarding');
 
-  if (isDev || !hasCompleted) {
+
+  if (isDev ||!hasCompletedOnboarding()) {
     createOnboarding();
   } else {
     createWindow();
