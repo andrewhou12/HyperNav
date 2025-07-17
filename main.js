@@ -148,7 +148,7 @@ function createOnboarding() {
   if (isDev) {
     onboardingWin.loadURL('http://localhost:5173#/onboarding');
   } else {
-    win.loadURL(`file://${path.join(__dirname, 'renderer/dist/index.html')}#/onboarding`);
+    onboardingWin.loadURL(`file://${path.join(__dirname, 'renderer/dist/index.html')}#/onboarding`);
   }
 
   onboardingWin.on('closed', () => {
@@ -240,7 +240,7 @@ function createOverlayWindow() {
   if (isDev) {
     overlayWindow.loadURL('http://localhost:5173/#overlay');
   } else {
-    win.loadURL(`file://${path.join(__dirname, 'renderer/dist/index.html')}#/overlay`);
+    overlayWindow.loadURL(`file://${path.join(__dirname, 'renderer/dist/index.html')}#/overlay`);
   }
   overlayWindow.hide();
   sessionManager.setOverlayWindow(overlayWindow);
@@ -309,7 +309,7 @@ const COLLAPSED_HEIGHT = 70;
   if (isDev) {
     hudWindow.loadURL('http://localhost:5173/#hud');
   } else {
-    win.loadURL(`file://${path.join(__dirname, 'renderer/dist/index.html')}#/hud`);
+    hudWindow.loadURL(`file://${path.join(__dirname, 'renderer/dist/index.html')}#/hud`);
   }
 
   sessionManager.setHudWindow(hudWindow);
