@@ -93,8 +93,7 @@ const { toggleDockAutohide } = require('./core/systemUIManager');
 const { showApps, quitAppByName } = require('./utils/applescript');
 const sessionManager = require('./core/sessionManager');
 const store = new Store();
-const isDev = true
-// !app.isPackaged;
+const isDev = !app.isPackaged;
 
 app.setName("Cortex");
 let hotkeysEnabled = false;
