@@ -719,8 +719,6 @@ app.on('activate', () => {
 app.whenReady().then(async () => {
   await loadRecentApps();
 
-
-
   if (isDev ||!hasCompletedOnboarding()) {
     createOnboarding();
   } else {

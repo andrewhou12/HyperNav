@@ -16,6 +16,7 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
 } from "firebase/auth";
+import GoogleIcon from "assets/google.svg"
 
 interface CortexUser {
   email: string;
@@ -225,7 +226,7 @@ export function Account({ onExportData, onDeleteData }: AccountProps) {
   disabled={isSubmitting}
   className="w-full flex items-center justify-center gap-2"
 >
-  <img src="/icons/google.svg" alt="Google" className="w-4 h-4" />
+  <img src={GoogleIcon} alt="Google" className="w-4 h-4" />
   {isSubmitting ? "Signing in..." : "Continue with Google"}
 </Button>
 
