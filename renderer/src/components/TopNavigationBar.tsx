@@ -110,10 +110,10 @@ export function TopNavigationBar({
 
 {/* Right: Account + Time */}
 <div className="flex items-center gap-4">
-        <Account 
+        {/* <Account 
           onExportData={() => console.log('Export data triggered')}
           onDeleteData={() => console.log('Delete data triggered')}
-        />
+        /> */}
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <button

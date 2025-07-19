@@ -1,6 +1,12 @@
 const { contextBridge, ipcRenderer } = require('electron');
 
 contextBridge.exposeInMainWorld('electron', {
+  startHostedLogin: () => ipcRenderer.invoke('startHostedLogin'),
+  onAuthSuccess: (cb) => {
+    const listener = (_e, token) => cb(token);
+    ipcRenderer.on('auth-success', listener);
+    return () => ipcRenderer.removeListener('auth-success', listener);
+  },
   onboardingComplete: () => ipcRenderer.send('onboarding-complete'),
   getSettings: () => ipcRenderer.invoke('get-settings'),
   saveSettings: (settings) => ipcRenderer.invoke('save-settings', settings),
