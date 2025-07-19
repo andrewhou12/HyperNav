@@ -85,10 +85,10 @@ export function CortexLauncher() {
             onClick={() => setView('settings')}>
               <LucideSettings className="w-4 h-4 text-muted-foreground" />
             </Button>
-            <Account 
+            {/* <Account 
           onExportData={() => console.log('Export data triggered')}
           onDeleteData={() => console.log('Delete data triggered')}
-        />
+        /> */}
           </div>
         </div>
       </header>

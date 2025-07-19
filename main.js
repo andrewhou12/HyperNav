@@ -3,6 +3,7 @@ const fs = require('fs');
 const { app, BrowserWindow, globalShortcut, ipcMain, screen, dialog, clipboard } = require('electron');
 const { autoUpdater } = require('electron-updater');
 require('./core/gptRouter');
+const { saveAuthToken } = require('./authManager');
 const { exec } = require('child_process');
 require('dotenv').config();
 const { getInstalledApps, getInstalledAppsWithIcons, extractIcon } = require('./core/appDiscovery');
@@ -14,8 +15,10 @@ const { activateApp,
   const { loadSettings, saveSettings } = require('./settingsManager');
 const RECENT_APPS_FILE = path.join(app.getPath('userData'), 'recent-apps.json');
 const { v4 } = require('uuid');
+const { shell } = require('electron');
 const ONBOARDING_FLAG_PATH = path.join(app.getPath('userData'), 'onboarding.json');
 
+app.setAsDefaultProtocolClient('cortex');
 
 autoUpdater.checkForUpdatesAndNotify();
 let recentApps = [];
@@ -110,6 +113,7 @@ let hotkeysEnabled = false;
 let overlayWindow;
 let launcherWindow;
 let sessionWindow;
+let onboardingWin;
 let hudWindow;
 let overlayOpenedFromGlobal = false;
 let isSessionPaused = false;
@@ -148,7 +152,7 @@ function createWindow() {
 }
 
 function createOnboarding() {
-  const onboardingWin = new BrowserWindow({
+   onboardingWin = new BrowserWindow({
     width: 1200,
     height: 800,
     icon: iconPath,
@@ -706,6 +710,25 @@ ipcMain.on('onboarding-complete', (event) => {
   markOnboardingComplete();
 });
 
+ipcMain.handle('startHostedLogin', async () => {
+  const ts = Date.now();
+  shell.openExternal(`https://cortexmacapp.web.app?v=${ts}`);
+});
+
+app.on('open-url', (event, urlStr) => {
+  const url = new URL(urlStr);
+  const token = url.searchParams.get('token');
+  if (!token) return console.error('No token in deep link');
+
+  saveAuthToken(token); // Store token securely
+  if (onboardingWin?.webContents) {
+    onboardingWin.webContents.send('auth-success', token);
+  } else if (launcherWindow?.webContents) {
+    launcherWindow.webContents.send('auth-success', token);
+  } else {
+    console.warn('⚠️ No renderer window available to receive token');
+  }
+});
 
 app.on('activate', () => {
   const dashboardVisible = sessionWindow && !sessionWindow.isDestroyed() && sessionWindow.isVisible();
